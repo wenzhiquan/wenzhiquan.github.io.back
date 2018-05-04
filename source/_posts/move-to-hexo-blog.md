@@ -435,3 +435,5 @@ pace: true
 2、[hexo 的 next 主题个性化配置教程](https://segmentfault.com/a/1190000009544924)
 
 3、sunshine 小小倩，[hexo 高阶教程](https://juejin.im/post/58eb2fd2a0bb9f006928f8c7#heading-16)
+
+4、[打造个性超赞博客 Hexo+NexT+GithubPages 的超深度优化](https://reuixiy.github.io/technology/computer/computer-aided-art/2017/06/09/hexo-next-optimization.html)
