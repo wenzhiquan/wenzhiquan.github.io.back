@@ -824,5 +824,5 @@ images: images
 version: 5.1.4
 
 # Online contact
-daovoice: true
+daovoice: false
 daovoice_app_id: 5ad7a912
