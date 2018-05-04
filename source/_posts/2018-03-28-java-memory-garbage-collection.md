@@ -1,10 +1,7 @@
 ---
-layout:     post
 title:      "Java内存模型和垃圾回收"
-subtitle:   "介绍了java内存区域，垃圾回收技术和内存分配策略"
 date:       2018-03-28 12:00:00
-author:     "Wenzhiquan"
-header-img: "img/post-bg-universe.jpg"
+copyright: true
 categories:
     - Java
 tags:
@@ -24,6 +21,7 @@ tags:
 #### 程序计数器
 
 每条线程都有一个独立的程序计数器，用于记录当前线程所执行的`字节码`的`行号`。如果执行的是java方法，计数器记录的是虚拟机字节码指令的地址，如果是本地方法，则计数器值为空。
+<!-- more -->
 
 #### Java虚拟机栈
 

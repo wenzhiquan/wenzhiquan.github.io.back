@@ -5,6 +5,7 @@
   <span class="with-love">
     <i class="fa fa-{{ theme.footer.icon }}"></i>
   </span>
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
   <span class="author" itemprop="copyrightHolder">{{ theme.footer.copyright || config.author }}</span>
 
   {% if theme.post_wordcount.totalcount %}
@@ -21,6 +22,20 @@
   {% endif %}
 </div>
 
+<div class="powered-by">
+  <i class="fa fa-eye"></i>
+  <span id="busuanzi_container_site_pv">
+    本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  <i class="fa fa-users"></i>
+  <span id="busuanzi_container_site_uv">
+    本站访客数:<span id="busuanzi_value_site_uv"></span>
+  </span>
+</div>
+
+<br/>
+
+<!--
 {% if theme.footer.powered %}
   <div class="powered-by">{#
   #}{{ __('footer.powered', '<a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a>') }}{#
@@ -39,6 +54,7 @@
   #}</a>{% if theme.footer.theme.version %} v{{ theme.version }}{% endif %}{#
 #}</div>
 {% endif %}
+-->
 
 {% if theme.footer.custom_text %}
   <div class="footer-custom">{#

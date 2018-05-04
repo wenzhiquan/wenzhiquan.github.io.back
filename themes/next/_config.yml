@@ -27,8 +27,8 @@ override: false
 # For example, you put your favicons into `hexo-site/source/images` directory.
 # Then need to rename & redefine they on any other names, otherwise icons from Next will rewrite your custom icons in Hexo.
 favicon:
-  small: /images/favicon.ico
-  medium: /images/favicon.ico
+  small: /uploads/favicon.ico
+  medium: /uploads/favicon.ico
   apple_touch_icon: /images/apple-touch-icon-next.png
   safari_pinned_tab: /images/logo.svg
   #android_manifest: /images/manifest.json
@@ -105,16 +105,19 @@ menu:
 menu_icons:
   enable: true
 
-
+# 最近文章配置
+recent_posts_title: 近期文章
+recent_posts_layout: block
+recent_posts: true
 # ---------------------------------------------------------------
 # Scheme Settings
 # ---------------------------------------------------------------
 
 # Schemes
 # scheme: Muse
-#scheme: Mist
+# scheme: Mist
 scheme: Pisces
-#scheme: Gemini
+# scheme: Gemini
 
 
 # ---------------------------------------------------------------
@@ -126,12 +129,13 @@ scheme: Pisces
 # Key is the link label showing to end users.
 # Value before `||` delimeter is the target permalink.
 # Value after `||` delimeter is the name of FontAwesome icon. If icon (with or without delimeter) is not specified, globe icon will be loaded.
-#social:
-  #GitHub: https://github.com/yourname || github
-  #E-Mail: mailto:yourname@gmail.com || envelope
+social:
+  GitHub: https://github.com/yourname || github-alt
+  知乎: https://www.zhihu.com/people/wenzhiquan/activities
+  E-Mail: mailto:wenzhiquanr@163.com || envelope
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
-  #FB Page: https://www.facebook.com/yourname || facebook
+  Facebook: https://www.facebook.com/profile.php?id=100006943363300 || facebook
   #VK Group: https://vk.com/yourname || vk
   #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
   #YouTube: https://youtube.com/yourname || youtube
@@ -145,16 +149,20 @@ social_icons:
 
 # Blog rolls
 links_icon: link
-links_title: Links
+links_title: 友情链接
 links_layout: block
 #links_layout: inline
-#links:
-  #Title: http://example.com/
+links:
+  肖楚天的博客: https://xiaochutian.github.io/
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
 # in site  directory(source/uploads): /uploads/avatar.gif
-avatar: /images/avatar-wen.jpg
+avatar: /uploads/avatar-wen.jpg
+
+# 文章末尾添加“本文结束”标记
+passage_end_tag:
+  enabled: true
 
 # Table Of Contents in the Sidebar
 toc:
@@ -175,7 +183,7 @@ toc:
 sidebar:
   # Sidebar Position, available value: left | right (only for Pisces | Gemini).
   position: left
-  #position: right
+  # position: right
 
   # Sidebar Display, available value (only for Muse | Mist):
   #  - post    expand on posts automatically. Default.
@@ -194,7 +202,7 @@ sidebar:
   b2t: false
 
   # Scroll percent label in b2t button.
-  scrollpercent: false
+  scrollpercent: true
 
   # Enable sidebar on narrow view (only for Muse | Mist).
   onmobile: false
@@ -230,9 +238,9 @@ post_meta:
 # Dependencies: https://github.com/willin/hexo-wordcount
 post_wordcount:
   item_text: true
-  wordcount: false
-  min2read: false
-  totalcount: false
+  wordcount: true
+  min2read: true
+  totalcount: true
   separated_meta: true
 
 # Wechat Subscriber
@@ -242,9 +250,9 @@ post_wordcount:
   #description: ex. subscribe to my blog by scanning my public wechat account
 
 # Reward
-#reward_comment: Donate comment here
-#wechatpay: /images/wechatpay.jpg
-#alipay: /images/alipay.jpg
+reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作！
+wechatpay: /uploads/wechatpay.jpg
+alipay: /uploads/alipay.jpg
 #bitcoin: /images/bitcoin.png
 
 # Declare license on posts
@@ -363,7 +371,7 @@ baidu_analytics: 0ee846e1ba3a25130ad41180a73f6f9a
 
 # Disqus
 disqus:
-  enable: false
+  enable: true
   shortname: wenzhiquan
   count: true
 
@@ -428,7 +436,7 @@ gitment:
 # This plugin is more useful in China, make sure you known how to use it.
 # And you can find the use guide at official webiste: http://www.jiathis.com/.
 # Warning: JiaThis does not support https.
-#jiathis:
+# jiathis:
   ##uid: Get this uid from http://www.jiathis.com/
 #add_this_id:
 
@@ -678,7 +686,7 @@ motion:
 fancybox: true
 
 # Progress bar in the top during page loading.
-pace: false
+pace: true
 # Themes list:
 #pace-theme-big-counter
 #pace-theme-bounce

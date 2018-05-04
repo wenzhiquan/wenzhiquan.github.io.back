@@ -5,7 +5,7 @@
 # Site
 title: 温智全的博客
 subtitle: Wenknows's Blog
-description: 爱唱歌健身的程序员 | 这里是 @温智全 的个人博客，期待和你一起学习成长。
+description: 爱唱歌健身的程序员
 keywords: wenzhiquan, wenknows, 温智全, 技术, 软件, 互联网, Mac, 算法, Linux, blog
 author: 温智全
 language: zh-Hans
@@ -54,10 +54,6 @@ fancybox: true
 # Specify the date when the site was setup
 since: 2013
 
-social:
-  GitHub: https://github.com/wenzhiquan
-  ZhiHu: https://www.zhihu.com/people/wenzhiquan/activities
-
 # Home page setting
 # path: Root path for your blogs index page. (default = '')
 # per_page: Posts displayed per page. (0 = disable pagination)
@@ -95,6 +91,20 @@ pagination_dir: page
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: next
+
+# RSS订阅
+plugin:
+- hexo-generator-feed
+- hexo-generator-sitemap
+# Feed configuration.
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
