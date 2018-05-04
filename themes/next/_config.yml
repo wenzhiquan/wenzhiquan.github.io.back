@@ -534,7 +534,7 @@ vkontakte_api:
 # Star rating support to each article.
 # To get your ID visit https://widgetpack.com
 rating:
-  enable: true
+  enable: false
   id:     11264
   color:  fc6423
 # ---------------------------------------------------------------
@@ -822,3 +822,7 @@ images: images
 
 # Theme version
 version: 5.1.4
+
+# Online contact
+daovoice: true
+daovoice_app_id: 5ad7a912
