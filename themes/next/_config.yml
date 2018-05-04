@@ -393,7 +393,7 @@ valine:
   appid: xSt4331oBR0VyC2jUzPEuxxh-gzGzoHsz
   appkey: t2TehJbxap2pAcoBr4oCrCtT
   notify: false # mail notifier , https://github.com/xCss/Valine/wiki
-  verify: true # Verification code
+  verify: false # Verification code
   placeholder: ~\(≧▽≦)/~来呀，快活呀~ # comment box placeholder
   avatar: mm # gravatar style
   guest_info: nick,mail,link # custom comment header
