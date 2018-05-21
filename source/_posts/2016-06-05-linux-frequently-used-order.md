@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Linux系统常用命令"
-date:        2016-06-05 12:00:00
+date:       2016-06-05 12:00:00
 copyright: true
 categories:
     - Linux

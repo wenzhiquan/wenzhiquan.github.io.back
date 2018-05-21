@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "单例模式的八种写法"
-date:        2016-06-16 12:00:00
+date:       2016-06-16 12:00:00
 copyright: true
 categories:
     - Java

@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Linux基础学习"
-date:        2016-06-20 12:00:00
+date:       2016-06-20 12:00:00
 copyright: true
 categories:
     - Linux

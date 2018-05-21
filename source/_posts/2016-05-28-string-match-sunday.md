@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "字符串匹配Sunday算法"
-date:        2016-05-28 12:00:00
+date:       2016-05-28 12:00:00
 copyright: true
 categories:
     - Algorithm

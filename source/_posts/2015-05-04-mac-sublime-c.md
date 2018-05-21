@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Mac OS Yosemite 配置sublime text C语言开发环境"
-date:        2015-05-04 12:00:00
+date:       2015-05-04 12:00:00
 copyright: true
 categories:
     - Mac

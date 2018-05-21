@@ -4,13 +4,15 @@ title:      "面试必会题目（3）—— Binary Search"
 date:        2016-06-26 12:00:00
 copyright: true
 categories:
-    - Mac
+    - Algorithm
 tags:
-    - Sublime
-    - C
+    - Algorithm
+    - Binary Search
 ---
 
 > “面试技术岗位应该掌握的算法题目--Binary Search相关”
+
+<!-- more -->
 
 ### Sqrt(x) - easy
 
