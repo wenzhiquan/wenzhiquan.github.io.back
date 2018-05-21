@@ -280,7 +280,7 @@ Class 文件存储格式中对方法的描述与对字段的描述几乎一致�
 2. 扩展类加载器（Extension ClassLoader）：将存放在<JAVA_HOME>/lib/ext 目录中的，或呗 java.ext.dirs 系统变量指定路径中的所有类库加载到虚拟机内存中
 3. 应用程序类加载器（Application ClassLoader）：负责加载用户类路径（ClassPath）上所指定的类库
 
-![](https://img-blog.csdn.net/20160506184936657)
+![](/uploads/in-post/parent-delegate.png)
 
 图中展示的类加载器之间的层次关系，称为类加载器的`双亲委派模型`，该模型要求除了启动类加载器外，其余的类加载器都应当有自己的父类加载器。类加载器的父子关系都是使用`组合关系`来复用父加载器的
 
