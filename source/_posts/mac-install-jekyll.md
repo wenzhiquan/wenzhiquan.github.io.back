@@ -7,6 +7,7 @@ categories:
     - Mac
 tags:
     - Jekyll
+    - 博客
 ---
 
 > “jekyll 是一款简单的博客系统，静态网站生成器。”
