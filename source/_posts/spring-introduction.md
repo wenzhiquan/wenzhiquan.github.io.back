@@ -21,6 +21,8 @@ Spring采取4种关键策略简化Java开发：
 + 基于切面和惯例进行声明式编程
 + 通过切面和模板减少样板式代码
 
+<!-- more -->
+
 #### POJO
 
 Spring不强迫实现Spring规范的接口或继承Spring规范的类，最坏的场景是使用了Sprin的注解，但他依旧是POJO。
@@ -58,7 +60,6 @@ Spring通过应用上下文（Applicaiton Context）装载bea的定义并把它�
   </aop:aspect>
 </aop:config>
 ```
-<!-- more -->
 
 #### 使用模板消除样板式代码
 

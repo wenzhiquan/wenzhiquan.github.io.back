@@ -13,6 +13,8 @@ tags:
 
 之前一直使用的是基于`jekyll`的博客系统，但是功能不是十分的强大，最近老铁安利了`Hexo`这个博客系统，同时也想对自己以前的博文进行整理，所以开始准备将以前基于`jekyll`的博文迁移至`Hexo`。
 
+<!-- more -->
+
 ### 前期准备
 
 #### 安装`git`和`node.js`
@@ -29,7 +31,6 @@ git version
 # 输出：
 # git version 2.7.4
 ```
-<!-- more -->
 
 **安装node.js**
 安装 Node.js 的最佳方式是使用 [nvm](https://github.com/creationix/nvm)。

@@ -19,6 +19,8 @@ tags:
 
 在Java语言中，类的加载、连接和初始化过程都是在程序运行期间完成的，为Java应用程序提供了高度的灵活性。
 
+<!-- more -->
+
 ### Class类文件的结构
 
 任何一个Class文件都对应着`唯一一个`类或者接口的定义信息。Class文件是一组以8位字节为基础单位的二进制流，各个数据项目`严格按照顺序`紧凑的排列在Class文件之中，中间没有任何分隔符，所以整个Class文件中存储的内容几乎全是程序运行的必要数据。，遇到占用8位字节以上空间的数据项目时，会按照`高位在前`的方式分割成若干个8位字节进行存储。
@@ -49,7 +51,6 @@ Class文件格式如下：
 |method_info|methods|methods_count|
 |u2|attributes_count|1|
 |attribute_info|attributes|attributes_count|
-<!-- more -->
 
 #### 魔数与Class文件的版本
 

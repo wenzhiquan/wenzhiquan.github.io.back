@@ -44,10 +44,6 @@
             #}</p>
           </div>
 
-          <div id="music163player">
-            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=26127161&auto=1&height=66"></iframe>
-          </div>
-
           <nav class="site-state motion-element">
 
             {% if config.archive_dir != '/' and site.posts.length > 0 %}
