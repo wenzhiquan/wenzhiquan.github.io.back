@@ -371,7 +371,7 @@ baidu_analytics: 0ee846e1ba3a25130ad41180a73f6f9a
 
 # Disqus
 disqus:
-  enable: true
+  enable: false
   shortname: wenzhiquan
   count: true
 
@@ -389,12 +389,12 @@ changyan:
 # You can get your appid and appkey from https://leancloud.cn
 # more info please open https://valine.js.org
 valine:
-  enable: false
-  appid:  # your leancloud application appid
-  appkey:  # your leancloud application appkey
+  enable: true
+  appid: xSt4331oBR0VyC2jUzPEuxxh-gzGzoHsz
+  appkey: t2TehJbxap2pAcoBr4oCrCtT
   notify: false # mail notifier , https://github.com/xCss/Valine/wiki
   verify: false # Verification code
-  placeholder: Just go go # comment box placeholder
+  placeholder: ~\(≧▽≦)/~来呀，快活呀~ # comment box placeholder
   avatar: mm # gravatar style
   guest_info: nick,mail,link # custom comment header
   pageSize: 10 # pagination size
@@ -535,7 +535,7 @@ vkontakte_api:
 # To get your ID visit https://widgetpack.com
 rating:
   enable: false
-  id:     #<app_id>
+  id:     11264
   color:  fc6423
 # ---------------------------------------------------------------
 
@@ -706,7 +706,7 @@ pace: true
 pace_theme: pace-theme-minimal
 
 # Canvas-nest
-canvas_nest: false
+canvas_nest: true
 
 # three_waves
 three_waves: false
@@ -822,3 +822,7 @@ images: images
 
 # Theme version
 version: 5.1.4
+
+# Online contact
+daovoice: false
+daovoice_app_id: 5ad7a912

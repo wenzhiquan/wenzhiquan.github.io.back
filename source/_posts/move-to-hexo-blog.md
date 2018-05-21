@@ -19,36 +19,44 @@ tags:
 
 #### 安装`git`和`node.js`
 
-**安装Git**:
+**安装 Git**:
 Windows：下载并安装 [git](https://git-scm.com/download/win)
 Mac：`brew install git`
 Linux (Ubuntu, Debian)：`sudo apt-get install git-core`
 Linux (Fedora, Red Hat, CentOS)：`sudo yum install git-core`
 
-*验证安装*：
+_验证安装_：
+
 ```
 git version
 # 输出：
 # git version 2.7.4
 ```
 
-**安装node.js**
+**安装 node.js**
 安装 Node.js 的最佳方式是使用 [nvm](https://github.com/creationix/nvm)。
 cURL:
+
 ```
 $ curl https://raw.github.com/creationix/nvm/master/install.sh | sh
 ```
+
 Wget:
+
 ```
 $ wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh
 ```
+
 安装完成后，重启终端并执行下列命令即可安装 node.js：
+
 ```
 $ nvm install stable
 ```
+
 当然，也可以根据[官网](https://nodejs.org/en/)教程进行安装。
 
-*验证安装*：
+_验证安装_：
+
 ```
 node --version
 # 输出：
@@ -61,7 +69,8 @@ node --version
 npm install -g hexo-cli
 ```
 
-*验证安装*：
+_验证安装_：
+
 ```
 hexo version
 # 输出：
@@ -155,7 +164,7 @@ hexo generate
 hexo deploy
 ```
 
-### 安装NexT主题
+### 安装 NexT 主题
 
 ```
 # 进入博客项目根目录，创建next目录
@@ -166,7 +175,7 @@ mkdir themes/next
 curl -s https://api.github.com/repos/theme-next/hexo-theme-next/releases/latest | grep tarball_url | cut -d '"' -f 4 | wget -i - -O- | tar -zx -C themes/next --strip-components=1
 ```
 
-#### 配置NexT主题
+#### 配置 NexT 主题
 
 请参照[Hexo 的文档](http://theme-next.iissnan.com/getting-started.html#install-next-theme)
 
@@ -193,13 +202,14 @@ local_search:
 
 #### 增加阅读量统计功能
 
-请参照[为NexT主题添加文章阅读量统计功能](https://notes.wanghao.work/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud)一文
+请参照[为 NexT 主题添加文章阅读量统计功能](https://notes.wanghao.work/2015-10-21-%E4%B8%BANexT%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0%E6%96%87%E7%AB%A0%E9%98%85%E8%AF%BB%E9%87%8F%E7%BB%9F%E8%AE%A1%E5%8A%9F%E8%83%BD.html#%E9%85%8D%E7%BD%AELeanCloud)一文
 
 ### 其他设置
 
-#### 设置RSS
+#### 设置 RSS
 
 安装插件：
+
 ```
 npm install hexo-generator-feed
 ```
@@ -219,22 +229,23 @@ feed:
   content_limit: 140
   content_limit_delim: ' '
 ```
+
 参数的含义：
 
-+ `type`: RSS的类型(atom/rss2)
-+ `path`: 文件路径,默认是atom.xml/rss2.xml
-+ `limit`: 展示文章的数量,使用0或则false代表展示全部
-+ `hub`: PubSubHubbub hubs的URL，如果不用的话请置为空
-+ `content`: 在RSS文件中是否包含内容 ,有3个值 true/false默认不填为false
-+ `content_limit`: 指定内容的长度作为摘要,仅仅在上面content设置为false和没有自定义的描述出现
-+ `content_limit_delim`: 上面截取描述的分隔符,截取内容是以指定的这个分隔符作为截取结束的标志。在达到规定的内容长度之前最后出现的这个分隔符之前的内容，防止从中间截断.
+* `type`: RSS 的类型(atom/rss2)
+* `path`: 文件路径,默认是 atom.xml/rss2.xml
+* `limit`: 展示文章的数量,使用 0 或则 false 代表展示全部
+* `hub`: PubSubHubbub hubs 的 URL，如果不用的话请置为空
+* `content`: 在 RSS 文件中是否包含内容 ,有 3 个值 true/false 默认不填为 false
+* `content_limit`: 指定内容的长度作为摘要,仅仅在上面 content 设置为 false 和没有自定义的描述出现
+* `content_limit_delim`: 上面截取描述的分隔符,截取内容是以指定的这个分隔符作为截取结束的标志。在达到规定的内容长度之前最后出现的这个分隔符之前的内容，防止从中间截断.
 
 配置完成后运行`hexo g`，如果在`public`文件夹生成了`atom.xml`文件说明添加成功。
 
 #### 设置阅读全文
 
-1.在文章中使用`<!-- more -->`关键字进行手动截断
-2.在主题配置文件中添加
+1.在文章中使用`<!-- more -->`关键字进行手动截断 2.在主题配置文件中添加
+
 ```
 auto_excerpt:
   enable: true
@@ -262,6 +273,7 @@ alipay: /images/alipay.jpg
 ##### 生成页面
 
 在`blogName.github.io`目录下调用命令：
+
 ```
 # 添加分类页面
 hexo new page "categories"
@@ -270,9 +282,11 @@ hexo new page “tags”
 # 添加关于页面
 hexo new page "about"
 ```
+
 执行完指令后，在`/source/`文件夹下创建三个文件夹，命名分别为：`categories`、`tags`、`about`文件夹
 
 ##### 修改页面
+
 ```
 ---
 title: 分类
@@ -280,6 +294,7 @@ date: 2018-05-04 12:06:24
 type: "categories"
 ---
 ```
+
 ```
 ---
 title: 标签
@@ -287,6 +302,7 @@ date: 2018-05-04 12:07:36
 type: "tags"
 ---
 ```
+
 ```
 ---
 title: 关于我
@@ -296,6 +312,7 @@ type: "about"
 ```
 
 在文章开头添加关键字即可生成相应的`分类`和`标签`：
+
 ```
 ---
 title:      "迁移至Hexo博客"
@@ -413,8 +430,10 @@ pace: true
 
 ### 参考
 
-1、Moorez，[hexo的next主题个性化教程:打造炫酷网站](https://www.jianshu.com/p/f054333ac9e6)
+1、Moorez，[hexo 的 next 主题个性化教程:打造炫酷网站](https://www.jianshu.com/p/f054333ac9e6)
 
-2、[hexo的next主题个性化配置教程](https://segmentfault.com/a/1190000009544924)
+2、[hexo 的 next 主题个性化配置教程](https://segmentfault.com/a/1190000009544924)
 
-3、sunshine小小倩，[hexo高阶教程](https://juejin.im/post/58eb2fd2a0bb9f006928f8c7#heading-16)
+3、sunshine 小小倩，[hexo 高阶教程](https://juejin.im/post/58eb2fd2a0bb9f006928f8c7#heading-16)
+
+4、[打造个性超赞博客 Hexo+NexT+GithubPages 的超深度优化](https://reuixiy.github.io/technology/computer/computer-aided-art/2017/06/09/hexo-next-optimization.html)
