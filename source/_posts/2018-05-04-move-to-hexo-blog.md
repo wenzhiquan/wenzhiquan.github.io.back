@@ -391,16 +391,26 @@ recent_posts: true
 安装插件：
 
 ```
-npm install hexo-wordcount --save
+npm install hexo-symbols-count-time --save
 ```
 
-然后在`theme/next/layout/_partials/footer.swig`文件尾部添加
+然后在`站点配置文件加入`：
 
 ```
-<div class="theme-info">
-  <div class="powered-by"></div>
-  <span class="post-count">博客全站共{{ totalcount(site) }}字</span>
-</div>
+symbols_count_time:
+  total_symbols: true
+  total_time: true
+```
+
+并在`主题配置文件配置`：
+
+```
+symbols_count_time:
+  separated_meta: true
+  item_text_post: true
+  item_text_total: true
+  awl: 2
+  wpm: 275
 ```
 
 #### 打赏字体不闪动

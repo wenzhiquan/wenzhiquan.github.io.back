@@ -57,7 +57,7 @@ Linux是一个开源的免费操作系统，如下图所示，Linux就是`内核
 
 * 1984年之二，GNU项目与FSF基金会成立
 
-> Richard Mathew Stallman在1984年发起GNU项目，目的是创建一个自由、开放的Unix操作系统（Free Unix）。他从开发Unix可运行的小程序开始，开发了GCC、Emacs、Bash Shell、GLIBC等软件，打开了GNU项目的知名度，并成立了自由软件基金会
+> Richard Mathew Stallman在1984年发起GNU项目，目的是创建一个自由、开放的Unix操作系统（Free Unix）。他从开发Unix可运行的小程序开始，开发了GCC、Emacs、Bash Shell、GLIBC等软件，打开了GNU项目的知名度，并成立了自由软件基金会
 
 * 1985 年，GNU的通用公共许可证
 

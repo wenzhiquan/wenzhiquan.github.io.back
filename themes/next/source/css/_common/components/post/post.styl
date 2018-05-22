@@ -5,6 +5,17 @@
   }
 }
 
+.post-body p a{
+  color: #0593d3;
+  border-bottom: none;
+
+  &:hover {
+    color: #fc6423;
+    border-bottom: none;
+  border-bottom: 1px solid #fc6423;
+  }
+}
+
 .post-body .fancybox img {
   display: block !important;
   margin: 0 auto;
@@ -44,17 +55,6 @@
   if hexo-config('motion.transition.coll_header') { .collection-title { opacity: 0; } }
 }
 
-.post-body p a{
-  color: #0593d3;
-  border-bottom: none;
-
-  &:hover {
-    color: #fc6423;
-    border-bottom: none;
-    border-bottom: 1px solid #fc6423;
-  }
-}
-
 @import "post-expand";
 @import "post-collapse";
 @import "post-type";
@@ -69,4 +69,4 @@
 @import "post-copyright" if hexo-config('post_copyright.enable');
 @import "post-widgets" if (hexo-config('facebook_sdk.enable') and hexo-config('facebook_sdk.like_button')) or (hexo-config('vkontakte_api.enable') and hexo-config('vkontakte_api.like')) or hexo-config('rating.enable') or (hexo-config('needmoreshare2.enable') and hexo-config('needmoreshare2.postbottom.enable'));
 @import "post-rtl";
-@import "my-post-copyright";
+@import "post-reading_progress" if hexo-config('reading_progress.enable');

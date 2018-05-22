@@ -75,6 +75,12 @@ search:
   format: html
   limit: 10000
 
+symbols_count_time:
+  symbols: true
+  time: true
+  total_symbols: true
+  total_time: false
+
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
 ## You can customize the date format as defined in

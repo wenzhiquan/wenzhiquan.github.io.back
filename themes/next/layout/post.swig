@@ -3,7 +3,7 @@
 {% import '_macro/sidebar.swig' as sidebar_template %}
 
 
-{% block title %}{{ page.title }} | {{ config.title }}{% endblock %}
+{% block title %}{{ page.title }} | {{ title }}{% endblock %}
 
 {% block page_class %}page-post-detail{% endblock %}
 
@@ -20,8 +20,6 @@
         {% include '_partials/share/baidushare.swig' %}
       {% elseif theme.add_this_id %}
         {% include '_partials/share/add-this.swig' %}
-      {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
-        {% include '_partials/share/duoshuo_share.swig' %}
       {% endif %}
     </div>
   </div>
