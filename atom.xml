@@ -17,7 +17,7 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>RPC简析</title>
+    <title>RPC 简析</title>
     <link href="http://wenzhiquan.github.io/2018/05/29/2018-05-29-rpc-introduction/"/>
     <id>http://wenzhiquan.github.io/2018/05/29/2018-05-29-rpc-introduction/</id>
     <published>2018-05-29T04:00:00.000Z</published>
@@ -28,7 +28,7 @@
       &lt;blockquote&gt;
 &lt;p&gt;RPC 的主要功能目标是让构建分布式计算（应用）更容易，在提供强大的远程调用能力时不损失本地调用的语义简洁性。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h3&gt;&lt;h4 id=&quot;什么是-RPC&quot;&gt;&lt;a href=&quot;#什么是-RPC&quot; class=&quot;headerlink&quot; title=&quot;什么是 RPC&quot;&gt;&lt;/a&gt;什么是 &lt;code&gt;RPC&lt;/code&gt;&lt;/h4&gt;&lt;p&gt;&lt;code&gt;RPC&lt;/code&gt;，全称为&lt;code&gt;Remote Procedure Call&lt;/code&gt;，即远程过程调用，是一种进程间的通信方式。它能够实现从主机 A 调用可达地址空间中另一台主机 B 上的过程或函数，而程序员并不需要显示的编码其调用过程。也即是说对于程序员来说，这个调用过程是透明的，本地调用和远程调用所用代码基本是相同的。&lt;/p&gt;
+&lt;h3 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h3&gt;&lt;h4 id=&quot;什么是-RPC&quot;&gt;&lt;a href=&quot;#什么是-RPC&quot; class=&quot;headerlink&quot; title=&quot;什么是 RPC&quot;&gt;&lt;/a&gt;什么是 &lt;code&gt;RPC&lt;/code&gt;&lt;/h4&gt;&lt;p&gt;&lt;code&gt;RPC&lt;/code&gt;，全称为 &lt;code&gt;Remote Procedure Call&lt;/code&gt;，即远程过程调用，是一种进程间的通信方式。它能够实现从主机 A 调用可达地址空间中另一台主机 B 上的过程或函数，而程序员并不需要显示的编码其调用过程。也即是说对于程序员来说，这个调用过程是透明的，本地调用和远程调用所用代码基本是相同的。&lt;/p&gt;
     
     </summary>
     
@@ -40,7 +40,7 @@
   </entry>
   
   <entry>
-    <title>迁移至Hexo博客</title>
+    <title>迁移至 Hexo 博客</title>
     <link href="http://wenzhiquan.github.io/2018/05/04/2018-05-04-move-to-hexo-blog/"/>
     <id>http://wenzhiquan.github.io/2018/05/04/2018-05-04-move-to-hexo-blog/</id>
     <published>2018-05-04T04:00:00.000Z</published>
@@ -51,7 +51,7 @@
       &lt;blockquote&gt;
 &lt;p&gt;Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;之前一直使用的是基于&lt;code&gt;jekyll&lt;/code&gt;的博客系统，但是功能不是十分的强大，最近老铁安利了&lt;code&gt;Hexo&lt;/code&gt;这个博客系统，同时也想对自己以前的博文进行整理，所以开始准备将以前基于&lt;code&gt;jekyll&lt;/code&gt;的博文迁移至&lt;code&gt;Hexo&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;之前一直使用的是基于 &lt;code&gt;jekyll&lt;/code&gt; 的博客系统，但是功能不是十分的强大，最近老铁安利了 &lt;code&gt;Hexo&lt;/code&gt; 这个博客系统，同时也想对自己以前的博文进行整理，所以开始准备将以前基于 &lt;code&gt;jekyll&lt;/code&gt; 的博文迁移至 &lt;code&gt;Hexo&lt;/code&gt;。&lt;/p&gt;
     
     </summary>
     
@@ -67,11 +67,11 @@
   </entry>
   
   <entry>
-    <title>Spring简介</title>
+    <title>Spring 简介</title>
     <link href="http://wenzhiquan.github.io/2018/04/15/2018-04-15-spring-introduction/"/>
     <id>http://wenzhiquan.github.io/2018/04/15/2018-04-15-spring-introduction/</id>
     <published>2018-04-15T04:00:00.000Z</published>
-    <updated>2018-05-29T10:46:52.091Z</updated>
+    <updated>2018-05-30T04:00:00.000Z</updated>
     
     <summary type="html">
     
@@ -83,7 +83,8 @@
 &lt;li&gt;基于 POJO 的轻量级和最小侵入性编程&lt;/li&gt;
 &lt;li&gt;通过依赖注入和面向接口实现松耦合&lt;/li&gt;
 &lt;li&gt;基于切面和惯例进行声明式编程&lt;/li&gt;
-&lt;li&gt;通过切面和模板减少样板式代码
+&lt;li&gt;通过切面和模板减少样板式代码&lt;/li&gt;
+&lt;/ul&gt;
     
     </summary>
     
@@ -276,7 +277,7 @@
 &lt;/blockquote&gt;
 &lt;h3 id=&quot;程序员必备&quot;&gt;&lt;a href=&quot;#程序员必备&quot; class=&quot;headerlink&quot; title=&quot;程序员必备&quot;&gt;&lt;/a&gt;程序员必备&lt;/h3&gt;&lt;h4 id=&quot;Homebrew&quot;&gt;&lt;a href=&quot;#Homebrew&quot; class=&quot;headerlink&quot; title=&quot;Homebrew&quot;&gt;&lt;/a&gt;Homebrew&lt;/h4&gt;&lt;p&gt;这个是最需要安装的软件，利用&lt;code&gt;homebrew&lt;/code&gt;可以快速的安装和管理其他软件包，类似于&lt;code&gt;Fedora&lt;/code&gt;系统中的&lt;code&gt;dnf&lt;/code&gt;命令。&lt;/p&gt;
 &lt;p&gt;安装方法如下：&lt;/p&gt;
-&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;/usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;figure class=&quot;highlight awk&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;regexp&quot;&gt;/usr/&lt;/span&gt;bin&lt;span class=&quot;regexp&quot;&gt;/ruby -e &quot;$(curl -fsSL https:/&lt;/span&gt;&lt;span class=&quot;regexp&quot;&gt;/raw.githubusercontent.com/&lt;/span&gt;Homebrew&lt;span class=&quot;regexp&quot;&gt;/install/m&lt;/span&gt;aster&lt;span class=&quot;regexp&quot;&gt;/install)&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
 &lt;p&gt;直接在命令行中输入上述命令即可快速安装&lt;code&gt;homebrew&lt;/code&gt;了。&lt;/p&gt;
     
     </summary>
