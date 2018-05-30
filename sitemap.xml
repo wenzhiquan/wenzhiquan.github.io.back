@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://wenzhiquan.github.io/categories/index.html</loc>
+    <loc>http://wenzhiquan.github.io/tags/index.html</loc>
     
     <lastmod>2018-05-29T10:46:52.092Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/tags/index.html</loc>
+    <loc>http://wenzhiquan.github.io/categories/index.html</loc>
     
     <lastmod>2018-05-29T10:46:52.092Z</lastmod>
     
@@ -44,14 +44,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/10/15/2016-10-15-sed/</loc>
+    <loc>http://wenzhiquan.github.io/2017/01/01/2017-01-01-idea-gradle-tssm-supermarket-manage-system-1/</loc>
     
     <lastmod>2018-05-29T10:46:52.089Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2017/01/01/2017-01-01-idea-gradle-tssm-supermarket-manage-system-1/</loc>
+    <loc>http://wenzhiquan.github.io/2016/10/15/2016-10-15-sed/</loc>
     
     <lastmod>2018-05-29T10:46:52.089Z</lastmod>
     
@@ -65,13 +65,6 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/09/06/2016-09-06-grep/</loc>
-    
-    <lastmod>2018-05-29T10:46:52.088Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://wenzhiquan.github.io/2016/08/05/2016-08-05-mac-installed-todo/</loc>
     
     <lastmod>2018-05-29T10:46:52.088Z</lastmod>
@@ -79,14 +72,21 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/06/26/2016-06-26-interview-algorithm-binary-search/</loc>
+    <loc>http://wenzhiquan.github.io/2016/09/06/2016-09-06-grep/</loc>
+    
+    <lastmod>2018-05-29T10:46:52.088Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2016/06/28/2016-06-28-regex/</loc>
     
     <lastmod>2018-05-29T10:46:52.087Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/06/28/2016-06-28-regex/</loc>
+    <loc>http://wenzhiquan.github.io/2016/06/26/2016-06-26-interview-algorithm-binary-search/</loc>
     
     <lastmod>2018-05-29T10:46:52.087Z</lastmod>
     
@@ -114,13 +114,6 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/05/31/2016-05-31-interview-algorithm-string/</loc>
-    
-    <lastmod>2018-05-29T10:46:52.084Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://wenzhiquan.github.io/2016/05/28/2016-05-28-string-match-sunday/</loc>
     
     <lastmod>2018-05-29T10:46:52.084Z</lastmod>
@@ -128,9 +121,9 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/06/16/2016-03-28-singleton-eight-type/</loc>
+    <loc>http://wenzhiquan.github.io/2016/05/31/2016-05-31-interview-algorithm-string/</loc>
     
-    <lastmod>2018-05-29T10:46:52.083Z</lastmod>
+    <lastmod>2018-05-29T10:46:52.084Z</lastmod>
     
   </url>
   
@@ -142,14 +135,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2015/05/04/2015-05-04-mac-sublime-c/</loc>
+    <loc>http://wenzhiquan.github.io/2016/06/16/2016-03-28-singleton-eight-type/</loc>
     
-    <lastmod>2018-05-29T10:46:52.082Z</lastmod>
+    <lastmod>2018-05-29T10:46:52.083Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2015/09/18/2015-09-18-install-jekyll-fedora/</loc>
+    <loc>http://wenzhiquan.github.io/2015/03/19/2015-03-19-mac-install-jekyll/</loc>
     
     <lastmod>2018-05-29T10:46:52.082Z</lastmod>
     
@@ -163,7 +156,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2015/03/19/2015-03-19-mac-install-jekyll/</loc>
+    <loc>http://wenzhiquan.github.io/2015/05/04/2015-05-04-mac-sublime-c/</loc>
+    
+    <lastmod>2018-05-29T10:46:52.082Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2015/09/18/2015-09-18-install-jekyll-fedora/</loc>
     
     <lastmod>2018-05-29T10:46:52.082Z</lastmod>
     
