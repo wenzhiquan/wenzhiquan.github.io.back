@@ -116,11 +116,13 @@ leancloud_counter_security:
   enable_sync: true
   app_id: xSt4331oBR0VyC2jUzPEuxxh-gzGzoHsz
   app_key: t2TehJbxap2pAcoBr4oCrCtT
-  username: wenzhiquanr@163.com # Will be asked while deploying if is left blank
-  password:  # Recommmended to be left blank. Will be asked while deploying if is left blank
+  username: wenzhiquan # Will be asked while deploying if is left blank
+  password: # Recommmended to be left blank. Will be asked while deploying if is left blank
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: git
   repo: git@github.com:wenzhiquan/wenzhiquan.github.io.git
   branch: master
+  deploy:
+  - type: leancloud_counter_security_sync
