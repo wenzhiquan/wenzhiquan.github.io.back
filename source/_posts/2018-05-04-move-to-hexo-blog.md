@@ -1,6 +1,7 @@
 ---
 title:      "迁移至Hexo博客"
 date:       2018-05-04 12:00:00
+updated:    2018-05-29 12:00:00
 copyright: true
 categories:
     - 博客
@@ -28,7 +29,7 @@ Linux (Fedora, Red Hat, CentOS)：`sudo yum install git-core`
 
 _验证安装_：
 
-```
+```Zsh
 git version
 # 输出：
 # git version 2.7.4
@@ -38,27 +39,27 @@ git version
 安装 Node.js 的最佳方式是使用 [nvm](https://github.com/creationix/nvm)。
 cURL:
 
-```
-$ curl https://raw.github.com/creationix/nvm/master/install.sh | sh
+```Zsh
+curl https://raw.github.com/creationix/nvm/master/install.sh | sh
 ```
 
 Wget:
 
-```
-$ wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh
+```Zsh
+wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh
 ```
 
 安装完成后，重启终端并执行下列命令即可安装 node.js：
 
-```
-$ nvm install stable
+```Zsh
+nvm install stable
 ```
 
 当然，也可以根据[官网](https://nodejs.org/en/)教程进行安装。
 
 _验证安装_：
 
-```
+```Zsh
 node --version
 # 输出：
 # v8.11.1
@@ -66,13 +67,13 @@ node --version
 
 #### 安装`hexo-cli`
 
-```
+```Zsh
 npm install -g hexo-cli
 ```
 
 _验证安装_：
 
-```
+```Zsh
 hexo version
 # 输出：
 # hexo-cli: 1.1.0
@@ -100,14 +101,14 @@ hexo version
 
 #### 备份原仓库
 
-```
+```Zsh
 在github中直接将原仓库重命名即可：
 blogName.github.io -> blogName.github.io.backup
 ```
 
 #### 新建空仓库
 
-```
+```Zsh
 在github中创建一个新的仓库：
 name: blogName.github.io
 ```
@@ -116,7 +117,7 @@ name: blogName.github.io
 
 #### 创建本地`Hexo`项目
 
-```
+```Zsh
 # 在用户根目录创建Hexo项目
 cd ~
 hexo init blogName.github.io
@@ -125,7 +126,7 @@ cd blogName.github.io
 
 #### 关联本地`Hexo`项目与`github`
 
-```
+```Zsh
 # 将新建的Hexo项目进行git初始化
 git init
 git add .
@@ -143,19 +144,21 @@ git push --set-upstream origin gh-pages
 
 #### 本地编译并远端部署
 
-```
+```Zsh
 # 在blogName.github.io目录下安装已有插件
 npm install
 
 # 安装Hexo与github的关联插件
 npm install hexo-deployer-git --save
-
+```
+```yml
 # 修改站点配置文件_config
 deploy:
   type: git
   repo: git@github.com:yourName/blogName.github.io.git
   branch: master
-
+```
+```Zsh
 # 本地调试
 hexo s --debug
 
@@ -167,7 +170,7 @@ hexo deploy
 
 ### 安装 NexT 主题
 
-```
+```Zsh
 # 进入博客项目根目录，创建next目录
 cd ~/blogName.github.io
 mkdir themes/next
@@ -184,10 +187,12 @@ curl -s https://api.github.com/repos/theme-next/hexo-theme-next/releases/latest 
 
 #### 增加站内搜索功能
 
-```
+```Zsh
 # 安装相关插件
 npm install hexo-generator-searchdb --save
+```
 
+```yml
 # 配置站点_config.xml文件
 search:
   path: search.xml
@@ -211,13 +216,13 @@ local_search:
 
 安装插件：
 
-```
+```Zsh
 npm install hexo-generator-feed
 ```
 
 在站点配置文件中进行配置：
 
-```
+```yml
 plugin:
 - hexo-generator-feed
 # Feed configuration.
@@ -247,7 +252,7 @@ feed:
 
 1.在文章中使用`<!-- more -->`关键字进行手动截断 2.在主题配置文件中添加
 
-```
+```yml
 auto_excerpt:
   enable: true
   length: 150
@@ -255,14 +260,14 @@ auto_excerpt:
 
 #### 设置阅读百分比
 
-```
+```yml
 # 在主题配置文件中进行设置
 scrollpercent: true
 ```
 
 #### 添加打赏功能
 
-```
+```yml
 # 在主题配置文件中进行设置
 reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作！
 wechatpay: /images/wechatpay.jpg
@@ -275,7 +280,7 @@ alipay: /images/alipay.jpg
 
 在`blogName.github.io`目录下调用命令：
 
-```
+```Zsh
 # 添加分类页面
 hexo new page "categories"
 # 添加标签页面
@@ -288,7 +293,7 @@ hexo new page "about"
 
 ##### 修改页面
 
-```
+```Zsh
 ---
 title: 分类
 date: 2018-05-04 12:06:24
@@ -296,7 +301,7 @@ type: "categories"
 ---
 ```
 
-```
+```Zsh
 ---
 title: 标签
 date: 2018-05-04 12:07:36
@@ -304,7 +309,7 @@ type: "tags"
 ---
 ```
 
-```
+```Zsh
 ---
 title: 关于我
 date: 2018-05-04 12:08:27
@@ -314,7 +319,7 @@ type: "about"
 
 在文章开头添加关键字即可生成相应的`分类`和`标签`：
 
-```
+```Zsh
 ---
 title:      "迁移至Hexo博客"
 date:       2018-05-04 12:00:00
@@ -330,7 +335,7 @@ tags:
 
 在主题配置文件中修改`social`属性：
 
-```
+```yml
 social:
   GitHub: https://github.com/yourname || github
   知乎: https://www.zhihu.com/people/wenzhiquan/activities
@@ -342,7 +347,7 @@ social:
 
 在主题配置文件中修改`links`属性
 
-```
+```yml
 # Blog rolls
 links_icon: link
 links_title: 友情链接
@@ -356,7 +361,7 @@ links:
 
 在`theme/next/layout/_macro/sidebar.swig`中的`if theme.links`前面添加：
 
-```
+```Swig
 {% if theme.recent_posts %}
     <div class="links-of-blogroll motion-element {{ "links-of-blogroll-" + theme.recent_posts_layout  }}">
       <div class="links-of-blogroll-title">
@@ -378,7 +383,7 @@ links:
 
 并在主题配置文件中添加：
 
-```
+```yml
 recent_posts_title: 近期文章
 recent_posts_layout: block
 recent_posts: true
@@ -390,13 +395,13 @@ recent_posts: true
 
 安装插件：
 
-```
+```Zsh
 npm install hexo-symbols-count-time --save
 ```
 
 然后在`站点配置文件加入`：
 
-```
+```yml
 symbols_count_time:
   total_symbols: true
   total_time: true
@@ -404,7 +409,7 @@ symbols_count_time:
 
 并在`主题配置文件配置`：
 
-```
+```yml
 symbols_count_time:
   separated_meta: true
   item_text_post: true
@@ -417,7 +422,7 @@ symbols_count_time:
 
 修改文件`next/source/css/_common/components/post/post-reward.styl`，然后注释其中的函数`wechat:hover`和`alipay:hover`，如下：
 
-```
+```CSS
 //#wechat:hover p{
 //    animation: roll 0.1s infinite linear;
 //    -webkit-animation: roll 0.1s infinite linear;
@@ -432,7 +437,7 @@ symbols_count_time:
 
 #### 进度条
 
-```
+```yml
 # 在主题配置文件中配置
 pace: true
 ```
