@@ -1,0 +1,2713 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/uploads/favicon.ico?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/uploads/favicon.ico?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.3.0',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="“Linux是一套免费使用和自由传播的类Unix操作系统，是一个基于POSIX和UNIX的多用户、多任务、支持多线程和多CPU的操作系统。”  Linux系统简介Linux是一个开源的免费操作系统，如下图所示，Linux就是内核与系统调用接口那两层。  而平常我们使用的应用程序一般都是运行在操作系统之上的，如qq，浏览器，文本编辑器等。">
+<meta name="keywords" content="Linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux基础学习">
+<meta property="og:url" content="http://wenzhiquan.github.io/2016/06/20/2016-06-20-linux-basic/index.html">
+<meta property="og:site_name" content="温智全的博客">
+<meta property="og:description" content="“Linux是一套免费使用和自由传播的类Unix操作系统，是一个基于POSIX和UNIX的多用户、多任务、支持多线程和多CPU的操作系统。”  Linux系统简介Linux是一个开源的免费操作系统，如下图所示，Linux就是内核与系统调用接口那两层。  而平常我们使用的应用程序一般都是运行在操作系统之上的，如qq，浏览器，文本编辑器等。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/os_level.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/Unix_family.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/linux_GUI.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/who_am_i.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/add_user.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/groups_visitor.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/etc_group.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/not_in_sudo.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/ls_l.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/ls_desc.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/ls_type.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/ls_lh.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/chown_ls.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/chown.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/binary_present.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/chmod.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/chmod_can_not_read.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/chmod_rwx.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/FHS.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/cd.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/cat.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/nl.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/more.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/less.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/head_tail.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/file.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/declare.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/shell_env.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/set_env.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/path.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/whereis.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/locate.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/locate_jpg.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/which.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/find.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/find_time.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/find_mtime.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/find_name.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/find_perm.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/find_type.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/find_grep.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/df.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/df_h.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/du.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/cowsay.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/cowsay_echo.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/order_control.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/grep.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/grep_export.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/wc.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/wc_ls.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/tr.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/col.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/join.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/paste.png">
+<meta property="og:updated_time" content="2018-05-29T10:46:52.086Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux基础学习">
+<meta name="twitter:description" content="“Linux是一套免费使用和自由传播的类Unix操作系统，是一个基于POSIX和UNIX的多用户、多任务、支持多线程和多CPU的操作系统。”  Linux系统简介Linux是一个开源的免费操作系统，如下图所示，Linux就是内核与系统调用接口那两层。  而平常我们使用的应用程序一般都是运行在操作系统之上的，如qq，浏览器，文本编辑器等。">
+<meta name="twitter:image" content="http://wenzhiquan.github.io/uploads/in-post/linux_basic/os_level.png">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="温智全的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="http://wenzhiquan.github.io/2016/06/20/2016-06-20-linux-basic/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Linux基础学习 | 温智全的博客</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-75727255-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-75727255-1');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?0ee846e1ba3a25130ad41180a73f6f9a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/wenzhiquan">
+      <img style="position: absolute; top: 0; right: 0; border: 0; z-index: 9999" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">温智全的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Wenknows's Blog</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">36</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">12</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">29</span></a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2016/06/20/2016-06-20-linux-basic/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="温智全">
+      <meta itemprop="description" content="爱唱歌健身的程序员">
+      <meta itemprop="image" content="/uploads/avatar-wen.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="温智全的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Linux基础学习
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2016-06-20 12:00:00" itemprop="dateCreated datePublished" datetime="2016-06-20T12:00:00+08:00">2016-06-20</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-05-29 18:46:52" itemprop="dateModified" datetime="2018-05-29T18:46:52+08:00">2018-05-29</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2016/06/20/2016-06-20-linux-basic/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2016/06/20/2016-06-20-linux-basic/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2016/06/20/2016-06-20-linux-basic/" class="leancloud_visitors" data-flag-title="Linux基础学习">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-fire"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">21k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">39 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>“Linux是一套免费使用和自由传播的类Unix操作系统，是一个基于POSIX和UNIX的多用户、多任务、支持多线程和多CPU的操作系统。”</p>
+</blockquote>
+<h3 id="Linux系统简介"><a href="#Linux系统简介" class="headerlink" title="Linux系统简介"></a>Linux系统简介</h3><p>Linux是一个开源的免费操作系统，如下图所示，Linux就是<code>内核</code>与<code>系统调用</code>接口那两层。</p>
+<p><img src="/uploads/in-post/linux_basic/os_level.png" alt="操作系统的角色"></p>
+<p>而平常我们使用的应用程序一般都是运行在操作系统之上的，如qq，浏览器，文本编辑器等。</p>
+<a id="more"></a>
+<h4 id="Linux之前Unix的历史"><a href="#Linux之前Unix的历史" class="headerlink" title="Linux之前Unix的历史"></a>Linux之前Unix的历史</h4><p>早在Linux出现之前20年，就已经有一个相当稳定而成熟的操作系统<code>Unix</code>，那么<code>Unix</code>又是如何诞生的呢？</p>
+<ul>
+<li>1969年以前，Bell实验室、MIT、GE（通用电气公司）的<code>Multics</code>系统</li>
+</ul>
+<blockquote>
+<p>当时的输入设备只有卡片阅读机，输出设备只有打印机，因此如果要测试某个程序，则需要将读卡纸插入卡片机，如果有错误，还需要重新来过。</p>
+</blockquote>
+<blockquote>
+<p>在一个学校里，主机只有一台，如果有多人使用，就需要等待，20世纪60年代初，MIT开发了分时操作系统，让大型主机可以通过提供多个终端机（Terminal）以连入主机</p>
+</blockquote>
+<blockquote>
+<p>1965年前后，Bell、MIT、GE共同发起了Multiplexed Information and Computing Service项目，以使大型主机可以同时提供300台以上的终端连接使用，但由于资金短缺，项目进度落后，造成了失败。</p>
+</blockquote>
+<ul>
+<li>1969年，Ken Thompson的小型File Server System</li>
+</ul>
+<blockquote>
+<p>仅仅用4个星期，他就以汇编语言写了一组内核程序， 同时包括一些内核工具程序，以及一个小的文件系统，这个系统就是Unix系统的原型。Thompson将Multics系统简化了不少，同实验室的朋友戏称这个系统为Unics。</p>
+</blockquote>
+<blockquote>
+<p>这个文件系统有两个重要的概念：① 所有的程序或系统装置都是文件；② 不管构件编辑器还是附属文件，所写的程序只有一个目的，就是有效的完成目标。</p>
+</blockquote>
+<ul>
+<li>1973年，Unix正式诞生，Ritchie等人以C语言写出第一个正式Unix内核</li>
+</ul>
+<blockquote>
+<p>Thompson的操作系统由于其易用性，在贝尔实验室内部广为流传，但由于Unics是汇编语言写的，对于硬件有依赖性，所以他和Ritchie合作想将Unics用高级的程序语言来编写。当时现成的高级语言有B语言，但编译出来的内核性能不好。Ritchie和Thompson将B语言重新改写为C语言，再用C语言改写和编译Unics内核，发行出了Unix正式版本。而由于是C语言改写的内核，Unix很容易被移植到不同机器上。</p>
+</blockquote>
+<ul>
+<li>1977年，重要的Unix分支——BSD诞生</li>
+</ul>
+<blockquote>
+<p>1973年以后，Unix与学术界开始了合作开发，Berkeley大学的Bill Joy取得Unix内核源码后，将其改编，命名为Berkeley Software Distribution（即BSD），Bill Joy也是Sun公司的创办者</p>
+</blockquote>
+<ul>
+<li>1979年，重要的System V架构与版权声明</li>
+</ul>
+<blockquote>
+<p>早期的Unix只能与服务器（Server）或者大型工作站（Workstation）画上等号。而1979年AT&amp;T推出的System V第七版Unix，可以支持x86架构的个人计算机系统。但为了收回Unix版权，增加了”不可对学生提供源码”的严格限制。</p>
+</blockquote>
+<ul>
+<li>1984年之一， x86架构的Minix操作系统诞生</li>
+</ul>
+<blockquote>
+<p>Andrew Tanenbaum（谭宁邦）教授，完全不看Unix源码，自己动手写了Minix这个Unix Like的内核程序，专门用于教学。</p>
+</blockquote>
+<ul>
+<li>1984年之二，GNU项目与FSF基金会成立</li>
+</ul>
+<blockquote>
+<p>Richard Mathew Stallman在1984年发起GNU项目，目的是创建一个自由、开放的Unix操作系统（Free Unix）。他从开发Unix可运行的小程序开始，开发了GCC、Emacs、Bash Shell、GLIBC等软件，打开了GNU项目的知名度，并成立了自由软件基金会</p>
+</blockquote>
+<ul>
+<li>1985 年，GNU的通用公共许可证</li>
+</ul>
+<blockquote>
+<p>为了避免 GNU 开发的自由软件被其他人用作专利软件，因此创建了<code>通用公共许可证</code>（General Public License， GPL），并称呼他为CopyLeft。</p>
+</blockquote>
+<ul>
+<li>1988年， 图形接口XFree86项目</li>
+</ul>
+<blockquote>
+<p>由于GUI的需求日益增加，MIT和其他第三方发布了X Window System，并成立了XFree86这个组织。</p>
+</blockquote>
+<ul>
+<li>1991年，芬兰大学生Linus Torvalds基于bash，gcc开发了Intel 386机器上的内核程序</li>
+</ul>
+<p>下面附上Unix系统的家族族谱</p>
+<p><img src="/uploads/in-post/linux_basic/Unix_family.png" alt="Unix家族族谱"></p>
+<h4 id="Linux的内核版本"><a href="#Linux的内核版本" class="headerlink" title="Linux的内核版本"></a>Linux的内核版本</h4><p>Linux的内核版本号类似于：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">4.3.1-42.e15</span><br><span class="line">主版本.次版本.释出版本-修改版本</span><br></pre></td></tr></table></figure>
+<p>由于Linux的内核开发者太多，Linux内核经常变动。所以托瓦茨将内核的开发趋势分为两股，并根据两个内核的开发分别给予不同的内核编号：</p>
+<ul>
+<li><code>主、次版本为奇数</code>：开发中版本（development）</li>
+</ul>
+<blockquote>
+<p>如4.1.xx，这种内核版本主要用在测试与开发新功能，所以通常这种版本仅有内核开发工程师会使用</p>
+</blockquote>
+<ul>
+<li><code>主、次版本为偶数</code>：稳定版本（stable）</li>
+</ul>
+<blockquote>
+<p>如4.2.xx，等到内核功能开发成熟后会加到这类的版本中，主要用在一般家庭计算机及企业版本中。</p>
+</blockquote>
+<h4 id="Linux的特色"><a href="#Linux的特色" class="headerlink" title="Linux的特色"></a>Linux的特色</h4><ul>
+<li><p>自由与开放的使用与学习环境</p>
+</li>
+<li><p>配置需求低廉</p>
+</li>
+<li><p>内核功能强大而稳定</p>
+</li>
+<li><p>独立作业</p>
+</li>
+</ul>
+<h4 id="Linux的优缺点"><a href="#Linux的优缺点" class="headerlink" title="Linux的优缺点"></a>Linux的优缺点</h4><p><strong>优点</strong>：</p>
+<ul>
+<li><p>稳定的系统</p>
+</li>
+<li><p>免费或少许费用</p>
+</li>
+<li><p>安全性、漏洞的快速修补</p>
+</li>
+<li><p>多任务、多用户</p>
+</li>
+<li><p>用户与用户组的规划</p>
+</li>
+<li><p>相对比较不耗资源的系统</p>
+</li>
+<li><p>适合需要小内核程序的嵌入式系统</p>
+</li>
+<li><p>整合度佳且多样的图形用户界面</p>
+</li>
+</ul>
+<p><strong>缺点</strong>：</p>
+<ul>
+<li><p>没有特定的支持厂商</p>
+</li>
+<li><p>游戏的支持度不足</p>
+</li>
+<li><p>专业软件的支持度不足</p>
+</li>
+</ul>
+<h3 id="基本概念及操作"><a href="#基本概念及操作" class="headerlink" title="基本概念及操作"></a>基本概念及操作</h3><h4 id="Linux桌面环境介绍"><a href="#Linux桌面环境介绍" class="headerlink" title="Linux桌面环境介绍"></a>Linux桌面环境介绍</h4><p>相对于现在的<code>Windows</code>系统，<code>Unix/Linux</code>本身是没有图形界面的，我们通常在<code>Unix/Linux</code>发行版上看到的图形界面实际都只是运行在Linux系统之上的软件。大家熟知的桌面环境有KDE，GNOME，XFCE，LXDE等，用户可以根据自己的需要安装喜欢的桌面环境，甚至定制桌面。</p>
+<p><img src="/uploads/in-post/linux_basic/linux_GUI.png" alt="Unix/Linux的GUI架构"></p>
+<h4 id="终端（Terminal）"><a href="#终端（Terminal）" class="headerlink" title="终端（Terminal）"></a>终端（Terminal）</h4><p>在使用<code>Linux</code>系统时，我们并不是直接与计算机系统进行交互，而是通过一个叫做<code>Shell</code>的中间程序来完成。<code>Shell</code>的中文含义是<code>壳</code>，可以理解为包裹在计算机内核外的软件，隐藏了操作系统底层的实现细节，他可以解析我们的命令，并将其转化为计算机可以看懂的字段，将命令交给计算机运行。在<code>Unix/Linux</code>中比较流行的常见的<code>Shell</code>有<code>bash</code>，<code>zsh</code>，<code>ksh</code>，<code>csh</code>等。为了提供一个可以接受用户输入并能够显示输出的窗口，Linux系统在图形界面下提供了一个叫做终端模拟器（Terminal）的程序。在MAC系统上推荐使用的Terminal为<code>iTerm</code>，Linux系统上推荐使用的Terminal为<code>Guake</code>。</p>
+<h4 id="Terminal命令行"><a href="#Terminal命令行" class="headerlink" title="Terminal命令行"></a>Terminal命令行</h4><h5 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h5><ul>
+<li><p>[Tab] 使用<code>Tab</code>键可以对命令进行快速补全</p>
+</li>
+<li><p>[Ctrl+c] 使用<code>Ctrl+c</code>可以强行终止当前运行的程序</p>
+</li>
+<li><p>[Ctrl+a] 使用<code>Ctrl+a</code>可以将光标移至输入行的头部，相当于<code>Home</code>键</p>
+</li>
+<li><p>[Ctrl+e] 使用<code>Ctrl+e</code>可以将光标移至输入行的尾部，相当于<code>End</code>键</p>
+</li>
+<li><p>[Ctrl+k] 使用<code>Ctrl+k</code>可以删除从光标所在位置到行尾的所有字符</p>
+</li>
+</ul>
+<h5 id="历史输入命令"><a href="#历史输入命令" class="headerlink" title="历史输入命令"></a>历史输入命令</h5><ul>
+<li><p>⬆️  方向键的<code>上</code>键，可以快速查阅输入过的上一条命令</p>
+</li>
+<li><p>⬇️  方向键的<code>下</code>键，可以与<code>上</code>键在输入过的命令间进行切换</p>
+</li>
+<li><p>order + ⬆️  输入部分命令后按<code>上</code>键，可以调出上一个包含该order字符的命令</p>
+</li>
+</ul>
+<h5 id="通配符"><a href="#通配符" class="headerlink" title="通配符"></a>通配符</h5><ul>
+<li><p>*  匹配 0 或多个字符</p>
+</li>
+<li><p>?  匹配任意一个字符</p>
+</li>
+<li><p>[list]  匹配<code>list</code>中的任意单一字符，如[abc]，意为匹配a或b或c</p>
+</li>
+<li><p>[!list]  匹配除<code>list</code>中的任意单一字符以外的字符，如[!abc]，意为不匹配a或b或c</p>
+</li>
+<li><p>[c1-c2]  匹配<code>c1-c2</code>中的任意单一字符 如[0-9]，意为匹配数字0到9任意数字</p>
+</li>
+<li><p>{s1,s2,…}  匹配<code>s1</code>或<code>s2</code>(或更多)其一字符串</p>
+</li>
+<li><p>{c1..c2}  匹配<code>c1-c2</code>中全部字符 如{1..10}</p>
+</li>
+</ul>
+<h3 id="用户权限管理"><a href="#用户权限管理" class="headerlink" title="用户权限管理"></a>用户权限管理</h3><p><code>Linux</code>是一个可以实现多用户登陆的操作系统，比如“admin”和“visitor”都可以同时登陆同一台主机，他们共享一些主机的资源，但他们也分别有自己的用户空间，用于存放各自的文件。但实际上他们的文件都是放在同一个物理磁盘上的甚至同一个逻辑分区或者目录里，但是由于<code>Linux</code>的<code>用户管理</code>和<code>权限机制</code>，不同用户不可以轻易地查看、修改彼此的文件。</p>
+<h4 id="查看用户"><a href="#查看用户" class="headerlink" title="查看用户"></a>查看用户</h4><p>打开终端，输入命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">who am i</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/in-post/linux_basic/who_am_i.png" alt="who am i"></p>
+<p>可以看到，输入的第一列表示当前伪终端的用户的用户名（要查看当前登录用户的用户名，去掉空格直接使用<code>whoami</code>即可），第二列的<code>pts/0</code>中<code>pts</code>表示伪终端，所谓伪是相对于<code>/dev/tty</code>设备而言的，<code>pts/0</code>后面那个数字就表示打开的伪终端序号，第三列则表示当前伪终端的启动时间。</p>
+<h4 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h4><p><code>Linux</code>系统中，<code>root</code>账户拥有整个系统最高的权限，可以对所有账户进行操作。</p>
+<blockquote>
+<p><code>root</code>权限，系统权限的一种，与<code>SYSTEM</code>权限可以理解成一个概念，但高于<code>Administrator</code>权限，<code>root</code>是<code>Linux</code>和<code>Unix</code>系统中的超级管理员用户帐户，该帐户拥有整个系统至高无上的权力，所有对象他都可以操作，所以很多黑客在入侵系统的时候，都要把权限提升到<code>root</code>权限，获得<code>root</code>权限之后就意味着已经获得了手机的最高权限，这时候你可以对手机中的任何文件（包括系统文件）执行所有增、删、改、查的操作</p>
+</blockquote>
+<p>一般登录系统时都是以普通账户的身份登录的，创建用户需要用到<code>root</code>权限，使用<code>root</code>权限有两种方式，一种是用<code>root</code>用户登录进行操作，另一种是使用<code>sudo</code>命令。</p>
+<p><strong>su，su - 与 sudo</strong></p>
+<p><code>su &lt;user&gt;</code>可以切换到用户user，执行时需要输入目标用户的密码，<code>sudo &lt;cmd&gt;</code>可以以特权权限运行cmd命令，需要当前用户属于<code>sudo</code>组，且需要输入当前用户密码。<code>su - &lt;user&gt;</code>命令也是切换用户，同时环境变量也会跟着改变成目标用户的环境变量。</p>
+<p>利用<code>sudo</code>命令创建一个名为<code>visitor</code>的用户：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo adduser visitor</span><br></pre></td></tr></table></figure>
+<p>系统会创建用户，并生成相应的<code>home</code>目录，如果不想生成目录，请使用<code>useradd</code>命令。</p>
+<p>使用命令<code>su -l visitor</code>可以切换到<code>visitor</code>用户并将目录切换到其根目录。</p>
+<p><img src="/uploads/in-post/linux_basic/add_user.png" alt="add user"></p>
+<p>退出当前用户使用命令<code>exit</code>或者使用快捷键<code>Ctrl+d</code>。</p>
+<h4 id="用户组"><a href="#用户组" class="headerlink" title="用户组"></a>用户组</h4><p>在<code>Linux</code>中每个用户都有一个归属（用户组），用户组简单地理解就是一组用户的集合，它们共享一些资源和权限，同时拥有私有资源，就跟家的形式差不多，你的兄弟姐妹（不同的用户）属于同一个家（用户组），你们可以共同拥有这个家（共享资源），爸妈对待你们都一样（共享权限），你偶尔写写日记，其他人未经允许不能查看（私有资源和权限）。当然一个用户是可以属于多个用户组的，正如你既属于家庭，又属于学校或公司。</p>
+<p><strong>查看自己所在用户组</strong></p>
+<ul>
+<li>使用<code>groups</code>命令</li>
+</ul>
+<p><img src="/uploads/in-post/linux_basic/groups_visitor.png" alt="groups"></p>
+<p>其中冒号之前表示用户，后面表示该用户所属的用户组。这里可以看到<code>visitor</code>用户属于<code>visitor</code>用户组，每次新建用户如果不指定用户组的话，默认会自动创建一个与用户名相同的用户组（差不多就相当于家长的意思，或者说是老总）。默认情况下在sudo用户组里的可以使用sudo命令获得root权限。</p>
+<ul>
+<li>查看<code>/etc/group</code>文件</li>
+</ul>
+<p><img src="/uploads/in-post/linux_basic/etc_group.png" alt="groups"></p>
+<p><code>/etc/group</code>的内容包括用户组:用户组口令:GID:该用户组所包含的用户，每个用户组一条记录。格式如下：</p>
+<blockquote>
+<p>group_name:password:GID:user_list</p>
+</blockquote>
+<p><code>password</code>字段为一个<code>x</code>，表示密码不可见。</p>
+<p><strong>将其他用户加入sudo组</strong></p>
+<p>默认情况下新创建的用户是不具有<code>root</code>权限的，也不在<code>sudo</code>用户组，可以让其加入<code>sudo</code>用户组从而获取<code>root</code>权限。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">su - l visitor</span><br><span class="line">sudo ls</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/in-post/linux_basic/not_in_sudo.png" alt="not in sudo list"></p>
+<p>如上述提示，<code>visitor</code>用户不在<code>sudoers</code>文件中，如果想让<code>visitor</code>具有s<code>udo</code>权限，需要将其添加到<code>sudo</code>用户组</p>
+<p>使用<code>usermod</code>命令可以为用户添加用户组，同样使用该命令你必需有<code>root</code>权限，你可以直接使用<code>root</code>用户为其它用户添加用户组，或者用其它已经在<code>sudo</code>用户组的用户使用<code>sudo</code>命令获取权限来执行该命令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -G sudo visitor</span><br></pre></td></tr></table></figure>
+<p>上述命令将<code>visitor</code>用户添加到了<code>sudo</code>组中，可以使用<code>sudo</code>命令获取<code>root</code>权限。</p>
+<h4 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a>删除用户</h4><p>想要删除用户，需要使用命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo userdel -rf visitor</span><br></pre></td></tr></table></figure>
+<h3 id="文件权限管理"><a href="#文件权限管理" class="headerlink" title="文件权限管理"></a>文件权限管理</h3><h4 id="查看文件权限"><a href="#查看文件权限" class="headerlink" title="查看文件权限"></a>查看文件权限</h4><p>使用<code>ls -l</code>命令列出文件。</p>
+<p><img src="/uploads/in-post/linux_basic/ls_l.png" alt="ls"></p>
+<p>每个文件名之前都有一段参数，这些参数的含义如下图：</p>
+<p><img src="/uploads/in-post/linux_basic/ls_desc.png" alt="ls desc"></p>
+<ul>
+<li>文件类型</li>
+</ul>
+<p>文件类型，分为<code>设备文件</code>（/dev目录下有各种设备文件）<code>socket</code>（网络套接字），<code>pipe</code>(管道)，<code>软链接文件</code>，<code>普通文件</code>和<code>目录</code>这几种。</p>
+<ul>
+<li>文件权限</li>
+</ul>
+<p>读权限，表示你可以使用<code>tail &lt;file name&gt;</code>之类的命令来读取某个文件的内容，用<code>r</code>表示。</p>
+<p>写权限，表示你可以编辑和修改某个文件，用<code>w</code>表示。</p>
+<p>执行权限，通常指可以运行的二进制程序文件或者脚本文件，用<code>x</code>表示。</p>
+<p>文件类型和权限由<code>10</code>位构成，第一位表示文件的类型，后九位表示文件权限，2-4位表示拥有者权限，5-7位表示用户组权限，8-10位表示其他用户权限，<code>rwx</code>表示可读可写可执行，<code>---</code>表示不可读不可写不可执行，拥有那某个字母表示拥有该字母对应的权限。</p>
+<p><img src="/uploads/in-post/linux_basic/ls_type.png" alt="ls type"></p>
+<p>拥有者权限表示文件创建者对该文件拥有的权限，用户组权限表示本组用户对该文件所拥有的权限，其他用户权限则表示非创建者和用户组的所有其他用户对该文件拥有的权限。</p>
+<ul>
+<li>链接数</li>
+</ul>
+<p>链接到该文件所在的<code>inode</code>结点的文件名数目。</p>
+<ul>
+<li>文件大小</li>
+</ul>
+<p>以<code>inode</code>结点大小为单位来表示的文件大小，可以使用<code>ls -lh</code>来更直观的查看文件的大小。</p>
+<p><img src="/uploads/in-post/linux_basic/ls_lh.png" alt="ls lh"></p>
+<h4 id="变更文件所有者"><a href="#变更文件所有者" class="headerlink" title="变更文件所有者"></a>变更文件所有者</h4><p>用<code>visitor</code>用户创建一个文件。</p>
+<p><img src="/uploads/in-post/linux_basic/chown_ls.png" alt="chown ls"></p>
+<p>然后切换回<code>root</code>用户修改文件所有者。</p>
+<p><img src="/uploads/in-post/linux_basic/chown.png" alt="chown"></p>
+<p>发现文件的所有者变成了<code>root</code>用户。</p>
+<h4 id="修改文件权限"><a href="#修改文件权限" class="headerlink" title="修改文件权限"></a>修改文件权限</h4><p>如果想让自己创建的文件不能被其他用户读、写、执行，需要修改文件的相应权限。共有两种方法进行修改：</p>
+<ul>
+<li>二进制数字表示</li>
+</ul>
+<p>如4.1.所述，文件权限由后9位表示，每3位为一组，表示不同类型用户拥有的权限，可以将<code>rwx</code>转化为对应的二进制数字：</p>
+<p><img src="/uploads/in-post/linux_basic/binary_present.png" alt="binary present"></p>
+<p>简单来说，<code>r</code>对应数字<code>4</code>，<code>w</code>对应数字<code>2</code>，<code>x</code>对应数字<code>1</code>。</p>
+<p><code>rwx</code>对应数字为4+2+1 = 7，<code>rw-</code>对应数字为4+2+0 = 6，以此类推。</p>
+<p>修改文件权限，需要使用<code>chmod</code>命令：</p>
+<p><img src="/uploads/in-post/linux_basic/chmod.png" alt="chmod"></p>
+<p>修改权限后，其他用户就不能读取该文件了：</p>
+<p><img src="/uploads/in-post/linux_basic/chmod_can_not_read.png" alt="chmod can not read"></p>
+<ul>
+<li><code>+-</code>符号表示</li>
+</ul>
+<p>利用下面的命令，可以达到上述同样的效果</p>
+<p><img src="/uploads/in-post/linux_basic/chmod_rwx.png" alt="chmod rwx"></p>
+<p><code>g</code>，<code>o</code>，<code>u</code>分别表示<code>group</code>，<code>others</code>，<code>user</code>。</p>
+<p><code>+</code>，<code>-</code>分别表示增加或者删除相应的权限。</p>
+<h3 id="Linux目录结构"><a href="#Linux目录结构" class="headerlink" title="Linux目录结构"></a>Linux目录结构</h3><p><code>Unix</code>是以目录为主的，<code>Linux</code>也继承了这一优良特性。<code>Linux</code>是以树形目录结构的形式来构建整个系统的，可以理解为一个用户可操作系统的骨架。虽然本质上无论是目录结构还是操作系统内核都是存储在磁盘上的，但从逻辑上来说<code>Linux</code>的磁盘是挂载在目录上的，每一个目录不仅能使用本地磁盘分区的文件系统，也可以使用网络上的文件系统。</p>
+<h4 id="FHS标准"><a href="#FHS标准" class="headerlink" title="FHS标准"></a>FHS标准</h4><p>在早期的<code>Unix</code>系统中，各个厂家各自定义了自己的<code>Unix</code>系统的文件系统构成，比较混乱，而<code>Linux</code>为了避免这个问题，对文件系统进行了标准化的活动，推出了<code>FHS</code>标准，2004年1月19日发行了最新版本<a href="http://refspecs.linuxfoundation.org/FHS_2.3/fhs-2.3.pdf" target="_blank" rel="noopener">FHS标准2.3</a>。</p>
+<blockquote>
+<p><code>FHS</code>（英文：Filesystem Hierarchy Standard 中文：文件系统层次结构标准），多数<code>Linux</code>版本采用这种文件组织形式，<code>FHS</code>定义了系统中每个区域的用途、所需要的最小构成的文件和目录同时还给出了例外处理与矛盾处理。</p>
+</blockquote>
+<p><code>FHS</code>定义了两层规范，第一层是，<code>/</code>下面的各个目录应该要放什么文件数据，例如<code>/etc</code>应该要放置设置文件，<code>/bin</code>与<code>/sbin</code>则应该要放置可执行文件等等。</p>
+<p>第二层则是针对<code>/usr</code>及<code>/var</code>这两个目录的子目录来定义。例如<code>/var/log</code>放置系统登录文件、<code>/usr/share</code>放置共享数据等等。</p>
+<p><code>FHS</code>依据文件系统使用的频繁与否以及是否允许用户随意改动，将目录定义为四种交互作用的形态:</p>
+<p><img src="/uploads/in-post/linux_basic/FHS.png" alt=""></p>
+<p><strong><code>根目录</code>（/）含义*</strong>：</p>
+<p>根目录是整个系统最重要的目录，因为不但所有的目录都是由根目录衍生出来的，同时，根目录也与开机、还原、系统修复等操作有关。</p>
+<p><code>FHS</code>建议：根目录所在的分区越小，系统性能就越好，根目录所在的文件系统也较不容易发生问题</p>
+<p>以下是重要目录放置的文件内容：</p>
+<table>
+<thead>
+<tr>
+<th>目录</th>
+<th>应放置文件内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/bin</td>
+<td>放置一些在<span style="COLOR: #ff0000"><strong>单用户维护模式下还能被操作的命令</strong></span>，主要有：cat, chmod, chown, date, mv, mkdir, cp, bash等命令</td>
+</tr>
+<tr>
+<td>/boot</td>
+<td>放置开机会使用到的文件，包括<span style="COLOR: #ff0000"><strong>Linux内核文件以及开机菜单与开机所需配置文件</strong></span>等</td>
+</tr>
+<tr>
+<td>/dev</td>
+<td>以文件形式存放<strong><span style="COLOR: #ff0000">任何设备与接口设备</span></strong>，比较重要的文件：/dev/null, /dev/zero, /dev/tty, /dev/lp*, /dev/hd*, /dev/sd*等</td>
+</tr>
+<tr>
+<td>/etc</td>
+<td>系统主要的配置文件<strong><span style="COLOR: #ff0000">几乎</span></strong>都放置在这个目录内。FHS建议：不要将可执行文件放到这个目录，比较重要的文件：/etc/inittab, /etc/init.d, /etc/modprobe.conf, /etc/X11, /etc/sysconfig等</td>
+</tr>
+<tr>
+<td>/home</td>
+<td>系统默认的用户主文件夹，～代表当前用户主文件夹</td>
+</tr>
+<tr>
+<td>/lib</td>
+<td>放置在开机时会用到的<strong><span style="COLOR: #ff0000">函数库</span></strong>，以及在/bin或/sbin下面的命令会调用的函数库，/lib/modules这个目录放置的驱动程序文件，尤其重要</td>
+</tr>
+<tr>
+<td>/media</td>
+<td>此目录下的文件都是可删除的设备，常见文件名：/media/cdrom</td>
+</tr>
+<tr>
+<td>/mnt</td>
+<td>用来暂时挂载某些额外设备</td>
+</tr>
+<tr>
+<td>/opt</td>
+<td>第三方软件放置的目录</td>
+</tr>
+<tr>
+<td>/root</td>
+<td>系统管理员的主文件夹，/root应该和根目录放在同一个分区中</td>
+</tr>
+<tr>
+<td>/srv</td>
+<td>存放网络服务所需取用的数据，如：www服务需要的网页数据就可以放置在/srv/www里面</td>
+</tr>
+<tr>
+<td>/tmp</td>
+<td>任何人都可以访问这个目录，这是用于暂时放置文件的地方，重要的数据<strong>都不可以</strong>放到这个目录里面，FHS建议：每次开机时都清空一下这个目录</td>
+</tr>
+<tr>
+<td>/sbin</td>
+<td>放置了开机过程所需的命令，包括<strong><span style="COLOR: #ff0000">开机、修复、还原系统所需的命令</span></strong></td></tr></tbody></table>
+
+
+
+<p>注意：</p>
+<p>开机过程中，只有根目录会被挂载，其他分区则是在开机完成后才会持续进行挂载，所以在根目录下与开机相关的目录都<code>不能</code>与根目录放到<code>不同的分区</code>中。</p>
+<p>从上表可以轻易得出，下列五个目录一定不可与根目录分开：</p>
+<p>/etc—-配置文件</p>
+<p>/bin—-重要执行文件</p>
+<p>/dev—-所需要的设备文件</p>
+<p>/lib—-执行文件所需要的函数库与内核所需的模块</p>
+<p>/sbin—-重要的系统执行文件</p>
+<h4 id="目录路径"><a href="#目录路径" class="headerlink" title="目录路径"></a>目录路径</h4><p><code>路径</code>是指某个目录或文件所在的位置，分为<code>绝对路径</code>和<code>相对路径</code>两种：</p>
+<ul>
+<li>绝对路径</li>
+</ul>
+<p>是以<code>根&quot;/&quot;</code>目录为起点的完整路径，以你所要到的目录为终点，表现形式如：<code>/usr/local</code>，表示根目录下的<code>usr</code>目录中的<code>local</code>目录。</p>
+<ul>
+<li>相对路径</li>
+</ul>
+<p>相对路径，是相对于当前目录的路径，相对路径是以当前目录<code>.</code>为起点，以所要到的目录为终点，表现形式如：<code>local/bin</code>。因为这个目录为 当前目录下的子目录，是可以省略这个<code>.</code>的；如果是当前目录的上一级目录，则需要使用<code>..</code>，比如你当前目录为<code>home</code>目录，根目录就应该表示为<code>../</code> ,表示当前目录（<code>home</code>目录）的上一级目录（<code>/</code>目录）。</p>
+<p>使用<code>cd</code>命令可以切换目录，在<code>Linux</code>中，<code>.</code>表示当前目录，<code>..</code>表示上一级目录, <code>-</code>表示上一次所在目录，<code>～</code>通常表示当前用户的<code>home</code>目录。使用<code>pwd</code>命令可以获取当前所在路径（绝对路径）。</p>
+<p>进入上一级目录：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ..</span><br></pre></td></tr></table></figure>
+<p>进入本用户<code>home</code>目录</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br></pre></td></tr></table></figure>
+<p>使用<code>pwd</code>获取当前路径</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pwd</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/in-post/linux_basic/cd.png" alt="cd"></p>
+<p>提示：在进行目录切换的过程中请多使用<code>Tab</code>键自动补全，可避免输入错误，连续按两次<code>Tab</code>可以显示全部候选结果。</p>
+<h3 id="Linux文件的基本操作"><a href="#Linux文件的基本操作" class="headerlink" title="Linux文件的基本操作"></a>Linux文件的基本操作</h3><h4 id="新建"><a href="#新建" class="headerlink" title="新建"></a>新建</h4><ul>
+<li>新建空白文件</li>
+</ul>
+<p>使用<code>touch</code>命令创建空白文件，可以创建一个不会覆盖已有同名文件的空白文件。</p>
+<ul>
+<li>新建有预定内容的文件</li>
+</ul>
+<p>使用<code>echo &quot;content&quot; &gt; filename</code>命令，可以创建一个拥有<code>content</code>内容的名为<code>filename</code>的文件。</p>
+<ul>
+<li>新建目录</li>
+</ul>
+<p>使用<code>mkdir</code>命令可以创建一个空白目录，使用<code>-p</code>参数可以同时创建父目录。</p>
+<h4 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h4><ul>
+<li>复制文件</li>
+</ul>
+<p>使用<code>cp</code>命令可以复制一个文件到指定目录。</p>
+<ul>
+<li>复制目录</li>
+</ul>
+<p>使用<code>cp -r</code>或<code>cp -R</code>命令，可以递归复制目录及其中的文件到指定目录。</p>
+<h4 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h4><ul>
+<li>删除文件</li>
+</ul>
+<p>使用<code>rm</code>命令，可以删除一个文件。使用参数<code>-f</code>可以强制删除文件。</p>
+<ul>
+<li>删除目录</li>
+</ul>
+<p>使用<code>rm -r</code>命令，可以删除一个目录。</p>
+<h4 id="移动文件与文件重命名"><a href="#移动文件与文件重命名" class="headerlink" title="移动文件与文件重命名"></a>移动文件与文件重命名</h4><ul>
+<li>移动文件</li>
+</ul>
+<p>使用<code>mv</code>命令可以移动文件，使用方法为<code>mv 源文件 目的目录</code>。</p>
+<ul>
+<li>重命名文件</li>
+</ul>
+<p>使用<code>mv</code>命令还可以重命名文件，使用方法为<code>mv 旧文件名 新文件名</code>。</p>
+<ul>
+<li>批量重命名</li>
+</ul>
+<p>使用<code>rename</code>命令可以通过<code>perl</code>正则表达式进行批量重命名：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 使用通配符批量创建 5 个文件</span><br><span class="line">touch file&#123;1..5&#125;.txt</span><br><span class="line"></span><br><span class="line"># 批量将这 5 个后缀为 .txt 的文本文件重命名为以 .c 为后缀的文件</span><br><span class="line">rename &apos;s/\.txt/\.c/&apos; *.txt</span><br><span class="line"></span><br><span class="line"># 批量将这 5 个文件，文件名改为大写</span><br><span class="line">rename &apos;y/a-z/A-Z/&apos; *.c</span><br></pre></td></tr></table></figure>
+<p><code>rename</code>是先使用第二个参数的通配符匹配所有后缀为<code>.txt</code>的文件，然后使用第一个参数提供的正则表达式将匹配的这些文件的<code>.txt</code>后缀替换为<code>.c</code>。</p>
+<h4 id="查看文件"><a href="#查看文件" class="headerlink" title="查看文件"></a>查看文件</h4><ul>
+<li>使用<code>cat</code>，<code>tac</code>和<code>nl</code>命令查看文件</li>
+</ul>
+<p>这三个命令都是用来打印文件内容到标准输出,其中<code>cat</code>为正序显示，<code>tac</code>倒序显示，<code>nl</code>添加行号并打印。</p>
+<blockquote>
+<p>标准输入输出：当我们执行一个<code>shell</code>命令行时通常会自动打开三个标准文件，即标准输入文件<code>stdin</code>，默认对应终端的键盘；标准输出文件<code>stdout</code>和标准错误输出文件<code>stderr</code>，这两个文件都对应被重定向到终端的屏幕，以便我们能直接看到输出内容。进程将从标准输入文件中得到输入数据，将正常输出数据输出到标准输出文件，而将错误信息送到标准错误文件中。</p>
+</blockquote>
+<p>比如我们要查看<code>/local</code>文件夹下的<code>test.txt</code>文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat test.txt</span><br></pre></td></tr></table></figure>
+<p>可以加上参数<code>-n</code>显示行号：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat -n test.txt</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/in-post/linux_basic/cat.png" alt="cat"></p>
+<p><code>nl</code>命令，添加行号并打印，是比<code>cat -n</code>更专业的行号打印命令。他有以下几个常用参数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-b : 指定添加行号的方式，主要有两种：</span><br><span class="line">    -b a:表示无论是否为空行，同样列出行号(&quot;cat -n&quot;就是这种方式)</span><br><span class="line">    -b t:只列出非空行的编号并列出（默认为这种方式）</span><br><span class="line">-n : 设置行号的样式，主要有三种：</span><br><span class="line">    -n ln:在行号字段最左端显示</span><br><span class="line">    -n rn:在行号字段最右边显示，且不加 0</span><br><span class="line">    -n rz:在行号字段最右边显示，且加 0</span><br><span class="line">-w : 行号字段占用的位数(默认为6位)</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/in-post/linux_basic/nl.png" alt="nl"></p>
+<p>以上三个命令都是在当前窗口显示文本，一屏显示不完文本的内容，需要用鼠标拖动滚动条或者滑动滚轮才能继续往下翻页，如果能够用键盘直接进行翻页操作的话会更加方便，这就需要使用下面的几个命令。</p>
+<ul>
+<li>使用<code>more</code>和<code>less</code>命令分页查看文件</li>
+</ul>
+<p>这两个命令都能够实现用键盘向下翻页的操作，其中<code>more</code>命令翻页到最后一行时会自动退出命令，而<code>less</code>的功能更加强大，他是基于<code>more</code>和<code>vi</code>开发的，会新打开一个页面显示文本内容，只要不按<code>q</code>推出，可以随意翻页。</p>
+<p>比如我们要使用<code>more</code>命令查看一个单页放不下的<code>test.txt</code>文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">more test.txt</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/in-post/linux_basic/more.png" alt="more"></p>
+<p>打开后默认只显示一屏内容，终端底部显示当前阅读的进度(百分比)，翻到尾行时命令会自动退出。可以使用<code>Enter</code>键向下滚动一行，使用<code>Space</code>键向下滚动一屏，按下<code>h</code>显示帮助，<code>q</code>退出。</p>
+<p>如果我们使用<code>less</code>命令查看单页放不下德 <code>test.txt</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">less test.txt</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/in-post/linux_basic/less.png" alt="less"></p>
+<p>可以看到，翻到尾行时命令不会退出，而是显示<code>End</code>，表示已经到达了尾行。</p>
+<ul>
+<li>使用<code>head</code>和<code>tail</code>命令查看文件</li>
+</ul>
+<p>正如命令的名称，<code>head</code>命令只查看文件的头几行（默认为10行，不足10行则显示全部），<code>tail</code>命令只查看文件的尾几行。</p>
+<p>两个命令的输入方式如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">head test.txt</span><br><span class="line">head -n 1 test.txt</span><br><span class="line">tail test.txt</span><br><span class="line">tail -n 1 test.txt</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/in-post/linux_basic/head_tail.png" alt="head tail"></p>
+<p>关于<code>tail</code>命令，还有一个很实用的参数<code>-f</code>，这个参数可以实现不停地读取某个文件的内容并显示。让我们可以动态查看日志，起到实时监视的作用。</p>
+<h4 id="查看文件类型"><a href="#查看文件类型" class="headerlink" title="查看文件类型"></a>查看文件类型</h4><p>我们可以使用<code>file</code>命令查看文件的类型：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">file test.txt</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/in-post/linux_basic/file.png" alt="file"></p>
+<p>这表示<code>test.txt</code>是一个由ASCII编码的文本文件。</p>
+<h3 id="环境变量"><a href="#环境变量" class="headerlink" title="环境变量"></a>环境变量</h3><h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><p>要了解<code>环境变量</code>，首先要了解<code>Shell变量</code>，所谓<code>变量</code>就是计算机中用于记录一个值（不一定是数值，也可以是字符或字符串）的符号，而这些符号将用于不同的运算处理中。通常变量与值是一对一的关系，可以通过表达式读取它的值赋值给其它变量，也可以直接指定数值赋值给任意变量。为了便于运算和处理，大部分的编程语言会区分变量的类型，用于分别记录数值、字符或者字符串等等数据类型。<code>Shell</code>中的变量也基本如此，有不同类型（但不用专门指定类型名），可以参与运算，有作用域限定。</p>
+<blockquote>
+<p>变量的作用域即变量的有效范围（比如一个函数中、一个源文件中或者全局范围），在该范围内只能有一个同名变量。一旦离开则该变量无效，如同不存在这个变量一般。</p>
+</blockquote>
+<ul>
+<li>创建变量</li>
+</ul>
+<p>使用<code>declare</code>命令可以创建一个变量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">declare tmp</span><br></pre></td></tr></table></figure>
+<p>其实也可以不用<code>declare</code>预声明一个变量，直接用的时候创建即可。</p>
+<p>使用<code>=</code>符号（不要加空格）赋值运算符可以为变量<code>tmp</code>赋值：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tmp=nihao</span><br></pre></td></tr></table></figure>
+<p>读取变量的值，使用<code>echo</code>命令和<code>$</code>符号（一定要加<code>$</code>符号，不然输出的是变量名而不是他的值）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $tmp</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/in-post/linux_basic/declare.png" alt="declare"></p>
+<p>注意:关于变量名，并不是任何形式的变量名都是可用的，变量名只能是英文字母,数字或者下划线，且不能以数字作为开头。</p>
+<h4 id="环境变量-1"><a href="#环境变量-1" class="headerlink" title="环境变量"></a>环境变量</h4><p><code>环境变量</code>就是作用域比自定义变量要大，如<code>Shell</code>的环境变量作用于自身和它的子进程。在所有的<code>Unix</code>和类<code>Unix</code>系统中，每个进程都有其各自的环境变量设置，且默认情况下，当一个进程被创建时，处理创建过程中明确指定的话，它将继承其父进程的绝大部分环境设置。<code>Shell</code>程序也作为一个进程运行在操作系统之上，而我们在<code>Shell</code>中运行的大部分命令都将以<code>Shell</code>的子进程的方式运行。</p>
+<p><img src="/uploads/in-post/linux_basic/shell_env.png" alt="shell env"></p>
+<p>通常我们会涉及到的环境变量有三种：</p>
+<ul>
+<li><p>当前<code>Shell</code>进程私有用户自定义变量，如上面我们创建的<code>tmp</code>变量，只在当前<code>Shell</code>中有效。</p>
+</li>
+<li><p><code>Shell</code>本身内建的变量。</p>
+</li>
+<li><p>从自定义变量导出的环境变量。</p>
+</li>
+</ul>
+<p>也有三个与上述三种环境变量相关的命令，<code>set</code>，<code>env</code>，<code>export</code>。这三个命令很相似，都可以用于打印相关环境变量,区别在于涉及的是不同范围的环境变量，详见下表：</p>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>set</code></td>
+<td>显示当前<code>Shell</code>所有环境变量，包括其内建环境变量（与<code>Shell</code>外观等相关），用户自定义变量及导出的环境变量</td>
+</tr>
+<tr>
+<td><code>env</code></td>
+<td>显示与当前用户相关的环境变量，还可以让命令在指定环境中运行</td>
+</tr>
+<tr>
+<td><code>export</code></td>
+<td>显示从<code>Shell</code>中导出成环境变量的变量，也能通过它将自定义变量导出为环境变量</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/uploads/in-post/linux_basic/set_env.png" alt="set env"></p>
+<p>关于环境变量，可以简单的理解成在当前进程的子进程是否有效，有效则为环境变量，否则不是。</p>
+<p>注意：为了与普通变量区分，通常我们习惯将环境变量名设为大写。</p>
+<h4 id="命令的查找路径与顺序"><a href="#命令的查找路径与顺序" class="headerlink" title="命令的查找路径与顺序"></a>命令的查找路径与顺序</h4><p>我们在<code>Shell</code>中输入一个命令，他是怎么找到相应的命令并执行的呢？答案是通过环境变量<code>PATH</code>来进行搜索的。</p>
+<p>查看<code>PATH</code>环境变量的内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo $PATH</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/in-post/linux_basic/path.png" alt="path"></p>
+<p>上面这些目录中放的都是可执行文件，当我们在<code>Shell</code>中执行一个命令时，系统就会按照<code>PATH</code>中设定的路径按照顺序依次到目录中去查找，如果存在同名的命令，则执行先找到的那个。</p>
+<h4 id="添加自定义路径到PATH环境变量"><a href="#添加自定义路径到PATH环境变量" class="headerlink" title="添加自定义路径到PATH环境变量"></a>添加自定义路径到<code>PATH</code>环境变量</h4><p><code>PATH</code>环境变量中是以<code>:</code>作为路径的分隔符，我们可以这样添加自定义路径：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">PATH = $PATH:/home/wen/bin</span><br></pre></td></tr></table></figure>
+<p>注意：<code>PATH</code>路径一定要使用绝对路径</p>
+<p>但是给<code>PATH</code>环境变量追加了一个路径，它也只是在当前<code>Shell</code>有效，一旦退出终端，再打开就会发现失效了。有没有方法让添加的环境变量全局有效？或者每次启动<code>Shell</code>时自动执行上面添加自定义路径到<code>PATH</code>的命令？</p>
+<p>在每个用户的<code>home</code>目录中有一个<code>Shell</code>每次启动时会默认执行一个配置脚本，以初始化环境，包括添加一些用户自定义环境变量等等。<code>zsh</code>的配置文件是<code>.zshrc</code>，相应<code>Bash</code>的配置文件为<code>.bashrc</code>。它们在<code>etc</code>下还都有一个或多个全局的配置文件，不过我们一般只修改用户目录下的配置文件。</p>
+<p>我们可以简单的使用下面命令直接添加内容到.zshrc中：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;PATH=$PATH:/home/wen/bin&quot; &gt;&gt; .zshrc</span><br></pre></td></tr></table></figure>
+<p>上述命令中<code>&gt;&gt;</code>表示将标准输出以追加的方式重定向到一个文件中，注意前面用到的<code>&gt;</code>是以覆盖的方式重定向到一个文件中，使用的时候一定要注意分辨。在指定文件不存在的情况下都会创建新的文件。</p>
+<p>或者使用<code>vi</code>或<code>vim</code>或其他文本编辑器打开<code>.zshrc</code>文件，找到<code>PATH</code>行，将内容添加进<code>PATH</code>的配置中。</p>
+<h4 id="修改和删除已有变量"><a href="#修改和删除已有变量" class="headerlink" title="修改和删除已有变量"></a>修改和删除已有变量</h4><ul>
+<li>变量修改</li>
+</ul>
+<p>变量的修改有以下几种方式：</p>
+<table>
+<thead>
+<tr>
+<th>变量设置方式</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>${变量名#匹配字串}</code></td>
+<td>从头向后开始匹配，删除符合匹配字串的最短数据</td>
+</tr>
+<tr>
+<td><code>${变量名##匹配字串}</code></td>
+<td>从头向后开始匹配，删除符合匹配字串的最长数据</td>
+</tr>
+<tr>
+<td><code>${变量名%匹配字串}</code></td>
+<td>从尾向前开始匹配，删除符合匹配字串的最短数据</td>
+</tr>
+<tr>
+<td><code>${变量名%%匹配字串}</code></td>
+<td>从尾向前开始匹配，删除符合匹配字串的最长数据</td>
+</tr>
+<tr>
+<td><code>${变量名/旧的字串/新的字串}</code></td>
+<td>将符合旧字串的第一个字串替换为新的字串</td>
+</tr>
+<tr>
+<td><code>${变量名//旧的字串/新的字串}</code></td>
+<td>将符合旧字串的全部字串替换为新的字串</td>
+</tr>
+</tbody>
+</table>
+<p>比如要修改我们前面添加到<code>PATH</code>的环境变量。为了避免操作失误导致命令找不到，我们先将<code>PATH</code>赋值给一个新的自定义变量<code>path</code>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ path=$PATH</span><br><span class="line">$ echo $path</span><br><span class="line">$ path=$&#123;path%/home/wen/bin&#125;</span><br><span class="line"># 或使用通配符,*表示任意多个任意字符</span><br><span class="line">$ path=$&#123;path%*/bin&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>变量删除</li>
+</ul>
+<p>可以使用<code>unset</code>命令删除一个环境变量：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unset tmp</span><br></pre></td></tr></table></figure>
+<h4 id="如何让环境变量立即生效"><a href="#如何让环境变量立即生效" class="headerlink" title="如何让环境变量立即生效"></a>如何让环境变量立即生效</h4><p>我们在<code>Shell</code>中修改了一个配置脚本文件之后（比如<code>zsh</code>的配置文件<code>home</code>目录下的<code>.zshrc</code>），需要退出终端重新打开甚至重启主机之后其才能生效，我们可以使用<code>source</code>命令来让其立即生效，如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source .zshrc</span><br></pre></td></tr></table></figure>
+<p><code>source</code>命令还有一个别名就是<code>.</code>，但后面的文件必须指定完整的绝对或相对路径名：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">. ./.zshrc</span><br></pre></td></tr></table></figure>
+<p>第一个<code>.</code>表示<code>source</code>命令，第二个<code>.</code>表示当前目录。</p>
+<h3 id="搜索文件"><a href="#搜索文件" class="headerlink" title="搜索文件"></a>搜索文件</h3><p>与搜索相关的命令常用的有如下几个<code>whereis</code>，<code>locate</code>，<code>which</code>，<code>find</code>。</p>
+<h4 id="whereis简单快速"><a href="#whereis简单快速" class="headerlink" title="whereis简单快速"></a><code>whereis</code>简单快速</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whereis test</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/in-post/linux_basic/whereis.png" alt="whereis"></p>
+<p><code>whereis</code>只能搜索<code>二进制文件</code>(-b)，<code>man帮助文件</code>(-m)和<code>源代码文件</code>(-s)。和<code>find</code>相比，<code>whereis</code>查找的速度非常快，这是因为<code>Linux</code>系统会将 系统内的所有文件都记录在一个数据库文件中，当使用<code>whereis</code>和下面即将介绍的<code>locate</code>时，会从数据库中查找数据，而不是像<code>find</code>命令那样，通过遍历硬盘来查找，效率自然会很高。但是该数据库文件并不是实时更新，默认情况下时一星期更新一次，因此，我们在用<code>whereis</code>和<code>locate</code>查找文件时，有时会找到已经被删除的数据，或者刚刚建立文件，却无法查找到，原因就是因为数据库文件没有被更新。</p>
+<h4 id="locate快而全"><a href="#locate快而全" class="headerlink" title="locate快而全"></a><code>locate</code>快而全</h4><p><code>locate</code>让使用者可以很快速的搜寻档案系统内是否有指定的档案。其方法是先建立一个包括系统内所有档案名称及路径的数据库，之后当寻找时就只需查询这个数据库，而不必实际深入档案系统之中了。<code>locate</code>通过<code>/var/lib/mlocate/mlocate.db</code>数据库查找，不过这个数据库也不是实时更新的，系统会使用定时任务每天自动执行<code>updatedb</code>命令更新一次，所以有时候你刚添加的文件，它可能会找不到，需要手动执行一次<code>updatedb</code>命令。</p>
+<p>它可以用来查找指定目录下的不同文件类型，如查找<code>/usr</code>下所有以<code>src</code>开头的文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">locate /usr/src</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/in-post/linux_basic/locate.png" alt="locate"></p>
+<p>注意：它不只是在<code>usr</code>目录下查找，还会自动递归子目录进行查找。</p>
+<p>查找<code>/usr/share/</code>下所有<code>jpg</code>文件：</p>
+<p><img src="/uploads/in-post/linux_basic/locate_jpg.png" alt="locate jpg"></p>
+<p>注意：<code>*</code>号前面要添加反斜杠(<code>\</code>)转义，否则会无法找到。</p>
+<p>如果想只统计数目可以加上<code>-c</code>参数，<code>-i</code>参数可以忽略大小写进行查找，<code>whereis</code>的<code>-b</code>,<code>-m</code>，<code>-s</code>同样可以使用。</p>
+<h4 id="which小而精"><a href="#which小而精" class="headerlink" title="which小而精"></a><code>which</code>小而精</h4><p><code>which</code>本身是<code>Shell</code>内建的一个命令，我们通常使用<code>which</code>来确定是否安装了某个指定的软件，因为它只从<code>PATH</code>环境变量中执行的路径中去搜索命令。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">which man</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/in-post/linux_basic/which.png" alt="which"></p>
+<h4 id="find精而细"><a href="#find精而细" class="headerlink" title="find精而细"></a><code>find</code>精而细</h4><p><code>Linux</code>下<code>find</code>命令在目录结构中搜索文件，并执行指定的操作。<code>Linux</code>下<code>find</code>命令提供了相当多的查找条件，功能很强大。由于<code>find</code>具有强大的功能，所以它的选项也很多。即使系统中含有网络文件系统(NFS)，<code>find</code>命令在该文件系统中同样有效，只要你具有相应的权限。</p>
+<p>在指定目录下搜索指定文件名的文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find / -name &apos;test.txt&apos;</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/in-post/linux_basic/find.png" alt="find"></p>
+<p><code>find</code>命令的路径是作为第一个参数的， 基本命令格式为<code>find [path] [option] [action]</code>。</p>
+<p>基本命令选项：</p>
+<ul>
+<li><code>-name</code>   按照文件名查找文件。</li>
+<li><code>-perm</code>   按照文件权限来查找文件。</li>
+<li><code>-prune</code>  使用这一选项可以使find命令不在当前指定的目录中查找，如果同时使用-depth选项，那么-prune将被find命令忽略。</li>
+<li><code>-user</code>   按照文件属主来查找文件。</li>
+<li><code>-group</code>  按照文件所属的组来查找文件。</li>
+<li><code>-nogroup</code>    查找无有效所属组的文件，即该文件所属的组在/etc/groups中不存在。</li>
+<li><code>-nouser</code>     查找无有效属主的文件，即该文件的属主在/etc/passwd中不存在。</li>
+<li><code>-newer file1 ! file2</code>    查找更改时间比文件file1新但比文件file2旧的文件。</li>
+<li><code>-type</code>   查找某一类型的文件，诸如：<ul>
+<li><code>b</code> - 块设备文件。</li>
+<li><code>d</code> - 目录。</li>
+<li><code>c</code> - 字符设备文件。</li>
+<li><code>p</code> - 管道文件。</li>
+<li><code>l</code> - 符号链接文件。</li>
+<li><code>f</code> - 普通文件。</li>
+</ul>
+</li>
+</ul>
+<p>与时间相关的命令参数：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-amin n</code></td>
+<td>查找系统中最后N分钟访问的文件</td>
+</tr>
+<tr>
+<td><code>-atime n</code></td>
+<td>查找系统中最后n*24小时访问的文件</td>
+</tr>
+<tr>
+<td><code>-cmin n</code></td>
+<td>查找系统中最后N分钟被改变文件状态的文件</td>
+</tr>
+<tr>
+<td><code>-ctime n</code></td>
+<td>查找系统中最后n*24小时被改变文件状态的文件</td>
+</tr>
+<tr>
+<td><code>-mmin n</code></td>
+<td>查找系统中最后N分钟被改变文件数据的文件</td>
+</tr>
+<tr>
+<td><code>-mtime n</code></td>
+<td>查找系统中最后n*24小时被改变文件数据的文件</td>
+</tr>
+</tbody>
+</table>
+<p>下面以<code>-mtime</code>参数举例：</p>
+<ul>
+<li><code>-mtime n</code>: n为数字，表示为在n天之前的”一天之内“修改过的文件</li>
+<li><code>-mtime +n</code>: 列出在n天之前（不包含n天本身）被修改过的文件</li>
+<li><code>-mtime -n</code>: 列出在n天之前（包含n天本身）被修改过的文件</li>
+</ul>
+<p><img src="/uploads/in-post/linux_basic/find_time.png" alt="find time"></p>
+<p>实例：</p>
+<ul>
+<li>查找指定时间内修改过的文件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find -mtime -2</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/in-post/linux_basic/find_mtime.png" alt="find mtime"></p>
+<p>查找<code>2 * 24</code>小时之内被修改过的文件。</p>
+<ul>
+<li>根据关键字查找</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name &quot;test.txt&quot;</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/in-post/linux_basic/find_name.png" alt="find name"></p>
+<p>在当前目录查找文件名为<code>test.txt</code>的文件。</p>
+<ul>
+<li>按照目录或文件的权限查找文件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -perm 765</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/in-post/linux_basic/find_perm.png" alt="find perm"></p>
+<p>查找当前目录下权限为<code>765</code>的文件。</p>
+<ul>
+<li>按照类型查找</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -type f -name &quot;*.xml&quot;</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/in-post/linux_basic/find_type.png" alt="find type"></p>
+<p>查找当前目录下以<code>xml</code>结尾的普通文件。</p>
+<ul>
+<li>按照文件内容查找</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">find . -name &quot;*.txt&quot; | xargs grep &quot;test*&quot;</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/in-post/linux_basic/find_grep.png" alt="find grep"></p>
+<p>查找当前目录下含有<code>test</code>开头的所有<code>txt</code>文件。</p>
+<h3 id="文件打包和解压缩"><a href="#文件打包和解压缩" class="headerlink" title="文件打包和解压缩"></a>文件打包和解压缩</h3><p>在<code>Linux</code>上常用的是<code>tar</code>工具，常用的压缩命令还有<code>compress</code>，<code>gzip</code>和<code>bzip2</code>等。</p>
+<p>常用的命令如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">compress filename       将文件压缩成.Z格式</span><br><span class="line"></span><br><span class="line">gzip filename           将文件压缩成.gz格式</span><br><span class="line"></span><br><span class="line">bzip2 filename          将文件压缩成.bz2格式</span><br><span class="line"></span><br><span class="line">以上三个命令 -d           将相应的文件解压缩</span><br><span class="line"></span><br><span class="line">tar dest source         打包压缩</span><br><span class="line"></span><br><span class="line">    -c                      归档文件</span><br><span class="line"></span><br><span class="line">    -x                      压缩文件</span><br><span class="line"></span><br><span class="line">    -z                      gzip压缩文件</span><br><span class="line"></span><br><span class="line">    -j                      bzip2压缩文件</span><br><span class="line"></span><br><span class="line">    -v                      显示压缩或解压缩过程 v(view)</span><br><span class="line"></span><br><span class="line">    -f                      使用档名</span><br></pre></td></tr></table></figure>
+<p>实例：</p>
+<p>tar -cvf /local/test.tar /local/test          只打包，不压缩</p>
+<p>tar -zcvf /local/test.tar.gz /local/test      打包，并用gzip压缩</p>
+<p>tar -jcvf /local/test.tar.bz2 /local/test     打包，并用bzip2压缩</p>
+<p>tar -xvf /local/test.tar /local/test          只拆包</p>
+<p>tar -zxvf /local/test.tar.gz /local/test      用gzip解压缩，并拆包</p>
+<p>tar -jxvf /local/test.tar.bz2 /local/test     用bzip2解压缩，并拆包</p>
+<h3 id="文件系统操作"><a href="#文件系统操作" class="headerlink" title="文件系统操作"></a>文件系统操作</h3><h4 id="查看磁盘和目录的容量"><a href="#查看磁盘和目录的容量" class="headerlink" title="查看磁盘和目录的容量"></a>查看磁盘和目录的容量</h4><ul>
+<li>使用<code>df</code>命令查看磁盘的容量</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/in-post/linux_basic/df.png" alt="df"></p>
+<p>一般使用情况下，我们更多只是关心<code>/dev/sda1</code>的内容。</p>
+<p>物理主机上的<code>/dev/sda1</code>是对应着主机硬盘的分区，后面的数字表示分区号，数字前面的字母<code>a</code>表示第几块硬盘（也可能是可移动磁盘），你如果主机上有多块硬盘则可能还会出现<code>/dev/sdb</code>，<code>/dev/sdc</code>这些磁盘设备都会在<code>/dev</code>目录下以文件的存在形式。</p>
+<p>我们还可以看到<code>1k-块</code>(1k-blocks)这个陌生的名词，它表示以磁盘块大小的方式显示容量，后面为相应的以块大小表示的已用和可用容量。</p>
+<p>可以用参数<code>-h</code>转化为更为直观的方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df -h</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/in-post/linux_basic/df_h.png" alt="df h"></p>
+<ul>
+<li>使用<code>du</code>命令查看目录的容量</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 默认同样以 blocks 的大小展示</span><br><span class="line">du</span><br><span class="line"># 加上`-h`参数，以更易读的方式展示</span><br><span class="line">du -h</span><br></pre></td></tr></table></figure>
+<p><code>-d</code>参数指定查看目录的深度</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 只查看1级目录的信息</span><br><span class="line">du -h -d 0 ~</span><br><span class="line"># 查看2级</span><br><span class="line">du -h -d 1 ~</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/in-post/linux_basic/du.png" alt="du"></p>
+<h3 id="命令执行顺序的控制"><a href="#命令执行顺序的控制" class="headerlink" title="命令执行顺序的控制"></a>命令执行顺序的控制</h3><h4 id="顺序执行多条命令"><a href="#顺序执行多条命令" class="headerlink" title="顺序执行多条命令"></a>顺序执行多条命令</h4><p>通常情况下，我们每次只能在终端输入一条命令，按下回车执行，执行完成后，我们再输入第二条命令，然后再按回车执行……</p>
+<p>但是我们可能会遇到如下使用场景：我们需要使用<code>apt-get</code>安装一个软件，然后安装完成后立即运行安装的软件（或命令工具），又恰巧你的主机没有更新软件列表,那么你可能会有如下一系列操作：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line"># 等待——————————然后输入下面的命令</span><br><span class="line">sudo apt-get install software</span><br><span class="line"># 等待——————————然后输入下面的命令</span><br><span class="line">software</span><br></pre></td></tr></table></figure>
+<p>这样的输入方式比较浪费我们的时间，我们可能想要一次性输入完命令，并让系统自动运行。</p>
+<p>简单的顺序执行可以使用<code>;</code>来完成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update;sudo apt-get install software;software</span><br><span class="line"># 让它自己运行</span><br></pre></td></tr></table></figure>
+<h4 id="有选择的执行命令"><a href="#有选择的执行命令" class="headerlink" title="有选择的执行命令"></a>有选择的执行命令</h4><p>如果自动顺序执行命令时，前面的命令执行不成功，而后面的命令又依赖于上一条命令的结果，那么就会造成花了时间，最终却得到一个错误的结果，而且有时候无法判断结果是否正确。此时我们需要能够有选择性的执行命令，比如上一条命令执行成功才继续下一条：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">which cowsay &amp;&amp; cowsay -f head-in ohch~</span><br></pre></td></tr></table></figure>
+<p>如果没有安装<code>cowsay</code>，执行一次上述命令，会发现什么也没发生，如果安装了<code>cowsay</code>，会出现以下效果：</p>
+<p><img src="/uploads/in-post/linux_basic/cowsay.png" alt="cowsay"></p>
+<p>上面的<code>&amp;&amp;</code>就是用来实现选择性执行的，它表示如果前面的命令执行结果返回<code>0</code>则执行后面的，否则不执行，你可以从<code>$?</code>环境变量获取上一次命令的返回结果：</p>
+<p><img src="/uploads/in-post/linux_basic/cowsay_echo.png" alt="cowsay echo"></p>
+<p><code>&amp;&amp;</code>表示逻辑与，<code>||</code>表示逻辑或，<code>shell</code>可以用两个符号实现命令执行顺序的简单控制。<code>||</code>在这里就是与<code>&amp;&amp;</code>相反的控制效果，即当上一条命令执行结果为<code>≠0($?≠0)</code>时则执行它后面的命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">which cowsay || echo &quot;cowsay not found&quot;</span><br></pre></td></tr></table></figure>
+<p>同时我们可以将<code>&amp;&amp;</code>命令和<code>||</code>命令综合起来进行使用，比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">which cowsay &amp;&amp; echo &quot;exist&quot; || echo &quot;not exist&quot;</span><br></pre></td></tr></table></figure>
+<p>上面命令运行的流程如下：</p>
+<p><img src="/uploads/in-post/linux_basic/order_control.png" alt="order control"></p>
+<h3 id="管道"><a href="#管道" class="headerlink" title="管道"></a>管道</h3><p><code>管道</code>是一种通信机制，通常用于<code>进程</code>间的通信（也可通过socket进行网络通信），它表现出来的形式就是将前面每一个进程的输出(stdout)直接作为下一个进程的输入(stdin)。</p>
+<p><code>管道</code>又分为<code>匿名管道</code>和<code>具名管道</code>。<code>具名管道</code>简单的说就是有名字的管道，通常只会在源程序中用到具名管道。我们在使用一些过滤程序时经常会用到的就是<code>匿名管道</code>，在命令行中由<code>|</code>分隔符表示。</p>
+<h4 id="匿名管道"><a href="#匿名管道" class="headerlink" title="匿名管道"></a>匿名管道</h4><p>输入命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -al /etc</span><br></pre></td></tr></table></figure>
+<p>上述命令结果很多，屏幕不能完全显示，可以使用管道命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -al /etc | less</span><br></pre></td></tr></table></figure>
+<p>会将前一个命令<code>ls</code>的输出传递给下一个命令<code>less</code>，然后可以进行<code>less</code>命令的操作。</p>
+<h4 id="cut命令"><a href="#cut命令" class="headerlink" title="cut命令"></a>cut命令</h4><p><code>cut</code>命令可以将文件进行处理后输出：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 输出每行前五个字符（包含第五个）</span><br><span class="line">cut /etc/passwd -c -5</span><br><span class="line"># 输出每行前五个之后的字符（包含第五个）</span><br><span class="line">cut /etc/passwd -c 5-</span><br><span class="line"># 输出每行第五个字符</span><br><span class="line">cut /etc/passwd -c 5</span><br><span class="line"># 输出每行2到5之间的字符（包含第五个）</span><br><span class="line">cut /etc/passwd -c 2-5</span><br><span class="line"># 将分隔符变为:分割出不同的field，并输出第1个和第2个field</span><br><span class="line">cut /etc/passwd -d &apos;:&apos; -f 1,2</span><br><span class="line"># 将分隔符变为:分割出不同的field，并输出第1个到第4个field</span><br><span class="line">cut /etc/passwd -d &apos;:&apos; -f 1-4</span><br></pre></td></tr></table></figure>
+<h4 id="grep命令"><a href="#grep命令" class="headerlink" title="grep命令"></a>grep命令</h4><p><code>grep</code>命令是很强大的，也是相当常用的一个命令，它结合正则表达式可以实现很复杂却很高效的匹配和查找。</p>
+<p><code>grep</code>命令的一般形式为：<code>grep</code> <code>[命令选项]</code> <code>用于匹配的表达式</code> <code>[文件]</code></p>
+<p>例如，搜索当前目录下所有包含<code>test</code>的所有文件，并显示出现在文本中的行号：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep -rnI &quot;test&quot; .</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/in-post/linux_basic/grep.png" alt="grep"></p>
+<p><code>-r</code>参数表示递归搜索子目录中的文件,<code>-n</code>表示打印匹配项行号，<code>-I</code>表示忽略二进制文件。</p>
+<p>也可以在匹配字段中使用正则表达式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 查看环境变量中以&quot;bin&quot;结尾的字符串</span><br><span class="line">$ export | grep &quot;.*bin$&quot;</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/in-post/linux_basic/grep_export.png" alt="grep export"></p>
+<h4 id="wc命令"><a href="#wc命令" class="headerlink" title="wc命令"></a>wc命令</h4><p><code>wc</code>命令用于统计并输出一个文件中行、单词和字节的数目：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">wc /etc/passwd</span><br><span class="line"># 行数</span><br><span class="line">wc -l /etc/passwd</span><br><span class="line"># 单词数</span><br><span class="line">wc -w /etc/passwd</span><br><span class="line"># 字节数</span><br><span class="line">wc -c /etc/passwd</span><br><span class="line"># 字符数</span><br><span class="line">wc -m /etc/passwd</span><br><span class="line"># 最长行字节数</span><br><span class="line">wc -L /etc/passwd</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/in-post/linux_basic/wc.png" alt="wc"></p>
+<p>注意：对于西文字符来说，一个字符就是一个字节，但对于中文字符一个汉字是大于2个字节的，具体数目是由字符编码决定的。</p>
+<p>结合管道来操作一下，下面统计<code>/etc</code>下面所有目录数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -dl /etc/*/ | wc -l</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/in-post/linux_basic/wc_ls.png" alt="wc ls"></p>
+<h4 id="sort命令"><a href="#sort命令" class="headerlink" title="sort命令"></a>sort命令</h4><p>功能是将输入按照一定方式排序，然后再输出,它支持的排序有按字典排序,数字排序，按月份排序，随机排序，反转排序，指定特定字段进行排序等等。</p>
+<p>默认为字典排序：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/passswd | sort</span><br></pre></td></tr></table></figure>
+<p>反转排序：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/passwd | sort -r</span><br></pre></td></tr></table></figure>
+<p>按特定字段排序：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/passwd | sort -t&apos;:&apos; -k 3</span><br></pre></td></tr></table></figure>
+<p>上面的<code>-t</code>参数用于指定字段的分隔符，这里是以<code>:</code>作为分隔符；<code>-k</code>字段号用于指定对哪一个字段进行排序。这里<code>/etc/passwd</code>文件的第三个字段为数字，默认情况下是一字典序排序的，如果要按照数字排序就要加上<code>-n</code>参数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat /etc/passwd | sort -t&apos;:&apos; -k 3 -n</span><br></pre></td></tr></table></figure>
+<h4 id="uniq命令"><a href="#uniq命令" class="headerlink" title="uniq命令"></a>uniq命令</h4><p><code>uniq</code>命令可以用于过滤或者输出重复行。</p>
+<ul>
+<li>过滤重复行</li>
+</ul>
+<p>我们可以使用<code>history</code>命令查看最近执行过的命令，不过你可能只想查看使用了那个命令而不需要知道具体干了什么，那么你可能就会要想去掉命令后面的参数然后去掉重复的命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">history | cut -c 8- | cut -d &apos; &apos; -f 1 | uniq</span><br></pre></td></tr></table></figure>
+<p>由于<code>uniq</code>命令只能去连续重复的行，不是全文去重，所以要达到全文去重效果，我们需要先排序：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">history | cut -c 8- | cut -d &apos; &apos; -f 1 | sort | uniq</span><br><span class="line"># 或者$ history | cut -c 8- | cut -d &apos; &apos; -f 1 | sort -u</span><br></pre></td></tr></table></figure>
+<ul>
+<li>输出重复行</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 输出重复过的行（重复的只输出一个）及重复次数</span><br><span class="line">history | cut -c 8- | cut -d &apos; &apos; -f 1 | sort | uniq -dc</span><br><span class="line"># 输出所有重复的行</span><br><span class="line">history | cut -c 8- | cut -d &apos; &apos; -f 1 | sort | uniq -D</span><br></pre></td></tr></table></figure>
+<h3 id="常用文本处理命令"><a href="#常用文本处理命令" class="headerlink" title="常用文本处理命令"></a>常用文本处理命令</h3><h4 id="tr命令"><a href="#tr命令" class="headerlink" title="tr命令"></a>tr命令</h4><p><code>tr</code>命令可以用来删除一段文本信息中的某些文字。或者将其进行转换。</p>
+<p>使用方式：<code>tr</code> <code>[option]</code>…<code>SET1</code> <code>[SET2]</code></p>
+<p>常用的选项有：</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-d</td>
+<td>删除和set1匹配的字符，注意不是全词匹配也不是按字符顺序匹配</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>去除set1指定的在输入文本中连续并重复的字符</td>
+</tr>
+</tbody>
+</table>
+<p>操作举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 删除 &quot;hello world&quot; 中所有的&apos;o&apos;,&apos;l&apos;,&apos;h&apos;</span><br><span class="line">echo &apos;hello world&apos; | tr -d &apos;olh&apos;</span><br><span class="line"># 将&quot;hello&quot; 中的ll,去重为一个l</span><br><span class="line">echo &apos;hello&apos; | tr -s &apos;l&apos;</span><br><span class="line"># 将输入文本，全部转换为大写或小写输出</span><br><span class="line">echo &apos;hello world&apos; | tr &apos;[a-z]&apos; &apos;[A-Z]&apos;</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/in-post/linux_basic/tr.png" alt="tr"></p>
+<h4 id="col命令"><a href="#col命令" class="headerlink" title="col命令"></a>col命令</h4><p><code>col</code>命令可以将<code>Tab</code>换成对等数量的<code>空格建</code>，或反转这个操作。</p>
+<p>使用方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">col [option]</span><br></pre></td></tr></table></figure>
+<p>常用的选项有：</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-x</td>
+<td>将Tab转换为空格</td>
+</tr>
+<tr>
+<td>-h</td>
+<td>将空格转换为Tab（默认选项）</td>
+</tr>
+</tbody>
+</table>
+<p>操作举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 查看 /etc/protocols 中的不可见字符，可以看到很多 ^I ，这其实就是 Tab 转义成可见字符的符号</span><br><span class="line">cat -A /etc/protocols | tail -n 5</span><br><span class="line"># 使用 col -x 将 /etc/protocols 中的 Tab 转换为空格,然后再使用 cat 查看，你发现 ^I 不见了</span><br><span class="line">cat /etc/protocols | col -x | tail -n 5</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/in-post/linux_basic/col.png" alt="col"></p>
+<h4 id="join命令"><a href="#join命令" class="headerlink" title="join命令"></a>join命令</h4><p><code>join</code>命令用于将两个文件中包含相同内容的那一行合并在一起。</p>
+<p>使用方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">join [option]... file1 file2</span><br></pre></td></tr></table></figure>
+<p>常用的选项有：</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-t</td>
+<td>指定分隔符，默认为空格</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>忽略大小写的差异</td>
+</tr>
+<tr>
+<td>-1</td>
+<td>指明第一个文件要用哪个字段来对比，，默认对比第一个字段</td>
+</tr>
+<tr>
+<td>-2</td>
+<td>指明第二个文件要用哪个字段来对比，，默认对比第一个字段</td>
+</tr>
+</tbody>
+</table>
+<p>操作举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 创建两个文件</span><br><span class="line">echo &apos;haha 1:hello haha&apos; &gt; file1</span><br><span class="line">echo &apos;haha 1:world hehe&apos; &gt; file2</span><br><span class="line">join file1 file2</span><br><span class="line"># 将file1与file2两个文件合并，指定以&apos;:&apos;作为分隔符</span><br><span class="line">sudo join -t&apos;:&apos; file1 file2</span><br><span class="line"># 将file1与file2两个文件合并，指定以&apos;:&apos;作为分隔符, 分别比对第1和第1个字段</span><br><span class="line">sudo join -t&apos;:&apos; -1 1 file1 -2 1 file2</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/in-post/linux_basic/join.png" alt="join"></p>
+<h4 id="paste命令"><a href="#paste命令" class="headerlink" title="paste命令"></a>paste命令</h4><p><code>paste</code>命令与<code>join</code>命令类似，它是在不对比数据的情况下，简单地将多个文件合并一起，以<code>Tab</code>隔开。</p>
+<p>使用方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">paste [option] file...</span><br></pre></td></tr></table></figure></p>
+<p>常用的选项有：</p>
+<table>
+<thead>
+<tr>
+<th>选项</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-d</td>
+<td>指定合并的分隔符，默认为Tab</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>不合并到一行，每个文件为一行</td>
+</tr>
+</tbody>
+</table>
+<p>操作举例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">echo hello &gt; file1</span><br><span class="line">echo world &gt; file2</span><br><span class="line">echo wenzhiquan &gt; file3</span><br><span class="line">paste -d &apos;:&apos; file1 file2 file3</span><br><span class="line">paste -s file1 file2 file3</span><br></pre></td></tr></table></figure>
+<p><img src="/uploads/in-post/linux_basic/paste.png" alt="paste"></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+    
+    
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-heart"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+      
+    </div>
+    
+    
+    
+
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.jpg" alt="温智全 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/alipay.jpg" alt="温智全 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文标题： </strong>Linux基础学习</li>
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>温智全</li>
+  <li class="post-copyright-author">
+    <strong>发布时间： </strong>2016-06-20 12:00:00</li>
+  <li class="post-copyright-author">
+    <strong>最后更新： </strong>2018-05-29 18:46:52</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://wenzhiquan.github.io/2016/06/20/2016-06-20-linux-basic/" title="Linux基础学习">http://wenzhiquan.github.io/2016/06/20/2016-06-20-linux-basic/</a>
+    <span class="copy-path" style="margin-left: 5px;" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://wenzhiquan.github.io/2016/06/20/2016-06-20-linux-basic/"  aria-label="复制成功！"></i></span>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处和作者。
+  </li>
+</ul>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<!-- JS库 sweetalert 可修改路径 -->
+<script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    var clipboard = new Clipboard('.fa-clipboard');
+      $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({
+          title: "",
+          text: '复制成功',
+          icon: "success",
+          showConfirmButton: true
+          });
+        });
+    });
+</script>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/16/2016-03-28-singleton-eight-type/" rel="next" title="单例模式的八种写法">
+                <i class="fa fa-chevron-left"></i> 单例模式的八种写法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/06/26/2016-06-26-interview-algorithm-binary-search/" rel="prev" title="面试必会题目（3）—— Binary Search">
+                面试必会题目（3）—— Binary Search <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar-wen.jpg"
+                alt="温智全" />
+            
+              <p class="site-author-name" itemprop="name">温智全</p>
+              <p class="site-description motion-element" itemprop="description">爱唱歌健身的程序员</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">29</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">36</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/yourname" target="_blank" title="GitHub"><i class="fa fa-fw fa-github-alt"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/wenzhiquan/activities" target="_blank" title="知乎"><i class="fa fa-fw fa-globe"></i>知乎</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:wenzhiquanr@163.com" target="_blank" title="邮箱"><i class="fa fa-fw fa-envelope"></i>邮箱</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com/profile.php?id=100006943363300" target="_blank" title="Facebook"><i class="fa fa-fw fa-facebook"></i>Facebook</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+              <div class="links-of-blogroll motion-element links-of-blogroll-block">
+                <div class="links-of-blogroll-title">
+                  <!-- modify icon to fire by szw -->
+                  <i class="fa fa-history fa-" aria-hidden="true"></i>
+                  近期文章
+                </div>
+                <ul class="links-of-blogroll-list">
+                  
+                  
+                    <li>
+                      <a href="/2018/05/29/2018-05-29-rpc-introduction/" title="RPC简析">RPC简析</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/2018/05/04/2018-05-04-move-to-hexo-blog/" title="迁移至Hexo博客">迁移至Hexo博客</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/2018/04/15/2018-04-15-spring-introduction/" title="Spring简介">Spring简介</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/2018/04/01/2018-04-01-java-class-load/" title="类文件结构和Java虚拟机类加载机制">类文件结构和Java虚拟机类加载机制</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/2018/03/28/2018-03-28-java-memory-garbage-collection/" title="Java内存模型和垃圾回收">Java内存模型和垃圾回收</a>
+                    </li>
+                  
+                </ul>
+              </div>
+          
+
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://xiaochutian.github.io/" title="肖楚天的博客" target="_blank">肖楚天的博客</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux系统简介"><span class="nav-number">1.</span> <span class="nav-text">Linux系统简介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Linux之前Unix的历史"><span class="nav-number">1.1.</span> <span class="nav-text">Linux之前Unix的历史</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Linux的内核版本"><span class="nav-number">1.2.</span> <span class="nav-text">Linux的内核版本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Linux的特色"><span class="nav-number">1.3.</span> <span class="nav-text">Linux的特色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Linux的优缺点"><span class="nav-number">1.4.</span> <span class="nav-text">Linux的优缺点</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念及操作"><span class="nav-number">2.</span> <span class="nav-text">基本概念及操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Linux桌面环境介绍"><span class="nav-number">2.1.</span> <span class="nav-text">Linux桌面环境介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#终端（Terminal）"><span class="nav-number">2.2.</span> <span class="nav-text">终端（Terminal）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Terminal命令行"><span class="nav-number">2.3.</span> <span class="nav-text">Terminal命令行</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#常用快捷键"><span class="nav-number">2.3.1.</span> <span class="nav-text">常用快捷键</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#历史输入命令"><span class="nav-number">2.3.2.</span> <span class="nav-text">历史输入命令</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#通配符"><span class="nav-number">2.3.3.</span> <span class="nav-text">通配符</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户权限管理"><span class="nav-number">3.</span> <span class="nav-text">用户权限管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看用户"><span class="nav-number">3.1.</span> <span class="nav-text">查看用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建用户"><span class="nav-number">3.2.</span> <span class="nav-text">创建用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#用户组"><span class="nav-number">3.3.</span> <span class="nav-text">用户组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除用户"><span class="nav-number">3.4.</span> <span class="nav-text">删除用户</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件权限管理"><span class="nav-number">4.</span> <span class="nav-text">文件权限管理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看文件权限"><span class="nav-number">4.1.</span> <span class="nav-text">查看文件权限</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#变更文件所有者"><span class="nav-number">4.2.</span> <span class="nav-text">变更文件所有者</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改文件权限"><span class="nav-number">4.3.</span> <span class="nav-text">修改文件权限</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux目录结构"><span class="nav-number">5.</span> <span class="nav-text">Linux目录结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#FHS标准"><span class="nav-number">5.1.</span> <span class="nav-text">FHS标准</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#目录路径"><span class="nav-number">5.2.</span> <span class="nav-text">目录路径</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux文件的基本操作"><span class="nav-number">6.</span> <span class="nav-text">Linux文件的基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#新建"><span class="nav-number">6.1.</span> <span class="nav-text">新建</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复制"><span class="nav-number">6.2.</span> <span class="nav-text">复制</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除"><span class="nav-number">6.3.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#移动文件与文件重命名"><span class="nav-number">6.4.</span> <span class="nav-text">移动文件与文件重命名</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看文件"><span class="nav-number">6.5.</span> <span class="nav-text">查看文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看文件类型"><span class="nav-number">6.6.</span> <span class="nav-text">查看文件类型</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境变量"><span class="nav-number">7.</span> <span class="nav-text">环境变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#变量"><span class="nav-number">7.1.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#环境变量-1"><span class="nav-number">7.2.</span> <span class="nav-text">环境变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#命令的查找路径与顺序"><span class="nav-number">7.3.</span> <span class="nav-text">命令的查找路径与顺序</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加自定义路径到PATH环境变量"><span class="nav-number">7.4.</span> <span class="nav-text">添加自定义路径到PATH环境变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改和删除已有变量"><span class="nav-number">7.5.</span> <span class="nav-text">修改和删除已有变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#如何让环境变量立即生效"><span class="nav-number">7.6.</span> <span class="nav-text">如何让环境变量立即生效</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搜索文件"><span class="nav-number">8.</span> <span class="nav-text">搜索文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#whereis简单快速"><span class="nav-number">8.1.</span> <span class="nav-text">whereis简单快速</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#locate快而全"><span class="nav-number">8.2.</span> <span class="nav-text">locate快而全</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#which小而精"><span class="nav-number">8.3.</span> <span class="nav-text">which小而精</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#find精而细"><span class="nav-number">8.4.</span> <span class="nav-text">find精而细</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件打包和解压缩"><span class="nav-number">9.</span> <span class="nav-text">文件打包和解压缩</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#文件系统操作"><span class="nav-number">10.</span> <span class="nav-text">文件系统操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#查看磁盘和目录的容量"><span class="nav-number">10.1.</span> <span class="nav-text">查看磁盘和目录的容量</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令执行顺序的控制"><span class="nav-number">11.</span> <span class="nav-text">命令执行顺序的控制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#顺序执行多条命令"><span class="nav-number">11.1.</span> <span class="nav-text">顺序执行多条命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#有选择的执行命令"><span class="nav-number">11.2.</span> <span class="nav-text">有选择的执行命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#管道"><span class="nav-number">12.</span> <span class="nav-text">管道</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#匿名管道"><span class="nav-number">12.1.</span> <span class="nav-text">匿名管道</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#cut命令"><span class="nav-number">12.2.</span> <span class="nav-text">cut命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#grep命令"><span class="nav-number">12.3.</span> <span class="nav-text">grep命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#wc命令"><span class="nav-number">12.4.</span> <span class="nav-text">wc命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sort命令"><span class="nav-number">12.5.</span> <span class="nav-text">sort命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#uniq命令"><span class="nav-number">12.6.</span> <span class="nav-text">uniq命令</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用文本处理命令"><span class="nav-number">13.</span> <span class="nav-text">常用文本处理命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#tr命令"><span class="nav-number">13.1.</span> <span class="nav-text">tr命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#col命令"><span class="nav-number">13.2.</span> <span class="nav-text">col命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#join命令"><span class="nav-number">13.3.</span> <span class="nav-text">join命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#paste命令"><span class="nav-number">13.4.</span> <span class="nav-text">paste命令</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">温智全</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">213k</span>
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-users"></i>
+      本站访客数： <span class="busuanzi-value" id="busuanzi_value_site_uv"></span> 人
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      本站总访问量： <span class="busuanzi-value" id="busuanzi_value_site_pv"></span> 次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/reading_progress/reading_progress.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'xSt4331oBR0VyC2jUzPEuxxh-gzGzoHsz',
+        appKey: 't2TehJbxap2pAcoBr4oCrCtT',
+        placeholder: '~\(≧▽≦)/~来呀，快活呀~',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('10');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("xSt4331oBR0VyC2jUzPEuxxh-gzGzoHsz", "t2TehJbxap2pAcoBr4oCrCtT");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.get('time'));
+            
+            counter.save(null, {
+              success: function(counter) {
+                
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set \'security\' option to \'false\'.');
+            
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 11264,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
+  <script type="text/javascript">
+  
+    bookmark.scrollToMark('auto', "#更多");
+  
+  </script>
+
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('复制成功')
+          else $(this).text('复制失败')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('复制')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
+
+  <!-- 页面点击小心心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+</body>
+</html>

@@ -1,0 +1,1883 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/uploads/favicon.ico?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/uploads/favicon.ico?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '6.3.0',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="“IDEA是jetbrains公司开发的Java开发IDE，功能齐全。使用IDEA搭建SSM开发环境简单有效。本项目基于Spring，Spring MVC和MyBatis进行开发，模板引擎为Thymeleaf。”  主要功能概述因为是为超市定制的管理系统，所以只会有内部人员进行使用，这就意味着新用户是需要拥有权限的人来进行添加，故需要实现的功能主要包括以下两点：  用户添加 用户登录  这两点功">
+<meta name="keywords" content="Gradle,Java,Web">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用IDEA和gradle创建超市管理系统（贰）-- 登录注册功能">
+<meta property="og:url" content="http://wenzhiquan.github.io/2017/02/05/2017-02-05-idea-gradle-tssm-supermarket-manage-system-2/index.html">
+<meta property="og:site_name" content="温智全的博客">
+<meta property="og:description" content="“IDEA是jetbrains公司开发的Java开发IDE，功能齐全。使用IDEA搭建SSM开发环境简单有效。本项目基于Spring，Spring MVC和MyBatis进行开发，模板引擎为Thymeleaf。”  主要功能概述因为是为超市定制的管理系统，所以只会有内部人员进行使用，这就意味着新用户是需要拥有权限的人来进行添加，故需要实现的功能主要包括以下两点：  用户添加 用户登录  这两点功">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/sms/addUser.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/sms/interceptor.png">
+<meta property="og:image" content="http://wenzhiquan.github.io/uploads/in-post/sms/login.png">
+<meta property="og:updated_time" content="2018-05-29T10:46:52.090Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="使用IDEA和gradle创建超市管理系统（贰）-- 登录注册功能">
+<meta name="twitter:description" content="“IDEA是jetbrains公司开发的Java开发IDE，功能齐全。使用IDEA搭建SSM开发环境简单有效。本项目基于Spring，Spring MVC和MyBatis进行开发，模板引擎为Thymeleaf。”  主要功能概述因为是为超市定制的管理系统，所以只会有内部人员进行使用，这就意味着新用户是需要拥有权限的人来进行添加，故需要实现的功能主要包括以下两点：  用户添加 用户登录  这两点功">
+<meta name="twitter:image" content="http://wenzhiquan.github.io/uploads/in-post/sms/addUser.png">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="温智全的博客" type="application/atom+xml" />
+
+
+
+
+  <link rel="canonical" href="http://wenzhiquan.github.io/2017/02/05/2017-02-05-idea-gradle-tssm-supermarket-manage-system-2/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>使用IDEA和gradle创建超市管理系统（贰）-- 登录注册功能 | 温智全的博客</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-75727255-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-75727255-1');
+</script>
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?0ee846e1ba3a25130ad41180a73f6f9a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+    <a href="https://github.com/wenzhiquan">
+      <img style="position: absolute; top: 0; right: 0; border: 0; z-index: 9999" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub">
+    </a>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">温智全的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Wenknows's Blog</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />标签<span class="badge">36</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />分类<span class="badge">12</span></a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">29</span></a>
+  </li>
+
+      
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />搜索</a>
+        </li>
+      
+    </ul>
+  
+
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2017/02/05/2017-02-05-idea-gradle-tssm-supermarket-manage-system-2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="温智全">
+      <meta itemprop="description" content="爱唱歌健身的程序员">
+      <meta itemprop="image" content="/uploads/avatar-wen.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="温智全的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">使用IDEA和gradle创建超市管理系统（贰）-- 登录注册功能
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2017-02-05 12:00:00" itemprop="dateCreated datePublished" datetime="2017-02-05T12:00:00+08:00">2017-02-05</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2018-05-29 18:46:52" itemprop="dateModified" datetime="2018-05-29T18:46:52+08:00">2018-05-29</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Java/" itemprop="url" rel="index"><span itemprop="name">Java</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/02/05/2017-02-05-idea-gradle-tssm-supermarket-manage-system-2/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2017/02/05/2017-02-05-idea-gradle-tssm-supermarket-manage-system-2/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2017/02/05/2017-02-05-idea-gradle-tssm-supermarket-manage-system-2/" class="leancloud_visitors" data-flag-title="使用IDEA和gradle创建超市管理系统（贰）-- 登录注册功能">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-fire"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">48k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1:false</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>“IDEA是jetbrains公司开发的Java开发IDE，功能齐全。使用IDEA搭建SSM开发环境简单有效。本项目基于Spring，Spring MVC和MyBatis进行开发，模板引擎为Thymeleaf。”</p>
+</blockquote>
+<h3 id="主要功能概述"><a href="#主要功能概述" class="headerlink" title="主要功能概述"></a>主要功能概述</h3><p>因为是为超市定制的管理系统，所以只会有内部人员进行使用，这就意味着新用户是需要拥有权限的人来进行添加，故需要实现的功能主要包括以下两点：</p>
+<ul>
+<li>用户添加</li>
+<li>用户登录</li>
+</ul>
+<p>这两点功能中又包含了一些更细小的功能，将在后续章节进行详细的介绍。</p>
+<a id="more"></a>
+<h3 id="后台前端模板"><a href="#后台前端模板" class="headerlink" title="后台前端模板"></a>后台前端模板</h3><p>由于本人不擅长前端页面的编写，故采用了开源的后台系统模板进行改造，后台系统模板的名称为<a href="https://colorlib.com/polygon/gentelella/index.html" target="_blank" rel="noopener">Gentallela</a>，下载地址是在作者的<a href="https://github.com/puikinsh/gentelella" target="_blank" rel="noopener">Github</a>，感兴趣的同学可以前往下载。</p>
+<h3 id="用户添加功能"><a href="#用户添加功能" class="headerlink" title="用户添加功能"></a>用户添加功能</h3><p>用户添加功能分为以下几个步骤进行完成：</p>
+<ul>
+<li>添加数据库</li>
+<li>编写对应的model</li>
+<li>编写对应的mapper</li>
+<li>编写对应的service</li>
+<li>编写对应的controller</li>
+<li>编写对应的js请求和前端页面</li>
+</ul>
+<h4 id="添加数据库"><a href="#添加数据库" class="headerlink" title="添加数据库"></a>添加数据库</h4><p>首先需要建立一个user表，用于存储用户信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `user` (</span><br><span class="line">  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT &apos;用户ID&apos;,</span><br><span class="line">  `username` varchar(20) NOT NULL DEFAULT &apos;&apos; COMMENT &apos;用户名&apos;,</span><br><span class="line">  `password` varchar(32) NOT NULL DEFAULT &apos;&apos; COMMENT &apos;用户密码&apos;,</span><br><span class="line">  `email` varchar(45) NOT NULL COMMENT &apos;用户邮箱&apos;,</span><br><span class="line">  `salt` int(4) NOT NULL COMMENT &apos;盐&apos;,</span><br><span class="line">  `authority` int(2) NOT NULL DEFAULT &apos;0&apos; COMMENT &apos;用户身份&apos;,</span><br><span class="line">  `status` int(1) NOT NULL DEFAULT &apos;1&apos; COMMENT &apos;账户状态&apos;,</span><br><span class="line">  `created_time` datetime NOT NULL COMMENT &apos;创建时间&apos;,</span><br><span class="line">  `updated_time` datetime NOT NULL COMMENT &apos;更新时间&apos;,</span><br><span class="line">  PRIMARY KEY (`id`)</span><br><span class="line">) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8</span><br></pre></td></tr></table></figure>
+<p>其中<code>salt</code>的作用是和<code>password</code>一起作用生成一个不可破解的密码，加密方式用的是<code>MD5</code>加密。</p>
+<h4 id="编写User类"><a href="#编写User类" class="headerlink" title="编写User类"></a>编写User类</h4><p>User类中的属性和数据库的字段是一一对应的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class User &#123;</span><br><span class="line">    private int id;</span><br><span class="line">    private String username;</span><br><span class="line">    private String password;</span><br><span class="line">    private String email;</span><br><span class="line">    private int salt;</span><br><span class="line">    private int status;</span><br><span class="line">    private Date createdTime;</span><br><span class="line">    private Date updatedTime;</span><br><span class="line"></span><br><span class="line">    // 需要生成所有属性的get和set方法。</span><br></pre></td></tr></table></figure>
+<h4 id="编写UserMapper接口和UserMapper-xml文件"><a href="#编写UserMapper接口和UserMapper-xml文件" class="headerlink" title="编写UserMapper接口和UserMapper.xml文件"></a>编写UserMapper接口和UserMapper.xml文件</h4><p>UserMapper接口为UserService提供可以调用的数据库操作接口。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@Repository</span><br><span class="line">public interface UserMapper &#123;</span><br><span class="line">    // 由于接口方法默认且必须是public的，所以无需添加此关键字</span><br><span class="line">    User selectByName(String name);</span><br><span class="line"></span><br><span class="line">    User selectByEmail(String name);</span><br><span class="line"></span><br><span class="line">    int addUser(User user);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>而UserMapper.xml用于实现具体的数据库调用方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org/DTD Mapper 3.0&quot; &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;</span><br><span class="line">&lt;!-- namespace必须和UserMapper接口相对应 --&gt;</span><br><span class="line">&lt;mapper namespace=&quot;cn.edu.bupt.wen.mapper.UserMapper&quot;&gt;</span><br><span class="line">    &lt;!-- 自定义返回结果集 --&gt;</span><br><span class="line">    &lt;!-- 由于Mybatis无法自动将DateTime类型和java.util.Date类型进行自动映射，故需要手动配置 --&gt;</span><br><span class="line">    &lt;resultMap id=&quot;userMap&quot; type=&quot;User&quot;&gt;</span><br><span class="line">        &lt;id property=&quot;id&quot; column=&quot;id&quot; javaType=&quot;java.lang.Integer&quot;&gt;&lt;/id&gt;</span><br><span class="line">        &lt;result property=&quot;username&quot; column=&quot;username&quot; javaType=&quot;java.lang.String&quot;&gt;&lt;/result&gt;</span><br><span class="line">        &lt;result property=&quot;password&quot; column=&quot;password&quot; javaType=&quot;java.lang.String&quot;&gt;&lt;/result&gt;</span><br><span class="line">        &lt;result property=&quot;email&quot; column=&quot;email&quot; javaType=&quot;java.lang.String&quot;&gt;&lt;/result&gt;</span><br><span class="line">        &lt;result property=&quot;salt&quot; column=&quot;salt&quot; javaType=&quot;java.lang.Integer&quot;&gt;&lt;/result&gt;</span><br><span class="line">        &lt;result property=&quot;status&quot; column=&quot;status&quot; javaType=&quot;java.lang.Integer&quot;&gt;&lt;/result&gt;</span><br><span class="line">        &lt;result property=&quot;createdTime&quot; column=&quot;created_time&quot; jdbcType=&quot;DATE&quot; javaType=&quot;java.util.Date&quot;&gt;&lt;/result&gt;</span><br><span class="line">        &lt;result property=&quot;updatedTime&quot; column=&quot;updated_time&quot; jdbcType=&quot;DATE&quot; javaType=&quot;java.util.Date&quot;&gt;&lt;/result&gt;</span><br><span class="line">    &lt;/resultMap&gt;</span><br><span class="line"></span><br><span class="line">    &lt;sql id=&quot;tableName&quot;&gt;user&lt;/sql&gt;</span><br><span class="line"></span><br><span class="line">    &lt;sql id=&quot;insertFields&quot;&gt;username, password, email, salt, status, created_time, updated_time&lt;/sql&gt;</span><br><span class="line"></span><br><span class="line">    &lt;sql id=&quot;selectFields&quot;&gt;id, &lt;include refid=&quot;insertFields&quot;/&gt;&lt;/sql&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- 方法的id必须和UserMapper接口中定义的方法名相同 --&gt;</span><br><span class="line">    &lt;!-- parameterType必须和传入的参数类型相同，若要传多个参数需要在Mapper接口中加@Param注解 --&gt;</span><br><span class="line">    &lt;select id=&quot;selectByName&quot; parameterType=&quot;java.lang.String&quot; resultMap=&quot;userMap&quot;&gt;</span><br><span class="line">        SELECT</span><br><span class="line">        &lt;include refid=&quot;selectFields&quot;/&gt;</span><br><span class="line">        FROM</span><br><span class="line">        &lt;include refid=&quot;tableName&quot;/&gt;</span><br><span class="line">        WHERE username = #&#123;username&#125;</span><br><span class="line">    &lt;/select&gt;</span><br><span class="line"></span><br><span class="line">    &lt;select id=&quot;selectByEmail&quot; parameterType=&quot;java.lang.String&quot; resultMap=&quot;userMap&quot;&gt;</span><br><span class="line">        SELECT</span><br><span class="line">        &lt;include refid=&quot;selectFields&quot;/&gt;</span><br><span class="line">        FROM</span><br><span class="line">        &lt;include refid=&quot;tableName&quot;/&gt;</span><br><span class="line">        WHERE email = #&#123;email&#125;</span><br><span class="line">    &lt;/select&gt;</span><br><span class="line"></span><br><span class="line">    &lt;insert id=&quot;addUser&quot; parameterType=&quot;User&quot;&gt;</span><br><span class="line">        INSERT INTO</span><br><span class="line">        &lt;include refid=&quot;tableName&quot;/&gt;</span><br><span class="line">        (&lt;include refid=&quot;insertFields&quot;/&gt;)</span><br><span class="line">        VALUES</span><br><span class="line">        (#&#123;username&#125;, #&#123;password&#125;, #&#123;email&#125;, #&#123;salt&#125;, #&#123;status&#125;, #&#123;createdTime&#125;, #&#123;updatedTime&#125;)</span><br><span class="line">    &lt;/insert&gt;</span><br><span class="line">&lt;/mapper&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="编写UserService"><a href="#编写UserService" class="headerlink" title="编写UserService"></a>编写UserService</h4><p>UserService调用UserMapper的方法，并为UserController提供返回值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">@Service</span><br><span class="line">public class UserService &#123;</span><br><span class="line">    // 利用slf4j生成log信息</span><br><span class="line">    private static final Logger logger = LoggerFactory.getLogger(UserService.class);</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private UserMapper userMapper;</span><br><span class="line"></span><br><span class="line">    public User getUserByName(String username) &#123;</span><br><span class="line">        return userMapper.selectByName(username);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * add a new user</span><br><span class="line">     *</span><br><span class="line">     * @param username</span><br><span class="line">     * @param email</span><br><span class="line">     * @return map</span><br><span class="line">     * @author wenzhiquan</span><br><span class="line">     */</span><br><span class="line">    public Map&lt;String, Object&gt; addUser(String username, String email) &#123;</span><br><span class="line">        logger.info(&quot;UserService addUser&quot;);</span><br><span class="line">        Map&lt;String, Object&gt; map = new HashMap&lt;&gt;();</span><br><span class="line">        if (StringUtils.isEmpty(username)) &#123;</span><br><span class="line">            map.put(&quot;msg&quot;, &quot;username can not be empty&quot;);</span><br><span class="line">            return map;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        if (userMapper.selectByName(username) != null) &#123;</span><br><span class="line">            map.put(&quot;msg&quot;, &quot;username existed&quot;);</span><br><span class="line">            return map;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        if (StringUtils.isEmpty(email)) &#123;</span><br><span class="line">            map.put(&quot;msg&quot;, &quot;email can not be empty&quot;);</span><br><span class="line">            return map;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        if (userMapper.selectByEmail(email) != null) &#123;</span><br><span class="line">            map.put(&quot;msg&quot;, &quot;email existed&quot;);</span><br><span class="line">            return map;</span><br><span class="line">        &#125;</span><br><span class="line">        // 随机生成一个四位数的盐</span><br><span class="line">        int salt = (int)Math.random() * 8999 + 1000;</span><br><span class="line">        StringBuilder sb = new StringBuilder();</span><br><span class="line">        sb.append(MD5Util.md5(username + &quot;123&quot;)).append(String.valueOf(salt));</span><br><span class="line">        String password = MD5Util.md5(sb.toString());</span><br><span class="line">        int status = Constant.Status.NEED_CHANGE_PWD.getIndex();</span><br><span class="line">        Date date = new Date();</span><br><span class="line">        User user = new User();</span><br><span class="line">        user.setUsername(username);</span><br><span class="line">        user.setPassword(password);</span><br><span class="line">        user.setEmail(email);</span><br><span class="line">        user.setSalt(salt);</span><br><span class="line">        user.setStatus(status);</span><br><span class="line">        user.setCreatedTime(date);</span><br><span class="line">        user.setUpdatedTime(date);</span><br><span class="line"></span><br><span class="line">        userMapper.addUser(user);</span><br><span class="line">        return map;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>其中使用的MD5Util为自己编写的MD5加密算法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">public class MD5Util &#123;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * 获取加密后的字符串</span><br><span class="line">     * @param pw</span><br><span class="line">     * @return</span><br><span class="line">     */</span><br><span class="line">    public static String md5(String pw) &#123;</span><br><span class="line">        try &#123;</span><br><span class="line"></span><br><span class="line">            // 拿到一个MD5转换器（如果想要SHA1参数换成”SHA1”）</span><br><span class="line">            MessageDigest messageDigest =MessageDigest.getInstance(&quot;MD5&quot;);</span><br><span class="line">            // 输入的字符串转换成字节数组</span><br><span class="line">            byte[] inputByteArray = pw.getBytes();</span><br><span class="line">            // inputByteArray是输入字符串转换得到的字节数组</span><br><span class="line">            messageDigest.update(inputByteArray);</span><br><span class="line">            // 转换并返回结果，也是字节数组，包含16个元素</span><br><span class="line">            byte[] resultByteArray = messageDigest.digest();</span><br><span class="line">            // 字符数组转换成字符串返回</span><br><span class="line">            return byteArrayToHex(resultByteArray);</span><br><span class="line">        &#125; catch (NoSuchAlgorithmException e) &#123;</span><br><span class="line">            return null;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static String byteArrayToHex(byte[] byteArray) &#123;</span><br><span class="line"></span><br><span class="line">        // 首先初始化一个字符数组，用来存放每个16进制字符</span><br><span class="line">        char[] hexDigits = &#123;&apos;0&apos;,&apos;1&apos;,&apos;2&apos;,&apos;3&apos;,&apos;4&apos;,&apos;5&apos;,&apos;6&apos;,&apos;7&apos;,&apos;8&apos;,&apos;9&apos;, &apos;A&apos;,&apos;B&apos;,&apos;C&apos;,&apos;D&apos;,&apos;E&apos;,&apos;F&apos; &#125;;</span><br><span class="line">        // new一个字符数组，这个就是用来组成结果字符串的（解释一下：一个byte是八位二进制，也就是2位十六进制字符（2的8次方等于16的2次方））</span><br><span class="line">        char[] resultCharArray =new char[byteArray.length * 2];</span><br><span class="line">        // 遍历字节数组，通过位运算（位运算效率高），转换成字符放到字符数组中去</span><br><span class="line">        int index = 0;</span><br><span class="line">        for (byte b : byteArray) &#123;</span><br><span class="line">            resultCharArray[index++] = hexDigits[b&gt;&gt;&gt; 4 &amp; 0xf];</span><br><span class="line">            resultCharArray[index++] = hexDigits[b&amp; 0xf];</span><br><span class="line">        &#125;</span><br><span class="line">        // 字符数组组合成字符串返回</span><br><span class="line">        return new String(resultCharArray);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Constant为自己编写的常量枚举魔法数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">public class Constant &#123;</span><br><span class="line">  public enum Status &#123;</span><br><span class="line">    AVAILABLE(&quot;available&quot;, 0),</span><br><span class="line">    UNAVAILABLE(&quot;unavailable&quot;, 1),</span><br><span class="line">    NEED_CHANGE_PWD(&quot;need change password&quot;, 2);</span><br><span class="line"></span><br><span class="line">    public String name;</span><br><span class="line">    public int index;</span><br><span class="line"></span><br><span class="line">    Status(String name, int index) &#123;</span><br><span class="line">        this.name = name;</span><br><span class="line">        this.index = index;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public String getName() &#123;</span><br><span class="line">        return name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public int getIndex() &#123;</span><br><span class="line">        return index;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public static String getNameByIndex(int index) &#123;</span><br><span class="line">        for (Status c : Status.values()) &#123;</span><br><span class="line">            if (c.getIndex() == index) &#123;</span><br><span class="line">                return c.name;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return null;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="编写UserController"><a href="#编写UserController" class="headerlink" title="编写UserController"></a>编写UserController</h4><p>UserController用于处理用户请求并返回数据。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">@Controller</span><br><span class="line">public class UserController &#123;</span><br><span class="line">  private static final Logger logger = LoggerFactory.getLogger(UserController.class);</span><br><span class="line"></span><br><span class="line">  @Autowired</span><br><span class="line">  private UserService userService;</span><br><span class="line"></span><br><span class="line">  @RequestMapping(path = &#123;&quot;/addUser&quot;&#125;, method = &#123;RequestMethod.GET&#125;)</span><br><span class="line">  public String addUser(Model model) &#123;</span><br><span class="line">    // model用于向view层返回数据</span><br><span class="line">    model.addAttribute(&quot;title&quot;, &quot;addUser&quot;);</span><br><span class="line">    // 返回值为模板所在目录及其名称</span><br><span class="line">    return &quot;user/addUser&quot;;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  @RequestMapping(path = &#123;&quot;/addUser&quot;&#125;, method = &#123;RequestMethod.POST&#125;)</span><br><span class="line">  @ResponseBody // 加上此字段后表明返回的数据直接发送给浏览器而不经过模板引擎渲染</span><br><span class="line">  public String addUser(@RequestParam(&quot;username&quot;) String username,</span><br><span class="line">                        @RequestParam(&quot;email&quot;) String email,</span><br><span class="line">                        HttpServletResponse response) &#123;</span><br><span class="line">    try &#123;</span><br><span class="line">        Map&lt;String, Object&gt; map = userService.addUser(username, email);</span><br><span class="line">        if (map.containsKey(&quot;msg&quot;)) &#123;</span><br><span class="line">            return JsonUtil.getJSONString(1, map);</span><br><span class="line">        &#125;</span><br><span class="line">        map.put(&quot;msg&quot;, &quot;success&quot;);</span><br><span class="line">        return JsonUtil.getJSONString(0, map);</span><br><span class="line"></span><br><span class="line">    &#125; catch (Exception e) &#123;</span><br><span class="line">        logger.error(&quot;add user failed!&quot;);</span><br><span class="line">        Map&lt;String, Object&gt; map = new HashMap&lt;&gt;();</span><br><span class="line">        map.put(&quot;msg&quot;, &quot;add user failed.&quot;);</span><br><span class="line">        return JsonUtil.getJSONString(1, map);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>JsonUtil为自己编写的将数据转换为json字符串的工具类。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">public class JsonUtil &#123;</span><br><span class="line">  private static final Logger logger = LoggerFactory.getLogger(JsonUtil.class);</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * Generate a json string with certain code</span><br><span class="line">   * @author wenzhiquan</span><br><span class="line">   * @param code</span><br><span class="line">   * @return json String</span><br><span class="line">   */</span><br><span class="line">  public static String getJSONString(int code) &#123;</span><br><span class="line">      JSONObject json = new JSONObject();</span><br><span class="line">      json.put(&quot;code&quot;, code);</span><br><span class="line">      return json.toJSONString();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * Generate a json string with code and message</span><br><span class="line">   * @author wenzhiquan</span><br><span class="line">   * @param code</span><br><span class="line">   * @param msg</span><br><span class="line">   * @return json String</span><br><span class="line">   */</span><br><span class="line">  public static String getJSONString(int code, String msg) &#123;</span><br><span class="line">      JSONObject json = new JSONObject();</span><br><span class="line">      json.put(&quot;code&quot;, code);</span><br><span class="line">      json.put(&quot;msg&quot;, msg);</span><br><span class="line">      return json.toJSONString();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  /**</span><br><span class="line">   * Generate a json string with code and map</span><br><span class="line">   * @author wenzhiquan</span><br><span class="line">   * @param code</span><br><span class="line">   * @param map</span><br><span class="line">   * @return json String</span><br><span class="line">   */</span><br><span class="line">  public static String getJSONString(int code, Map&lt;String, Object&gt; map) &#123;</span><br><span class="line">      JSONObject json = new JSONObject();</span><br><span class="line">      json.put(&quot;code&quot;, code);</span><br><span class="line">      for (Map.Entry&lt;String, Object&gt; entry: map.entrySet()) &#123;</span><br><span class="line">          json.put(entry.getKey(), entry.getValue());</span><br><span class="line">      &#125;</span><br><span class="line">      return json.toJSONString();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="编写对应的js请求和前端页面"><a href="#编写对应的js请求和前端页面" class="headerlink" title="编写对应的js请求和前端页面"></a>编写对应的js请求和前端页面</h4><p>前端页面分为base，nav和sidebar，和页面内容addUser四大部分。</p>
+<p>nav:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot; xmlns:th=&quot;http://www.thymeleaf.org&quot;&gt;</span><br><span class="line">&lt;head th:replace=&quot;~&#123;common/base::common_header(_)&#125;&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;!-- top navigation --&gt;</span><br><span class="line">&lt;div th:fragment=&quot;top_nav&quot; class=&quot;top_nav&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;nav_menu&quot;&gt;</span><br><span class="line">        &lt;nav class=&quot;&quot; role=&quot;navigation&quot;&gt;</span><br><span class="line">            &lt;div class=&quot;nav toggle&quot;&gt;</span><br><span class="line">                &lt;a id=&quot;menu_toggle&quot;&gt;&lt;i class=&quot;fa fa-bars&quot;&gt;&lt;/i&gt;&lt;/a&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">            &lt;ul class=&quot;nav navbar-nav navbar-right&quot;&gt;</span><br><span class="line">                &lt;li class=&quot;&quot;&gt;</span><br><span class="line">                    &lt;a href=&quot;javascript:;&quot; class=&quot;user-profile dropdown-toggle&quot; data-toggle=&quot;dropdown&quot;</span><br><span class="line">                       aria-expanded=&quot;false&quot;&gt;</span><br><span class="line">                        &lt;img src=&quot;images/img.jpg&quot; th:src=&quot;@&#123;/statics/img/default.png&#125;&quot; alt=&quot;&quot;&gt;</span><br><span class="line">                        &lt;span th:if=&quot;$&#123;user&#125;&quot; th:text=&quot;$&#123;user.username&#125;&quot;&gt;John Doe&lt;/span&gt;</span><br><span class="line">                        &lt;span class=&quot; fa fa-angle-down&quot;&gt;&lt;/span&gt;</span><br><span class="line">                    &lt;/a&gt;</span><br><span class="line">                    &lt;ul class=&quot;dropdown-menu dropdown-usermenu pull-right&quot;&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt; Profile&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;</span><br><span class="line">                            &lt;a href=&quot;javascript:;&quot;&gt;</span><br><span class="line">                                &lt;span class=&quot;badge bg-red pull-right&quot;&gt;50%&lt;/span&gt;</span><br><span class="line">                                &lt;span&gt;Settings&lt;/span&gt;</span><br><span class="line">                            &lt;/a&gt;</span><br><span class="line">                        &lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;javascript:;&quot;&gt;Help&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;li&gt;&lt;a href=&quot;login.html&quot; th:href=&quot;@&#123;/logout&#125;&quot;&gt;&lt;i class=&quot;fa fa-sign-out pull-right&quot;&gt;&lt;/i&gt; Log Out&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                    &lt;/ul&gt;</span><br><span class="line">                &lt;/li&gt;</span><br><span class="line">            &lt;/ul&gt;</span><br><span class="line">        &lt;/nav&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;!-- /top navigation --&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>siderbar:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot; xmlns:th=&quot;http://www.thymeleaf.org&quot;&gt;</span><br><span class="line">&lt;head th:replace=&quot;~&#123;common/base::common_header(_)&#125;&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;div th:fragment=&quot;sidebar&quot; class=&quot;col-md-3 left_col&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;left_col scroll-view&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;navbar nav_title&quot; style=&quot;border: 0;&quot;&gt;</span><br><span class="line">            &lt;a href=&quot;index.html&quot; th:href=&quot;@&#123;/&#125;&quot; class=&quot;site_title&quot;&gt;&lt;i class=&quot;fa fa-barcode&quot;&gt;&lt;/i&gt;</span><br><span class="line">                &lt;span&gt;SMS&lt;/span&gt;&lt;/a&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        &lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- menu profile quick info --&gt;</span><br><span class="line">        &lt;div class=&quot;profile&quot;&gt;</span><br><span class="line">            &lt;div class=&quot;profile_pic&quot;&gt;</span><br><span class="line">                &lt;img src=&quot;/statics/img/img.jpg&quot; th:src=&quot;@&#123;/statics/img/default.png&#125;&quot; alt=&quot;...&quot;</span><br><span class="line">                     class=&quot;img-circle profile_img&quot;&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;profile_info&quot;&gt;</span><br><span class="line">                &lt;span&gt;Welcome,&lt;/span&gt;</span><br><span class="line">                &lt;h2 th:if=&quot;$&#123;user&#125;&quot; th:text=&quot;$&#123;user.username&#125;&quot;&gt;John Doe&lt;/h2&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;!-- /menu profile quick info --&gt;</span><br><span class="line"></span><br><span class="line">        &lt;br/&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- sidebar menu --&gt;</span><br><span class="line">        &lt;div id=&quot;sidebar-menu&quot; class=&quot;main_menu_side hidden-print main_menu&quot;&gt;</span><br><span class="line">            &lt;div class=&quot;menu_section&quot;&gt;</span><br><span class="line">                &lt;h3&gt;General&lt;/h3&gt;</span><br><span class="line">                &lt;ul class=&quot;nav side-menu&quot;&gt;</span><br><span class="line">                    &lt;li&gt;&lt;a&gt;&lt;i class=&quot;fa fa-home&quot;&gt;&lt;/i&gt; Home &lt;span class=&quot;fa fa-chevron-down&quot;&gt;&lt;/span&gt;&lt;/a&gt;</span><br><span class="line">                        &lt;ul class=&quot;nav child_menu&quot;&gt;</span><br><span class="line">                            &lt;li&gt;&lt;a href=&quot;index.html&quot; th:href=&quot;@&#123;/&#125;&quot;&gt;Dashboard&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;/ul&gt;</span><br><span class="line">                    &lt;/li&gt;</span><br><span class="line">                    &lt;li&gt;&lt;a&gt;&lt;i class=&quot;fa fa-edit&quot;&gt;&lt;/i&gt; Authority &lt;span class=&quot;fa fa-chevron-down&quot;&gt;&lt;/span&gt;&lt;/a&gt;</span><br><span class="line">                        &lt;ul class=&quot;nav child_menu&quot;&gt;</span><br><span class="line">                            &lt;li&gt;&lt;a href=&quot;form.html&quot; th:href=&quot;@&#123;/addUser&#125;&quot;&gt;Add New User&lt;/a&gt;&lt;/li&gt;</span><br><span class="line">                        &lt;/ul&gt;</span><br><span class="line">                    &lt;/li&gt;</span><br><span class="line">                &lt;/ul&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;!-- /sidebar menu --&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- menu footer buttons --&gt;</span><br><span class="line">        &lt;div class=&quot;sidebar-footer hidden-small&quot;&gt;</span><br><span class="line">            &lt;a data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Settings&quot;&gt;</span><br><span class="line">                &lt;span class=&quot;glyphicon glyphicon-cog&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;</span><br><span class="line">            &lt;/a&gt;</span><br><span class="line">            &lt;a data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;FullScreen&quot;&gt;</span><br><span class="line">                &lt;span class=&quot;glyphicon glyphicon-fullscreen&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;</span><br><span class="line">            &lt;/a&gt;</span><br><span class="line">            &lt;a data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Lock&quot;&gt;</span><br><span class="line">                &lt;span class=&quot;glyphicon glyphicon-eye-close&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;</span><br><span class="line">            &lt;/a&gt;</span><br><span class="line">            &lt;a th:href=&quot;@&#123;/logout&#125;&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;top&quot; title=&quot;Logout&quot;&gt;</span><br><span class="line">                &lt;span class=&quot;glyphicon glyphicon-off&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;</span><br><span class="line">            &lt;/a&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;!-- /menu footer buttons --&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>base:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html xmlns:th=&quot;http://www.thymeleaf.org&quot;&gt;</span><br><span class="line">&lt;head th:fragment=&quot;common_header(links)&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=UTF-8&quot;&gt;</span><br><span class="line">    &lt;!-- Meta, title, CSS, favicons, etc. --&gt;</span><br><span class="line">    &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt;</span><br><span class="line">    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;</span><br><span class="line">    &lt;title th:text=&quot;$&#123;title&#125;&quot;&gt;&lt;/title&gt;</span><br><span class="line"></span><br><span class="line">    &lt;!-- Common styles and scripts --&gt;</span><br><span class="line">    &lt;link rel=&quot;stylesheet&quot; th:href=&quot;@&#123;/statics/vendors/bootstrap/dist/css/bootstrap.min.css&#125;&quot;&gt;</span><br><span class="line">    &lt;link rel=&quot;stylesheet&quot; th:href=&quot;@&#123;/statics/vendors/font-awesome/css/font-awesome.min.css&#125;&quot;&gt;</span><br><span class="line">    &lt;link rel=&quot;stylesheet&quot; th:href=&quot;@&#123;/statics/css/custom.min.css&#125;&quot;&gt;</span><br><span class="line">    &lt;link rel=&quot;stylesheet&quot; th:href=&quot;@&#123;/statics/css/main.css&#125;&quot;&gt;</span><br><span class="line">    &lt;!--/* Per-page placeholder for additional links */--&gt;</span><br><span class="line">    &lt;th:block th:replace=&quot;$&#123;links&#125;&quot;/&gt;</span><br><span class="line"></span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body th:fragment=&quot;common_body(content, scripts)&quot; class=&quot;nav-md&quot;&gt;</span><br><span class="line">&lt;div class=&quot;container body&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;main_container&quot;&gt;</span><br><span class="line">        &lt;div th:replace=&quot;~&#123;common/sidebar::sidebar&#125;&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        &lt;div th:replace=&quot;~&#123;common/nav::top_nav&#125;&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- page content --&gt;</span><br><span class="line">        &lt;div class=&quot;right_col&quot; role=&quot;main&quot; th:include=&quot;$&#123;content&#125;&quot;&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;!-- /page content --&gt;</span><br><span class="line"></span><br><span class="line">        &lt;!-- footer content --&gt;</span><br><span class="line">        &lt;footer&gt;</span><br><span class="line">            &lt;div class=&quot;pull-right&quot;&gt;</span><br><span class="line">                ©2017 All Rights Reserved</span><br><span class="line">                &lt;span class=&quot;hidden-xs&quot;&gt;Powered By &lt;a href=&quot;http://wenzhiquan.github.io&quot;</span><br><span class="line">                                                      target=&quot;blank&quot;&gt;Wen Zhiquan&lt;/a&gt;&lt;/span&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">            &lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;</span><br><span class="line">        &lt;/footer&gt;</span><br><span class="line">        &lt;!-- /footer content --&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- jQuery --&gt;</span><br><span class="line">&lt;script src=&quot;../vendors/jquery/dist/jquery.min.js&quot;</span><br><span class="line">        th:src=&quot;@&#123;/statics/vendors/jquery/dist/jquery.min.js&#125;&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;!-- Bootstrap --&gt;</span><br><span class="line">&lt;script src=&quot;../vendors/bootstrap/dist/js/bootstrap.min.js&quot;</span><br><span class="line">        th:src=&quot;@&#123;/statics/vendors/bootstrap/dist/js/bootstrap.min.js&#125;&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;!-- Custom Theme Scripts --&gt;</span><br><span class="line">&lt;script src=&quot;../build/js/custom.min.js&quot; th:src=&quot;@&#123;/statics/js/custom.js&#125;&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;!--/* Per-page placeholder for additional links */--&gt;</span><br><span class="line">&lt;th:block th:replace=&quot;$&#123;scripts&#125;&quot;/&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>addUser:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot; xmlns:th=&quot;http://www.thymeleaf.org&quot;&gt;</span><br><span class="line">&lt;head th:replace=&quot;~&#123;common/base::common_header(~&#123;::link&#125;)&#125;&quot;&gt;</span><br><span class="line">    &lt;!-- iCheck --&gt;</span><br><span class="line">    &lt;link href=&quot;../vendors/iCheck/skins/flat/green.css&quot;</span><br><span class="line">          th:href=&quot;@&#123;/statics/vendors/iCheck/skins/flat/green.css&#125;&quot; rel=&quot;stylesheet&quot;&gt;</span><br><span class="line">    &lt;!-- bootstrap-wysiwyg --&gt;</span><br><span class="line">    &lt;link href=&quot;../vendors/google-code-prettify/bin/prettify.min.css&quot;</span><br><span class="line">          th:href=&quot;@&#123;/statics/vendors/google-code-prettify/bin/prettify.min.css&#125;&quot; rel=&quot;stylesheet&quot;&gt;</span><br><span class="line">    &lt;!-- Select2 --&gt;</span><br><span class="line">    &lt;link href=&quot;../vendors/select2/dist/css/select2.min.css&quot;</span><br><span class="line">          th:href=&quot;@&#123;/statics/vendors/select2/dist/css/select2.min.css&#125;&quot; rel=&quot;stylesheet&quot;&gt;</span><br><span class="line">    &lt;!-- Switchery --&gt;</span><br><span class="line">    &lt;link href=&quot;../vendors/switchery/dist/switchery.min.css&quot;</span><br><span class="line">          th:href=&quot;@&#123;/statics/vendors/switchery/dist/switchery.min.css&#125;&quot; rel=&quot;stylesheet&quot;&gt;</span><br><span class="line">    &lt;!-- starrr --&gt;</span><br><span class="line">    &lt;link href=&quot;../vendors/starrr/dist/starrr.css&quot;</span><br><span class="line">          th:href=&quot;@&#123;/statics/vendors/starrr/dist/starrr.css&#125;&quot; rel=&quot;stylesheet&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body th:replace=&quot;~&#123;common/base::common_body(~&#123;::content&#125;, ~&#123;::script&#125;)&#125;&quot;&gt;</span><br><span class="line">&lt;div th:fragment=&quot;content&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;alert alert-info&quot;&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;page-title&quot;&gt;</span><br><span class="line">            &lt;div class=&quot;title_left&quot;&gt;</span><br><span class="line">                &lt;h3&gt;Add new user&lt;/h3&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;</span><br><span class="line">        &lt;div class=&quot;row&quot;&gt;</span><br><span class="line">            &lt;div class=&quot;col-md-12 col-sm-12 col-xs-12&quot;&gt;</span><br><span class="line">                &lt;div class=&quot;x_panel&quot;&gt;</span><br><span class="line">                    &lt;div class=&quot;x_content&quot;&gt;</span><br><span class="line">                        &lt;br/&gt;</span><br><span class="line">                        &lt;form id=&quot;add-user-form&quot; data-parsley-validate</span><br><span class="line">                              class=&quot;form-horizontal form-label-left&quot;&gt;</span><br><span class="line"></span><br><span class="line">                            &lt;div class=&quot;item form-group&quot;&gt;</span><br><span class="line">                                &lt;label class=&quot;control-label col-md-3 col-sm-3 col-xs-12&quot; for=&quot;username&quot;&gt;Username &lt;span</span><br><span class="line">                                        class=&quot;required&quot;&gt;*&lt;/span&gt;</span><br><span class="line">                                &lt;/label&gt;</span><br><span class="line">                                &lt;div class=&quot;col-md-6 col-sm-6 col-xs-12&quot;&gt;</span><br><span class="line">                                    &lt;input id=&quot;username&quot; class=&quot;form-control col-md-7 col-xs-12&quot;</span><br><span class="line">                                           name=&quot;username&quot; placeholder=&quot;Enter the username&quot; required=&quot;required&quot;</span><br><span class="line">                                           type=&quot;text&quot;&gt;</span><br><span class="line">                                &lt;/div&gt;</span><br><span class="line">                            &lt;/div&gt;</span><br><span class="line">                            &lt;div class=&quot;item form-group&quot;&gt;</span><br><span class="line">                                &lt;label class=&quot;control-label col-md-3 col-sm-3 col-xs-12&quot; for=&quot;email&quot;&gt;Email &lt;span</span><br><span class="line">                                        class=&quot;required&quot;&gt;*&lt;/span&gt;</span><br><span class="line">                                &lt;/label&gt;</span><br><span class="line">                                &lt;div class=&quot;col-md-6 col-sm-6 col-xs-12&quot;&gt;</span><br><span class="line">                                    &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; placeholder=&quot;Enter the email&quot;</span><br><span class="line">                                           required=&quot;required&quot; class=&quot;form-control col-md-7 col-xs-12&quot;&gt;</span><br><span class="line">                                &lt;/div&gt;</span><br><span class="line">                            &lt;/div&gt;</span><br><span class="line">                            &lt;div class=&quot;ln_solid&quot;&gt;&lt;/div&gt;</span><br><span class="line">                            &lt;div class=&quot;form-group&quot;&gt;</span><br><span class="line">                                &lt;div class=&quot;col-md-6 col-sm-6 col-xs-12 col-md-offset-3&quot;&gt;</span><br><span class="line">                                    &lt;button type=&quot;reset&quot; id=&quot;clear-btn&quot; class=&quot;btn btn-primary&quot;&gt;Clear&lt;/button&gt;</span><br><span class="line">                                    &lt;button type=&quot;submit&quot; id=&quot;submit-btn&quot; class=&quot;btn btn-success&quot;&gt;Submit&lt;/button&gt;</span><br><span class="line">                                &lt;/div&gt;</span><br><span class="line">                            &lt;/div&gt;</span><br><span class="line">                        &lt;/form&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br><span class="line">                &lt;/div&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div th:fragment=&quot;script&quot;&gt;</span><br><span class="line">    &lt;!-- validator --&gt;</span><br><span class="line">    &lt;script src=&quot;../vendors/validator/validator.min.js&quot;</span><br><span class="line">            th:src=&quot;@&#123;/statics/vendors/validator/validator.min.js&#125;&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script th:src=&quot;@&#123;/statics/js/authority/addUser.js&#125;&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;script th:src=&quot;@&#123;/statics/vendors/layer/layer.js&#125;&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>addUser.js:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Created by wenzhiquan on 16/7/14.</span><br><span class="line"> */</span><br><span class="line">$(function () &#123;</span><br><span class="line">    var username = $(&quot;#username&quot;),</span><br><span class="line">        email = $(&quot;#email&quot;),</span><br><span class="line">        clearBtn = $(&quot;#clear-btn&quot;),</span><br><span class="line">        submitBtn = $(&quot;#submit-btn&quot;);</span><br><span class="line"></span><br><span class="line">    // initialize the validator function</span><br><span class="line">    validator.message.date = &apos;not a real date&apos;;</span><br><span class="line"></span><br><span class="line">    // validate a field on &quot;blur&quot; event, a &apos;select&apos; on &apos;change&apos; event &amp; a &apos;.reuired&apos; classed multifield on &apos;keyup&apos;:</span><br><span class="line">    $(&apos;form&apos;)</span><br><span class="line">        .on(&apos;blur&apos;, &apos;input[required], input.optional, select.required&apos;, validator.checkField)</span><br><span class="line">        .on(&apos;change&apos;, &apos;select.required&apos;, validator.checkField);</span><br><span class="line"></span><br><span class="line">    $(&apos;.multi.required&apos;).on(&apos;keyup blur&apos;, &apos;input&apos;, function () &#123;</span><br><span class="line">        validator.checkField.apply($(this).siblings().last()[0]);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    submitBtn.click(function (e) &#123;</span><br><span class="line">        e.preventDefault();</span><br><span class="line">        var submit = true;</span><br><span class="line"></span><br><span class="line">        // evaluate the form using generic validating</span><br><span class="line">        if (!validator.checkAll($(&apos;form&apos;))) &#123;</span><br><span class="line">            submit = false;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        console.log(submit);</span><br><span class="line"></span><br><span class="line">        if (submit) &#123;</span><br><span class="line">            $.ajax(&#123;</span><br><span class="line">                url: &apos;addUser&apos;,// 跳转到 action</span><br><span class="line">                data: &#123;</span><br><span class="line">                    username: username.val(),</span><br><span class="line">                    email: email.val(),</span><br><span class="line">                &#125;,</span><br><span class="line">                type: &apos;post&apos;,</span><br><span class="line">                cache: false,</span><br><span class="line">                dataType: &apos;json&apos;,</span><br><span class="line">                success: function (data) &#123;</span><br><span class="line">                    if (data.code == 0) &#123;</span><br><span class="line">                        layer.msg(&apos;Success!&apos;, &#123;</span><br><span class="line">                            icon: 1,</span><br><span class="line">                            time: 1000 //1s后自动关闭</span><br><span class="line">                        &#125;);</span><br><span class="line">                    &#125;</span><br><span class="line">                    else &#123;</span><br><span class="line">                        layer.msg(&apos;Failed!&apos;, &#123;</span><br><span class="line">                            icon: 2,</span><br><span class="line">                            time: 1000 //1s后自动关闭</span><br><span class="line">                        &#125;);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;,</span><br><span class="line">                error: function () &#123;</span><br><span class="line">                    layer.msg(&apos;Error!&apos;, &#123;</span><br><span class="line">                        time: 1000 //1s后自动关闭</span><br><span class="line">                    &#125;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">        return false;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    clearBtn.click(function () &#123;</span><br><span class="line">        username.val(&quot;&quot;);</span><br><span class="line">        email.val(&quot;&quot;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="运行效果"><a href="#运行效果" class="headerlink" title="运行效果"></a>运行效果</h4><p><img src="/uploads/in-post/sms/addUser.png" alt="addUser"></p>
+<h3 id="用户登录功能"><a href="#用户登录功能" class="headerlink" title="用户登录功能"></a>用户登录功能</h3><p>因为已经添加过User表并完成了model和mapper的编写，用户登录功能分为以下几个步骤进行完成：</p>
+<ul>
+<li>添加Token数据库表及对应model和mapper</li>
+<li>编写对应的service</li>
+<li>编写对应的controller</li>
+<li>编写对应的js请求和前端页面</li>
+<li>编写登录拦截器</li>
+</ul>
+<h4 id="添加Token数据库表及Token-model和TokenMapper"><a href="#添加Token数据库表及Token-model和TokenMapper" class="headerlink" title="添加Token数据库表及Token model和TokenMapper"></a>添加Token数据库表及Token model和TokenMapper</h4><p>由于需要保持用户的登录状态，并且不能把用户信息保存在浏览器中，故需要在服务器端增加一个token字段，作为识别用户的唯一信息，可以保证用户登录时不用再次输入用户名密码。</p>
+<p>首先，需要在数据库中增加Token表，用于存储token信息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `token` (</span><br><span class="line">  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT &apos;token id&apos;,</span><br><span class="line">  `user_id` int(11) NOT NULL COMMENT &apos;user id&apos;,</span><br><span class="line">  `token` varchar(32) NOT NULL COMMENT &apos;token content&apos;,</span><br><span class="line">  `expired_time` datetime NOT NULL COMMENT &apos;token expired time&apos;,</span><br><span class="line">  `status` int(4) NOT NULL,</span><br><span class="line">  PRIMARY KEY (`id`)</span><br><span class="line">) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;</span><br></pre></td></tr></table></figure>
+<p>表中的<code>status</code>字段用于指示该<code>token</code>是否可用。</p>
+<p>接着，类似于<code>User</code>类，需要生成一个<code>Token</code>的实体类：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public class Token &#123;</span><br><span class="line">    private int id;</span><br><span class="line">    private int userId;</span><br><span class="line">    private String token;</span><br><span class="line">    private Date expiredTime;</span><br><span class="line">    private int status;</span><br><span class="line"></span><br><span class="line">    // 需要生成所有属性的get和set方法。</span><br></pre></td></tr></table></figure>
+<p>类似的，需要编写<code>TokenMapper</code>文件和相应的<code>xml</code>文件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@Repository</span><br><span class="line">public interface TokenMapper &#123;</span><br><span class="line"></span><br><span class="line">    Token selectByToken(String token);</span><br><span class="line"></span><br><span class="line">    int addToken(Token token);</span><br><span class="line"></span><br><span class="line">    int updateStatus(@Param(&quot;status&quot;)int status, @Param(&quot;token&quot;)String token);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;!DOCTYPE mapper PUBLIC &quot;-//mybatis.org/DTD Mapper 3.0&quot; &quot;http://mybatis.org/dtd/mybatis-3-mapper.dtd&quot;&gt;</span><br><span class="line">&lt;mapper namespace=&quot;cn.edu.bupt.wen.mapper.TokenMapper&quot;&gt;</span><br><span class="line">    &lt;!-- 自定义返回结果集 --&gt;</span><br><span class="line">    &lt;resultMap id=&quot;tokenMap&quot; type=&quot;Token&quot;&gt;</span><br><span class="line">        &lt;id property=&quot;id&quot; column=&quot;id&quot; javaType=&quot;java.lang.Integer&quot;&gt;&lt;/id&gt;</span><br><span class="line">        &lt;result property=&quot;userId&quot; column=&quot;user_id&quot; javaType=&quot;java.lang.Integer&quot;&gt;&lt;/result&gt;</span><br><span class="line">        &lt;result property=&quot;token&quot; column=&quot;token&quot; javaType=&quot;java.lang.String&quot;&gt;&lt;/result&gt;</span><br><span class="line">        &lt;result property=&quot;status&quot; column=&quot;status&quot; javaType=&quot;java.lang.Integer&quot;&gt;&lt;/result&gt;</span><br><span class="line">        &lt;result property=&quot;expiredTime&quot; column=&quot;expired_time&quot; jdbcType=&quot;DATE&quot; javaType=&quot;java.util.Date&quot;&gt;&lt;/result&gt;</span><br><span class="line">    &lt;/resultMap&gt;</span><br><span class="line"></span><br><span class="line">    &lt;sql id=&quot;tableName&quot;&gt;token&lt;/sql&gt;</span><br><span class="line"></span><br><span class="line">    &lt;sql id=&quot;insertFields&quot;&gt;user_id, token, expired_time, status&lt;/sql&gt;</span><br><span class="line"></span><br><span class="line">    &lt;sql id=&quot;selectFields&quot;&gt;id, &lt;include refid=&quot;insertFields&quot;&gt;&lt;/include&gt;&lt;/sql&gt;</span><br><span class="line"></span><br><span class="line">    &lt;select id=&quot;selectByToken&quot; parameterType=&quot;java.lang.String&quot; resultMap=&quot;tokenMap&quot;&gt;</span><br><span class="line">        SELECT</span><br><span class="line">        &lt;include refid=&quot;selectFields&quot;&gt;&lt;/include&gt;</span><br><span class="line">        FROM</span><br><span class="line">        &lt;include refid=&quot;tableName&quot;&gt;&lt;/include&gt;</span><br><span class="line">        WHERE token = #&#123;token&#125;</span><br><span class="line">    &lt;/select&gt;</span><br><span class="line"></span><br><span class="line">    &lt;insert id=&quot;addToken&quot; parameterType=&quot;Token&quot;&gt;</span><br><span class="line">        INSERT INTO</span><br><span class="line">        &lt;include refid=&quot;tableName&quot;&gt;&lt;/include&gt;</span><br><span class="line">        (&lt;include refid=&quot;insertFields&quot;&gt;&lt;/include&gt;)</span><br><span class="line">        VALUES</span><br><span class="line">        (#&#123;userId&#125;, #&#123;token&#125;, #&#123;expiredTime&#125;, #&#123;status&#125;)</span><br><span class="line">    &lt;/insert&gt;</span><br><span class="line"></span><br><span class="line">    &lt;update id=&quot;updateStatus&quot;&gt;</span><br><span class="line">        UPDATE</span><br><span class="line">        &lt;include refid=&quot;tableName&quot;&gt;&lt;/include&gt;</span><br><span class="line">        SET status = #&#123;status&#125;</span><br><span class="line">        WHERE token = #&#123;token&#125;</span><br><span class="line">    &lt;/update&gt;</span><br><span class="line">&lt;/mapper&gt;</span><br></pre></td></tr></table></figure>
+<p>至此，<code>Token</code>相关内容基本完成。</p>
+<h4 id="编写UserService类"><a href="#编写UserService类" class="headerlink" title="编写UserService类"></a>编写UserService类</h4><p>登录和登出是一对必不可少的操作。故为UserService类增加login和logout方法，除此之外，需要保存用户登录状态，故需要增加生成token字段的方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line">     * settle the login request</span><br><span class="line">     *</span><br><span class="line">     * @param username</span><br><span class="line">     * @param password</span><br><span class="line">     * @return map</span><br><span class="line">     * @author wenzhiquan</span><br><span class="line">     */</span><br><span class="line">    public Map&lt;String, Object&gt; login(String username, String password) &#123;</span><br><span class="line">        logger.info(&quot;UserService login&quot;);</span><br><span class="line">        Map&lt;String, Object&gt; map = new HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        logger.info(username);</span><br><span class="line">        if (StringUtils.isEmpty(username)) &#123;</span><br><span class="line">            map.put(&quot;msg&quot;, &quot;username can not be empty&quot;);</span><br><span class="line">            return map;</span><br><span class="line">        &#125;</span><br><span class="line">        if (StringUtils.isEmpty(password)) &#123;</span><br><span class="line">            map.put(&quot;msg&quot;, &quot;password can not be empty&quot;);</span><br><span class="line">            return map;</span><br><span class="line">        &#125;</span><br><span class="line">        User user = userMapper.selectByName(username);</span><br><span class="line">        if (user == null) &#123;</span><br><span class="line">            map.put(&quot;msg&quot;, &quot;username does not exist&quot;);</span><br><span class="line">            return map;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        logger.info(user.getUsername());</span><br><span class="line">        StringBuffer stringBuffer = new StringBuffer();</span><br><span class="line">        stringBuffer.append(MD5Util.md5(password)).append(user.getSalt());</span><br><span class="line">        if (!user.getPassword().equals(MD5Util.md5(stringBuffer.toString()))) &#123;</span><br><span class="line">            map.put(&quot;msg&quot;, &quot;wrong password&quot;);</span><br><span class="line">            return map;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        String token = generateToken(user.getId());</span><br><span class="line">        map.put(&quot;token&quot;, token);</span><br><span class="line">        return map;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * generate login token</span><br><span class="line">     *</span><br><span class="line">     * @param userId</span><br><span class="line">     * @return token</span><br><span class="line">     * @author wenzhiquan</span><br><span class="line">     */</span><br><span class="line">    public String generateToken(int userId) &#123;</span><br><span class="line">        Token token = new Token();</span><br><span class="line">        token.setUserId(userId);</span><br><span class="line">        Date date = new Date();</span><br><span class="line">        date.setTime(date.getTime() + 1000 * 3600 * 24);</span><br><span class="line">        token.setExpiredTime(date);</span><br><span class="line">        token.setToken(UUID.randomUUID().toString().replaceAll(&quot;-&quot;, &quot;&quot;));</span><br><span class="line">        token.setStatus(0);</span><br><span class="line">        tokenMapper.addToken(token);</span><br><span class="line">        return token.getToken();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /**</span><br><span class="line">     * logout and set token status to 1</span><br><span class="line">     *</span><br><span class="line">     * @param token</span><br><span class="line">     * @return</span><br><span class="line">     * @author wenzhiquan</span><br><span class="line">     */</span><br><span class="line">    public void logout(String token) &#123;</span><br><span class="line">        tokenMapper.updateStatus(1, token);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="编写UserController类"><a href="#编写UserController类" class="headerlink" title="编写UserController类"></a>编写UserController类</h4><p>同样的，需要在<code>UserController</code>类中增加登录登出相关代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">@RequestMapping(path = &#123;&quot;/login&quot;&#125;, method = &#123;RequestMethod.GET&#125;)</span><br><span class="line">public String login(Model model) &#123;</span><br><span class="line">    model.addAttribute(&quot;title&quot;, &quot;Login&quot;);</span><br><span class="line">    return &quot;user/login&quot;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@RequestMapping(path = &#123;&quot;/login&quot;&#125;, method = &#123;RequestMethod.POST&#125;)</span><br><span class="line">@ResponseBody</span><br><span class="line">public String login(@RequestParam(&quot;username&quot;) String username,</span><br><span class="line">                    @RequestParam(&quot;password&quot;) String password,</span><br><span class="line">                    HttpServletResponse response) &#123;</span><br><span class="line">    logger.info(username);</span><br><span class="line">    try &#123;</span><br><span class="line">        Map&lt;String, Object&gt; map = userService.login(username, password);</span><br><span class="line">        if (map.containsKey(&quot;token&quot;)) &#123;</span><br><span class="line">            Cookie cookie = new Cookie(&quot;token&quot;, map.get(&quot;token&quot;).toString());</span><br><span class="line">            cookie.setPath(&quot;/&quot;);</span><br><span class="line">            response.addCookie(cookie);</span><br><span class="line">            map.put(&quot;msg&quot;, &quot;login successful!&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        return JsonUtil.getJSONString(0, map);</span><br><span class="line">    &#125; catch (Exception e) &#123;</span><br><span class="line">        logger.error(&quot;login failed!&quot;);</span><br><span class="line">        Map&lt;String, Object&gt; map = new HashMap&lt;&gt;();</span><br><span class="line">        map.put(&quot;msg&quot;, &quot;login failed&quot;);</span><br><span class="line">        return JsonUtil.getJSONString(1, map);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@RequestMapping(path = &#123;&quot;/logout&quot;&#125;, method = &#123;RequestMethod.GET, RequestMethod.POST&#125;)</span><br><span class="line">public String logout(@CookieValue(&quot;token&quot;) String token) &#123;</span><br><span class="line">    userService.logout(token);</span><br><span class="line">    return &quot;redirect:/login&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在获取了用户的<code>token</code>之后，需要将<code>token</code>存储到浏览器的<code>Cookie</code>中，以便下次访问时将<code>token</code>发送给服务器，用于查询用户信息。</p>
+<h4 id="编写对应的js请求和前端页面-1"><a href="#编写对应的js请求和前端页面-1" class="headerlink" title="编写对应的js请求和前端页面"></a>编写对应的js请求和前端页面</h4><p>登录界面独立于其他界面存在，便于拦截请求后的页面跳转。</p>
+<p>login.html:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot; xmlns:th=&quot;http://www.thymeleaf.org&quot;&gt;</span><br><span class="line">&lt;head th:replace=&quot;~&#123;common/base::common_header(~&#123;::link&#125;)&#125;&quot;&gt;</span><br><span class="line">    &lt;link rel=&quot;stylesheet&quot; th:href=&quot;@&#123;/statics/vendors/animate.css/animate.min.css&#125;&quot;&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line"></span><br><span class="line">&lt;body class=&quot;login&quot;&gt;</span><br><span class="line">&lt;div&gt;</span><br><span class="line">    &lt;a class=&quot;hiddenanchor&quot; id=&quot;signin&quot;&gt;&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">    &lt;div class=&quot;login_wrapper&quot;&gt;</span><br><span class="line">        &lt;div class=&quot;animate form login_form&quot;&gt;</span><br><span class="line">            &lt;section class=&quot;login_content&quot;&gt;</span><br><span class="line">                &lt;form&gt;</span><br><span class="line">                    &lt;h1&gt;Login Form&lt;/h1&gt;</span><br><span class="line">                    &lt;div&gt;</span><br><span class="line">                        &lt;input type=&quot;text&quot; class=&quot;form-control&quot; id=&quot;username&quot; name=&quot;username&quot; placeholder=&quot;Username&quot;</span><br><span class="line">                               required=&quot;required&quot;/&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br><span class="line">                    &lt;div&gt;</span><br><span class="line">                        &lt;input type=&quot;password&quot; class=&quot;form-control&quot; id=&quot;password&quot; name=&quot;password&quot; placeholder=&quot;Password&quot;</span><br><span class="line">                               required=&quot;required&quot;/&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br><span class="line">                    &lt;div class=&quot;error&quot; id=&quot;error-password&quot;&gt;&lt;/div&gt;</span><br><span class="line">                    &lt;div class=&quot;error&quot; id=&quot;error-username&quot;&gt;&lt;/div&gt;</span><br><span class="line">                    &lt;div&gt;</span><br><span class="line">                        &lt;a class=&quot;btn btn-default submit&quot; id=&quot;login-btn&quot;&gt;Log in&lt;/a&gt;</span><br><span class="line">                        &lt;a class=&quot;reset_pass&quot;&gt;Lost your password?&lt;/a&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br><span class="line"></span><br><span class="line">                    &lt;div class=&quot;clearfix&quot;&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">                    &lt;div class=&quot;separator&quot;&gt;</span><br><span class="line">                        &lt;p&gt;&lt;/p&gt;</span><br><span class="line">                        &lt;div&gt;</span><br><span class="line">                            &lt;h1&gt;&lt;i class=&quot;fa fa-barcode&quot;&gt;&lt;/i&gt; SMS&lt;/h1&gt;</span><br><span class="line">                            ©2017 All Rights Reserved</span><br><span class="line">                            &lt;span class=&quot;hidden-xs&quot;&gt;Powered By &lt;a href=&quot;http://wenzhiquan.github.io&quot; target=&quot;blank&quot;&gt;Wen Zhiquan&lt;/a&gt;&lt;/span&gt;</span><br><span class="line">                        &lt;/div&gt;</span><br><span class="line">                    &lt;/div&gt;</span><br><span class="line">                &lt;/form&gt;</span><br><span class="line">            &lt;/section&gt;</span><br><span class="line">        &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;!-- jQuery --&gt;</span><br><span class="line">&lt;script src=&quot;../vendors/jquery/dist/jquery.min.js&quot;</span><br><span class="line">        th:src=&quot;@&#123;/statics/vendors/jquery/dist/jquery.min.js&#125;&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;!-- Bootstrap --&gt;</span><br><span class="line">&lt;script src=&quot;../vendors/bootstrap/dist/js/bootstrap.min.js&quot;</span><br><span class="line">        th:src=&quot;@&#123;/statics/vendors/bootstrap/dist/js/bootstrap.min.js&#125;&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script th:src=&quot;@&#123;/statics/js/login.js&#125;&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;script th:src=&quot;@&#123;/statics/vendors/layer/layer.js&#125;&quot;&gt;&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>login.js:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line">$(function () &#123;</span><br><span class="line">    var username = $(&quot;#username&quot;),</span><br><span class="line">        password = $(&quot;#password&quot;),</span><br><span class="line">        loginBtn = $(&quot;#login-btn&quot;),</span><br><span class="line">        errorUsername = $(&quot;#error-username&quot;),</span><br><span class="line">        errorPassword = $(&quot;#error-password&quot;);</span><br><span class="line"></span><br><span class="line">    username.blur(function () &#123;</span><br><span class="line">        if (username.val() == &quot;&quot;) &#123;</span><br><span class="line">            errorUsername.html(&quot;username can not be empty&quot;);</span><br><span class="line">            errorUsername.show();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    username.focus(function () &#123;</span><br><span class="line">        errorUsername.hide();</span><br><span class="line">        username.val(&quot;&quot;);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    password.blur(function () &#123;</span><br><span class="line">        if (password.val() == &quot;&quot;) &#123;</span><br><span class="line">            errorPassword.html(&quot;password can not be empty&quot;);</span><br><span class="line">            errorPassword.show();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    password.focus(function () &#123;</span><br><span class="line">        errorPassword.hide();</span><br><span class="line">        password.val(&quot;&quot;);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    loginBtn.click(function () &#123;</span><br><span class="line">        console.log(username.val());</span><br><span class="line">        if (username.val() != &quot;&quot; &amp;&amp; password.val() != &quot;&quot;) &#123;</span><br><span class="line">            $.ajax(&#123;</span><br><span class="line">                url: &apos;login&apos;,// 跳转到 action</span><br><span class="line">                data: &#123;</span><br><span class="line">                    username: username.val(),</span><br><span class="line">                    password: password.val()</span><br><span class="line">                &#125;,</span><br><span class="line">                type: &apos;post&apos;,</span><br><span class="line">                cache: false,</span><br><span class="line">                dataType: &apos;json&apos;,</span><br><span class="line">                success: function (data) &#123;</span><br><span class="line">                    if (data.code == 0) &#123;</span><br><span class="line">                        if (data.next != undefined) &#123;</span><br><span class="line">                            location.href = data.next;</span><br><span class="line">                        &#125;</span><br><span class="line">                        location.href = &quot;/&quot;;</span><br><span class="line">                    &#125;</span><br><span class="line">                    else &#123;</span><br><span class="line">                        layer.msg(data.msg, &#123;</span><br><span class="line">                            time: 1000 //1s后自动关闭</span><br><span class="line">                        &#125;);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;,</span><br><span class="line">                error: function () &#123;</span><br><span class="line">                    layer.msg(&apos;Error!&apos;, &#123;</span><br><span class="line">                        time: 1000 //1s后自动关闭</span><br><span class="line">                    &#125;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="编写登录拦截器"><a href="#编写登录拦截器" class="headerlink" title="编写登录拦截器"></a>编写登录拦截器</h4><p>拦截器分为两个，一个用于读取<code>token</code>信息，并根据<code>token</code>信息写入用户信息，一个用于拦截未登录用户。</p>
+<p>拦截器运行阶段如下：</p>
+<p><img src="/uploads/in-post/sms/interceptor.png" alt="拦截器运行阶段"></p>
+<p>PassportInterceptor（主要用于读取<code>token</code>，并根据此<code>token</code>读取并写入用户信息）:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">@Component</span><br><span class="line">public class PassportInterceptor implements HandlerInterceptor &#123;</span><br><span class="line">    private static final Logger logger = LoggerFactory.getLogger(PassportInterceptor.class);</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private TokenMapper tokenMapper;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private UserMapper userMapper;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private HostHolder hostHolder;</span><br><span class="line"></span><br><span class="line">    /*</span><br><span class="line">     * 此阶段发生在Controller运行之前</span><br><span class="line">     */</span><br><span class="line">    @Override</span><br><span class="line">    public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception &#123;</span><br><span class="line">        String token = null;</span><br><span class="line">        if (httpServletRequest.getCookies() != null) &#123;</span><br><span class="line">            for (Cookie cookie : httpServletRequest.getCookies()) &#123;</span><br><span class="line">                if (cookie.getName().equals(&quot;token&quot;)) &#123;</span><br><span class="line">                    token = cookie.getValue();</span><br><span class="line">                    break;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        if (token != null) &#123;</span><br><span class="line">            Token selectedToken = tokenMapper.selectByToken(token);</span><br><span class="line">            if (selectedToken == null || selectedToken.getExpiredTime().before(new Date()) || selectedToken.getStatus() != 0) &#123;</span><br><span class="line">                return true;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            User user = userMapper.selectById(selectedToken.getUserId());</span><br><span class="line">            hostHolder.setUser(user);</span><br><span class="line">        &#125;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /*</span><br><span class="line">     * 此阶段发生在Controller运行之后</span><br><span class="line">     */</span><br><span class="line">    @Override</span><br><span class="line">    public void postHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView) throws Exception &#123;</span><br><span class="line">        if (modelAndView != null &amp;&amp; hostHolder.getUser() != null) &#123;</span><br><span class="line">            modelAndView.addObject(&quot;user&quot;, hostHolder.getUser());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /*</span><br><span class="line">     * 此阶段发生在视图渲染完成之后</span><br><span class="line">     */</span><br><span class="line">    @Override</span><br><span class="line">    public void afterCompletion(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) throws Exception &#123;</span><br><span class="line">        hostHolder.clear();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>LoginRequiredInterceptor(用于拦截未登录用户):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">@Component</span><br><span class="line">public class LoginRequiredInterceptor implements HandlerInterceptor &#123;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private HostHolder hostHolder;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o) throws Exception &#123;</span><br><span class="line">        if (hostHolder.getUser() == null) &#123;</span><br><span class="line">            httpServletResponse.sendRedirect(&quot;/login&quot;);</span><br><span class="line">            return false;</span><br><span class="line">        &#125;</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void postHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView) throws Exception &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void afterCompletion(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, Exception e) throws Exception &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>拦截器编写完成后，需要将拦截器注册到<code>Spring</code>当中：</p>
+<p>spring-interceptor.xml:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;beans xmlns=&quot;http://www.springframework.org/schema/beans&quot;</span><br><span class="line">       xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:mvc=&quot;http://www.springframework.org/schema/mvc&quot;</span><br><span class="line">       xsi:schemaLocation=&quot;http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd&quot;&gt;</span><br><span class="line">    &lt;mvc:interceptors&gt;</span><br><span class="line">        &lt;!-- 使用bean定义一个Interceptor，直接定义在mvc:interceptors根下面的Interceptor将拦截所有的请求 --&gt;</span><br><span class="line">        &lt;bean class=&quot;cn.edu.bupt.wen.interceptor.PassportInterceptor&quot;/&gt;</span><br><span class="line">        &lt;mvc:interceptor&gt;</span><br><span class="line">            &lt;mvc:mapping path=&quot;/*&quot;/&gt;</span><br><span class="line">            &lt;mvc:exclude-mapping path=&quot;/login&quot;/&gt;</span><br><span class="line">            &lt;!-- 定义在mvc:interceptor下面的表示是对特定的请求才进行拦截的 --&gt;</span><br><span class="line">            &lt;bean class=&quot;cn.edu.bupt.wen.interceptor.LoginRequiredInterceptor&quot;/&gt;</span><br><span class="line">        &lt;/mvc:interceptor&gt;</span><br><span class="line">    &lt;/mvc:interceptors&gt;</span><br><span class="line">&lt;/beans&gt;</span><br></pre></td></tr></table></figure>
+<p>并在<code>spring-mvc.xml</code>中加入引用<code>&lt;import resource=&quot;spring-interceptor.xml&quot;&gt;&lt;/import&gt;</code></p>
+<h4 id="运行效果-1"><a href="#运行效果-1" class="headerlink" title="运行效果"></a>运行效果</h4><p><img src="/uploads/in-post/sms/login.png" alt="登录页面"></p>
+<h3 id="遇到的问题和解决方案"><a href="#遇到的问题和解决方案" class="headerlink" title="遇到的问题和解决方案"></a>遇到的问题和解决方案</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">问题：无法找到*Mapper.xml文件</span><br><span class="line">解决方案：*Mapper.xml文件应当位于resources文件夹中而不是java文件夹中</span><br><span class="line"></span><br><span class="line">问题：IDEA提示无法注入mapper的bean</span><br><span class="line">解决方案：将Mapper接口文件注解为@Repository</span><br><span class="line"></span><br><span class="line">问题：Could not resolve placeholder</span><br><span class="line">解决方案：在引入外部文件的bean中增加属性</span><br><span class="line">&lt;property name=&quot;ignoreUnresolvablePlaceholders&quot; value=&quot;true&quot; /&gt;</span><br><span class="line">并且需要注意properties的格式必须是beanName.property=value   </span><br><span class="line"></span><br><span class="line">问题：xml文件，元素 &apos;bean&apos; 必须不含字符 [子级]</span><br><span class="line">解决方案：xml文件中有不合法字符，可能是中文没有注释掉</span><br><span class="line"></span><br><span class="line">问题：使用AOP的通配符时，报Expected raw type form of</span><br><span class="line">org.springframework.web.servlet.handler.AbstractHandlerMethodMapping</span><br><span class="line">$MappingRegistry错误</span><br><span class="line">解决方案：AspectJ 1.8.10版本bug，换成1.8.9版本问题解决</span><br><span class="line"></span><br><span class="line">问题：数据库datetime类型无法直接映射到java项目中</span><br><span class="line">解决方案：在Mapper.xml文件中增加resultMap进行java.util.Date类型的映射</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+    
+    
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-heart"></i>感谢您的阅读-------------</div>
+    
+</div>
+
+      
+    </div>
+    
+    
+    
+
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/uploads/wechatpay.jpg" alt="温智全 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/uploads/alipay.jpg" alt="温智全 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文标题： </strong>使用IDEA和gradle创建超市管理系统（贰）-- 登录注册功能</li>
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>温智全</li>
+  <li class="post-copyright-author">
+    <strong>发布时间： </strong>2017-02-05 12:00:00</li>
+  <li class="post-copyright-author">
+    <strong>最后更新： </strong>2018-05-29 18:46:52</li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://wenzhiquan.github.io/2017/02/05/2017-02-05-idea-gradle-tssm-supermarket-manage-system-2/" title="使用IDEA和gradle创建超市管理系统（贰）-- 登录注册功能">http://wenzhiquan.github.io/2017/02/05/2017-02-05-idea-gradle-tssm-supermarket-manage-system-2/</a>
+    <span class="copy-path" style="margin-left: 5px;" title="点击复制文章链接"><i class="fa fa-clipboard" data-clipboard-text="http://wenzhiquan.github.io/2017/02/05/2017-02-05-idea-gradle-tssm-supermarket-manage-system-2/"  aria-label="复制成功！"></i></span>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处和作者。
+  </li>
+</ul>
+<script src="//cdn.bootcss.com/clipboard.js/1.5.10/clipboard.min.js"></script>
+
+<!-- JS库 sweetalert 可修改路径 -->
+<script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script>
+    var clipboard = new Clipboard('.fa-clipboard');
+      $(".fa-clipboard").click(function(){
+      clipboard.on('success', function(){
+        swal({
+          title: "",
+          text: '复制成功',
+          icon: "success",
+          showConfirmButton: true
+          });
+        });
+    });
+</script>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Gradle/" rel="tag"><i class="fa fa-tag"></i> Gradle</a>
+          
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tag"></i> Java</a>
+          
+            <a href="/tags/Web/" rel="tag"><i class="fa fa-tag"></i> Web</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/01/2017-01-01-idea-gradle-tssm-supermarket-manage-system-1/" rel="next" title="使用IDEA和gradle创建超市管理系统（壹）-- 环境配置">
+                <i class="fa fa-chevron-left"></i> 使用IDEA和gradle创建超市管理系统（壹）-- 环境配置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/28/2018-03-28-java-memory-garbage-collection/" rel="prev" title="Java内存模型和垃圾回收">
+                Java内存模型和垃圾回收 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar-wen.jpg"
+                alt="温智全" />
+            
+              <p class="site-author-name" itemprop="name">温智全</p>
+              <p class="site-description motion-element" itemprop="description">爱唱歌健身的程序员</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">29</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">12</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">36</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/yourname" target="_blank" title="GitHub"><i class="fa fa-fw fa-github-alt"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.zhihu.com/people/wenzhiquan/activities" target="_blank" title="知乎"><i class="fa fa-fw fa-globe"></i>知乎</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:wenzhiquanr@163.com" target="_blank" title="邮箱"><i class="fa fa-fw fa-envelope"></i>邮箱</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com/profile.php?id=100006943363300" target="_blank" title="Facebook"><i class="fa fa-fw fa-facebook"></i>Facebook</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+              <div class="links-of-blogroll motion-element links-of-blogroll-block">
+                <div class="links-of-blogroll-title">
+                  <!-- modify icon to fire by szw -->
+                  <i class="fa fa-history fa-" aria-hidden="true"></i>
+                  近期文章
+                </div>
+                <ul class="links-of-blogroll-list">
+                  
+                  
+                    <li>
+                      <a href="/2018/05/29/2018-05-29-rpc-introduction/" title="RPC简析">RPC简析</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/2018/05/04/2018-05-04-move-to-hexo-blog/" title="迁移至Hexo博客">迁移至Hexo博客</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/2018/04/15/2018-04-15-spring-introduction/" title="Spring简介">Spring简介</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/2018/04/01/2018-04-01-java-class-load/" title="类文件结构和Java虚拟机类加载机制">类文件结构和Java虚拟机类加载机制</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/2018/03/28/2018-03-28-java-memory-garbage-collection/" title="Java内存模型和垃圾回收">Java内存模型和垃圾回收</a>
+                    </li>
+                  
+                </ul>
+              </div>
+          
+
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://xiaochutian.github.io/" title="肖楚天的博客" target="_blank">肖楚天的博客</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#主要功能概述"><span class="nav-number">1.</span> <span class="nav-text">主要功能概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#后台前端模板"><span class="nav-number">2.</span> <span class="nav-text">后台前端模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户添加功能"><span class="nav-number">3.</span> <span class="nav-text">用户添加功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#添加数据库"><span class="nav-number">3.1.</span> <span class="nav-text">添加数据库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编写User类"><span class="nav-number">3.2.</span> <span class="nav-text">编写User类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编写UserMapper接口和UserMapper-xml文件"><span class="nav-number">3.3.</span> <span class="nav-text">编写UserMapper接口和UserMapper.xml文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编写UserService"><span class="nav-number">3.4.</span> <span class="nav-text">编写UserService</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编写UserController"><span class="nav-number">3.5.</span> <span class="nav-text">编写UserController</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编写对应的js请求和前端页面"><span class="nav-number">3.6.</span> <span class="nav-text">编写对应的js请求和前端页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运行效果"><span class="nav-number">3.7.</span> <span class="nav-text">运行效果</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户登录功能"><span class="nav-number">4.</span> <span class="nav-text">用户登录功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#添加Token数据库表及Token-model和TokenMapper"><span class="nav-number">4.1.</span> <span class="nav-text">添加Token数据库表及Token model和TokenMapper</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编写UserService类"><span class="nav-number">4.2.</span> <span class="nav-text">编写UserService类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编写UserController类"><span class="nav-number">4.3.</span> <span class="nav-text">编写UserController类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编写对应的js请求和前端页面-1"><span class="nav-number">4.4.</span> <span class="nav-text">编写对应的js请求和前端页面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编写登录拦截器"><span class="nav-number">4.5.</span> <span class="nav-text">编写登录拦截器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#运行效果-1"><span class="nav-number">4.6.</span> <span class="nav-text">运行效果</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遇到的问题和解决方案"><span class="nav-number">5.</span> <span class="nav-text">遇到的问题和解决方案</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">温智全</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点总字数：</span>
+    
+    <span title="站点总字数">213k</span>
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv" title="总访客量">
+      <i class="fa fa-users"></i>
+      本站访客数： <span class="busuanzi-value" id="busuanzi_value_site_uv"></span> 人
+    </span>
+  
+
+  
+    <span class="site-pv" title="总访问量">
+      <i class="fa fa-eye"></i>
+      本站总访问量： <span class="busuanzi-value" id="busuanzi_value_site_pv"></span> 次
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/reading_progress/reading_progress.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=6.3.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'xSt4331oBR0VyC2jUzPEuxxh-gzGzoHsz',
+        appKey: 't2TehJbxap2pAcoBr4oCrCtT',
+        placeholder: '~\(≧▽≦)/~来呀，快活呀~',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('10');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("xSt4331oBR0VyC2jUzPEuxxh-gzGzoHsz", "t2TehJbxap2pAcoBr4oCrCtT");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.get('time'));
+            
+            counter.save(null, {
+              success: function(counter) {
+                
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set \'security\' option to \'false\'.');
+            
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+
+  
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: 11264,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
+  <script type="text/javascript">
+  
+    bookmark.scrollToMark('auto', "#更多");
+  
+  </script>
+
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('复制').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+          if(result)$(this).text('复制成功')
+          else $(this).text('复制失败')
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('复制')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
+
+  <!-- 页面点击小心心 -->
+  <script type="text/javascript" src="/js/src/love.js"></script>
+</body>
+</html>

@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>温智全的博客</title>
+  
+  <subtitle>Wenknows&#39;s Blog</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://wenzhiquan.github.io/"/>
+  <updated>2018-05-29T04:00:00.000Z</updated>
+  <id>http://wenzhiquan.github.io/</id>
+  
+  <author>
+    <name>温智全</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>RPC简析</title>
+    <link href="http://wenzhiquan.github.io/2018/05/29/2018-05-29-rpc-introduction/"/>
+    <id>http://wenzhiquan.github.io/2018/05/29/2018-05-29-rpc-introduction/</id>
+    <published>2018-05-29T04:00:00.000Z</published>
+    <updated>2018-05-29T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;RPC 的主要功能目标是让构建分布式计算（应用）更容易，在提供强大的远程调用能力时不损失本地调用的语义简洁性。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h3&gt;&lt;h4 id=&quot;什么是-RPC&quot;&gt;&lt;a href=&quot;#什么是-RPC&quot; class=&quot;headerlink&quot; title=&quot;什么是 RPC&quot;&gt;&lt;/a&gt;什么是 &lt;code&gt;RPC&lt;/code&gt;&lt;/h4&gt;&lt;p&gt;&lt;code&gt;RPC&lt;/code&gt;，全称为&lt;code&gt;Remote Procedure Call&lt;/code&gt;，即远程过程调用，是一种进程间的通信方式。它能够实现从主机 A 调用可达地址空间中另一台主机 B 上的过程或函数，而程序员并不需要显示的编码其调用过程。也即是说对于程序员来说，这个调用过程是透明的，本地调用和远程调用所用代码基本是相同的。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="RPC" scheme="http://wenzhiquan.github.io/categories/RPC/"/>
+    
+    
+      <category term="RPC" scheme="http://wenzhiquan.github.io/tags/RPC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>迁移至Hexo博客</title>
+    <link href="http://wenzhiquan.github.io/2018/05/04/2018-05-04-move-to-hexo-blog/"/>
+    <id>http://wenzhiquan.github.io/2018/05/04/2018-05-04-move-to-hexo-blog/</id>
+    <published>2018-05-04T04:00:00.000Z</published>
+    <updated>2018-05-29T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;之前一直使用的是基于&lt;code&gt;jekyll&lt;/code&gt;的博客系统，但是功能不是十分的强大，最近老铁安利了&lt;code&gt;Hexo&lt;/code&gt;这个博客系统，同时也想对自己以前的博文进行整理，所以开始准备将以前基于&lt;code&gt;jekyll&lt;/code&gt;的博文迁移至&lt;code&gt;Hexo&lt;/code&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="博客" scheme="http://wenzhiquan.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+      <category term="博客" scheme="http://wenzhiquan.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="Hexo" scheme="http://wenzhiquan.github.io/tags/Hexo/"/>
+    
+      <category term="NexT" scheme="http://wenzhiquan.github.io/tags/NexT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring简介</title>
+    <link href="http://wenzhiquan.github.io/2018/04/15/2018-04-15-spring-introduction/"/>
+    <id>http://wenzhiquan.github.io/2018/04/15/2018-04-15-spring-introduction/</id>
+    <published>2018-04-15T04:00:00.000Z</published>
+    <updated>2018-05-29T10:46:52.091Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“本章将从宏观的层面上介绍 Spring。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;简化-Java-开发&quot;&gt;&lt;a href=&quot;#简化-Java-开发&quot; class=&quot;headerlink&quot; title=&quot;简化 Java 开发&quot;&gt;&lt;/a&gt;简化 Java 开发&lt;/h3&gt;&lt;p&gt;Spring 采取 4 种关键策略简化 Java 开发：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;基于 POJO 的轻量级和最小侵入性编程&lt;/li&gt;
+&lt;li&gt;通过依赖注入和面向接口实现松耦合&lt;/li&gt;
+&lt;li&gt;基于切面和惯例进行声明式编程&lt;/li&gt;
+&lt;li&gt;通过切面和模板减少样板式代码
+    
+    </summary>
+    
+      <category term="Java" scheme="http://wenzhiquan.github.io/categories/Java/"/>
+    
+      <category term="Spring" scheme="http://wenzhiquan.github.io/categories/Java/Spring/"/>
+    
+    
+      <category term="Spring" scheme="http://wenzhiquan.github.io/tags/Spring/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>类文件结构和Java虚拟机类加载机制</title>
+    <link href="http://wenzhiquan.github.io/2018/04/01/2018-04-01-java-class-load/"/>
+    <id>http://wenzhiquan.github.io/2018/04/01/2018-04-01-java-class-load/</id>
+    <published>2018-04-01T04:00:00.000Z</published>
+    <updated>2018-05-29T10:46:52.091Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“代码编译的结果从本地机器码转变为字节码，是存储格式发展的一小步，却是编程语言发展的一大步。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h3&gt;&lt;p&gt;虚拟机把描述类的数据从 Class 文件加载到内存，并对数据进行校验、转换解析和初始化，最终形成可以被虚拟机直接使用的 Java 类型，这就是虚拟机的类加载机制。&lt;/p&gt;
+&lt;p&gt;在 Java 语言中，类的加载、连接和初始化过程都是在程序运行期间完成的，为 Java 应用程序提供了高度的灵活性。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://wenzhiquan.github.io/categories/Java/"/>
+    
+    
+      <category term="类文件结构" scheme="http://wenzhiquan.github.io/tags/%E7%B1%BB%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="类加载机制" scheme="http://wenzhiquan.github.io/tags/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java内存模型和垃圾回收</title>
+    <link href="http://wenzhiquan.github.io/2018/03/28/2018-03-28-java-memory-garbage-collection/"/>
+    <id>http://wenzhiquan.github.io/2018/03/28/2018-03-28-java-memory-garbage-collection/</id>
+    <published>2018-03-28T04:00:00.000Z</published>
+    <updated>2018-05-29T10:46:52.090Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“Java 与 C++之间有一堵由内存动态分配和垃圾收集技术所围成的高墙，墙外面的人想进去，墙里面的人却想出来。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;运行时数据区域&quot;&gt;&lt;a href=&quot;#运行时数据区域&quot; class=&quot;headerlink&quot; title=&quot;运行时数据区域&quot;&gt;&lt;/a&gt;运行时数据区域&lt;/h3&gt;&lt;p&gt;按照 java 虚拟机规范，抽象的 Java 虚拟机如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1417629-3a2a7c7286d0418a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://wenzhiquan.github.io/categories/Java/"/>
+    
+    
+      <category term="内存模型" scheme="http://wenzhiquan.github.io/tags/%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/"/>
+    
+      <category term="垃圾回收" scheme="http://wenzhiquan.github.io/tags/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用IDEA和gradle创建超市管理系统（贰）-- 登录注册功能</title>
+    <link href="http://wenzhiquan.github.io/2017/02/05/2017-02-05-idea-gradle-tssm-supermarket-manage-system-2/"/>
+    <id>http://wenzhiquan.github.io/2017/02/05/2017-02-05-idea-gradle-tssm-supermarket-manage-system-2/</id>
+    <published>2017-02-05T04:00:00.000Z</published>
+    <updated>2018-05-29T10:46:52.090Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“IDEA是jetbrains公司开发的Java开发IDE，功能齐全。使用IDEA搭建SSM开发环境简单有效。本项目基于Spring，Spring MVC和MyBatis进行开发，模板引擎为Thymeleaf。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;主要功能概述&quot;&gt;&lt;a href=&quot;#主要功能概述&quot; class=&quot;headerlink&quot; title=&quot;主要功能概述&quot;&gt;&lt;/a&gt;主要功能概述&lt;/h3&gt;&lt;p&gt;因为是为超市定制的管理系统，所以只会有内部人员进行使用，这就意味着新用户是需要拥有权限的人来进行添加，故需要实现的功能主要包括以下两点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;用户添加&lt;/li&gt;
+&lt;li&gt;用户登录&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这两点功能中又包含了一些更细小的功能，将在后续章节进行详细的介绍。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://wenzhiquan.github.io/categories/Java/"/>
+    
+    
+      <category term="Gradle" scheme="http://wenzhiquan.github.io/tags/Gradle/"/>
+    
+      <category term="Java" scheme="http://wenzhiquan.github.io/tags/Java/"/>
+    
+      <category term="Web" scheme="http://wenzhiquan.github.io/tags/Web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用IDEA和gradle创建超市管理系统（壹）-- 环境配置</title>
+    <link href="http://wenzhiquan.github.io/2017/01/01/2017-01-01-idea-gradle-tssm-supermarket-manage-system-1/"/>
+    <id>http://wenzhiquan.github.io/2017/01/01/2017-01-01-idea-gradle-tssm-supermarket-manage-system-1/</id>
+    <published>2017-01-01T04:00:00.000Z</published>
+    <updated>2018-05-29T10:46:52.089Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“IDEA是jetbrains公司开发的Java开发IDE，功能齐全。使用IDEA搭建SSM开发环境简单有效。本项目基于Spring，Spring MVC和MyBatis进行开发，模板引擎为Thymeleaf。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://gradle.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Gradle&lt;/a&gt;是一个基于Apache Ant和Apache Maven概念的项目自动化建构工具。它使用一种基于Groovy的特定领域语言(DSL)来声明项目设置，抛弃了基于XML的各种繁琐配置。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://spring.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Spring MVC&lt;/a&gt;属于SpringFrameWork的后续产品，已经融合在Spring Web Flow里面。Spring 框架提供了构建Web应用程序的全功能&lt;code&gt;MVC&lt;/code&gt;模块。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://blog.mybatis.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;MyBatis&lt;/a&gt;本是apache的一个开源项目&lt;code&gt;iBatis&lt;/code&gt;, 2010年这个项目由apache software foundation 迁移到了google code，并且改名为&lt;code&gt;MyBatis&lt;/code&gt; 。2013年11月迁移到&lt;code&gt;Github&lt;/code&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://wenzhiquan.github.io/categories/Java/"/>
+    
+    
+      <category term="Gradle" scheme="http://wenzhiquan.github.io/tags/Gradle/"/>
+    
+      <category term="Java" scheme="http://wenzhiquan.github.io/tags/Java/"/>
+    
+      <category term="Web" scheme="http://wenzhiquan.github.io/tags/Web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sed流编辑器</title>
+    <link href="http://wenzhiquan.github.io/2016/10/15/2016-10-15-sed/"/>
+    <id>http://wenzhiquan.github.io/2016/10/15/2016-10-15-sed/</id>
+    <published>2016-10-15T04:00:00.000Z</published>
+    <updated>2018-05-29T10:46:52.089Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“sed是用于过滤和转换文本的流编辑器。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h3&gt;&lt;p&gt;&lt;code&gt;sed&lt;/code&gt;，全称为&lt;code&gt;stream editor&lt;/code&gt;，是一个非交互式的编辑器。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sed&lt;/code&gt;命令是利用&lt;code&gt;script&lt;/code&gt;来处理文本文件。&lt;code&gt;sed&lt;/code&gt;可依照&lt;code&gt;script&lt;/code&gt;的指令，来处理、编辑文本文件。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sed&lt;/code&gt;主要用来自动编辑一个或多个文件；简化对文件的反复操作；编写转换程序等。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://wenzhiquan.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://wenzhiquan.github.io/tags/Linux/"/>
+    
+      <category term="Sed" scheme="http://wenzhiquan.github.io/tags/Sed/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>grep模式匹配命令</title>
+    <link href="http://wenzhiquan.github.io/2016/09/06/2016-09-06-grep/"/>
+    <id>http://wenzhiquan.github.io/2016/09/06/2016-09-06-grep/</id>
+    <published>2016-09-06T04:00:00.000Z</published>
+    <updated>2018-05-29T10:46:52.088Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“grep是一种强大的文本搜索工具。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h3&gt;&lt;p&gt;&lt;code&gt;grep&lt;/code&gt;全称&lt;code&gt;Globally search a Regular Expression and Print&lt;/code&gt;是一种强大的文本搜索工具。它能使用正则表达式搜索文本，并把匹配的行打印出来。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;grep&lt;/code&gt;的工作方式是在一个或多个文件中搜索字符串模板。如果模板包括空格，则必须被引用，模板后的所有字符串被看作文件名。搜索的结果被送到屏幕，不影响原文件内容。&lt;code&gt;grep&lt;/code&gt;可用于&lt;code&gt;shell&lt;/code&gt;脚本，因为&lt;code&gt;grep&lt;/code&gt;通过返回一个状态值来说明搜索的状态，如果模板搜索成功，则返回&lt;code&gt;0&lt;/code&gt;，如果搜索不成功，则返回&lt;code&gt;1&lt;/code&gt;，如果搜索的文件不存在，则返回&lt;code&gt;2&lt;/code&gt;。&lt;code&gt;grep&lt;/code&gt;命令中允许指定的串语句是一个规则表达式，这是一种允许使用某些特殊键盘字符的指定字符串的方法，这种方法中的特殊键盘字符可以用于代表其他字符也可以进一步定义模式匹配工作方式。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://wenzhiquan.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://wenzhiquan.github.io/tags/Linux/"/>
+    
+      <category term="Grep" scheme="http://wenzhiquan.github.io/tags/Grep/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mac系统重装后必备</title>
+    <link href="http://wenzhiquan.github.io/2016/08/05/2016-08-05-mac-installed-todo/"/>
+    <id>http://wenzhiquan.github.io/2016/08/05/2016-08-05-mac-installed-todo/</id>
+    <published>2016-08-05T05:00:00.000Z</published>
+    <updated>2018-05-29T10:46:52.088Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“Mac系统常用软件，可以提升工作效率”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;程序员必备&quot;&gt;&lt;a href=&quot;#程序员必备&quot; class=&quot;headerlink&quot; title=&quot;程序员必备&quot;&gt;&lt;/a&gt;程序员必备&lt;/h3&gt;&lt;h4 id=&quot;Homebrew&quot;&gt;&lt;a href=&quot;#Homebrew&quot; class=&quot;headerlink&quot; title=&quot;Homebrew&quot;&gt;&lt;/a&gt;Homebrew&lt;/h4&gt;&lt;p&gt;这个是最需要安装的软件，利用&lt;code&gt;homebrew&lt;/code&gt;可以快速的安装和管理其他软件包，类似于&lt;code&gt;Fedora&lt;/code&gt;系统中的&lt;code&gt;dnf&lt;/code&gt;命令。&lt;/p&gt;
+&lt;p&gt;安装方法如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;/usr/bin/ruby -e &amp;quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;直接在命令行中输入上述命令即可快速安装&lt;code&gt;homebrew&lt;/code&gt;了。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Mac" scheme="http://wenzhiquan.github.io/categories/Mac/"/>
+    
+    
+      <category term="Mac" scheme="http://wenzhiquan.github.io/tags/Mac/"/>
+    
+      <category term="Software" scheme="http://wenzhiquan.github.io/tags/Software/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>面试必会题目（4）—— Math &amp; Bit Manipulation</title>
+    <link href="http://wenzhiquan.github.io/2016/07/04/2016-07-04-interview-algorithm-math-bit/"/>
+    <id>http://wenzhiquan.github.io/2016/07/04/2016-07-04-interview-algorithm-math-bit/</id>
+    <published>2016-07-04T06:00:00.000Z</published>
+    <updated>2018-05-29T10:46:52.088Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“面试技术岗位应该掌握的算法题目–Math &amp;amp; Bit Manipulation相关”&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="http://wenzhiquan.github.io/categories/Algorithm/"/>
+    
+    
+      <category term="Algorithm" scheme="http://wenzhiquan.github.io/tags/Algorithm/"/>
+    
+      <category term="Math" scheme="http://wenzhiquan.github.io/tags/Math/"/>
+    
+      <category term="Bit Manipulation" scheme="http://wenzhiquan.github.io/tags/Bit-Manipulation/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>正则表达式基础</title>
+    <link href="http://wenzhiquan.github.io/2016/06/28/2016-06-28-regex/"/>
+    <id>http://wenzhiquan.github.io/2016/06/28/2016-06-28-regex/</id>
+    <published>2016-06-28T04:00:00.000Z</published>
+    <updated>2018-05-29T10:46:52.087Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“工具和灵感，都是利器。当来自不同的领域，不同类型的创造者的工具和灵感互相碰撞的时候，才会迸发出更多的可能性。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h3&gt;&lt;p&gt;&lt;code&gt;正则表达式&lt;/code&gt;，又称正规表示式、正规表示法、正规表达式、规则表达式、常规表示法（英语：Regular Expression，在代码中常简写为 regex、regexp 或 RE），计算机科学的一个概念。正则表达式使用单个字符串来描述、匹配一系列符合某个句法规则的字符串。在很多文本编辑器里，正则表达式通常被用来检索、替换那些符合某个模式的文本。&lt;/p&gt;
+&lt;p&gt;许多程序设计语言都支持利用正则表达式进行字符串操作。例如，在&lt;code&gt;Perl&lt;/code&gt;中就内建了一个功能强大的正则表达式引擎。正则表达式这个概念最初是由&lt;code&gt;UNIX&lt;/code&gt;中的工具软件（例如&lt;code&gt;sed&lt;/code&gt;和&lt;code&gt;grep&lt;/code&gt;）普及开的。正则表达式通常缩写成“regex”，单数有 regexp、regex，复数有regexps、regexes、regexen。&lt;/p&gt;
+&lt;p&gt;在做文字处理或编写程序时，用到查找、替换等功能，使用正则表达式能够简单快捷的完成目标。简单而言，正则表达式通过一些特殊符号的帮助，使用户可以轻松快捷的完成查找、删除、替换等处理程序。例如&lt;code&gt;grep&lt;/code&gt;, &lt;code&gt;expr&lt;/code&gt;, &lt;code&gt;sed&lt;/code&gt; , &lt;code&gt;awk&lt;/code&gt;或 &lt;code&gt;vi&lt;/code&gt; 中经常会使用到正则表达式，为了充分发挥&lt;code&gt;shell&lt;/code&gt;编程的威力,需要精通正则表达式。正规表示法基本上是一种『表示法』， 只要工具程序支持这种表示法，那么该工具程序就可以用来作为正规表示法的字符串处理之用。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="正则表达式" scheme="http://wenzhiquan.github.io/categories/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+    
+      <category term="正则表达式" scheme="http://wenzhiquan.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Wenknows的利器</title>
+    <link href="http://wenzhiquan.github.io/2016/06/27/benefit_others/"/>
+    <id>http://wenzhiquan.github.io/2016/06/27/benefit_others/</id>
+    <published>2016-06-27T04:00:00.000Z</published>
+    <updated>2018-05-21T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“工具和灵感，都是利器。当来自不同的领域，不同类型的创造者的工具和灵感互相碰撞的时候，才会迸发出更多的可能性。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;更新记录&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;2016-06-27  研二期间创建本篇博文&lt;br&gt;2018-05-21  更新工作，更新使用的软件&lt;/p&gt;
+&lt;h3 id=&quot;我和我所做的工作&quot;&gt;&lt;a href=&quot;#我和我所做的工作&quot; class=&quot;headerlink&quot; title=&quot;我和我所做的工作&quot;&gt;&lt;/a&gt;我和我所做的工作&lt;/h3&gt;&lt;p&gt;我是&lt;code&gt;Wenknows&lt;/code&gt;，现在工作于小红书，职位为电商商户平台后台开发，平时喜欢运动和吃吃吃，业余弹弹尤克里里，喜欢听音乐和评书，喜爱编程，希望在程序猿的道路上能走得更远。&lt;/p&gt;
+&lt;h3 id=&quot;我当前使用的硬件&quot;&gt;&lt;a href=&quot;#我当前使用的硬件&quot; class=&quot;headerlink&quot; title=&quot;我当前使用的硬件&quot;&gt;&lt;/a&gt;我当前使用的硬件&lt;/h3&gt;&lt;p&gt;电脑是 14 年的 15 寸 MacBook Pro with Retina，i7处理器，16 GB RAM＋256 GB SSD。&lt;br&gt;&lt;img src=&quot;/uploads/in-post/macbookpro.png&quot; alt=&quot;macbookpro&quot;&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Mac" scheme="http://wenzhiquan.github.io/categories/Mac/"/>
+    
+    
+      <category term="Mac" scheme="http://wenzhiquan.github.io/tags/Mac/"/>
+    
+      <category term="Software" scheme="http://wenzhiquan.github.io/tags/Software/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>面试必会题目（3）—— Binary Search</title>
+    <link href="http://wenzhiquan.github.io/2016/06/26/2016-06-26-interview-algorithm-binary-search/"/>
+    <id>http://wenzhiquan.github.io/2016/06/26/2016-06-26-interview-algorithm-binary-search/</id>
+    <published>2016-06-26T04:00:00.000Z</published>
+    <updated>2018-05-29T10:46:52.087Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“面试技术岗位应该掌握的算法题目–Binary Search相关”&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="http://wenzhiquan.github.io/categories/Algorithm/"/>
+    
+    
+      <category term="Algorithm" scheme="http://wenzhiquan.github.io/tags/Algorithm/"/>
+    
+      <category term="Binary Search" scheme="http://wenzhiquan.github.io/tags/Binary-Search/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux基础学习</title>
+    <link href="http://wenzhiquan.github.io/2016/06/20/2016-06-20-linux-basic/"/>
+    <id>http://wenzhiquan.github.io/2016/06/20/2016-06-20-linux-basic/</id>
+    <published>2016-06-20T04:00:00.000Z</published>
+    <updated>2018-05-29T10:46:52.086Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“Linux是一套免费使用和自由传播的类Unix操作系统，是一个基于POSIX和UNIX的多用户、多任务、支持多线程和多CPU的操作系统。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;Linux系统简介&quot;&gt;&lt;a href=&quot;#Linux系统简介&quot; class=&quot;headerlink&quot; title=&quot;Linux系统简介&quot;&gt;&lt;/a&gt;Linux系统简介&lt;/h3&gt;&lt;p&gt;Linux是一个开源的免费操作系统，如下图所示，Linux就是&lt;code&gt;内核&lt;/code&gt;与&lt;code&gt;系统调用&lt;/code&gt;接口那两层。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/uploads/in-post/linux_basic/os_level.png&quot; alt=&quot;操作系统的角色&quot;&gt;&lt;/p&gt;
+&lt;p&gt;而平常我们使用的应用程序一般都是运行在操作系统之上的，如qq，浏览器，文本编辑器等。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://wenzhiquan.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://wenzhiquan.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>单例模式的八种写法</title>
+    <link href="http://wenzhiquan.github.io/2016/06/16/2016-03-28-singleton-eight-type/"/>
+    <id>http://wenzhiquan.github.io/2016/06/16/2016-03-28-singleton-eight-type/</id>
+    <published>2016-06-16T04:00:00.000Z</published>
+    <updated>2018-05-29T10:46:52.083Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“单例模式是最常用到的设计模式之一，熟悉设计模式的朋友对单例模式都不会陌生。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h3&gt;&lt;p&gt;&lt;code&gt;单例模式&lt;/code&gt;（singleton）是一种常用的设计模式，其定义是单例对象的类只能允许创建一个实例，而可以被多次调用。&lt;/p&gt;
+&lt;p&gt;单例模式是设计模式中最简单的形式之一。这一模式的目的是使得类的一个对象成为系统中的唯一实例。要实现这一点，可以从客户端对其进行实例化开始。因此需要用一种只允许生成对象类的唯一实例的机制，“阻止”所有想要生成对象的访问。使用工厂方法来限制实例化过程。这个方法应该是静态方法（类方法），因为让类的实例去生成另一个唯一实例毫无意义。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://wenzhiquan.github.io/categories/Java/"/>
+    
+      <category term="Design Pattern" scheme="http://wenzhiquan.github.io/categories/Java/Design-Pattern/"/>
+    
+    
+      <category term="Singleton" scheme="http://wenzhiquan.github.io/tags/Singleton/"/>
+    
+      <category term="Design Pattern" scheme="http://wenzhiquan.github.io/tags/Design-Pattern/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>面试必会题目（2）—— Array</title>
+    <link href="http://wenzhiquan.github.io/2016/06/15/2016-06-15-interview-algorithm-array/"/>
+    <id>http://wenzhiquan.github.io/2016/06/15/2016-06-15-interview-algorithm-array/</id>
+    <published>2016-06-15T04:00:00.000Z</published>
+    <updated>2018-05-29T10:46:52.085Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“面试技术岗位应该掌握的算法题目–Array相关”&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="http://wenzhiquan.github.io/categories/Algorithm/"/>
+    
+    
+      <category term="Algorithm" scheme="http://wenzhiquan.github.io/tags/Algorithm/"/>
+    
+      <category term="Array" scheme="http://wenzhiquan.github.io/tags/Array/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Linux系统常用命令</title>
+    <link href="http://wenzhiquan.github.io/2016/06/05/2016-06-05-linux-frequently-used-order/"/>
+    <id>http://wenzhiquan.github.io/2016/06/05/2016-06-05-linux-frequently-used-order/</id>
+    <published>2016-06-05T04:00:00.000Z</published>
+    <updated>2018-05-29T10:46:52.085Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“Linux是一套免费使用和自由传播的类Unix操作系统，是一个基于POSIX和UNIX的多用户、多任务、支持多线程和多CPU的操作系统。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h3&gt;&lt;p&gt;&lt;code&gt;UNIX&lt;/code&gt;的两个重要分支：&lt;code&gt;System V&lt;/code&gt;和&lt;code&gt;BSD UNIX&lt;/code&gt;，&lt;code&gt;Linux&lt;/code&gt;属于&lt;code&gt;BSD&lt;/code&gt;分支。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Linux&lt;/code&gt;版本号的命名规则：&lt;code&gt;Linux&lt;/code&gt;的内核版本由3部分组成。版本号的第二位数字，可以确定Linux内核版本的类型，第二位数字是偶数的为稳定版本。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Linux&lt;/code&gt;里一切皆文件。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://wenzhiquan.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://wenzhiquan.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>面试必会题目（1）—— String</title>
+    <link href="http://wenzhiquan.github.io/2016/05/31/2016-05-31-interview-algorithm-string/"/>
+    <id>http://wenzhiquan.github.io/2016/05/31/2016-05-31-interview-algorithm-string/</id>
+    <published>2016-05-31T04:00:00.000Z</published>
+    <updated>2018-05-29T10:46:52.084Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“面试技术岗位应该掌握的算法题目–String相关”&lt;/p&gt;
+&lt;/blockquote&gt;
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="http://wenzhiquan.github.io/categories/Algorithm/"/>
+    
+    
+      <category term="String" scheme="http://wenzhiquan.github.io/tags/String/"/>
+    
+      <category term="Algorithm" scheme="http://wenzhiquan.github.io/tags/Algorithm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>字符串匹配Sunday算法</title>
+    <link href="http://wenzhiquan.github.io/2016/05/28/2016-05-28-string-match-sunday/"/>
+    <id>http://wenzhiquan.github.io/2016/05/28/2016-05-28-string-match-sunday/</id>
+    <published>2016-05-28T04:00:00.000Z</published>
+    <updated>2018-05-29T10:46:52.084Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“Sunday算法是Daniel M.Sunday于1990年提出的字符串模式匹配。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;Sunday算法简介&quot;&gt;&lt;a href=&quot;#Sunday算法简介&quot; class=&quot;headerlink&quot; title=&quot;Sunday算法简介&quot;&gt;&lt;/a&gt;Sunday算法简介&lt;/h3&gt;&lt;p&gt;字符串查找算法中，最著名的两个是&lt;code&gt;KMP&lt;/code&gt;算法(Knuth-Morris-Pratt)和&lt;code&gt;BM&lt;/code&gt;算法(Boyer-Moore)。两个算法在最坏情况下均具有线性的查找时间。但是在实用上，KMP算法并不比c库函数&lt;code&gt;strstr()&lt;/code&gt;快多少，而&lt;code&gt;BM&lt;/code&gt;算法则往往比&lt;code&gt;KMP&lt;/code&gt;算法快上3－5倍(未经验证)。而&lt;code&gt;Sunday&lt;/code&gt;算法比&lt;code&gt;BM&lt;/code&gt;还要快，而且更易理解。&lt;code&gt;Sunday&lt;/code&gt;算法的核心思想是：在匹配过程中，模式串并不被要求一定要按从左向右进行比较还是从右向左进行比较，它在发现不匹配时，算法能跳过尽可能多的字符以进行下一步的匹配，从而提高了匹配效率。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Algorithm" scheme="http://wenzhiquan.github.io/categories/Algorithm/"/>
+    
+    
+      <category term="String" scheme="http://wenzhiquan.github.io/tags/String/"/>
+    
+      <category term="Algorithm" scheme="http://wenzhiquan.github.io/tags/Algorithm/"/>
+    
+  </entry>
+  
+</feed>
