@@ -2,14 +2,14 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://wenzhiquan.github.io/categories/index.html</loc>
+    <loc>http://wenzhiquan.github.io/tags/index.html</loc>
     
     <lastmod>2018-05-29T10:46:52.092Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/tags/index.html</loc>
+    <loc>http://wenzhiquan.github.io/categories/index.html</loc>
     
     <lastmod>2018-05-29T10:46:52.092Z</lastmod>
     
@@ -30,13 +30,6 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2018/03/28/2018-03-28-java-memory-garbage-collection/</loc>
-    
-    <lastmod>2018-05-29T10:46:52.090Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://wenzhiquan.github.io/2017/02/05/2017-02-05-idea-gradle-tssm-supermarket-manage-system-2/</loc>
     
     <lastmod>2018-05-29T10:46:52.090Z</lastmod>
@@ -44,14 +37,21 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/10/15/2016-10-15-sed/</loc>
+    <loc>http://wenzhiquan.github.io/2018/03/28/2018-03-28-java-memory-garbage-collection/</loc>
+    
+    <lastmod>2018-05-29T10:46:52.090Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2017/01/01/2017-01-01-idea-gradle-tssm-supermarket-manage-system-1/</loc>
     
     <lastmod>2018-05-29T10:46:52.089Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2017/01/01/2017-01-01-idea-gradle-tssm-supermarket-manage-system-1/</loc>
+    <loc>http://wenzhiquan.github.io/2016/10/15/2016-10-15-sed/</loc>
     
     <lastmod>2018-05-29T10:46:52.089Z</lastmod>
     
@@ -79,14 +79,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/06/26/2016-06-26-interview-algorithm-binary-search/</loc>
+    <loc>http://wenzhiquan.github.io/2016/06/28/2016-06-28-regex/</loc>
     
     <lastmod>2018-05-29T10:46:52.087Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/06/28/2016-06-28-regex/</loc>
+    <loc>http://wenzhiquan.github.io/2016/06/26/2016-06-26-interview-algorithm-binary-search/</loc>
     
     <lastmod>2018-05-29T10:46:52.087Z</lastmod>
     
@@ -142,14 +142,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/03/28/2016-03-28-seven-sort/</loc>
+    <loc>http://wenzhiquan.github.io/2015/05/29/2015-05-29-install-nginx-php-mysql-mac/</loc>
     
     <lastmod>2018-05-29T10:46:52.082Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2015/05/04/2015-05-04-mac-sublime-c/</loc>
+    <loc>http://wenzhiquan.github.io/2016/03/28/2016-03-28-seven-sort/</loc>
     
     <lastmod>2018-05-29T10:46:52.082Z</lastmod>
     
@@ -170,7 +170,7 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2015/05/29/2015-05-29-install-nginx-php-mysql-mac/</loc>
+    <loc>http://wenzhiquan.github.io/2015/05/04/2015-05-04-mac-sublime-c/</loc>
     
     <lastmod>2018-05-29T10:46:52.082Z</lastmod>
     
