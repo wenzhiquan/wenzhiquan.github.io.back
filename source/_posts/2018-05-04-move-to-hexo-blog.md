@@ -133,8 +133,7 @@ git add .
 git commit -m "Hexo博客，第一次提交"
 
 # 将git项目与github进行关联
-git remote add origin
-git@github.com:yourName/blogName.github.io.git
+git remote add origin git@github.com:yourName/blogName.github.io.git
 git push origin master
 
 # 使用gh-pages分支开发原代码，master分支用于放置编译后的站点文件
