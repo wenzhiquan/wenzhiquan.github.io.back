@@ -153,7 +153,7 @@
     <link href="http://wenzhiquan.github.io/2018/03/28/2018-03-28-java-memory-garbage-collection/"/>
     <id>http://wenzhiquan.github.io/2018/03/28/2018-03-28-java-memory-garbage-collection/</id>
     <published>2018-03-28T04:00:00.000Z</published>
-    <updated>2018-05-29T10:46:52.090Z</updated>
+    <updated>2018-06-21T13:07:22.151Z</updated>
     
     <summary type="html">
     
@@ -161,7 +161,7 @@
 &lt;p&gt;“Java 与 C++之间有一堵由内存动态分配和垃圾收集技术所围成的高墙，墙外面的人想进去，墙里面的人却想出来。”&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&quot;运行时数据区域&quot;&gt;&lt;a href=&quot;#运行时数据区域&quot; class=&quot;headerlink&quot; title=&quot;运行时数据区域&quot;&gt;&lt;/a&gt;运行时数据区域&lt;/h3&gt;&lt;p&gt;按照 java 虚拟机规范，抽象的 Java 虚拟机如下图所示：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;http://upload-images.jianshu.io/upload_images/1417629-3a2a7c7286d0418a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/uploads/in-post/java_memory/vm_structure.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
     
     </summary>
     
