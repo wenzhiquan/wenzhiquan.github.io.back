@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://wenzhiquan.github.io/2018/06/21/2018-05-30-thrift-introduction/</loc>
+    
+    <lastmod>2018-06-21T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wenzhiquan.github.io/2018/04/15/2018-04-15-spring-introduction/</loc>
     
     <lastmod>2018-05-30T04:00:00.000Z</lastmod>
@@ -9,14 +16,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/tags/index.html</loc>
+    <loc>http://wenzhiquan.github.io/categories/index.html</loc>
     
     <lastmod>2018-05-29T10:46:52.092Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/categories/index.html</loc>
+    <loc>http://wenzhiquan.github.io/tags/index.html</loc>
     
     <lastmod>2018-05-29T10:46:52.092Z</lastmod>
     
@@ -100,14 +107,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/06/15/2016-06-15-interview-algorithm-array/</loc>
+    <loc>http://wenzhiquan.github.io/2016/06/05/2016-06-05-linux-frequently-used-order/</loc>
     
     <lastmod>2018-05-29T10:46:52.085Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/06/05/2016-06-05-linux-frequently-used-order/</loc>
+    <loc>http://wenzhiquan.github.io/2016/06/15/2016-06-15-interview-algorithm-array/</loc>
     
     <lastmod>2018-05-29T10:46:52.085Z</lastmod>
     
@@ -128,13 +135,6 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/04/12/2016-04-12-idea-gradle-ssm/</loc>
-    
-    <lastmod>2018-05-29T10:46:52.083Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://wenzhiquan.github.io/2016/06/16/2016-03-28-singleton-eight-type/</loc>
     
     <lastmod>2018-05-29T10:46:52.083Z</lastmod>
@@ -142,7 +142,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2015/03/19/2015-03-19-mac-install-jekyll/</loc>
+    <loc>http://wenzhiquan.github.io/2016/04/12/2016-04-12-idea-gradle-ssm/</loc>
+    
+    <lastmod>2018-05-29T10:46:52.083Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2015/09/18/2015-09-18-install-jekyll-fedora/</loc>
     
     <lastmod>2018-05-29T10:46:52.082Z</lastmod>
     
@@ -156,14 +163,7 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2015/09/18/2015-09-18-install-jekyll-fedora/</loc>
-    
-    <lastmod>2018-05-29T10:46:52.082Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wenzhiquan.github.io/2015/05/04/2015-05-04-mac-sublime-c/</loc>
+    <loc>http://wenzhiquan.github.io/2015/03/19/2015-03-19-mac-install-jekyll/</loc>
     
     <lastmod>2018-05-29T10:46:52.082Z</lastmod>
     
@@ -177,14 +177,21 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2014/12/09/2014-12-09-nginx-mysql-php-fedora/</loc>
+    <loc>http://wenzhiquan.github.io/2015/05/04/2015-05-04-mac-sublime-c/</loc>
+    
+    <lastmod>2018-05-29T10:46:52.082Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2014/10/14/2014-10-14-markdown-simple-syntax/</loc>
     
     <lastmod>2018-05-29T10:46:52.081Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2014/10/14/2014-10-14-markdown-simple-syntax/</loc>
+    <loc>http://wenzhiquan.github.io/2014/12/09/2014-12-09-nginx-mysql-php-fedora/</loc>
     
     <lastmod>2018-05-29T10:46:52.081Z</lastmod>
     

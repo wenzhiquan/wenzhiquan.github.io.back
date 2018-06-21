@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wenzhiquan.github.io/"/>
-  <updated>2018-05-29T04:00:00.000Z</updated>
+  <updated>2018-06-21T04:00:00.000Z</updated>
   <id>http://wenzhiquan.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Thrift 简析</title>
+    <link href="http://wenzhiquan.github.io/2018/06/21/2018-05-30-thrift-introduction/"/>
+    <id>http://wenzhiquan.github.io/2018/06/21/2018-05-30-thrift-introduction/</id>
+    <published>2018-06-21T04:00:00.000Z</published>
+    <updated>2018-06-21T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Thrift 是一种可扩展、跨语言的服务开发框架，用于各个服务之间的 RPC 通信。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h3&gt;&lt;p&gt;&lt;code&gt;Thrift&lt;/code&gt; 最初由 &lt;code&gt;Facebook&lt;/code&gt; 于 2007 年开发，2008 年进入 &lt;code&gt;Apache&lt;/code&gt; 开源项目。Thrift 主要用于各个服务之间的 RPC 通信，是一种可扩展、跨语言的 &lt;code&gt;RPC&lt;/code&gt; 服务开发框架，其服务端和客户端可以用不同的语言来开发。只需要依照 IDL（Interface Description Language）定义一次接口，Thrift 工具就能编译生成 C++, Java, Python, PHP, Ruby, JavaScript, Node.js 等语言的代码。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Thrift" scheme="http://wenzhiquan.github.io/categories/Thrift/"/>
+    
+    
+      <category term="RPC" scheme="http://wenzhiquan.github.io/tags/RPC/"/>
+    
+      <category term="Thrift" scheme="http://wenzhiquan.github.io/tags/Thrift/"/>
+    
+  </entry>
   
   <entry>
     <title>RPC 简析</title>
@@ -173,11 +198,11 @@
       <category term="Java" scheme="http://wenzhiquan.github.io/categories/Java/"/>
     
     
-      <category term="Gradle" scheme="http://wenzhiquan.github.io/tags/Gradle/"/>
-    
       <category term="Java" scheme="http://wenzhiquan.github.io/tags/Java/"/>
     
       <category term="Web" scheme="http://wenzhiquan.github.io/tags/Web/"/>
+    
+      <category term="Gradle" scheme="http://wenzhiquan.github.io/tags/Gradle/"/>
     
   </entry>
   
@@ -202,11 +227,11 @@
       <category term="Java" scheme="http://wenzhiquan.github.io/categories/Java/"/>
     
     
-      <category term="Gradle" scheme="http://wenzhiquan.github.io/tags/Gradle/"/>
-    
       <category term="Java" scheme="http://wenzhiquan.github.io/tags/Java/"/>
     
       <category term="Web" scheme="http://wenzhiquan.github.io/tags/Web/"/>
+    
+      <category term="Gradle" scheme="http://wenzhiquan.github.io/tags/Gradle/"/>
     
   </entry>
   
@@ -508,31 +533,6 @@
       &lt;blockquote&gt;
 &lt;p&gt;“面试技术岗位应该掌握的算法题目–String相关”&lt;/p&gt;
 &lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Algorithm" scheme="http://wenzhiquan.github.io/categories/Algorithm/"/>
-    
-    
-      <category term="String" scheme="http://wenzhiquan.github.io/tags/String/"/>
-    
-      <category term="Algorithm" scheme="http://wenzhiquan.github.io/tags/Algorithm/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>字符串匹配Sunday算法</title>
-    <link href="http://wenzhiquan.github.io/2016/05/28/2016-05-28-string-match-sunday/"/>
-    <id>http://wenzhiquan.github.io/2016/05/28/2016-05-28-string-match-sunday/</id>
-    <published>2016-05-28T04:00:00.000Z</published>
-    <updated>2018-05-29T10:46:52.084Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;“Sunday算法是Daniel M.Sunday于1990年提出的字符串模式匹配。”&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;Sunday算法简介&quot;&gt;&lt;a href=&quot;#Sunday算法简介&quot; class=&quot;headerlink&quot; title=&quot;Sunday算法简介&quot;&gt;&lt;/a&gt;Sunday算法简介&lt;/h3&gt;&lt;p&gt;字符串查找算法中，最著名的两个是&lt;code&gt;KMP&lt;/code&gt;算法(Knuth-Morris-Pratt)和&lt;code&gt;BM&lt;/code&gt;算法(Boyer-Moore)。两个算法在最坏情况下均具有线性的查找时间。但是在实用上，KMP算法并不比c库函数&lt;code&gt;strstr()&lt;/code&gt;快多少，而&lt;code&gt;BM&lt;/code&gt;算法则往往比&lt;code&gt;KMP&lt;/code&gt;算法快上3－5倍(未经验证)。而&lt;code&gt;Sunday&lt;/code&gt;算法比&lt;code&gt;BM&lt;/code&gt;还要快，而且更易理解。&lt;code&gt;Sunday&lt;/code&gt;算法的核心思想是：在匹配过程中，模式串并不被要求一定要按从左向右进行比较还是从右向左进行比较，它在发现不匹配时，算法能跳过尽可能多的字符以进行下一步的匹配，从而提高了匹配效率。&lt;/p&gt;
     
     </summary>
     
