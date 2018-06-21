@@ -80,9 +80,9 @@
         <category>Java</category>
       </categories>
       <tags>
+        <tag>Gradle</tag>
         <tag>Java</tag>
         <tag>Web</tag>
-        <tag>Gradle</tag>
       </tags>
   </entry>
   <entry>
@@ -93,9 +93,9 @@
         <category>Java</category>
       </categories>
       <tags>
+        <tag>Gradle</tag>
         <tag>Java</tag>
         <tag>Web</tag>
-        <tag>Gradle</tag>
       </tags>
   </entry>
   <entry>
@@ -263,8 +263,8 @@
       </categories>
       <tags>
         <tag>Spring</tag>
-        <tag>Gradle</tag>
         <tag>MyBatis</tag>
+        <tag>Gradle</tag>
       </tags>
   </entry>
   <entry>
@@ -286,8 +286,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Fedora</tag>
         <tag>Jekyll</tag>
+        <tag>Fedora</tag>
       </tags>
   </entry>
   <entry>
@@ -336,8 +336,8 @@
         <category>PHP</category>
       </categories>
       <tags>
-        <tag>Fedora</tag>
         <tag>PHP</tag>
+        <tag>Fedora</tag>
         <tag>Nginx</tag>
         <tag>Mysql</tag>
       </tags>
