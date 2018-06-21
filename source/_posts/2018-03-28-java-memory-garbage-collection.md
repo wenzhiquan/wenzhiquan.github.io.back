@@ -15,7 +15,7 @@ tags:
 
 按照 java 虚拟机规范，抽象的 Java 虚拟机如下图所示：
 
-![](http://upload-images.jianshu.io/upload_images/1417629-3a2a7c7286d0418a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](/uploads/in-post/java_memory/vm_structure.png)
 
 <!-- more -->
 
@@ -140,7 +140,7 @@ Java 语言中，可作为 GC Roots 的对象有：
 
 G1 之前的垃圾回收算法，将堆划分为如下结构：
 
-![](http://upload-images.jianshu.io/upload_images/2184951-f6a73e5ef608cfa8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700)
+![](/uploads/in-post/java_memory/memory_generation.png)
 
 * 新生代：eden space + 2 个 survivor
 * 老年代：old space
@@ -171,7 +171,7 @@ IBM 研究表明，新生代中的对象 98%都是“朝生夕死”的，所以
 
 收集算法是内存回收的方法论，垃圾收集器就是内存回收的具体实现。HotSpot 包含的垃圾收集器如图所示：
 
-![HotSpot虚拟机的垃圾收集器](https://img-blog.csdn.net/20160505170035450)
+![HotSpot虚拟机的垃圾收集器](/uploads/in-post/java_memory/hot_spot_gb.png)
 
 到目前为止，没有最好的收集器，我们应该针对具体的使用场景选择最合适的垃圾收集器。
 
@@ -179,7 +179,7 @@ IBM 研究表明，新生代中的对象 98%都是“朝生夕死”的，所以
 
 这个收集器是一个单线程收集器，使用复制算法，他会在进行垃圾收集时，暂停所有其他的线程，直到收集结束。其运行过程如下：
 
-![](https://img-blog.csdn.net/20160505192254430)
+![](/uploads/in-post/java_memory/serial.png)
 
 由于其简单而高效（与其他收集器的单线程相比，没有线程交互的开销），他依然是虚拟机运行在 Client 模式下的默认新生代收集器。
 
@@ -187,7 +187,7 @@ IBM 研究表明，新生代中的对象 98%都是“朝生夕死”的，所以
 
 ParNew 收集器是 Serial 收集器的多线程版本，使用复制算法，工作过程如下：
 
-![](https://img-blog.csdn.net/20160505192308164)
+![](/uploads/in-post/java_memory/par_new.png)
 
 他是运行在 Server 模式下的虚拟机中首选的新生代收集器，其中一个很重要的原因是只有 Serial 收集器和 ParNew 收集器可以和 CMS 收集器配合工作。
 
@@ -225,7 +225,7 @@ ParNew 默认开启的收集线程数与 CPU 数量相同，在 CPU 很多的环
 
 在注重吞吐量 CPU 资源敏感的场合，可以优先考虑 Parallel Scavenge 加 Parallel Old 收集器，工作过程如下：
 
-![](https://img-blog.csdn.net/20160505192422531)
+![](/uploads/in-post/java_memory/par_old.png)
 
 ##### CMS（Concurrent Mark Sweep）收集器
 
@@ -246,7 +246,7 @@ ParNew 默认开启的收集线程数与 CPU 数量相同，在 CPU 很多的环
 
 重新标记用于修正并发标记期间因为用户程序继续运行导致标记产生变动的对象的标记记录
 
-![](https://img-blog.csdn.net/20160505193622716)
+![](/uploads/in-post/java_memory/CMS.png)
 
 整个回收过程中，耗时最长的是并发标记和并发清除过程，但这两个过程都是可以和用户线程一起工作的，所以从总体上说，CMS 收集器的内存回收过程和用户线程是并发执行的。
 
@@ -269,7 +269,7 @@ ParNew 默认开启的收集线程数与 CPU 数量相同，在 CPU 很多的环
 
 G1 收集器将整个 Java 堆划分为多个大小相等的独立区域（Region），并跟踪各个 Region 里面的垃圾堆积的价值大小，在后台维护一个优先列表，每次根据允许的时间，优先回收价值最大的 Region。每个 Region 是逻辑上连续的一段内存。结构如下：
 
-![](http://upload-images.jianshu.io/upload_images/2184951-715388c6f6799bd9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/700)
+![](/uploads/in-post/java_memory/G1.png)
 
 其中当新建对象大小超过 Region 大小一半时，会直接在一个或多个新的连续 Region 中分配此对象，并标记为 Humongous 对象。
 
@@ -304,7 +304,7 @@ G1 的工作过程如下：
 * 最终标记（Final Marking）
 * 筛选回收（Live Data Counting and Evacuation）
 
-![](https://img-blog.csdn.net/20160505194916580)
+![](/uploads/in-post/java_memory/G1_flow.png)
 
 初始标记阶段仅仅只是标记一下 GC Roots 能够直接关联的对象，并且修改 TAMS（Next Top at Mark Start）的值，让下一阶段的用户程序并发运行的时候，能在正确可用的 Region 中创建新对象，这个阶段需要暂停线程。并发标记阶段从 GC Roots 进行可达性分析，找出存活的对象，与用户线程并发执行。最终标记阶段则是修正在并发标记阶段因为用户程序的并发执行而导致标记产生变动的那一部分记录，这部分记录被保存在 Remembered Set Logs 中，最终标记阶段再把 Logs 中的记录合并到 Remembered Set 中，这个阶段是并行执行的，需要暂停用户线程。最后在筛选阶段首先对各个 Region 的回收价值和成本进行排序，根据用户所期望的 GC 停顿时间制定回收计划。
 
