@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://wenzhiquan.github.io/2016/03/28/2016-03-28-singleton-eight-type/</loc>
+    
+    <lastmod>2018-06-25T09:03:11.680Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wenzhiquan.github.io/2018/03/28/2018-03-28-java-memory-garbage-collection/</loc>
     
     <lastmod>2018-06-21T13:07:22.151Z</lastmod>
@@ -9,9 +16,30 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2018/06/21/2018-05-30-thrift-introduction/</loc>
+    <loc>http://wenzhiquan.github.io/2018/05/30/2018-05-30-thrift-introduction/</loc>
     
     <lastmod>2018-06-21T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2018/06/16/2018-06-16-design-pattern-factory-method/</loc>
+    
+    <lastmod>2018-06-16T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2018/02/25/2018-02-25-design-pattern-intro/</loc>
+    
+    <lastmod>2018-06-16T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2018/06/15/2018-06-15-design-pattern-simple-factory/</loc>
+    
+    <lastmod>2018-06-15T04:00:00.000Z</lastmod>
     
   </url>
   
@@ -23,14 +51,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/categories/index.html</loc>
+    <loc>http://wenzhiquan.github.io/tags/index.html</loc>
     
     <lastmod>2018-05-29T10:46:52.092Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/tags/index.html</loc>
+    <loc>http://wenzhiquan.github.io/categories/index.html</loc>
     
     <lastmod>2018-05-29T10:46:52.092Z</lastmod>
     
@@ -51,13 +79,6 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2017/01/01/2017-01-01-idea-gradle-tssm-supermarket-manage-system-1/</loc>
-    
-    <lastmod>2018-05-29T10:46:52.089Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://wenzhiquan.github.io/2016/10/15/2016-10-15-sed/</loc>
     
     <lastmod>2018-05-29T10:46:52.089Z</lastmod>
@@ -65,9 +86,9 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/07/04/2016-07-04-interview-algorithm-math-bit/</loc>
+    <loc>http://wenzhiquan.github.io/2017/01/01/2017-01-01-idea-gradle-tssm-supermarket-manage-system-1/</loc>
     
-    <lastmod>2018-05-29T10:46:52.088Z</lastmod>
+    <lastmod>2018-05-29T10:46:52.089Z</lastmod>
     
   </url>
   
@@ -80,6 +101,13 @@
   
   <url>
     <loc>http://wenzhiquan.github.io/2016/09/06/2016-09-06-grep/</loc>
+    
+    <lastmod>2018-05-29T10:46:52.088Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2016/07/04/2016-07-04-interview-algorithm-math-bit/</loc>
     
     <lastmod>2018-05-29T10:46:52.088Z</lastmod>
     
@@ -107,14 +135,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/06/05/2016-06-05-linux-frequently-used-order/</loc>
+    <loc>http://wenzhiquan.github.io/2016/06/15/2016-06-15-interview-algorithm-array/</loc>
     
     <lastmod>2018-05-29T10:46:52.085Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/06/15/2016-06-15-interview-algorithm-array/</loc>
+    <loc>http://wenzhiquan.github.io/2016/06/05/2016-06-05-linux-frequently-used-order/</loc>
     
     <lastmod>2018-05-29T10:46:52.085Z</lastmod>
     
@@ -135,16 +163,16 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/06/16/2016-03-28-singleton-eight-type/</loc>
+    <loc>http://wenzhiquan.github.io/2016/04/12/2016-04-12-idea-gradle-ssm/</loc>
     
     <lastmod>2018-05-29T10:46:52.083Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/04/12/2016-04-12-idea-gradle-ssm/</loc>
+    <loc>http://wenzhiquan.github.io/2015/05/04/2015-05-04-mac-sublime-c/</loc>
     
-    <lastmod>2018-05-29T10:46:52.083Z</lastmod>
+    <lastmod>2018-05-29T10:46:52.082Z</lastmod>
     
   </url>
   
@@ -156,7 +184,7 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2015/09/18/2015-09-18-install-jekyll-fedora/</loc>
+    <loc>http://wenzhiquan.github.io/2015/05/29/2015-05-29-install-nginx-php-mysql-mac/</loc>
     
     <lastmod>2018-05-29T10:46:52.082Z</lastmod>
     
@@ -170,14 +198,7 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2015/05/04/2015-05-04-mac-sublime-c/</loc>
-    
-    <lastmod>2018-05-29T10:46:52.082Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wenzhiquan.github.io/2015/05/29/2015-05-29-install-nginx-php-mysql-mac/</loc>
+    <loc>http://wenzhiquan.github.io/2015/09/18/2015-09-18-install-jekyll-fedora/</loc>
     
     <lastmod>2018-05-29T10:46:52.082Z</lastmod>
     
@@ -205,14 +226,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2018/05/04/2018-05-04-move-to-hexo-blog/</loc>
+    <loc>http://wenzhiquan.github.io/2018/05/29/2018-05-29-rpc-introduction/</loc>
     
     <lastmod>2018-05-29T04:00:00.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2018/05/29/2018-05-29-rpc-introduction/</loc>
+    <loc>http://wenzhiquan.github.io/2018/05/04/2018-05-04-move-to-hexo-blog/</loc>
     
     <lastmod>2018-05-29T04:00:00.000Z</lastmod>
     
