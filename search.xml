@@ -336,8 +336,8 @@
         <category>Linux</category>
       </categories>
       <tags>
-        <tag>Jekyll</tag>
         <tag>Fedora</tag>
+        <tag>Jekyll</tag>
       </tags>
   </entry>
   <entry>
@@ -386,8 +386,8 @@
         <category>PHP</category>
       </categories>
       <tags>
-        <tag>PHP</tag>
         <tag>Fedora</tag>
+        <tag>PHP</tag>
         <tag>Nginx</tag>
         <tag>Mysql</tag>
       </tags>
