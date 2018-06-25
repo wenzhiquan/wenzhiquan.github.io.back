@@ -1,14 +1,14 @@
 ---
 layout:     post
 title:      "单例模式的八种写法"
-date:       2016-06-16 12:00:00
+date:       2016-03-28 12:00:00
 copyright: true
 categories:
-    - Java
-    - Design Pattern
+    - 设计模式
 tags:
+    - 设计模式
+    - 创建型模式
     - Singleton
-    - Design Pattern
 ---
 
 > “单例模式是最常用到的设计模式之一，熟悉设计模式的朋友对单例模式都不会陌生。”
