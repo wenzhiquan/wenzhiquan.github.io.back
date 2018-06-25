@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[设计模式--抽象工厂模式]]></title>
+    <url>%2F2018%2F06%2F25%2F2018-06-25-design-pattern-abstract-factory%2F</url>
+    <content type="text"><![CDATA[“设计模式是软件开发人员在开发过程中可以遵循的一般问题的解决方案。” 1. 简介在工厂方法模式中具体工厂负责生产具体的产品，每一个具体工厂对应一种具体产品，工厂方法也具有唯一性，一般情况下，一个具体工厂中只有一个工厂方法或者一组重载的工厂方法。但是有时候我们需要一个工厂可以提供多个产品对象，而不是单一的产品对象。此时工厂方法模式就无法完成需求，而抽象工厂模式可以解决这个问题。 2. 模式意图当系统所提供的工厂所需生产的具体产品并不是一个简单的对象，而是多个位于不同产品等级结构中属于不同类型的具体产品时需要使用抽象工厂模式。 抽象工厂模式与工厂方法模式最大的区别在于: 工厂方法模式针对的是一个产品等级结构 抽象工厂模式需要面对多个产品等级结构，一个工厂等级结构可以负责多个不同产品等级结构中的产品对象的创建。 当一个工厂等级结构可以创建出分属于不同产品等级结构的一个产品族中的所有对象时，抽象工厂模式比工厂方法模式更为简单、有效率。 3. 优缺点 优点 抽象工厂模式隔离了具体类的生成，使得客户并不需要知道什么被创建。由于这种隔离，更换一个具体工厂就变得相对容易。所有的具体工厂都实现了抽象工厂中定义的那些公共接口，因此只需改变具体工厂的实例，就可以在某种程度上改变整个软件系统的行为。另外，应用抽象工厂模式可以实现高内聚低耦合的设计目的，因此抽象工厂模式得到了广泛的应用。 当一个产品族中的多个对象被设计成一起工作时，它能够保证客户端始终只使用同一个产品族中的对象。这对一些需要根据当前环境来决定其行为的软件系统来说，是一种非常实用的设计模式。 增加新的具体工厂和产品族很方便，无须修改已有系统，符合“开闭原则”。 缺点 在添加新的产品对象时，难以扩展抽象工厂来生产新种类的产品，这是因为在抽象工厂角色中规定了所有可能被创建的产品集合，要支持新种类的产品就意味着要对该接口进行扩展，而这将涉及到对抽象工厂角色及其所有子类的修改，显然会带来较大的不便。 开闭原则的倾斜性（增加新的工厂和产品族容易，增加新的产品等级结构麻烦）。 4. 模式结构抽象工厂模式包含如下角色： AbstractFactory：抽象工厂 ConcreteFactory：具体工厂 AbstractProduct：抽象产品 Product：具体产品 时序图 5. 实现AbstractProductA: 123public interface AbstractProductA &#123; void display();&#125; AbstractProductB: 123public interface AbstractProductB &#123; void draw();&#125; ProductA1: 123456public class ProductA1 implements AbstractProductA &#123; @Override public void display() &#123; System.out.println("This is product A1"); &#125;&#125; ProductA2: 123456public class ProductA2 implements AbstractProductA &#123; @Override public void display() &#123; System.out.println("This is product A2"); &#125;&#125; ProductB1: 123456public class ProductB1 implements AbstractProductB &#123; @Override public void display() &#123; System.out.println("This is product B1"); &#125;&#125; ProductB2: 123456public class ProductB2 implements AbstractProductB &#123; @Override public void display() &#123; System.out.println("This is product B2"); &#125;&#125; AbstractFactory: 1234public abstract class AbstractFactory &#123; public abstract AbstractProductA createProductA(); public abstract AbstractProductB createProductB();&#125; ConcreteFactory1: 1234567891011public class ConcreateFactory1 extends AbstractFactory&#123; @Override public ProductA1 createProductA() &#123; return new ProductA1(); &#125; @Override public ProductB1 createProductB() &#123; return new ProductB1(); &#125;&#125; ConcreteFactory1: 1234567891011public class ConcreateFactory2 extends AbstractFactory&#123; @Override public ProductA2 createProductA() &#123; return new ProductA2(); &#125; @Override public ProductB2 createProductB() &#123; return new ProductB2(); &#125;&#125; Main: 1234567891011121314151617181920212223public class Main &#123; public static void main(String[] args) &#123; AbstractFactory productFactory1 = new ConcreateFactory1(); AbstractProductA a1 = productFactory1.createProductA(); a1.display(); AbstractProductB b1 = productFactory1.createProductB(); b1.draw(); AbstractFactory productFactory2 = new ConcreateFactory2(); AbstractProductA a2 = productFactory2.createProductA(); a2.display(); AbstractProductB b2 = productFactory2.createProductB(); b2.draw(); &#125;&#125; 输出结果： 1234This is product A1This is product B1This is product A2This is product B2 6. 使用场景在以下情况下可以使用抽象工厂模式： 一个系统不应当依赖于产品类实例如何被创建、组合和表达的细节，这对于所有类型的工厂模式都是重要的。系统中有多于一个的产品族，而每次只使用其中某一产品族。 属于同一个产品族的产品将在一起使用，这一约束必须在系统的设计中体现出来。 系统提供一个产品类的库，所有的产品以同样的接口出现，从而使客户端不依赖于具体实现。]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+        <tag>创建型模式</tag>
+        <tag>工厂模式</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[设计模式--工厂方法模式]]></title>
     <url>%2F2018%2F06%2F16%2F2018-06-16-design-pattern-factory-method%2F</url>
     <content type="text"><![CDATA[“设计模式是软件开发人员在开发过程中可以遵循的一般问题的解决方案。” 1. 简介由于简单工厂模式每次增加新的产品时，都需要修改工厂类，违背了开闭原则，可以通过定义工厂类的父类，为每种产品都创建一个工厂，从而动态的获取子类，并且增加产品时增加工厂子类即可，不用修改工厂父类。 2. 目的解决简单工厂模式中违背开闭原则的问题 3. 优缺点 优点 新增产品时，增加具体产品类和工厂子类即可，不用更改工厂父类 每个具体工厂类只负责一个产品的创建，更符合单一职责原则 更利于形成继承结构 缺点 每次增加新产品时，都需要增加工厂类，导致系统复杂度变高 产品和工厂类之间的依赖较大 4. 实现我们将创建一个Product接口和实现Product接口的实体类，工厂接口类Factory和实现Factory接口的实体类 1234567891011121314151617181920212223242526272829303132333435363738394041424344interface Factory &#123; Product getProduct();&#125;interface Product &#123; void show();&#125;class Prouduct1 implements Product &#123; @Override public void show() &#123; System.out.println("我是产品1"); &#125;&#125;class Prouduct2 implements Product &#123; @Override public void show() &#123; System.out.println("我是产品2"); &#125;&#125;class Factory1 implements Factory &#123; @Override public Product getProduct() &#123; return new Prouduct1(); &#125;&#125;class Factory2 implements Factory &#123; @Override public Product getProduct() &#123; return new Prouduct2(); &#125;&#125;public class FactoryMethodPattern &#123; public static void main(String[] args) &#123; Factory factory1 = new Factory1(); factory1.getProduct().show(); Factory factory2 = new Factory2(); factory2.getProduct().show(); &#125;&#125; 输出为： 12我是产品1我是产品2 5. 使用场景但用户只知道产品对应的工厂，而不知道具体产品的类名时可以使用此模式。]]></content>
@@ -261,8 +274,8 @@
         <category>Algorithm</category>
       </categories>
       <tags>
-        <tag>String</tag>
         <tag>Algorithm</tag>
+        <tag>String</tag>
       </tags>
   </entry>
   <entry>
@@ -273,8 +286,8 @@
         <category>Algorithm</category>
       </categories>
       <tags>
-        <tag>String</tag>
         <tag>Algorithm</tag>
+        <tag>String</tag>
       </tags>
   </entry>
   <entry>

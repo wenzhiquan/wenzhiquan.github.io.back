@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wenzhiquan.github.io/"/>
-  <updated>2018-06-16T04:00:00.000Z</updated>
+  <updated>2018-06-25T04:00:00.000Z</updated>
   <id>http://wenzhiquan.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>设计模式--抽象工厂模式</title>
+    <link href="http://wenzhiquan.github.io/2018/06/25/2018-06-25-design-pattern-abstract-factory/"/>
+    <id>http://wenzhiquan.github.io/2018/06/25/2018-06-25-design-pattern-abstract-factory/</id>
+    <published>2018-06-25T04:00:00.000Z</published>
+    <updated>2018-06-25T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“设计模式是软件开发人员在开发过程中可以遵循的一般问题的解决方案。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;1-简介&quot;&gt;&lt;a href=&quot;#1-简介&quot; class=&quot;headerlink&quot; title=&quot;1. 简介&quot;&gt;&lt;/a&gt;1. 简介&lt;/h3&gt;&lt;p&gt;在&lt;code&gt;工厂方法模式&lt;/code&gt;中具体工厂负责生产具体的产品，每一个具体工厂对应一种具体产品，工厂方法也具有唯一性，一般情况下，一个具体工厂中只有一个工厂方法或者一组重载的工厂方法。但是有时候我们需要一个工厂可以提供多个产品对象，而不是单一的产品对象。此时工厂方法模式就无法完成需求，而抽象工厂模式可以解决这个问题。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://wenzhiquan.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="设计模式" scheme="http://wenzhiquan.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="创建型模式" scheme="http://wenzhiquan.github.io/tags/%E5%88%9B%E5%BB%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="工厂模式" scheme="http://wenzhiquan.github.io/tags/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>设计模式--工厂方法模式</title>
@@ -233,7 +260,7 @@
     <link href="http://wenzhiquan.github.io/2018/02/25/2018-02-25-design-pattern-intro/"/>
     <id>http://wenzhiquan.github.io/2018/02/25/2018-02-25-design-pattern-intro/</id>
     <published>2018-02-25T04:00:00.000Z</published>
-    <updated>2018-06-16T04:00:00.000Z</updated>
+    <updated>2018-06-25T09:09:51.557Z</updated>
     
     <summary type="html">
     
@@ -522,30 +549,6 @@
     
     
       <category term="Linux" scheme="http://wenzhiquan.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>面试必会题目（2）—— Array</title>
-    <link href="http://wenzhiquan.github.io/2016/06/15/2016-06-15-interview-algorithm-array/"/>
-    <id>http://wenzhiquan.github.io/2016/06/15/2016-06-15-interview-algorithm-array/</id>
-    <published>2016-06-15T04:00:00.000Z</published>
-    <updated>2018-05-29T10:46:52.085Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;“面试技术岗位应该掌握的算法题目–Array相关”&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Algorithm" scheme="http://wenzhiquan.github.io/categories/Algorithm/"/>
-    
-    
-      <category term="Algorithm" scheme="http://wenzhiquan.github.io/tags/Algorithm/"/>
-    
-      <category term="Array" scheme="http://wenzhiquan.github.io/tags/Array/"/>
     
   </entry>
   
