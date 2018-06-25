@@ -1,7 +1,6 @@
 ---
 title:      "设计模式--简介"
 date:       2018-02-25 12:00:00
-updated:    2018-06-16 12:00:00
 copyright: true
 categories:
     - 设计模式
@@ -36,7 +35,7 @@ tags:
 |类型|模式名称|使用频率|
 |--|--|--|
 |创建型模式|[工厂方法模式 Factory Method Pattern](/2018/06/15/2018-06-15-design-pattern-simple-factory/)|★★★★★|
-|创建型模式|抽象工厂模式 Abstract Factory Pattern|★★★★★|
+|创建型模式|[抽象工厂模式 Abstract Factory Pattern](/2018/06/25/2018-06-25-design-pattern-abstract-factory/)|★★★★★|
 |创建型模式|[单例模式 Singleton Pattern](/2016/03/28/2016-03-28-singleton-eight-type/)|★★★★☆|
 |创建型模式|[简单工厂模式 Simple Factory Pattern](/2018/06/16/2018-06-16-design-pattern-factory-method/)|★★★☆☆|
 |创建型模式|原型模式 Prototype Pattern|★★★☆☆|
