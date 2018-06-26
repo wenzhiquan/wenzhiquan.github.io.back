@@ -34,7 +34,7 @@ tags:
 
 |类型|模式名称|使用频率|
 |--|--|--|
-|创建型模式|[工厂方法模式 Factory Method Pattern](/2018/06/15/2018-06-15-design-pattern-simple-factory/)|★★★★★|
+|创建型模式|[工厂方法模式 Factory Method Pattern](/2018/06/15/2018-06-15-design-pattern-factory-method/)|★★★★★|
 |创建型模式|[抽象工厂模式 Abstract Factory Pattern](/2018/06/25/2018-06-25-design-pattern-abstract-factory/)|★★★★★|
 |创建型模式|[单例模式 Singleton Pattern](/2016/03/28/2016-03-28-singleton-eight-type/)|★★★★☆|
 |创建型模式|[简单工厂模式 Simple Factory Pattern](/2018/06/16/2018-06-16-design-pattern-factory-method/)|★★★☆☆|
@@ -50,7 +50,7 @@ tags:
 |结构型模式|享元模式 Flyweight Pattern|★☆☆☆☆|
 |--|--|--|
 |行为型模式|迭代器模式 Iterator Pattern|★★★★★|
-|行为型模式|观察者模式 Observer Pattern|★★★★★|
+|行为型模式|[观察者模式 Observer Pattern](/2018/06/26/2018-06-26-design-pattern-observer/)|★★★★★|
 |行为型模式|策略模式 Strategy Pattern|★★★★☆|
 |行为型模式|命令模式 Command Pattern|★★★★☆|
 |行为型模式|模板方法模式 Template Method Patter|★★★☆☆|
