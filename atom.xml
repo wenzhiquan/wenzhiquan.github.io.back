@@ -28,7 +28,7 @@
       &lt;blockquote&gt;
 &lt;p&gt;“设计模式是软件开发人员在开发过程中可以遵循的一般问题的解决方案。”&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3 id=&quot;1-简介&quot;&gt;&lt;a href=&quot;#1-简介&quot; class=&quot;headerlink&quot; title=&quot;1. 简介&quot;&gt;&lt;/a&gt;1. 简介&lt;/h3&gt;&lt;p&gt;当对象间存在一对多关系，且当一个对象被修改时，会自动通知它的依赖对象，则使用观察者模式（Observer Pattern）。观察者模式属于行为型模式。&lt;/p&gt;
+&lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;当对象间存在一对多关系，且当一个对象被修改时，会自动通知它的依赖对象，则使用观察者模式（Observer Pattern）。观察者模式属于行为型模式。&lt;/p&gt;
     
     </summary>
     
@@ -55,7 +55,7 @@
       &lt;blockquote&gt;
 &lt;p&gt;“设计模式是软件开发人员在开发过程中可以遵循的一般问题的解决方案。”&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3 id=&quot;1-简介&quot;&gt;&lt;a href=&quot;#1-简介&quot; class=&quot;headerlink&quot; title=&quot;1. 简介&quot;&gt;&lt;/a&gt;1. 简介&lt;/h3&gt;&lt;p&gt;在&lt;code&gt;工厂方法模式&lt;/code&gt;中具体工厂负责生产具体的产品，每一个具体工厂对应一种具体产品，工厂方法也具有唯一性，一般情况下，一个具体工厂中只有一个工厂方法或者一组重载的工厂方法。但是有时候我们需要一个工厂可以提供多个产品对象，而不是单一的产品对象。此时工厂方法模式就无法完成需求，而抽象工厂模式可以解决这个问题。&lt;/p&gt;
+&lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;在&lt;code&gt;工厂方法模式&lt;/code&gt;中具体工厂负责生产具体的产品，每一个具体工厂对应一种具体产品，工厂方法也具有唯一性，一般情况下，一个具体工厂中只有一个工厂方法或者一组重载的工厂方法。但是有时候我们需要一个工厂可以提供多个产品对象，而不是单一的产品对象。此时工厂方法模式就无法完成需求，而抽象工厂模式可以解决这个问题。&lt;/p&gt;
     
     </summary>
     
@@ -82,7 +82,7 @@
       &lt;blockquote&gt;
 &lt;p&gt;“设计模式是软件开发人员在开发过程中可以遵循的一般问题的解决方案。”&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3 id=&quot;1-简介&quot;&gt;&lt;a href=&quot;#1-简介&quot; class=&quot;headerlink&quot; title=&quot;1. 简介&quot;&gt;&lt;/a&gt;1. 简介&lt;/h3&gt;&lt;p&gt;由于简单工厂模式每次增加新的产品时，都需要修改工厂类，违背了开闭原则，可以通过定义工厂类的父类，为每种产品都创建一个工厂，从而动态的获取子类，并且增加产品时增加工厂子类即可，不用修改工厂父类。&lt;/p&gt;
+&lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;由于简单工厂模式每次增加新的产品时，都需要修改工厂类，违背了开闭原则，可以通过定义工厂类的父类，为每种产品都创建一个工厂，从而动态的获取子类，并且增加产品时增加工厂子类即可，不用修改工厂父类。&lt;/p&gt;
     
     </summary>
     
@@ -109,7 +109,7 @@
       &lt;blockquote&gt;
 &lt;p&gt;“设计模式是软件开发人员在开发过程中可以遵循的一般问题的解决方案。”&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3 id=&quot;1-简介&quot;&gt;&lt;a href=&quot;#1-简介&quot; class=&quot;headerlink&quot; title=&quot;1. 简介&quot;&gt;&lt;/a&gt;1. 简介&lt;/h3&gt;&lt;p&gt;简单工厂模式是最简单的设计模式之一，简单到甚至没有放到23种常用设计模式当中，可以用于设计模式的入门学习。&lt;/p&gt;
+&lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;简单工厂模式是最简单的设计模式之一，简单到甚至没有放到23种常用设计模式当中，可以用于设计模式的入门学习。&lt;/p&gt;
     
     </summary>
     
@@ -287,14 +287,14 @@
     <link href="http://wenzhiquan.github.io/2018/02/25/2018-02-25-design-pattern-intro/"/>
     <id>http://wenzhiquan.github.io/2018/02/25/2018-02-25-design-pattern-intro/</id>
     <published>2018-02-25T04:00:00.000Z</published>
-    <updated>2018-06-26T06:58:47.375Z</updated>
+    <updated>2018-06-26T07:15:11.421Z</updated>
     
     <summary type="html">
     
       &lt;blockquote&gt;
 &lt;p&gt;“设计模式是软件开发人员在开发过程中可以遵循的一般问题的解决方案。”&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h3 id=&quot;1-简介&quot;&gt;&lt;a href=&quot;#1-简介&quot; class=&quot;headerlink&quot; title=&quot;1. 简介&quot;&gt;&lt;/a&gt;1. 简介&lt;/h3&gt;&lt;p&gt;所谓&lt;code&gt;模式&lt;/code&gt;，就是在特定环境下人们对某类重复出现的问题提出的一套有效的解决方案。&lt;/p&gt;
+&lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;所谓&lt;code&gt;模式&lt;/code&gt;，就是在特定环境下人们对某类重复出现的问题提出的一套有效的解决方案。&lt;/p&gt;
 &lt;p&gt;而设计模式(&lt;code&gt;Design Pattern&lt;/code&gt;)，则是针对软件设计过程中，可能遇到的重复问题的合理解决方案。&lt;/p&gt;
 &lt;p&gt;设计模式提出的根本目的就是解决现实生活中的问题，每种设计模式都有对应的现实问题及其解决方案，找到对应的问题便能够快速的利用设计模式进行解决。&lt;/p&gt;
 &lt;p&gt;设计模式一般包含模式名称、解决的问题，解决方案和应对效果等部分。&lt;/p&gt;
