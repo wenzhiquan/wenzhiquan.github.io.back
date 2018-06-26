@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wenzhiquan.github.io/"/>
-  <updated>2018-06-25T04:00:00.000Z</updated>
+  <updated>2018-06-26T04:00:00.000Z</updated>
   <id>http://wenzhiquan.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>设计模式--观察者模式</title>
+    <link href="http://wenzhiquan.github.io/2018/06/26/2018-06-26-design-pattern-observer/"/>
+    <id>http://wenzhiquan.github.io/2018/06/26/2018-06-26-design-pattern-observer/</id>
+    <published>2018-06-26T04:00:00.000Z</published>
+    <updated>2018-06-26T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“设计模式是软件开发人员在开发过程中可以遵循的一般问题的解决方案。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;1-简介&quot;&gt;&lt;a href=&quot;#1-简介&quot; class=&quot;headerlink&quot; title=&quot;1. 简介&quot;&gt;&lt;/a&gt;1. 简介&lt;/h3&gt;&lt;p&gt;当对象间存在一对多关系，且当一个对象被修改时，会自动通知它的依赖对象，则使用观察者模式（Observer Pattern）。观察者模式属于行为型模式。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://wenzhiquan.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="设计模式" scheme="http://wenzhiquan.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="工厂模式" scheme="http://wenzhiquan.github.io/tags/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="行为型模式" scheme="http://wenzhiquan.github.io/tags/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>设计模式--抽象工厂模式</title>
@@ -260,7 +287,7 @@
     <link href="http://wenzhiquan.github.io/2018/02/25/2018-02-25-design-pattern-intro/"/>
     <id>http://wenzhiquan.github.io/2018/02/25/2018-02-25-design-pattern-intro/</id>
     <published>2018-02-25T04:00:00.000Z</published>
-    <updated>2018-06-25T10:59:55.918Z</updated>
+    <updated>2018-06-26T06:58:47.375Z</updated>
     
     <summary type="html">
     
@@ -524,31 +551,6 @@
       <category term="Algorithm" scheme="http://wenzhiquan.github.io/tags/Algorithm/"/>
     
       <category term="Binary Search" scheme="http://wenzhiquan.github.io/tags/Binary-Search/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux基础学习</title>
-    <link href="http://wenzhiquan.github.io/2016/06/20/2016-06-20-linux-basic/"/>
-    <id>http://wenzhiquan.github.io/2016/06/20/2016-06-20-linux-basic/</id>
-    <published>2016-06-20T04:00:00.000Z</published>
-    <updated>2018-05-29T10:46:52.086Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;“Linux是一套免费使用和自由传播的类Unix操作系统，是一个基于POSIX和UNIX的多用户、多任务、支持多线程和多CPU的操作系统。”&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;Linux系统简介&quot;&gt;&lt;a href=&quot;#Linux系统简介&quot; class=&quot;headerlink&quot; title=&quot;Linux系统简介&quot;&gt;&lt;/a&gt;Linux系统简介&lt;/h3&gt;&lt;p&gt;Linux是一个开源的免费操作系统，如下图所示，Linux就是&lt;code&gt;内核&lt;/code&gt;与&lt;code&gt;系统调用&lt;/code&gt;接口那两层。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/uploads/in-post/linux_basic/os_level.png&quot; alt=&quot;操作系统的角色&quot;&gt;&lt;/p&gt;
-&lt;p&gt;而平常我们使用的应用程序一般都是运行在操作系统之上的，如qq，浏览器，文本编辑器等。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://wenzhiquan.github.io/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://wenzhiquan.github.io/tags/Linux/"/>
     
   </entry>
   
