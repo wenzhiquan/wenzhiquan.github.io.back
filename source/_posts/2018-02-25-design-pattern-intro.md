@@ -11,7 +11,7 @@ tags:
 
 > “设计模式是软件开发人员在开发过程中可以遵循的一般问题的解决方案。”
 
-### 1. 简介
+### 简介
 
 所谓`模式`，就是在特定环境下人们对某类重复出现的问题提出的一套有效的解决方案。
 
@@ -25,7 +25,7 @@ tags:
 
 <!-- more -->
 
-### 2. 设计模式的类型
+### 设计模式的类型
 
 根据设计模式的参考书`Design Patterns - Elements of Reusable Object-Oriented Software`中所提到的，总共有 23 种设计模式。
 
@@ -61,32 +61,32 @@ tags:
 |行为型模式|访问者模式 Visitor Pattern|★☆☆☆☆|
 |行为型模式|解释器模式 Interpreter Pattern|★☆☆☆☆|
 
-### 3. 面向对象设计的几大原则
+### 面向对象设计的几大原则
 
-#### 1. 单一职责原则（Single Responsibility Principle）
+#### 单一职责原则（Single Responsibility Principle）
 
 简单来说就是一个类只负责一个功能，这样一个类的职责就不会出现大量耦合，重用性也会更高。
 
-#### 2. 开闭原则（Open-Closed Principle）
+#### 开闭原则（Open-Closed Principle）
 
 一个软件应当对扩展开放，而对修改关闭。即软件应当尽量在不修改原代码的基础上进行扩展。想要达到这个效果，需要使用接口和抽象类。
 
-#### 3. 里氏代换原则（Liskov Substitution Principle）
+#### 里氏代换原则（Liskov Substitution Principle）
 
 任何可以使用基类的地方，其子类一定也能够被使用。按照里氏原则，子类必须实现父类的所有方法，当我们设计父类时，尽量把父类设计为抽象类或接口，这样运行时子类替换父类实例，可以很轻松的扩展系统功能。
 
-#### 4. 依赖倒置原则（Dependency Inversion Principle）
+#### 依赖倒置原则（Dependency Inversion Principle）
 
 抽象不应该依赖于细节，而细节应该依赖于抽象。即我们应该面向接口编程，而不是针对实现编程。一个具体类应当只实现接口或抽象类中声明过的方法，而不应给出多余的方法。
 
-#### 5. 接口隔离原则（Interface Segregation Principle）
+#### 接口隔离原则（Interface Segregation Principle）
 
 使用多个隔离的接口，而不是使用单一的接口，即当一个接口太大时，我们应当将其分割为隔离的多个接口，可以减小类之间的耦合。
 
-#### 6. 合成复用原则（Composition/Aggregate Reuse Principle）
+#### 合成复用原则（Composition/Aggregate Reuse Principle）
 
 尽量使用对象组合，而不是继承来达到复用的目的。
 
-#### 7. 迪米特法则（Law of Demeter）
+#### 迪米特法则（Law of Demeter）
 
 一个软件的实体应当尽可能少的和其他实体发生相互作用，而成为一个独立的模块。
