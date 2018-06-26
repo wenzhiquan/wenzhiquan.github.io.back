@@ -37,9 +37,9 @@
     
       <category term="设计模式" scheme="http://wenzhiquan.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
     
-      <category term="工厂模式" scheme="http://wenzhiquan.github.io/tags/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
-    
       <category term="行为型模式" scheme="http://wenzhiquan.github.io/tags/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="观察者模式" scheme="http://wenzhiquan.github.io/tags/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
     
   </entry>
   
