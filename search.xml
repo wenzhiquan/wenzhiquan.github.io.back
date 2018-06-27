@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[设计模式--策略模式]]></title>
+    <url>%2F2018%2F06%2F27%2F2018-06-27-design-pattern-strategy%2F</url>
+    <content type="text"><![CDATA[“设计模式是软件开发人员在开发过程中可以遵循的一般问题的解决方案。” 简介策略模式(Strategy Pattern)：定义一系列算法，将每一个算法封装起来，并让它们可以相互替换。策略模式让算法独立于使用它的客户而变化，也称为政策模式(Policy)。 策略模式是一种对象行为型模式。 模式意图完成一项任务，往往可以有多种不同的方式，每一种方式称为一个策略，我们可以根据环境或者条件的不同选择不同的策略来完成该项任务。 在软件开发中也常常遇到类似的情况，实现某一个功能有多个途径，此时可以使用一种设计模式来使得系统可以灵活地选择解决途径，也能够方便地增加新的解决途径。 在软件系统中，有许多算法可以实现某一功能，如查找、排序等，一种常用的方法是硬编码(Hard Coding)在一个类中，如需要提供多种查找算法，可以将这些算法写到一个类中，在该类中提供多个方法，每一个方法对应一个具体的查找算法；当然也可以将这些查找算法封装在一个统一的方法中，通过if…else…等条件判断语句来进行选择。这两种实现方法我们都可以称之为硬编码，如果需要增加一种新的查找算法，需要修改封装算法类的源代码；更换查找算法，也需要修改客户端调用代码。在这个算法类中封装了大量查找算法，该类代码将较复杂，维护较为困难。 除了提供专门的查找算法类之外，还可以在客户端程序中直接包含算法代码，这种做法更不可取，将导致客户端程序庞大而且难以维护，如果存在大量可供选择的算法时问题将变得更加严重。 为了解决这些问题，可以定义一些独立的类来封装不同的算法，每一个类封装一个具体的算法，在这里，每一个封装算法的类我们都可以称之为策略(Strategy)，为了保证这些策略的一致性，一般会用一个抽象的策略类来做算法的定义，而具体每种算法则对应于一个具体策略类。 优缺点 优点 策略模式提供了对“开闭原则”的完美支持，用户可以在不修改原有系统的基础上选择算法或行为，也可以灵活地增加新的算法或行为。 策略模式提供了管理相关的算法族的办法。 策略模式提供了可以替换继承关系的办法。 使用策略模式可以避免使用多重条件转移语句。 缺点 客户端必须知道所有的策略类，并自行决定使用哪一个策略类。 策略模式将造成产生很多策略类，可以通过使用享元模式在一定程度上减少对象的数量。 模式结构抽象工厂模式包含如下角色： Context: 环境类 Strategy: 抽象策略类 ConcreteStrategy: 具体策略类 实现Strategy: 123public interface Strategy &#123; public int doAction(int i, int j);&#125; AddStrategy: 123456public class AddStrategy implements Strategy &#123; @Override public int doAction(int i, int j) &#123; return i + j; &#125;&#125; MinusStrategy: 123456public class MinusStrategy implements Strategy &#123; @Override public int doAction(int i, int j) &#123; return i - j; &#125;&#125; Context: 1234567891011public class Context &#123; private Strategy strategy; public void setStrategy(Strategy strategy) &#123; this.strategy = strategy; &#125; public void executeStrategy(int i, int j) &#123; System.out.println(this.strategy.doAction(i, j)); &#125;&#125; Main: 1234567891011public class Main &#123; public static void main(String[] args) &#123; Context context = new Context(); Strategy addStrategy = new AddStrategy(); Strategy minusStrategy = new MinusStrategy(); context.setStrategy(addStrategy); context.executeStrategy(1,2); context.setStrategy(minusStrategy); context.executeStrategy(1,2); &#125;&#125; 输出结果： 123-1 使用场景在以下情况下可以使用策略模式： 如果在一个系统里面有许多类，它们之间的区别仅在于它们的行为，那么使用策略模式可以动态地让一个对象在许多行为中选择一种行为。 一个系统需要动态地在几种算法中选择一种。 如果一个对象有很多的行为，如果不用恰当的模式，这些行为就只好使用多重的条件选择语句来实现。 不希望客户端知道复杂的、与算法相关的数据结构，在具体策略类中封装算法和相关的数据结构，提高算法的保密性与安全性。]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>设计模式</tag>
+        <tag>行为型模式</tag>
+        <tag>策略模式</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[设计模式--观察者模式]]></title>
     <url>%2F2018%2F06%2F26%2F2018-06-26-design-pattern-observer%2F</url>
     <content type="text"><![CDATA[“设计模式是软件开发人员在开发过程中可以遵循的一般问题的解决方案。” 简介当对象间存在一对多关系，且当一个对象被修改时，会自动通知它的依赖对象，则使用观察者模式（Observer Pattern）。观察者模式属于行为型模式。 模式意图可以建立一种对象与对象之间的依赖关系，一个对象发生改变时将自动通知其他对象，其他对象将相应做出反应。在此，发生改变的对象称为被观察者，而被通知的对象称为观察者，一个被观察者可以对应多个观察者，而且这些观察者之间没有相互联系，可以根据需要增加和删除观察者，使得系统更易于扩展，这就是观察者模式的模式意图。 优缺点 优点 观察者模式可以实现表示层和数据逻辑层的分离，并定义了稳定的消息更新传递机制，抽象了更新接口，使得可以有不同的表示层作为具体观察者角色。 观察者模式在被观察者和观察者之间建立一个抽象的耦合。 观察者模式支持广播通信。 观察者模式符合“开闭原则”的要求。 缺点 如果一个被观察者对象有很多直接和间接的观察者的话，将所有的观察者都通知到会花费很多时间。 如果在观察者和被观察者之间有循环依赖的话，被观察者会触发它们之间进行循环调用，可能导致系统崩溃。 观察者模式没有相应的机制让观察者知道所观察的目标对象是怎么发生变化的，而仅仅只是知道被观察者发生了变化。 模式结构抽象工厂模式包含如下角色： Subject：目标 ConcreteSubject：具体目标 Observer：观察者 ConcreteObserver：具体观察者 实现Subject: 12345public interface Subject &#123; public void registerObserver(Observer o); public void removeObserver(Observer o); public void notifyObserver();&#125; ConcreteSubject: 12345678910111213141516171819202122232425262728293031323334353637public class ConcreteSubject implements Subject &#123; private ArrayList&lt;Observer&gt; observers; private Object data; public ConcreteSubject() &#123; this.observers = new ArrayList&lt;&gt;(); &#125; @Override public void registerObserver(Observer o) &#123; observers.add(o); &#125; @Override public void removeObserver(Observer o) &#123; int index = observers.indexOf(o); if (index &gt;= 0) &#123; observers.remove(index); &#125; &#125; @Override public void notifyObserver() &#123; for (Observer observer: observers) &#123; observer.update(this, data); &#125; &#125; public void dataChanged() &#123; notifyObserver(); &#125; public void setData(Object data) &#123; this.data = data; dataChanged(); &#125;&#125; Observer: 123public interface Observer &#123; public void update(Subject sub, Object obj);&#125; ConcreteObserver: 12345678910111213public class ConcreteObserver implements Observer&#123; private Subject concreteSubject; public ConcreteObserver(Subject subject) &#123; this.concreteSubject = subject; this.concreteSubject.registerObserver(this); &#125; @Override public void update(Subject sub, Object obj) &#123; System.out.println("Subject is " + sub.toString() + " Data is " + obj.toString()); &#125;&#125; Main: 123456789public class Main &#123; public static void main(String[] args) &#123; ConcreteSubject subject = new ConcreteSubject(); Observer observer = new ConcreteObserver(subject); subject.setData(new HashMap&lt;Integer, Integer&gt;()&#123;&#123;put(1, 1);&#125;&#125;); subject.setData(new HashMap&lt;Integer, Integer&gt;()&#123;&#123;put(2, 2);&#125;&#125;); subject.setData(new HashMap&lt;Integer, Integer&gt;()&#123;&#123;put(3, 3);&#125;&#125;); &#125;&#125; 输出结果： 123Subject is observer_pattern.ConcreteSubject@610455d6 Data is &#123;1=1&#125;Subject is observer_pattern.ConcreteSubject@610455d6 Data is &#123;2=2&#125;Subject is observer_pattern.ConcreteSubject@610455d6 Data is &#123;3=3&#125; 使用场景在以下情况下可以使用观察者模式： 一个抽象模型有两个方面，其中一个方面依赖于另一个方面。将这些方面封装在独立的对象中使它们可以各自独立地改变和复用。 一个对象的改变将导致其他一个或多个对象也发生改变，而不知道具体有多少对象将发生改变，可以降低对象之间的耦合度。 一个对象必须通知其他对象，而并不知道这些对象是谁。 需要在系统中创建一个触发链，A对象的行为将影响B对象，B对象的行为将影响C对象……，可以使用观察者模式创建一种链式触发机制。]]></content>
@@ -287,8 +300,8 @@
         <category>Algorithm</category>
       </categories>
       <tags>
-        <tag>Algorithm</tag>
         <tag>String</tag>
+        <tag>Algorithm</tag>
       </tags>
   </entry>
   <entry>
@@ -299,8 +312,8 @@
         <category>Algorithm</category>
       </categories>
       <tags>
-        <tag>Algorithm</tag>
         <tag>String</tag>
+        <tag>Algorithm</tag>
       </tags>
   </entry>
   <entry>

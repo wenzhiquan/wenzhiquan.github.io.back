@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wenzhiquan.github.io/"/>
-  <updated>2018-06-26T04:00:00.000Z</updated>
+  <updated>2018-06-27T04:00:00.000Z</updated>
   <id>http://wenzhiquan.github.io/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>设计模式--策略模式</title>
+    <link href="http://wenzhiquan.github.io/2018/06/27/2018-06-27-design-pattern-strategy/"/>
+    <id>http://wenzhiquan.github.io/2018/06/27/2018-06-27-design-pattern-strategy/</id>
+    <published>2018-06-27T04:00:00.000Z</published>
+    <updated>2018-06-27T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“设计模式是软件开发人员在开发过程中可以遵循的一般问题的解决方案。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;策略模式(Strategy Pattern)：定义一系列算法，将每一个算法封装起来，并让它们可以相互替换。策略模式让算法独立于使用它的客户而变化，也称为政策模式(Policy)。&lt;/p&gt;
+&lt;p&gt;策略模式是一种对象行为型模式。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://wenzhiquan.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="设计模式" scheme="http://wenzhiquan.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="行为型模式" scheme="http://wenzhiquan.github.io/tags/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="策略模式" scheme="http://wenzhiquan.github.io/tags/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>设计模式--观察者模式</title>
@@ -287,7 +315,7 @@
     <link href="http://wenzhiquan.github.io/2018/02/25/2018-02-25-design-pattern-intro/"/>
     <id>http://wenzhiquan.github.io/2018/02/25/2018-02-25-design-pattern-intro/</id>
     <published>2018-02-25T04:00:00.000Z</published>
-    <updated>2018-06-26T07:15:11.421Z</updated>
+    <updated>2018-06-27T08:39:47.400Z</updated>
     
     <summary type="html">
     
@@ -527,30 +555,6 @@
       <category term="Mac" scheme="http://wenzhiquan.github.io/tags/Mac/"/>
     
       <category term="Software" scheme="http://wenzhiquan.github.io/tags/Software/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>面试必会题目（3）—— Binary Search</title>
-    <link href="http://wenzhiquan.github.io/2016/06/26/2016-06-26-interview-algorithm-binary-search/"/>
-    <id>http://wenzhiquan.github.io/2016/06/26/2016-06-26-interview-algorithm-binary-search/</id>
-    <published>2016-06-26T04:00:00.000Z</published>
-    <updated>2018-05-29T10:46:52.087Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;“面试技术岗位应该掌握的算法题目–Binary Search相关”&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Algorithm" scheme="http://wenzhiquan.github.io/categories/Algorithm/"/>
-    
-    
-      <category term="Algorithm" scheme="http://wenzhiquan.github.io/tags/Algorithm/"/>
-    
-      <category term="Binary Search" scheme="http://wenzhiquan.github.io/tags/Binary-Search/"/>
     
   </entry>
   
