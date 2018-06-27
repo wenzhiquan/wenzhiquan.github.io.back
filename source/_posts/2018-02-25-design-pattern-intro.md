@@ -51,7 +51,7 @@ tags:
 |--|--|--|
 |行为型模式|迭代器模式 Iterator Pattern|★★★★★|
 |行为型模式|[观察者模式 Observer Pattern](/2018/06/26/2018-06-26-design-pattern-observer/)|★★★★★|
-|行为型模式|策略模式 Strategy Pattern|★★★★☆|
+|行为型模式|[策略模式 Strategy Pattern](/2018/06/27/2018-06-27-design-pattern-strategy/)|★★★★☆|
 |行为型模式|命令模式 Command Pattern|★★★★☆|
 |行为型模式|模板方法模式 Template Method Patter|★★★☆☆|
 |行为型模式|状态模式 State Pattern|★★★☆☆|
