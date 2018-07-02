@@ -35,14 +35,25 @@ gulp.task('minify-js', function() {
 gulp.task('minify-images', function() {
     return gulp.src('./public/images/**/*.*')
         .pipe(imagemin(
-        [imagemin.gifsicle({'optimizationLevel': 3}),
+        [imagemin.gifsicle({'optimizationlevel': 3}),
         imagemin.jpegtran({'progressive': true}),
-        imagemin.optipng({'optimizationLevel': 7}),
+        imagemin.optipng({'optimizationlevel': 7}),
         imagemin.svgo()],
         {'verbose': true}))
         .pipe(gulp.dest('./public/images'))
 });
+// 压缩图片
+gulp.task('minify-uploads', function() {
+    return gulp.src('./public/uploads/**/*.*')
+        .pipe(imagemin(
+        [imagemin.gifsicle({'optimizationlevel': 3}),
+        imagemin.jpegtran({'progressive': true}),
+        imagemin.optipng({'optimizationlevel': 7}),
+        imagemin.svgo()],
+        {'verbose': true}))
+        .pipe(gulp.dest('./public/uploads'))
+});
 // 默认任务
 gulp.task('default', [
-    'minify-html','minify-css','minify-js','minify-images'
+    'minify-html','minify-css','minify-js','minify-images','minify-uploads'
 ]);
