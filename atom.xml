@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wenzhiquan.github.io/"/>
-  <updated>2018-06-27T04:00:00.000Z</updated>
+  <updated>2018-06-30T04:00:00.000Z</updated>
   <id>http://wenzhiquan.github.io/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vim 简明教程</title>
+    <link href="http://wenzhiquan.github.io/2018/06/30/2018-06-30-vim-introduction/"/>
+    <id>http://wenzhiquan.github.io/2018/06/30/2018-06-30-vim-introduction/</id>
+    <published>2018-06-30T04:00:00.000Z</published>
+    <updated>2018-06-30T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“Vim 是一个历史悠久的，具有很多命令的功能非常强大的文本编辑器，被称为 &lt;code&gt;编辑器之神&lt;/code&gt;。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/Vim&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Vim&lt;/a&gt; 是从 vi 发展出来的一个文本编辑器。其代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。和 Emacs 并列成为类 Unix 系统用户最喜欢的编辑器。两派使用者经常发起 “XXX 才是最好的编辑器” 之争。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Vim" scheme="http://wenzhiquan.github.io/categories/Vim/"/>
+    
+    
+      <category term="vim" scheme="http://wenzhiquan.github.io/tags/vim/"/>
+    
+  </entry>
   
   <entry>
     <title>设计模式--策略模式</title>
@@ -527,34 +550,6 @@
     
     
       <category term="正则表达式" scheme="http://wenzhiquan.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Wenknows的利器</title>
-    <link href="http://wenzhiquan.github.io/2016/06/27/benefit_others/"/>
-    <id>http://wenzhiquan.github.io/2016/06/27/benefit_others/</id>
-    <published>2016-06-27T04:00:00.000Z</published>
-    <updated>2018-05-21T04:00:00.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;“工具和灵感，都是利器。当来自不同的领域，不同类型的创造者的工具和灵感互相碰撞的时候，才会迸发出更多的可能性。”&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;strong&gt;更新记录&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;2016-06-27  研二期间创建本篇博文&lt;br&gt;2018-05-21  更新工作，更新使用的软件&lt;/p&gt;
-&lt;h3 id=&quot;我和我所做的工作&quot;&gt;&lt;a href=&quot;#我和我所做的工作&quot; class=&quot;headerlink&quot; title=&quot;我和我所做的工作&quot;&gt;&lt;/a&gt;我和我所做的工作&lt;/h3&gt;&lt;p&gt;我是&lt;code&gt;Wenknows&lt;/code&gt;，现在工作于小红书，职位为电商商户平台后台开发，平时喜欢运动和吃吃吃，业余弹弹尤克里里，喜欢听音乐和评书，喜爱编程，希望在程序猿的道路上能走得更远。&lt;/p&gt;
-&lt;h3 id=&quot;我当前使用的硬件&quot;&gt;&lt;a href=&quot;#我当前使用的硬件&quot; class=&quot;headerlink&quot; title=&quot;我当前使用的硬件&quot;&gt;&lt;/a&gt;我当前使用的硬件&lt;/h3&gt;&lt;p&gt;电脑是 14 年的 15 寸 MacBook Pro with Retina，i7处理器，16 GB RAM＋256 GB SSD。&lt;br&gt;&lt;img src=&quot;/uploads/in-post/macbookpro.png&quot; alt=&quot;macbookpro&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Mac" scheme="http://wenzhiquan.github.io/categories/Mac/"/>
-    
-    
-      <category term="Mac" scheme="http://wenzhiquan.github.io/tags/Mac/"/>
-    
-      <category term="Software" scheme="http://wenzhiquan.github.io/tags/Software/"/>
     
   </entry>
   
