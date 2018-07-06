@@ -125,3 +125,24 @@ deploy:
     repo: git@github.com:wenzhiquan/wenzhiquan.github.io.git
     branch: master
   - type: leancloud_counter_security_sync
+
+# Live2d
+live2d:
+  model:
+    scale: 1
+    hHeadPos: 0.5
+    vHeadPos: 0.618
+    use: live2d-widget-model-hijiki
+  display:
+    superSample: 2
+    width: 150
+    height: 180
+    position: left
+    hOffset: 0
+    vOffset: -20
+  mobile:
+    show: true
+    scale: 0.5
+  react:
+    opacityDefault: 1
+    opacityOnHover: 0.2
