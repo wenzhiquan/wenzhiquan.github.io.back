@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://wenzhiquan.github.io/2018/02/25/2018-02-25-design-pattern-intro/</loc>
+    
+    <lastmod>2018-09-03T09:00:34.681Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2018/08/23/2018-08-23-write-your-spring-starter/</loc>
+    
+    <lastmod>2018-08-23T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wenzhiquan.github.io/2018/07/13/2018-07-13-java-annotation/</loc>
     
     <lastmod>2018-07-13T04:00:00.000Z</lastmod>
@@ -12,13 +26,6 @@
     <loc>http://wenzhiquan.github.io/2018/06/30/2018-06-30-vim-introduction/</loc>
     
     <lastmod>2018-06-30T04:00:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wenzhiquan.github.io/2018/02/25/2018-02-25-design-pattern-intro/</loc>
-    
-    <lastmod>2018-06-27T08:39:47.400Z</lastmod>
     
   </url>
   
@@ -86,14 +93,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/categories/index.html</loc>
+    <loc>http://wenzhiquan.github.io/tags/index.html</loc>
     
     <lastmod>2018-05-29T10:46:52.092Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/tags/index.html</loc>
+    <loc>http://wenzhiquan.github.io/categories/index.html</loc>
     
     <lastmod>2018-05-29T10:46:52.092Z</lastmod>
     
@@ -135,14 +142,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/07/04/2016-07-04-interview-algorithm-math-bit/</loc>
+    <loc>http://wenzhiquan.github.io/2016/08/05/2016-08-05-mac-installed-todo/</loc>
     
     <lastmod>2018-05-29T10:46:52.088Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/08/05/2016-08-05-mac-installed-todo/</loc>
+    <loc>http://wenzhiquan.github.io/2016/07/04/2016-07-04-interview-algorithm-math-bit/</loc>
     
     <lastmod>2018-05-29T10:46:52.088Z</lastmod>
     
@@ -170,14 +177,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/06/15/2016-06-15-interview-algorithm-array/</loc>
+    <loc>http://wenzhiquan.github.io/2016/06/05/2016-06-05-linux-frequently-used-order/</loc>
     
     <lastmod>2018-05-29T10:46:52.085Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/06/05/2016-06-05-linux-frequently-used-order/</loc>
+    <loc>http://wenzhiquan.github.io/2016/06/15/2016-06-15-interview-algorithm-array/</loc>
     
     <lastmod>2018-05-29T10:46:52.085Z</lastmod>
     
@@ -205,6 +212,20 @@
   </url>
   
   <url>
+    <loc>http://wenzhiquan.github.io/2015/05/29/2015-05-29-install-nginx-php-mysql-mac/</loc>
+    
+    <lastmod>2018-05-29T10:46:52.082Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2015/05/04/2015-05-04-mac-sublime-c/</loc>
+    
+    <lastmod>2018-05-29T10:46:52.082Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wenzhiquan.github.io/2015/09/18/2015-09-18-install-jekyll-fedora/</loc>
     
     <lastmod>2018-05-29T10:46:52.082Z</lastmod>
@@ -219,13 +240,6 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2015/05/29/2015-05-29-install-nginx-php-mysql-mac/</loc>
-    
-    <lastmod>2018-05-29T10:46:52.082Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://wenzhiquan.github.io/2015/03/19/2015-03-19-mac-install-jekyll/</loc>
     
     <lastmod>2018-05-29T10:46:52.082Z</lastmod>
@@ -233,21 +247,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2015/05/04/2015-05-04-mac-sublime-c/</loc>
-    
-    <lastmod>2018-05-29T10:46:52.082Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wenzhiquan.github.io/2014/12/09/2014-12-09-nginx-mysql-php-fedora/</loc>
+    <loc>http://wenzhiquan.github.io/2014/10/14/2014-10-14-markdown-simple-syntax/</loc>
     
     <lastmod>2018-05-29T10:46:52.081Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2014/10/14/2014-10-14-markdown-simple-syntax/</loc>
+    <loc>http://wenzhiquan.github.io/2014/12/09/2014-12-09-nginx-mysql-php-fedora/</loc>
     
     <lastmod>2018-05-29T10:46:52.081Z</lastmod>
     
@@ -261,14 +268,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2018/05/04/2018-05-04-move-to-hexo-blog/</loc>
+    <loc>http://wenzhiquan.github.io/2018/05/29/2018-05-29-rpc-introduction/</loc>
     
     <lastmod>2018-05-29T04:00:00.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2018/05/29/2018-05-29-rpc-introduction/</loc>
+    <loc>http://wenzhiquan.github.io/2018/05/04/2018-05-04-move-to-hexo-blog/</loc>
     
     <lastmod>2018-05-29T04:00:00.000Z</lastmod>
     

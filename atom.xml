@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wenzhiquan.github.io/"/>
-  <updated>2018-07-13T04:00:00.000Z</updated>
+  <updated>2018-08-23T04:00:00.000Z</updated>
   <id>http://wenzhiquan.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>创建自定义的 Spring Starter</title>
+    <link href="http://wenzhiquan.github.io/2018/08/23/2018-08-23-write-your-spring-starter/"/>
+    <id>http://wenzhiquan.github.io/2018/08/23/2018-08-23-write-your-spring-starter/</id>
+    <published>2018-08-23T04:00:00.000Z</published>
+    <updated>2018-08-23T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“starter 是一种用于帮助程序员进行依赖管理的服务。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h3&gt;&lt;p&gt;依赖管理是任何复杂项目的关键部分。以手动的方式来实现依赖管理不仅耗时，而且不易维护，Spring Boot Starter 专为解决此问题而诞生。&lt;/p&gt;
+&lt;p&gt;通过使用某个功能创建的 starter，应用者只需要引入 starter jar 包，spring boot 就能自动扫描到要加载的信息。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://wenzhiquan.github.io/categories/Java/"/>
+    
+    
+      <category term="Spring" scheme="http://wenzhiquan.github.io/tags/Spring/"/>
+    
+      <category term="Java" scheme="http://wenzhiquan.github.io/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>Java Annotation 简析</title>
@@ -364,7 +390,7 @@
     <link href="http://wenzhiquan.github.io/2018/02/25/2018-02-25-design-pattern-intro/"/>
     <id>http://wenzhiquan.github.io/2018/02/25/2018-02-25-design-pattern-intro/</id>
     <published>2018-02-25T04:00:00.000Z</published>
-    <updated>2018-06-27T08:39:47.400Z</updated>
+    <updated>2018-09-03T09:00:34.681Z</updated>
     
     <summary type="html">
     
@@ -410,9 +436,9 @@
       <category term="Java" scheme="http://wenzhiquan.github.io/categories/Java/"/>
     
     
-      <category term="Gradle" scheme="http://wenzhiquan.github.io/tags/Gradle/"/>
-    
       <category term="Java" scheme="http://wenzhiquan.github.io/tags/Java/"/>
+    
+      <category term="Gradle" scheme="http://wenzhiquan.github.io/tags/Gradle/"/>
     
       <category term="Web" scheme="http://wenzhiquan.github.io/tags/Web/"/>
     
@@ -439,9 +465,9 @@
       <category term="Java" scheme="http://wenzhiquan.github.io/categories/Java/"/>
     
     
-      <category term="Gradle" scheme="http://wenzhiquan.github.io/tags/Gradle/"/>
-    
       <category term="Java" scheme="http://wenzhiquan.github.io/tags/Java/"/>
+    
+      <category term="Gradle" scheme="http://wenzhiquan.github.io/tags/Gradle/"/>
     
       <category term="Web" scheme="http://wenzhiquan.github.io/tags/Web/"/>
     
@@ -525,32 +551,6 @@
       <category term="Mac" scheme="http://wenzhiquan.github.io/tags/Mac/"/>
     
       <category term="Software" scheme="http://wenzhiquan.github.io/tags/Software/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>面试必会题目（4）—— Math &amp; Bit Manipulation</title>
-    <link href="http://wenzhiquan.github.io/2016/07/04/2016-07-04-interview-algorithm-math-bit/"/>
-    <id>http://wenzhiquan.github.io/2016/07/04/2016-07-04-interview-algorithm-math-bit/</id>
-    <published>2016-07-04T06:00:00.000Z</published>
-    <updated>2018-05-29T10:46:52.088Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;“面试技术岗位应该掌握的算法题目–Math &amp;amp; Bit Manipulation相关”&lt;/p&gt;
-&lt;/blockquote&gt;
-    
-    </summary>
-    
-      <category term="Algorithm" scheme="http://wenzhiquan.github.io/categories/Algorithm/"/>
-    
-    
-      <category term="Algorithm" scheme="http://wenzhiquan.github.io/tags/Algorithm/"/>
-    
-      <category term="Math" scheme="http://wenzhiquan.github.io/tags/Math/"/>
-    
-      <category term="Bit Manipulation" scheme="http://wenzhiquan.github.io/tags/Bit-Manipulation/"/>
     
   </entry>
   
