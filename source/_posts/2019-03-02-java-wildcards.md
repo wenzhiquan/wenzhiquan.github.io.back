@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Java 通配符简析"
-date: 2019-03-23 12:00:00
-updated: 2019-03-23 12:00:00
+date: 2019-03-02 12:00:00
+updated: 2019-03-02 12:00:00
 copyright: true
 categories:
   - Java
