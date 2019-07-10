@@ -1,0 +1,556 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>温智全的博客</title>
+  
+  <subtitle>Wenknows&#39;s Blog</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://wenzhiquan.github.io/"/>
+  <updated>2019-03-02T04:00:00.000Z</updated>
+  <id>http://wenzhiquan.github.io/</id>
+  
+  <author>
+    <name>温智全</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java 通配符简析</title>
+    <link href="http://wenzhiquan.github.io/2019/03/02/2019-03-02-java-wildcards/"/>
+    <id>http://wenzhiquan.github.io/2019/03/02/2019-03-02-java-wildcards/</id>
+    <published>2019-03-02T04:00:00.000Z</published>
+    <updated>2019-03-02T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“Java 通配符是一种表示未知类型的类型约束的方法。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h3&gt;&lt;p&gt;&lt;code&gt;通配符&lt;/code&gt; 并不包含在最初的泛型设计中（起源于 Generic Java（GJ）项目），从形成 JSR 14 到发布其最终版本之间的五年多时间内完成设计过程并被添加到了泛型中。&lt;code&gt;通配符&lt;/code&gt; 在类型系统中具有重要的意义，它们为一个泛型类所指定的类型集合提供了一个有用的类型范围。Oracle 的官方解释是 Type of unknown。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://wenzhiquan.github.io/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="http://wenzhiquan.github.io/tags/Java/"/>
+    
+      <category term="通配符" scheme="http://wenzhiquan.github.io/tags/%E9%80%9A%E9%85%8D%E7%AC%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java Annotation 简析</title>
+    <link href="http://wenzhiquan.github.io/2018/07/13/2018-07-13-java-annotation/"/>
+    <id>http://wenzhiquan.github.io/2018/07/13/2018-07-13-java-annotation/</id>
+    <published>2018-07-13T04:00:00.000Z</published>
+    <updated>2018-07-13T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“Java Annotation 是 JDK5.0 引入的一种注释机制, 用于为 Java 代码提供元数据。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h3&gt;&lt;p&gt;&lt;code&gt;Annotation&lt;/code&gt;，中文译名为注解，那么注解又是什么呢？简单来说，注解就是对某件事物的标记和解释，用来描述这件事物的特点和属性。举个例子，前一阵看《创造 101》，看到了一名熟悉的 &lt;code&gt;Rapper&lt;/code&gt; – Yamy，参加这个节目之后，她又被打上了 &lt;code&gt;Dancer&lt;/code&gt; 的标签。对于 Yamy 来说，&lt;code&gt;Rapper&lt;/code&gt; 和 &lt;code&gt;Dancer&lt;/code&gt; 就是对她的注解。我们通过注解，可以在一定程度上了解到被标记事物的一些属性，我们就可以用这些属性来做一些事情。比如在《中国有嘻哈》利用 &lt;code&gt;Rapper&lt;/code&gt; 标签宣传 Yamy 的说唱能力，而在《创造 101》利用 &lt;code&gt;Dancer&lt;/code&gt; 标签宣传 Yamy 的跳舞能力等。&lt;/p&gt;
+&lt;p&gt;从上面的例子我们可以看出来，通过获取事物的注解，可以得到事物的属性，利用这些属性可以进行一些操作。代码也是这样，通过获取代码的注解，我们可以获得注解赋予代码的属性，利用这些属性，我们就可以在程序的生命周期中，对具有这些属性的代码进行额外的操作。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://wenzhiquan.github.io/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="http://wenzhiquan.github.io/tags/Java/"/>
+    
+      <category term="Annotation" scheme="http://wenzhiquan.github.io/tags/Annotation/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vim 简明教程</title>
+    <link href="http://wenzhiquan.github.io/2018/06/30/2018-06-30-vim-introduction/"/>
+    <id>http://wenzhiquan.github.io/2018/06/30/2018-06-30-vim-introduction/</id>
+    <published>2018-06-30T04:00:00.000Z</published>
+    <updated>2018-06-30T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“Vim 是一个历史悠久的，具有很多命令的功能非常强大的文本编辑器，被称为 &lt;code&gt;编辑器之神&lt;/code&gt;。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/Vim&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Vim&lt;/a&gt; 是从 vi 发展出来的一个文本编辑器。其代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。和 Emacs 并列成为类 Unix 系统用户最喜欢的编辑器。两派使用者经常发起 “XXX 才是最好的编辑器” 之争。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Vim" scheme="http://wenzhiquan.github.io/categories/Vim/"/>
+    
+    
+      <category term="vim" scheme="http://wenzhiquan.github.io/tags/vim/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式--策略模式</title>
+    <link href="http://wenzhiquan.github.io/2018/06/27/2018-06-27-design-pattern-strategy/"/>
+    <id>http://wenzhiquan.github.io/2018/06/27/2018-06-27-design-pattern-strategy/</id>
+    <published>2018-06-27T04:00:00.000Z</published>
+    <updated>2018-06-27T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“设计模式是软件开发人员在开发过程中可以遵循的一般问题的解决方案。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;策略模式(Strategy Pattern)：定义一系列算法，将每一个算法封装起来，并让它们可以相互替换。策略模式让算法独立于使用它的客户而变化，也称为政策模式(Policy)。&lt;/p&gt;
+&lt;p&gt;策略模式是一种对象行为型模式。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://wenzhiquan.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="设计模式" scheme="http://wenzhiquan.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="行为型模式" scheme="http://wenzhiquan.github.io/tags/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="策略模式" scheme="http://wenzhiquan.github.io/tags/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式--观察者模式</title>
+    <link href="http://wenzhiquan.github.io/2018/06/26/2018-06-26-design-pattern-observer/"/>
+    <id>http://wenzhiquan.github.io/2018/06/26/2018-06-26-design-pattern-observer/</id>
+    <published>2018-06-26T04:00:00.000Z</published>
+    <updated>2018-06-26T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“设计模式是软件开发人员在开发过程中可以遵循的一般问题的解决方案。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;当对象间存在一对多关系，且当一个对象被修改时，会自动通知它的依赖对象，则使用观察者模式（Observer Pattern）。观察者模式属于行为型模式。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://wenzhiquan.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="设计模式" scheme="http://wenzhiquan.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="行为型模式" scheme="http://wenzhiquan.github.io/tags/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="观察者模式" scheme="http://wenzhiquan.github.io/tags/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式--抽象工厂模式</title>
+    <link href="http://wenzhiquan.github.io/2018/06/25/2018-06-25-design-pattern-abstract-factory/"/>
+    <id>http://wenzhiquan.github.io/2018/06/25/2018-06-25-design-pattern-abstract-factory/</id>
+    <published>2018-06-25T04:00:00.000Z</published>
+    <updated>2018-06-25T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“设计模式是软件开发人员在开发过程中可以遵循的一般问题的解决方案。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;在&lt;code&gt;工厂方法模式&lt;/code&gt;中具体工厂负责生产具体的产品，每一个具体工厂对应一种具体产品，工厂方法也具有唯一性，一般情况下，一个具体工厂中只有一个工厂方法或者一组重载的工厂方法。但是有时候我们需要一个工厂可以提供多个产品对象，而不是单一的产品对象。此时工厂方法模式就无法完成需求，而抽象工厂模式可以解决这个问题。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://wenzhiquan.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="设计模式" scheme="http://wenzhiquan.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="创建型模式" scheme="http://wenzhiquan.github.io/tags/%E5%88%9B%E5%BB%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="工厂模式" scheme="http://wenzhiquan.github.io/tags/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式--工厂方法模式</title>
+    <link href="http://wenzhiquan.github.io/2018/06/16/2018-06-16-design-pattern-factory-method/"/>
+    <id>http://wenzhiquan.github.io/2018/06/16/2018-06-16-design-pattern-factory-method/</id>
+    <published>2018-06-16T04:00:00.000Z</published>
+    <updated>2018-06-16T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“设计模式是软件开发人员在开发过程中可以遵循的一般问题的解决方案。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;由于简单工厂模式每次增加新的产品时，都需要修改工厂类，违背了开闭原则，可以通过定义工厂类的父类，为每种产品都创建一个工厂，从而动态的获取子类，并且增加产品时增加工厂子类即可，不用修改工厂父类。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://wenzhiquan.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="设计模式" scheme="http://wenzhiquan.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="创建型模式" scheme="http://wenzhiquan.github.io/tags/%E5%88%9B%E5%BB%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="工厂模式" scheme="http://wenzhiquan.github.io/tags/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式--简单工厂模式</title>
+    <link href="http://wenzhiquan.github.io/2018/06/15/2018-06-15-design-pattern-simple-factory/"/>
+    <id>http://wenzhiquan.github.io/2018/06/15/2018-06-15-design-pattern-simple-factory/</id>
+    <published>2018-06-15T04:00:00.000Z</published>
+    <updated>2018-06-15T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“设计模式是软件开发人员在开发过程中可以遵循的一般问题的解决方案。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;简单工厂模式是最简单的设计模式之一，简单到甚至没有放到23种常用设计模式当中，可以用于设计模式的入门学习。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://wenzhiquan.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="设计模式" scheme="http://wenzhiquan.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="创建型模式" scheme="http://wenzhiquan.github.io/tags/%E5%88%9B%E5%BB%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="工厂模式" scheme="http://wenzhiquan.github.io/tags/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Thrift 简析</title>
+    <link href="http://wenzhiquan.github.io/2018/05/30/2018-05-30-thrift-introduction/"/>
+    <id>http://wenzhiquan.github.io/2018/05/30/2018-05-30-thrift-introduction/</id>
+    <published>2018-05-30T04:00:00.000Z</published>
+    <updated>2018-06-21T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Thrift 是一种可扩展、跨语言的服务开发框架，用于各个服务之间的 RPC 通信。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h3&gt;&lt;p&gt;&lt;code&gt;Thrift&lt;/code&gt; 最初由 &lt;code&gt;Facebook&lt;/code&gt; 于 2007 年开发，2008 年进入 &lt;code&gt;Apache&lt;/code&gt; 开源项目。Thrift 主要用于各个服务之间的 RPC 通信，是一种可扩展、跨语言的 &lt;code&gt;RPC&lt;/code&gt; 服务开发框架，其服务端和客户端可以用不同的语言来开发。只需要依照 IDL（Interface Description Language）定义一次接口，Thrift 工具就能编译生成 C++, Java, Python, PHP, Ruby, JavaScript, Node.js 等语言的代码。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Thrift" scheme="http://wenzhiquan.github.io/categories/Thrift/"/>
+    
+    
+      <category term="RPC" scheme="http://wenzhiquan.github.io/tags/RPC/"/>
+    
+      <category term="Thrift" scheme="http://wenzhiquan.github.io/tags/Thrift/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RPC 简析</title>
+    <link href="http://wenzhiquan.github.io/2018/05/29/2018-05-29-rpc-introduction/"/>
+    <id>http://wenzhiquan.github.io/2018/05/29/2018-05-29-rpc-introduction/</id>
+    <published>2018-05-29T04:00:00.000Z</published>
+    <updated>2018-05-29T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;RPC 的主要功能目标是让构建分布式计算（应用）更容易，在提供强大的远程调用能力时不损失本地调用的语义简洁性。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h3&gt;&lt;h4 id=&quot;什么是-RPC&quot;&gt;&lt;a href=&quot;#什么是-RPC&quot; class=&quot;headerlink&quot; title=&quot;什么是 RPC&quot;&gt;&lt;/a&gt;什么是 &lt;code&gt;RPC&lt;/code&gt;&lt;/h4&gt;&lt;p&gt;&lt;code&gt;RPC&lt;/code&gt;，全称为 &lt;code&gt;Remote Procedure Call&lt;/code&gt;，即远程过程调用，是一种进程间的通信方式。它能够实现从主机 A 调用可达地址空间中另一台主机 B 上的过程或函数，而程序员并不需要显示的编码其调用过程。也即是说对于程序员来说，这个调用过程是透明的，本地调用和远程调用所用代码基本是相同的。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="RPC" scheme="http://wenzhiquan.github.io/categories/RPC/"/>
+    
+    
+      <category term="RPC" scheme="http://wenzhiquan.github.io/tags/RPC/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>迁移至 Hexo 博客</title>
+    <link href="http://wenzhiquan.github.io/2018/05/04/2018-05-04-move-to-hexo-blog/"/>
+    <id>http://wenzhiquan.github.io/2018/05/04/2018-05-04-move-to-hexo-blog/</id>
+    <published>2018-05-04T04:00:00.000Z</published>
+    <updated>2018-05-29T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;之前一直使用的是基于 &lt;code&gt;jekyll&lt;/code&gt; 的博客系统，但是功能不是十分的强大，最近老铁安利了 &lt;code&gt;Hexo&lt;/code&gt; 这个博客系统，同时也想对自己以前的博文进行整理，所以开始准备将以前基于 &lt;code&gt;jekyll&lt;/code&gt; 的博文迁移至 &lt;code&gt;Hexo&lt;/code&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="博客" scheme="http://wenzhiquan.github.io/categories/%E5%8D%9A%E5%AE%A2/"/>
+    
+    
+      <category term="博客" scheme="http://wenzhiquan.github.io/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+      <category term="Hexo" scheme="http://wenzhiquan.github.io/tags/Hexo/"/>
+    
+      <category term="NexT" scheme="http://wenzhiquan.github.io/tags/NexT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring 简介</title>
+    <link href="http://wenzhiquan.github.io/2018/04/15/2018-04-15-spring-introduction/"/>
+    <id>http://wenzhiquan.github.io/2018/04/15/2018-04-15-spring-introduction/</id>
+    <published>2018-04-15T04:00:00.000Z</published>
+    <updated>2018-05-30T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“本章将从宏观的层面上介绍 Spring。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;简化-Java-开发&quot;&gt;&lt;a href=&quot;#简化-Java-开发&quot; class=&quot;headerlink&quot; title=&quot;简化 Java 开发&quot;&gt;&lt;/a&gt;简化 Java 开发&lt;/h3&gt;&lt;p&gt;Spring 采取 4 种关键策略简化 Java 开发：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;基于 POJO 的轻量级和最小侵入性编程&lt;/li&gt;
+&lt;li&gt;通过依赖注入和面向接口实现松耦合&lt;/li&gt;
+&lt;li&gt;基于切面和惯例进行声明式编程&lt;/li&gt;
+&lt;li&gt;通过切面和模板减少样板式代码&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://wenzhiquan.github.io/categories/Java/"/>
+    
+      <category term="Spring" scheme="http://wenzhiquan.github.io/categories/Java/Spring/"/>
+    
+    
+      <category term="Spring" scheme="http://wenzhiquan.github.io/tags/Spring/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>类文件结构和Java虚拟机类加载机制</title>
+    <link href="http://wenzhiquan.github.io/2018/04/01/2018-04-01-java-class-load/"/>
+    <id>http://wenzhiquan.github.io/2018/04/01/2018-04-01-java-class-load/</id>
+    <published>2018-04-01T04:00:00.000Z</published>
+    <updated>2019-07-10T04:13:06.246Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“代码编译的结果从本地机器码转变为字节码，是存储格式发展的一小步，却是编程语言发展的一大步。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h3&gt;&lt;p&gt;虚拟机把描述类的数据从 Class 文件加载到内存，并对数据进行校验、转换解析和初始化，最终形成可以被虚拟机直接使用的 Java 类型，这就是虚拟机的类加载机制。&lt;/p&gt;
+&lt;p&gt;在 Java 语言中，类的加载、连接和初始化过程都是在程序运行期间完成的，为 Java 应用程序提供了高度的灵活性。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://wenzhiquan.github.io/categories/Java/"/>
+    
+    
+      <category term="类文件结构" scheme="http://wenzhiquan.github.io/tags/%E7%B1%BB%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84/"/>
+    
+      <category term="类加载机制" scheme="http://wenzhiquan.github.io/tags/%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java内存模型和垃圾回收</title>
+    <link href="http://wenzhiquan.github.io/2018/03/28/2018-03-28-java-memory-garbage-collection/"/>
+    <id>http://wenzhiquan.github.io/2018/03/28/2018-03-28-java-memory-garbage-collection/</id>
+    <published>2018-03-28T04:00:00.000Z</published>
+    <updated>2019-07-10T04:13:06.246Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“Java 与 C++之间有一堵由内存动态分配和垃圾收集技术所围成的高墙，墙外面的人想进去，墙里面的人却想出来。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;运行时数据区域&quot;&gt;&lt;a href=&quot;#运行时数据区域&quot; class=&quot;headerlink&quot; title=&quot;运行时数据区域&quot;&gt;&lt;/a&gt;运行时数据区域&lt;/h3&gt;&lt;p&gt;按照 java 虚拟机规范，抽象的 Java 虚拟机如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/uploads/in-post/java_memory/vm_structure.png&quot; alt&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://wenzhiquan.github.io/categories/Java/"/>
+    
+    
+      <category term="内存模型" scheme="http://wenzhiquan.github.io/tags/%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B/"/>
+    
+      <category term="垃圾回收" scheme="http://wenzhiquan.github.io/tags/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>设计模式--简介</title>
+    <link href="http://wenzhiquan.github.io/2018/02/25/2018-02-25-design-pattern-intro/"/>
+    <id>http://wenzhiquan.github.io/2018/02/25/2018-02-25-design-pattern-intro/</id>
+    <published>2018-02-25T04:00:00.000Z</published>
+    <updated>2019-07-10T04:13:06.246Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“设计模式是软件开发人员在开发过程中可以遵循的一般问题的解决方案。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;所谓&lt;code&gt;模式&lt;/code&gt;，就是在特定环境下人们对某类重复出现的问题提出的一套有效的解决方案。&lt;/p&gt;
+&lt;p&gt;而设计模式(&lt;code&gt;Design Pattern&lt;/code&gt;)，则是针对软件设计过程中，可能遇到的重复问题的合理解决方案。&lt;/p&gt;
+&lt;p&gt;设计模式提出的根本目的就是解决现实生活中的问题，每种设计模式都有对应的现实问题及其解决方案，找到对应的问题便能够快速的利用设计模式进行解决。&lt;/p&gt;
+&lt;p&gt;设计模式一般包含模式名称、解决的问题，解决方案和应对效果等部分。&lt;/p&gt;
+&lt;p&gt;使用设计模式的目的是为了提高代码的可重用性；按照一定的规则编写代码，能够让自己的代码更加容易被其他编程人员所理解；同时，在一定的规则内编写代码，可以在一定程度上提升代码的可靠性。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="设计模式" scheme="http://wenzhiquan.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+    
+      <category term="设计模式" scheme="http://wenzhiquan.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用IDEA和gradle创建超市管理系统（贰）-- 登录注册功能</title>
+    <link href="http://wenzhiquan.github.io/2017/02/05/2017-02-05-idea-gradle-tssm-supermarket-manage-system-2/"/>
+    <id>http://wenzhiquan.github.io/2017/02/05/2017-02-05-idea-gradle-tssm-supermarket-manage-system-2/</id>
+    <published>2017-02-05T04:00:00.000Z</published>
+    <updated>2019-07-10T04:13:06.245Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“IDEA是jetbrains公司开发的Java开发IDE，功能齐全。使用IDEA搭建SSM开发环境简单有效。本项目基于Spring，Spring MVC和MyBatis进行开发，模板引擎为Thymeleaf。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;主要功能概述&quot;&gt;&lt;a href=&quot;#主要功能概述&quot; class=&quot;headerlink&quot; title=&quot;主要功能概述&quot;&gt;&lt;/a&gt;主要功能概述&lt;/h3&gt;&lt;p&gt;因为是为超市定制的管理系统，所以只会有内部人员进行使用，这就意味着新用户是需要拥有权限的人来进行添加，故需要实现的功能主要包括以下两点：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;用户添加&lt;/li&gt;
+&lt;li&gt;用户登录&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这两点功能中又包含了一些更细小的功能，将在后续章节进行详细的介绍。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://wenzhiquan.github.io/categories/Java/"/>
+    
+    
+      <category term="Gradle" scheme="http://wenzhiquan.github.io/tags/Gradle/"/>
+    
+      <category term="Java" scheme="http://wenzhiquan.github.io/tags/Java/"/>
+    
+      <category term="Web" scheme="http://wenzhiquan.github.io/tags/Web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用IDEA和gradle创建超市管理系统（壹）-- 环境配置</title>
+    <link href="http://wenzhiquan.github.io/2017/01/01/2017-01-01-idea-gradle-tssm-supermarket-manage-system-1/"/>
+    <id>http://wenzhiquan.github.io/2017/01/01/2017-01-01-idea-gradle-tssm-supermarket-manage-system-1/</id>
+    <published>2017-01-01T04:00:00.000Z</published>
+    <updated>2019-07-10T04:13:06.245Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“IDEA是jetbrains公司开发的Java开发IDE，功能齐全。使用IDEA搭建SSM开发环境简单有效。本项目基于Spring，Spring MVC和MyBatis进行开发，模板引擎为Thymeleaf。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://gradle.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Gradle&lt;/a&gt;是一个基于Apache Ant和Apache Maven概念的项目自动化建构工具。它使用一种基于Groovy的特定领域语言(DSL)来声明项目设置，抛弃了基于XML的各种繁琐配置。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://spring.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Spring MVC&lt;/a&gt;属于SpringFrameWork的后续产品，已经融合在Spring Web Flow里面。Spring 框架提供了构建Web应用程序的全功能&lt;code&gt;MVC&lt;/code&gt;模块。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://blog.mybatis.org/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;MyBatis&lt;/a&gt;本是apache的一个开源项目&lt;code&gt;iBatis&lt;/code&gt;, 2010年这个项目由apache software foundation 迁移到了google code，并且改名为&lt;code&gt;MyBatis&lt;/code&gt; 。2013年11月迁移到&lt;code&gt;Github&lt;/code&gt;。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Java" scheme="http://wenzhiquan.github.io/categories/Java/"/>
+    
+    
+      <category term="Gradle" scheme="http://wenzhiquan.github.io/tags/Gradle/"/>
+    
+      <category term="Java" scheme="http://wenzhiquan.github.io/tags/Java/"/>
+    
+      <category term="Web" scheme="http://wenzhiquan.github.io/tags/Web/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>sed流编辑器</title>
+    <link href="http://wenzhiquan.github.io/2016/10/15/2016-10-15-sed/"/>
+    <id>http://wenzhiquan.github.io/2016/10/15/2016-10-15-sed/</id>
+    <published>2016-10-15T04:00:00.000Z</published>
+    <updated>2019-07-10T04:13:06.244Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“sed是用于过滤和转换文本的流编辑器。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h3&gt;&lt;p&gt;&lt;code&gt;sed&lt;/code&gt;，全称为&lt;code&gt;stream editor&lt;/code&gt;，是一个非交互式的编辑器。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sed&lt;/code&gt;命令是利用&lt;code&gt;script&lt;/code&gt;来处理文本文件。&lt;code&gt;sed&lt;/code&gt;可依照&lt;code&gt;script&lt;/code&gt;的指令，来处理、编辑文本文件。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;sed&lt;/code&gt;主要用来自动编辑一个或多个文件；简化对文件的反复操作；编写转换程序等。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://wenzhiquan.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://wenzhiquan.github.io/tags/Linux/"/>
+    
+      <category term="Sed" scheme="http://wenzhiquan.github.io/tags/Sed/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>grep模式匹配命令</title>
+    <link href="http://wenzhiquan.github.io/2016/09/06/2016-09-06-grep/"/>
+    <id>http://wenzhiquan.github.io/2016/09/06/2016-09-06-grep/</id>
+    <published>2016-09-06T04:00:00.000Z</published>
+    <updated>2019-07-10T04:13:06.244Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“grep是一种强大的文本搜索工具。”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h3&gt;&lt;p&gt;&lt;code&gt;grep&lt;/code&gt;全称&lt;code&gt;Globally search a Regular Expression and Print&lt;/code&gt;是一种强大的文本搜索工具。它能使用正则表达式搜索文本，并把匹配的行打印出来。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;grep&lt;/code&gt;的工作方式是在一个或多个文件中搜索字符串模板。如果模板包括空格，则必须被引用，模板后的所有字符串被看作文件名。搜索的结果被送到屏幕，不影响原文件内容。&lt;code&gt;grep&lt;/code&gt;可用于&lt;code&gt;shell&lt;/code&gt;脚本，因为&lt;code&gt;grep&lt;/code&gt;通过返回一个状态值来说明搜索的状态，如果模板搜索成功，则返回&lt;code&gt;0&lt;/code&gt;，如果搜索不成功，则返回&lt;code&gt;1&lt;/code&gt;，如果搜索的文件不存在，则返回&lt;code&gt;2&lt;/code&gt;。&lt;code&gt;grep&lt;/code&gt;命令中允许指定的串语句是一个规则表达式，这是一种允许使用某些特殊键盘字符的指定字符串的方法，这种方法中的特殊键盘字符可以用于代表其他字符也可以进一步定义模式匹配工作方式。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Linux" scheme="http://wenzhiquan.github.io/categories/Linux/"/>
+    
+    
+      <category term="Linux" scheme="http://wenzhiquan.github.io/tags/Linux/"/>
+    
+      <category term="Grep" scheme="http://wenzhiquan.github.io/tags/Grep/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Mac系统重装后必备</title>
+    <link href="http://wenzhiquan.github.io/2016/08/05/2016-08-05-mac-installed-todo/"/>
+    <id>http://wenzhiquan.github.io/2016/08/05/2016-08-05-mac-installed-todo/</id>
+    <published>2016-08-05T05:00:00.000Z</published>
+    <updated>2019-07-10T04:13:06.244Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;“Mac系统常用软件，可以提升工作效率”&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;程序员必备&quot;&gt;&lt;a href=&quot;#程序员必备&quot; class=&quot;headerlink&quot; title=&quot;程序员必备&quot;&gt;&lt;/a&gt;程序员必备&lt;/h3&gt;&lt;h4 id=&quot;Homebrew&quot;&gt;&lt;a href=&quot;#Homebrew&quot; class=&quot;headerlink&quot; title=&quot;Homebrew&quot;&gt;&lt;/a&gt;Homebrew&lt;/h4&gt;&lt;p&gt;这个是最需要安装的软件，利用&lt;code&gt;homebrew&lt;/code&gt;可以快速的安装和管理其他软件包，类似于&lt;code&gt;Fedora&lt;/code&gt;系统中的&lt;code&gt;dnf&lt;/code&gt;命令。&lt;/p&gt;
+&lt;p&gt;安装方法如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight awk&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;regexp&quot;&gt;/usr/&lt;/span&gt;bin&lt;span class=&quot;regexp&quot;&gt;/ruby -e &quot;$(curl -fsSL https:/&lt;/span&gt;&lt;span class=&quot;regexp&quot;&gt;/raw.githubusercontent.com/&lt;/span&gt;Homebrew&lt;span class=&quot;regexp&quot;&gt;/install/m&lt;/span&gt;aster&lt;span class=&quot;regexp&quot;&gt;/install)&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;直接在命令行中输入上述命令即可快速安装&lt;code&gt;homebrew&lt;/code&gt;了。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Mac" scheme="http://wenzhiquan.github.io/categories/Mac/"/>
+    
+    
+      <category term="Mac" scheme="http://wenzhiquan.github.io/tags/Mac/"/>
+    
+      <category term="Software" scheme="http://wenzhiquan.github.io/tags/Software/"/>
+    
+  </entry>
+  
+</feed>
