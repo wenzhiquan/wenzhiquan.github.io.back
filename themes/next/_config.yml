@@ -602,6 +602,9 @@ needmoreshare2:
 # Google Analytics
 google_analytics: 'UA-75727255-1'
 
+# Google Ad manager
+google_ad_client: "ca-pub-7026642734831900"
+
 # Bing Webmaster tools verification setting
 # See: https://www.bing.com/webmaster/
 #bing_site_verification:

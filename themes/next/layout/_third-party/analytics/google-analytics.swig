@@ -1,10 +1,9 @@
 {% if theme.google_analytics %}
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ theme.google_analytics }}"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', '{{ theme.google_analytics }}');
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-7026642734831900",
+    enable_page_level_ads: true
+  });
 </script>
 {% endif %}
