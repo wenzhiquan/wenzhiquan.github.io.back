@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://wenzhiquan.github.io/2020/03/15/2020-03-15-double-side-feedback/</loc>
+    
+    <lastmod>2020-03-15T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2020/03/06/2020-03-06-bbs-principle/</loc>
+    
+    <lastmod>2020-03-06T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2020/02/11/2020-02-21-mece-principle/</loc>
+    
+    <lastmod>2020-02-11T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wenzhiquan.github.io/tags/index.html</loc>
     
     <lastmod>2019-07-10T04:13:06.250Z</lastmod>
@@ -37,13 +58,6 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2017/02/05/2017-02-05-idea-gradle-tssm-supermarket-manage-system-2/</loc>
-    
-    <lastmod>2019-07-10T04:13:06.245Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://wenzhiquan.github.io/2017/01/01/2017-01-01-idea-gradle-tssm-supermarket-manage-system-1/</loc>
     
     <lastmod>2019-07-10T04:13:06.245Z</lastmod>
@@ -51,14 +65,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/07/04/2016-07-04-interview-algorithm-math-bit/</loc>
+    <loc>http://wenzhiquan.github.io/2017/02/05/2017-02-05-idea-gradle-tssm-supermarket-manage-system-2/</loc>
     
-    <lastmod>2019-07-10T04:13:06.244Z</lastmod>
+    <lastmod>2019-07-10T04:13:06.245Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/09/06/2016-09-06-grep/</loc>
+    <loc>http://wenzhiquan.github.io/2016/07/04/2016-07-04-interview-algorithm-math-bit/</loc>
     
     <lastmod>2019-07-10T04:13:06.244Z</lastmod>
     
@@ -79,7 +93,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/06/20/2016-06-20-linux-basic/</loc>
+    <loc>http://wenzhiquan.github.io/2016/09/06/2016-09-06-grep/</loc>
+    
+    <lastmod>2019-07-10T04:13:06.244Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2016/06/28/2016-06-28-regex/</loc>
     
     <lastmod>2019-07-10T04:13:06.243Z</lastmod>
     
@@ -93,7 +114,7 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/06/28/2016-06-28-regex/</loc>
+    <loc>http://wenzhiquan.github.io/2016/06/20/2016-06-20-linux-basic/</loc>
     
     <lastmod>2019-07-10T04:13:06.243Z</lastmod>
     
@@ -128,7 +149,7 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/05/28/2016-05-28-string-match-sunday/</loc>
+    <loc>http://wenzhiquan.github.io/2016/03/28/2016-03-28-singleton-eight-type/</loc>
     
     <lastmod>2019-07-10T04:13:06.241Z</lastmod>
     
@@ -142,7 +163,7 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/03/28/2016-03-28-singleton-eight-type/</loc>
+    <loc>http://wenzhiquan.github.io/2016/05/28/2016-05-28-string-match-sunday/</loc>
     
     <lastmod>2019-07-10T04:13:06.241Z</lastmod>
     
@@ -156,13 +177,6 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2015/05/29/2015-05-29-install-nginx-php-mysql-mac/</loc>
-    
-    <lastmod>2019-07-10T04:13:06.240Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://wenzhiquan.github.io/2015/09/18/2015-09-18-install-jekyll-fedora/</loc>
     
     <lastmod>2019-07-10T04:13:06.240Z</lastmod>
@@ -170,14 +184,21 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2014/10/14/2014-10-14-markdown-simple-syntax/</loc>
+    <loc>http://wenzhiquan.github.io/2015/05/29/2015-05-29-install-nginx-php-mysql-mac/</loc>
+    
+    <lastmod>2019-07-10T04:13:06.240Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2014/12/09/2014-12-09-nginx-mysql-php-fedora/</loc>
     
     <lastmod>2019-07-10T04:13:06.239Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2014/12/09/2014-12-09-nginx-mysql-php-fedora/</loc>
+    <loc>http://wenzhiquan.github.io/2014/10/14/2014-10-14-markdown-simple-syntax/</loc>
     
     <lastmod>2019-07-10T04:13:06.239Z</lastmod>
     

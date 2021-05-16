@@ -270,7 +270,7 @@
           
           <li class="menu-item menu-item-tags">
     <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">45</span></a>
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">46</span></a>
   </li>
         
         
@@ -278,7 +278,7 @@
           
           <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">14</span></a>
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">15</span></a>
   </li>
         
         
@@ -286,7 +286,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">39</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">42</span></a>
   </li>
 
       
@@ -549,7 +549,7 @@
 <p>然后输入命令：</p>
 <figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo netstat -tap <span class="string">| grep mysql</span></span><br></pre></td></tr></table></figure>
 <p>如果出现以下代码，说明启动成功：</p>
-<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">tcp        <span class="number">0</span>      <span class="number">0</span> <span class="number">0.0</span><span class="meta">.0</span><span class="meta">.0</span>:mysql           <span class="number">0.0</span><span class="meta">.0</span><span class="meta">.0</span>:*               LISTEN</span><br><span class="line"> <span class="number">5464</span>/mysqld</span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">tcp</span>        <span class="number">0</span>      <span class="number">0</span> <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span><span class="string">:mysql</span>           <span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span><span class="string">:*</span>               <span class="string">LISTEN</span></span><br><span class="line"> <span class="number">5464</span><span class="string">/mysqld</span></span><br></pre></td></tr></table></figure>
 <p>启动成功后，我们需要给root用户设置一个密码，以防止任何人都可以访问我们的数据库：</p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">mysqladmin</span> -u root password <span class="string">"root"</span></span><br></pre></td></tr></table></figure>
 <h3 id="安装PHP"><a href="#安装PHP" class="headerlink" title="安装PHP"></a>安装PHP</h3><p>我们可以让PHP5在nginx中以FastCGI的模式工作。</p>
@@ -560,11 +560,11 @@
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl <span class="builtin-name">enable</span> php-fpm.service</span><br></pre></td></tr></table></figure>
 <p>启动之后，还需要配置nginx使之支持php</p>
 <h3 id="配置nginx支持php"><a href="#配置nginx支持php" class="headerlink" title="配置nginx支持php"></a>配置nginx支持php</h3><p>首先备份原先的conf文件</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv /etc/nginx/nginx<span class="selector-class">.conf</span> /etc/nginx/nginx<span class="selector-class">.conf</span><span class="selector-class">.bak</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv <span class="regexp">/etc/</span>nginx<span class="regexp">/nginx.conf /</span>etc<span class="regexp">/nginx/</span>nginx.conf.bak</span><br></pre></td></tr></table></figure>
 <p>然后复制一份配置文件</p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp <span class="regexp">/etc/</span>nginx<span class="regexp">/nginx.conf.default /</span>etc<span class="regexp">/nginx/</span>nginx.conf</span><br></pre></td></tr></table></figure>
 <p>新建两个目录用于分别存放可用和生效的配置文件</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mkdir -<span class="selector-tag">p</span> /etc/nginx/sites-avaliable</span><br><span class="line">mkdir -<span class="selector-tag">p</span> /etc/nginx/sites-enabled</span><br></pre></td></tr></table></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p /etc/nginx/sites-avaliable</span><br><span class="line"><span class="built_in">mkdir</span> -p /etc/nginx/sites-enabled</span><br></pre></td></tr></table></figure>
 <p>这两个目录是模仿Ubuntu的nginx目录进行创建的，其中sites-analiable文件夹用于存放所有可用的server配置，sites-enabled文件夹用于存放生效的server配置</p>
 <p>修改nginx配置文件，添加fastcgi支持</p>
 <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">vim</span> /etc/nginx/nginx.<span class="keyword">conf</span></span><br></pre></td></tr></table></figure>
@@ -573,7 +573,7 @@
 <p>文件将从conf.d和sites-enabled文件夹中读取所有的server配置，首先需要在sites-avaliable文件夹中建立可用的server配置，然后软链接到sites-enabled文件夹中，这样就可以修改可用配置时，生效配置也会修改，但是删除生效配置时不会对可用配置造成影响：</p>
 <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim <span class="regexp">/etc/</span>nginx<span class="regexp">/sites-avaliable/</span><span class="keyword">default</span></span><br></pre></td></tr></table></figure>
 <p>将其修改为以下内容：</p>
-<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># The default server</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    server_name  localhost; <span class="comment"># or other domain name you like.</span></span><br><span class="line">    <span class="comment">#include /data/www/.htaccess;</span></span><br><span class="line">    charset utf-8;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#access_log  logs/host.access.log  main;</span></span><br><span class="line"></span><br><span class="line">	root <span class="string">/usr/share/nginx/html</span>;<span class="string">//</span>这里是web项目文件夹的根目录</span><br><span class="line"></span><br><span class="line">	include <span class="string">/etc/nginx/default.d/</span>*<span class="string">.conf</span>;<span class="string">//</span>这个配置文件是安装php和php-fpm时自动生成的，是对nginx针对php的配置</span><br><span class="line"></span><br><span class="line">   location / &#123;</span><br><span class="line">        <span class="comment">#try_files $uri $uri/ /index.php?$args;</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    error_page  404              <span class="string">/404.html</span>;</span><br><span class="line">    location = <span class="string">/404.html</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># redirect server error pages to the static page /50x.html</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    error_page   500 502 503 504  <span class="string">/50x.html</span>;</span><br><span class="line">    location = <span class="string">/50x.html</span> &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># The default server</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">server &#123;</span><br><span class="line">    listen       <span class="number">80</span>;</span><br><span class="line">    server_name  localhost; <span class="comment"># or other domain name you like.</span></span><br><span class="line">    <span class="comment">#include /data/www/.htaccess;</span></span><br><span class="line">    charset utf-<span class="number">8</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">#access_log  logs/host.access.log  main;</span></span><br><span class="line"></span><br><span class="line">	root /usr/share/nginx/html;//这里是web项目文件夹的根目录</span><br><span class="line"></span><br><span class="line">	include /etc/nginx/default.d/*.conf;//这个配置文件是安装php和php-fpm时自动生成的，是对nginx针对php的配置</span><br><span class="line"></span><br><span class="line">   <span class="keyword">location</span> <span class="title">/ &#123;</span></span><br><span class="line"><span class="title">        #try_files</span> $uri $uri/ /index.php?$args;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    error_page  <span class="number">404</span>              /<span class="number">404</span>.html;</span><br><span class="line">    <span class="keyword">location</span> <span class="title">= /404</span>.html &#123;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># redirect server error pages to the static page /50x.html</span></span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    error_page   <span class="number">500</span> <span class="number">502</span> <span class="number">503</span> <span class="number">504</span>  /<span class="number">50</span>x.html;</span><br><span class="line">    <span class="keyword">location</span> <span class="title">= /50x</span>.html &#123;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>然后在sites-enabled文件夹中建立可用配置的软链接即可<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s /etc/nginx/sites-avaliable<span class="built_in">/default </span>/etc/nginx/sites-enabled/</span><br></pre></td></tr></table></figure></p>
 <p>具体的其他nginx相关配置可以详见<a href="http://nginx.org/en/docs/" target="_blank" rel="noopener">nginx官方网站</a></p>
 <p>另外，如果php报与时区相关的错误，则需要修改/etc/php.ini文件，在其中<code>[Date]</code>标签下加入一行<code>date.timezone = &#39;Asia/Shanghai&#39;</code>即可</p>
@@ -584,7 +584,7 @@
 <p>然后建立index.php文件进行测试：</p>
 <figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim <span class="meta-keyword">/usr/</span>share<span class="meta-keyword">/nginx/</span>html/info.php</span><br><span class="line"></span><br><span class="line"><span class="params">&lt;?php</span></span><br><span class="line"><span class="params">   phpinfo();</span></span><br><span class="line"><span class="params">?&gt;</span></span><br></pre></td></tr></table></figure>
 <p>然后在浏览器中输入servername进行测试：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：localhost/info.php</span><br><span class="line">显示phpinfo界面说明解析成功</span><br></pre></td></tr></table></figure>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入：localhost/<span class="meta">info</span>.php</span><br><span class="line">显示phpinfo界面说明解析成功</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -815,7 +815,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-count">42</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -856,7 +856,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">14</span>
+                      
+                    
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -959,7 +961,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">45</span>
+                      
+                    
+                    <span class="site-state-item-count">46</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1016,23 +1020,23 @@
                   
                   
                     <li>
+                      <a href="/2020/03/15/2020-03-15-double-side-feedback/" title="双向反馈法">双向反馈法</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/2020/03/06/2020-03-06-bbs-principle/" title="BBS 法则">BBS 法则</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/2020/02/11/2020-02-21-mece-principle/" title="MECE 法则">MECE 法则</a>
+                    </li>
+                  
+                    <li>
                       <a href="/2019/03/02/2019-03-02-java-wildcards/" title="Java 通配符简析">Java 通配符简析</a>
                     </li>
                   
                     <li>
                       <a href="/2018/07/13/2018-07-13-java-annotation/" title="Java Annotation 简析">Java Annotation 简析</a>
-                    </li>
-                  
-                    <li>
-                      <a href="/2018/06/30/2018-06-30-vim-introduction/" title="Vim 简明教程">Vim 简明教程</a>
-                    </li>
-                  
-                    <li>
-                      <a href="/2018/06/27/2018-06-27-design-pattern-strategy/" title="设计模式--策略模式">设计模式--策略模式</a>
-                    </li>
-                  
-                    <li>
-                      <a href="/2018/06/26/2018-06-26-design-pattern-observer/" title="设计模式--观察者模式">设计模式--观察者模式</a>
                     </li>
                   
                 </ul>
@@ -1095,7 +1099,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

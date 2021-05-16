@@ -276,7 +276,7 @@
           
           <li class="menu-item menu-item-tags">
     <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">45</span></a>
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">46</span></a>
   </li>
         
         
@@ -284,7 +284,7 @@
           
           <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">14</span></a>
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">15</span></a>
   </li>
         
         
@@ -292,7 +292,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">39</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">42</span></a>
   </li>
 
       
@@ -549,7 +549,7 @@
 </ol>
 <!--break-->
 <p>实现代码：</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def bubbleSort(arr):</span><br><span class="line">    <span class="keyword">for</span> <span class="built_in">i</span> in range(len(arr))[::<span class="number">-1</span>]:</span><br><span class="line">        <span class="keyword">for</span> <span class="built_in">j</span> in range(<span class="built_in">i</span>):</span><br><span class="line">            <span class="keyword">if</span> arr[<span class="built_in">j</span>] &gt; arr[<span class="built_in">j</span> + <span class="number">1</span>]:</span><br><span class="line">                swap(arr[<span class="built_in">j</span>], arr[<span class="built_in">j</span> + <span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">def</span> <span class="selector-tag">bubbleSort</span>(arr):</span><br><span class="line">    <span class="selector-tag">for</span> <span class="selector-tag">i</span> <span class="selector-tag">in</span> <span class="selector-tag">range</span>(len(arr))<span class="selector-attr">[::-1]</span>:</span><br><span class="line">        <span class="selector-tag">for</span> <span class="selector-tag">j</span> <span class="selector-tag">in</span> <span class="selector-tag">range</span>(i):</span><br><span class="line">            <span class="selector-tag">if</span> <span class="selector-tag">arr</span><span class="selector-attr">[j]</span> &gt; <span class="selector-tag">arr</span><span class="selector-attr">[j + 1]</span>:</span><br><span class="line">                <span class="selector-tag">swap</span>(arr[j], arr[j + <span class="number">1</span>])</span><br></pre></td></tr></table></figure>
 <p>效果图：</p>
 <p><img src="/uploads/in-post/bubbleSort.gif" alt="冒泡排序"></p>
 <h4 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h4><p>简介：</p>
@@ -624,7 +624,7 @@
 <li>重复上述过程，直到交换了R[0]和R[1]为止。</li>
 </ol>
 <p>实现代码：</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">heapSort</span><span class="params">(arr)</span></span><span class="symbol">:</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(arr) / <span class="number">2</span>)[<span class="symbol">:</span><span class="symbol">:-</span><span class="number">1</span>]<span class="symbol">:</span></span><br><span class="line">        heapAdjust(arr, i, len(arr))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(arr) - <span class="number">1</span>)[<span class="symbol">:</span><span class="symbol">:-</span><span class="number">1</span>]<span class="symbol">:</span></span><br><span class="line">        swap(arr[i], arr[<span class="number">0</span>])</span><br><span class="line">        heapAdjust(arr, <span class="number">0</span>, i)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">heapAdjust</span><span class="params">(arr, parent, length)</span></span>：</span><br><span class="line">    tmp = arr[parent]</span><br><span class="line">    child = <span class="number">2</span> * parent + <span class="number">1</span></span><br><span class="line">    <span class="keyword">while</span> child &lt; <span class="symbol">length:</span></span><br><span class="line">        <span class="keyword">if</span> child + <span class="number">1</span> &lt; length <span class="keyword">and</span> arr[child + <span class="number">1</span>] &gt; arr[child]<span class="symbol">:</span></span><br><span class="line">            child += <span class="number">1</span></span><br><span class="line">        <span class="keyword">if</span> arr[child] &lt;= <span class="symbol">tmp:</span></span><br><span class="line">            <span class="keyword">break</span></span><br><span class="line">        arr[parent] = arr[child]</span><br><span class="line">        parent = child</span><br><span class="line">        child = <span class="number">2</span> * parent + <span class="number">1</span></span><br><span class="line">        arr[parent] = tmp</span><br></pre></td></tr></table></figure>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">def heapSort(arr):</span><br><span class="line">    for i in range(len(arr) / <span class="number">2</span>)[::-<span class="number">1</span>]:</span><br><span class="line">        heapAdjust(arr, i, len(arr))</span><br><span class="line"></span><br><span class="line">    for i in range(len(arr) - <span class="number">1</span>)[::-<span class="number">1</span>]:</span><br><span class="line">        swap(arr[i], arr[<span class="number">0</span>])</span><br><span class="line">        heapAdjust(arr, <span class="number">0</span>, i)</span><br><span class="line"></span><br><span class="line">def heapAdjust(arr, parent, length)：</span><br><span class="line">    tmp = arr[parent]</span><br><span class="line">    child = <span class="number">2</span> * parent + <span class="number">1</span></span><br><span class="line">    while child &lt; length:</span><br><span class="line">        if child + <span class="number">1</span> &lt; length and arr[child + <span class="number">1</span>] &gt; arr[child]:</span><br><span class="line">            child += <span class="number">1</span></span><br><span class="line">        if arr[child] &lt;= tmp:</span><br><span class="line">            break</span><br><span class="line">        arr[parent] = arr[child]</span><br><span class="line">        parent = child</span><br><span class="line">        child = <span class="number">2</span> * parent + <span class="number">1</span></span><br><span class="line">        arr[parent] = tmp</span><br></pre></td></tr></table></figure>
 <p>效果图：</p>
 <p><img src="/uploads/in-post/heapSort.gif" alt="堆排序"></p>
 <h3 id="各排序算法时间空间复杂度"><a href="#各排序算法时间空间复杂度" class="headerlink" title="各排序算法时间空间复杂度"></a>各排序算法时间空间复杂度</h3><p><img src="/uploads/in-post/sortTimeComplexity.png" alt></p>
@@ -852,7 +852,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-count">42</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -893,7 +893,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">14</span>
+                      
+                    
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -996,7 +998,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">45</span>
+                      
+                    
+                    <span class="site-state-item-count">46</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1053,23 +1057,23 @@
                   
                   
                     <li>
+                      <a href="/2020/03/15/2020-03-15-double-side-feedback/" title="双向反馈法">双向反馈法</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/2020/03/06/2020-03-06-bbs-principle/" title="BBS 法则">BBS 法则</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/2020/02/11/2020-02-21-mece-principle/" title="MECE 法则">MECE 法则</a>
+                    </li>
+                  
+                    <li>
                       <a href="/2019/03/02/2019-03-02-java-wildcards/" title="Java 通配符简析">Java 通配符简析</a>
                     </li>
                   
                     <li>
                       <a href="/2018/07/13/2018-07-13-java-annotation/" title="Java Annotation 简析">Java Annotation 简析</a>
-                    </li>
-                  
-                    <li>
-                      <a href="/2018/06/30/2018-06-30-vim-introduction/" title="Vim 简明教程">Vim 简明教程</a>
-                    </li>
-                  
-                    <li>
-                      <a href="/2018/06/27/2018-06-27-design-pattern-strategy/" title="设计模式--策略模式">设计模式--策略模式</a>
-                    </li>
-                  
-                    <li>
-                      <a href="/2018/06/26/2018-06-26-design-pattern-observer/" title="设计模式--观察者模式">设计模式--观察者模式</a>
                     </li>
                   
                 </ul>
@@ -1132,7 +1136,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

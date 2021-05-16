@@ -324,7 +324,7 @@
           
           <li class="menu-item menu-item-tags">
     <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">45</span></a>
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">46</span></a>
   </li>
         
         
@@ -332,7 +332,7 @@
           
           <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">14</span></a>
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">15</span></a>
   </li>
         
         
@@ -340,7 +340,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">39</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">42</span></a>
   </li>
 
       
@@ -1020,7 +1020,7 @@
 </ul>
 <p>正如命令的名称，<code>head</code>命令只查看文件的头几行（默认为10行，不足10行则显示全部），<code>tail</code>命令只查看文件的尾几行。</p>
 <p>两个命令的输入方式如下：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">head test.txt</span><br><span class="line">head -n <span class="number">1</span> test.txt</span><br><span class="line">tail test.txt</span><br><span class="line">tail -n <span class="number">1</span> test.txt</span><br></pre></td></tr></table></figure>
+<figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">head <span class="keyword">test</span>.txt</span><br><span class="line">head -n <span class="number">1</span> <span class="keyword">test</span>.txt</span><br><span class="line">tail <span class="keyword">test</span>.txt</span><br><span class="line">tail -n <span class="number">1</span> <span class="keyword">test</span>.txt</span><br></pre></td></tr></table></figure>
 <p><img src="/uploads/in-post/linux_basic/head_tail.png" alt="head tail"></p>
 <p>关于<code>tail</code>命令，还有一个很实用的参数<code>-f</code>，这个参数可以实现不停地读取某个文件的内容并显示。让我们可以动态查看日志，起到实时监视的作用。</p>
 <h4 id="查看文件类型"><a href="#查看文件类型" class="headerlink" title="查看文件类型"></a>查看文件类型</h4><p>我们可以使用<code>file</code>命令查看文件的类型：</p>
@@ -1162,7 +1162,7 @@
 <p><img src="/uploads/in-post/linux_basic/which.png" alt="which"></p>
 <h4 id="find精而细"><a href="#find精而细" class="headerlink" title="find精而细"></a><code>find</code>精而细</h4><p><code>Linux</code>下<code>find</code>命令在目录结构中搜索文件，并执行指定的操作。<code>Linux</code>下<code>find</code>命令提供了相当多的查找条件，功能很强大。由于<code>find</code>具有强大的功能，所以它的选项也很多。即使系统中含有网络文件系统(NFS)，<code>find</code>命令在该文件系统中同样有效，只要你具有相应的权限。</p>
 <p>在指定目录下搜索指定文件名的文件：</p>
-<figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">find</span> / -<span class="built_in">name</span> <span class="string">'test.txt'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">find</span> / -name <span class="string">'test.txt'</span></span><br></pre></td></tr></table></figure>
 <p><img src="/uploads/in-post/linux_basic/find.png" alt="find"></p>
 <p><code>find</code>命令的路径是作为第一个参数的， 基本命令格式为<code>find [path] [option] [action]</code>。</p>
 <p>基本命令选项：</p>
@@ -1260,7 +1260,7 @@
 <p>查找当前目录下含有<code>test</code>开头的所有<code>txt</code>文件。</p>
 <h3 id="文件打包和解压缩"><a href="#文件打包和解压缩" class="headerlink" title="文件打包和解压缩"></a>文件打包和解压缩</h3><p>在<code>Linux</code>上常用的是<code>tar</code>工具，常用的压缩命令还有<code>compress</code>，<code>gzip</code>和<code>bzip2</code>等。</p>
 <p>常用的命令如下：</p>
-<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">compress filename       将文件压缩成.Z格式</span><br><span class="line"></span><br><span class="line">gzip filename           将文件压缩成.gz格式</span><br><span class="line"></span><br><span class="line">bzip2 filename          将文件压缩成.bz2格式</span><br><span class="line"></span><br><span class="line">以上三个命令 -d           将相应的文件解压缩</span><br><span class="line"></span><br><span class="line">tar dest source         打包压缩</span><br><span class="line"></span><br><span class="line">    -<span class="ruby">c                      归档文件</span></span><br><span class="line"><span class="ruby"></span></span><br><span class="line"><span class="ruby">    -x                      压缩文件</span></span><br><span class="line"><span class="ruby"></span></span><br><span class="line"><span class="ruby">    -z                      gzip压缩文件</span></span><br><span class="line"><span class="ruby"></span></span><br><span class="line"><span class="ruby">    -j                      bzip2压缩文件</span></span><br><span class="line"><span class="ruby"></span></span><br><span class="line"><span class="ruby">    -v                      显示压缩或解压缩过程 v(view)</span></span><br><span class="line"><span class="ruby"></span></span><br><span class="line"><span class="ruby">    -f                      使用档名</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">compress filename       将文件压缩成.Z格式</span><br><span class="line"></span><br><span class="line">gzip filename           将文件压缩成.gz格式</span><br><span class="line"></span><br><span class="line">bzip2 filename          将文件压缩成.bz2格式</span><br><span class="line"></span><br><span class="line">以上三个命令 -d           将相应的文件解压缩</span><br><span class="line"></span><br><span class="line">tar dest source         打包压缩</span><br><span class="line"></span><br><span class="line">    -<span class="ruby">c                      归档文件</span></span><br><span class="line"></span><br><span class="line"><span class="ruby">    -x                      压缩文件</span></span><br><span class="line"></span><br><span class="line"><span class="ruby">    -z                      gzip压缩文件</span></span><br><span class="line"></span><br><span class="line"><span class="ruby">    -j                      bzip2压缩文件</span></span><br><span class="line"></span><br><span class="line"><span class="ruby">    -v                      显示压缩或解压缩过程 v(view)</span></span><br><span class="line"></span><br><span class="line"><span class="ruby">    -f                      使用档名</span></span><br></pre></td></tr></table></figure>
 <p>实例：</p>
 <p>tar -cvf /local/test.tar /local/test          只打包，不压缩</p>
 <p>tar -zcvf /local/test.tar.gz /local/test      打包，并用gzip压缩</p>
@@ -1293,7 +1293,7 @@
 <p>简单的顺序执行可以使用<code>;</code>来完成：</p>
 <figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="builtin-name">get</span> update;sudo apt-<span class="builtin-name">get</span> install software;software</span><br><span class="line"><span class="comment"># 让它自己运行</span></span><br></pre></td></tr></table></figure>
 <h4 id="有选择的执行命令"><a href="#有选择的执行命令" class="headerlink" title="有选择的执行命令"></a>有选择的执行命令</h4><p>如果自动顺序执行命令时，前面的命令执行不成功，而后面的命令又依赖于上一条命令的结果，那么就会造成花了时间，最终却得到一个错误的结果，而且有时候无法判断结果是否正确。此时我们需要能够有选择性的执行命令，比如上一条命令执行成功才继续下一条：</p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">which</span> cowsay &amp;&amp; cowsay -f head-<span class="keyword">in</span> ohch~</span><br></pre></td></tr></table></figure>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">which cowsay &amp;&amp; cowsay <span class="operator">-f</span> head<span class="operator">-in</span> ohch~</span><br></pre></td></tr></table></figure>
 <p>如果没有安装<code>cowsay</code>，执行一次上述命令，会发现什么也没发生，如果安装了<code>cowsay</code>，会出现以下效果：</p>
 <p><img src="/uploads/in-post/linux_basic/cowsay.png" alt="cowsay"></p>
 <p>上面的<code>&amp;&amp;</code>就是用来实现选择性执行的，它表示如果前面的命令执行结果返回<code>0</code>则执行后面的，否则不执行，你可以从<code>$?</code>环境变量获取上一次命令的返回结果：</p>
@@ -1333,7 +1333,7 @@
 <p>默认为字典排序：</p>
 <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat <span class="regexp">/etc/</span>passswd | <span class="keyword">sort</span></span><br></pre></td></tr></table></figure>
 <p>反转排序：</p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cat</span> /etc/passwd | <span class="keyword">sort</span> -<span class="built_in">r</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat <span class="regexp">/etc/</span>passwd | <span class="keyword">sort</span> -r</span><br></pre></td></tr></table></figure>
 <p>按特定字段排序：</p>
 <figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat <span class="regexp">/etc/</span>passwd | <span class="keyword">sort</span> -t<span class="string">':'</span> -k <span class="number">3</span></span><br></pre></td></tr></table></figure>
 <p>上面的<code>-t</code>参数用于指定字段的分隔符，这里是以<code>:</code>作为分隔符；<code>-k</code>字段号用于指定对哪一个字段进行排序。这里<code>/etc/passwd</code>文件的第三个字段为数字，默认情况下是一字典序排序的，如果要按照数字排序就要加上<code>-n</code>参数：</p>
@@ -1376,7 +1376,7 @@
 <p><img src="/uploads/in-post/linux_basic/tr.png" alt="tr"></p>
 <h4 id="col命令"><a href="#col命令" class="headerlink" title="col命令"></a>col命令</h4><p><code>col</code>命令可以将<code>Tab</code>换成对等数量的<code>空格建</code>，或反转这个操作。</p>
 <p>使用方式：</p>
-<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">col <span class="string">[option]</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">col</span><span class="meta"> [option]</span></span><br></pre></td></tr></table></figure>
 <p>常用的选项有：</p>
 <table>
 <thead>
@@ -1680,7 +1680,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-count">42</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1721,7 +1721,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">14</span>
+                      
+                    
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1824,7 +1826,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">45</span>
+                      
+                    
+                    <span class="site-state-item-count">46</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1881,23 +1885,23 @@
                   
                   
                     <li>
+                      <a href="/2020/03/15/2020-03-15-double-side-feedback/" title="双向反馈法">双向反馈法</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/2020/03/06/2020-03-06-bbs-principle/" title="BBS 法则">BBS 法则</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/2020/02/11/2020-02-21-mece-principle/" title="MECE 法则">MECE 法则</a>
+                    </li>
+                  
+                    <li>
                       <a href="/2019/03/02/2019-03-02-java-wildcards/" title="Java 通配符简析">Java 通配符简析</a>
                     </li>
                   
                     <li>
                       <a href="/2018/07/13/2018-07-13-java-annotation/" title="Java Annotation 简析">Java Annotation 简析</a>
-                    </li>
-                  
-                    <li>
-                      <a href="/2018/06/30/2018-06-30-vim-introduction/" title="Vim 简明教程">Vim 简明教程</a>
-                    </li>
-                  
-                    <li>
-                      <a href="/2018/06/27/2018-06-27-design-pattern-strategy/" title="设计模式--策略模式">设计模式--策略模式</a>
-                    </li>
-                  
-                    <li>
-                      <a href="/2018/06/26/2018-06-26-design-pattern-observer/" title="设计模式--观察者模式">设计模式--观察者模式</a>
                     </li>
                   
                 </ul>
@@ -1960,7 +1964,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>

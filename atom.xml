@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wenzhiquan.github.io/"/>
-  <updated>2019-03-02T04:00:00.000Z</updated>
+  <updated>2020-03-15T04:00:00.000Z</updated>
   <id>http://wenzhiquan.github.io/</id>
   
   <author>
@@ -15,6 +15,84 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>双向反馈法</title>
+    <link href="http://wenzhiquan.github.io/2020/03/15/2020-03-15-double-side-feedback/"/>
+    <id>http://wenzhiquan.github.io/2020/03/15/2020-03-15-double-side-feedback/</id>
+    <published>2020-03-15T04:00:00.000Z</published>
+    <updated>2020-03-15T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;当我们需要对他人的工作做出评价的时候，最好使用双向反馈法——既要给出激励性反馈，又要给出建设性反馈，每种反馈至少三条。激励性反馈是指找出其做得好的点，给出反馈，建设性反馈即找出可以改进的点，进行反馈。双向反馈法的好处是可以帮助我们更全面的考虑，避免出现片面的评价，同时又能为
+        
+      
+    
+    </summary>
+    
+      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
+    
+    
+      <category term="方法论" scheme="http://wenzhiquan.github.io/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>BBS 法则</title>
+    <link href="http://wenzhiquan.github.io/2020/03/06/2020-03-06-bbs-principle/"/>
+    <id>http://wenzhiquan.github.io/2020/03/06/2020-03-06-bbs-principle/</id>
+    <published>2020-03-06T04:00:00.000Z</published>
+    <updated>2020-03-06T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;这周学习到了一个很好的方法论【BBS】，分别是 learn from the Best，Basic way 和 Stop doing list，首先我们需要制定自己的 Stop doing list，这样才能够让自己不偏离正确的方向，Basic way
+        
+      
+    
+    </summary>
+    
+      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
+    
+    
+      <category term="方法论" scheme="http://wenzhiquan.github.io/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MECE 法则</title>
+    <link href="http://wenzhiquan.github.io/2020/02/11/2020-02-21-mece-principle/"/>
+    <id>http://wenzhiquan.github.io/2020/02/11/2020-02-21-mece-principle/</id>
+    <published>2020-02-11T04:00:00.000Z</published>
+    <updated>2020-02-11T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;本周学习到了一个很有意思的原则，【MECE法则】，全称是 Mutually Exclusive Collectively
+        
+      
+    
+    </summary>
+    
+      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
+    
+    
+      <category term="方法论" scheme="http://wenzhiquan.github.io/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>Java 通配符简析</title>
@@ -469,87 +547,6 @@
       <category term="Java" scheme="http://wenzhiquan.github.io/tags/Java/"/>
     
       <category term="Web" scheme="http://wenzhiquan.github.io/tags/Web/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>sed流编辑器</title>
-    <link href="http://wenzhiquan.github.io/2016/10/15/2016-10-15-sed/"/>
-    <id>http://wenzhiquan.github.io/2016/10/15/2016-10-15-sed/</id>
-    <published>2016-10-15T04:00:00.000Z</published>
-    <updated>2019-07-10T04:13:06.244Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;“sed是用于过滤和转换文本的流编辑器。”&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h3&gt;&lt;p&gt;&lt;code&gt;sed&lt;/code&gt;，全称为&lt;code&gt;stream editor&lt;/code&gt;，是一个非交互式的编辑器。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;sed&lt;/code&gt;命令是利用&lt;code&gt;script&lt;/code&gt;来处理文本文件。&lt;code&gt;sed&lt;/code&gt;可依照&lt;code&gt;script&lt;/code&gt;的指令，来处理、编辑文本文件。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;sed&lt;/code&gt;主要用来自动编辑一个或多个文件；简化对文件的反复操作；编写转换程序等。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://wenzhiquan.github.io/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://wenzhiquan.github.io/tags/Linux/"/>
-    
-      <category term="Sed" scheme="http://wenzhiquan.github.io/tags/Sed/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>grep模式匹配命令</title>
-    <link href="http://wenzhiquan.github.io/2016/09/06/2016-09-06-grep/"/>
-    <id>http://wenzhiquan.github.io/2016/09/06/2016-09-06-grep/</id>
-    <published>2016-09-06T04:00:00.000Z</published>
-    <updated>2019-07-10T04:13:06.244Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;“grep是一种强大的文本搜索工具。”&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h3&gt;&lt;p&gt;&lt;code&gt;grep&lt;/code&gt;全称&lt;code&gt;Globally search a Regular Expression and Print&lt;/code&gt;是一种强大的文本搜索工具。它能使用正则表达式搜索文本，并把匹配的行打印出来。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;grep&lt;/code&gt;的工作方式是在一个或多个文件中搜索字符串模板。如果模板包括空格，则必须被引用，模板后的所有字符串被看作文件名。搜索的结果被送到屏幕，不影响原文件内容。&lt;code&gt;grep&lt;/code&gt;可用于&lt;code&gt;shell&lt;/code&gt;脚本，因为&lt;code&gt;grep&lt;/code&gt;通过返回一个状态值来说明搜索的状态，如果模板搜索成功，则返回&lt;code&gt;0&lt;/code&gt;，如果搜索不成功，则返回&lt;code&gt;1&lt;/code&gt;，如果搜索的文件不存在，则返回&lt;code&gt;2&lt;/code&gt;。&lt;code&gt;grep&lt;/code&gt;命令中允许指定的串语句是一个规则表达式，这是一种允许使用某些特殊键盘字符的指定字符串的方法，这种方法中的特殊键盘字符可以用于代表其他字符也可以进一步定义模式匹配工作方式。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Linux" scheme="http://wenzhiquan.github.io/categories/Linux/"/>
-    
-    
-      <category term="Linux" scheme="http://wenzhiquan.github.io/tags/Linux/"/>
-    
-      <category term="Grep" scheme="http://wenzhiquan.github.io/tags/Grep/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Mac系统重装后必备</title>
-    <link href="http://wenzhiquan.github.io/2016/08/05/2016-08-05-mac-installed-todo/"/>
-    <id>http://wenzhiquan.github.io/2016/08/05/2016-08-05-mac-installed-todo/</id>
-    <published>2016-08-05T05:00:00.000Z</published>
-    <updated>2019-07-10T04:13:06.244Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;“Mac系统常用软件，可以提升工作效率”&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;程序员必备&quot;&gt;&lt;a href=&quot;#程序员必备&quot; class=&quot;headerlink&quot; title=&quot;程序员必备&quot;&gt;&lt;/a&gt;程序员必备&lt;/h3&gt;&lt;h4 id=&quot;Homebrew&quot;&gt;&lt;a href=&quot;#Homebrew&quot; class=&quot;headerlink&quot; title=&quot;Homebrew&quot;&gt;&lt;/a&gt;Homebrew&lt;/h4&gt;&lt;p&gt;这个是最需要安装的软件，利用&lt;code&gt;homebrew&lt;/code&gt;可以快速的安装和管理其他软件包，类似于&lt;code&gt;Fedora&lt;/code&gt;系统中的&lt;code&gt;dnf&lt;/code&gt;命令。&lt;/p&gt;
-&lt;p&gt;安装方法如下：&lt;/p&gt;
-&lt;figure class=&quot;highlight awk&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;regexp&quot;&gt;/usr/&lt;/span&gt;bin&lt;span class=&quot;regexp&quot;&gt;/ruby -e &quot;$(curl -fsSL https:/&lt;/span&gt;&lt;span class=&quot;regexp&quot;&gt;/raw.githubusercontent.com/&lt;/span&gt;Homebrew&lt;span class=&quot;regexp&quot;&gt;/install/m&lt;/span&gt;aster&lt;span class=&quot;regexp&quot;&gt;/install)&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;p&gt;直接在命令行中输入上述命令即可快速安装&lt;code&gt;homebrew&lt;/code&gt;了。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Mac" scheme="http://wenzhiquan.github.io/categories/Mac/"/>
-    
-    
-      <category term="Mac" scheme="http://wenzhiquan.github.io/tags/Mac/"/>
-    
-      <category term="Software" scheme="http://wenzhiquan.github.io/tags/Software/"/>
     
   </entry>
   

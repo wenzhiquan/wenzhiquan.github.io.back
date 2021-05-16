@@ -268,7 +268,7 @@
           
           <li class="menu-item menu-item-tags">
     <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">45</span></a>
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">46</span></a>
   </li>
         
         
@@ -276,7 +276,7 @@
           
           <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">14</span></a>
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">15</span></a>
   </li>
         
         
@@ -284,7 +284,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">39</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">42</span></a>
   </li>
 
       
@@ -552,12 +552,12 @@
 <h4 id="克隆gitolite并安装"><a href="#克隆gitolite并安装" class="headerlink" title="克隆gitolite并安装"></a>克隆gitolite并安装</h4><p>我们需要从<code>github</code>中克隆<code>gitolite</code>的官方仓库进行安装：</p>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 克隆gitolite仓库</span></span><br><span class="line">git clone git:<span class="regexp">//gi</span>thub.com<span class="regexp">/sitaramc/gi</span>tolite</span><br><span class="line"></span><br><span class="line"><span class="comment">#将gitolite安装到bin目录下</span></span><br><span class="line">.<span class="regexp">/gitolite/i</span>nstall -to ~<span class="regexp">/bin/</span></span><br></pre></td></tr></table></figure>
 <p>安装<code>gitolite</code>的时候，可能会出现错误：</p>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Can<span class="symbol">'t</span> locate Data/Dumper.pm <span class="keyword">in</span> @INC</span><br></pre></td></tr></table></figure>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Can</span><span class="symbol">'t</span> locate <span class="type">Data</span>/<span class="type">Dumper</span>.pm in <span class="meta">@INC</span></span><br></pre></td></tr></table></figure>
 <p>这是由于没有安装相应的<code>perl</code>包所导致的，需要切换回非<code>git</code>用户进行安装，使用命令：</p>
 <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># 使用CPAN安装<span class="keyword">perl</span>包</span><br><span class="line">sudo <span class="keyword">perl</span> -MCPAN -<span class="keyword">e</span> <span class="keyword">shell</span></span><br><span class="line"></span><br><span class="line">cpan[<span class="number">1</span>]&gt; install Dat<span class="variable">a:</span>:Dumper</span><br></pre></td></tr></table></figure>
 <p>如果是首次使用<code>CPAN</code>会进行一定的配置，在询问是否自动配置处输入<code>yes</code>即可。</p>
 <p>使用<code>CPAN</code>时可能出现错误：</p>
-<figure class="highlight ada"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Can<span class="symbol">'t</span> locate CPAN.pm <span class="keyword">in</span> @INC</span><br></pre></td></tr></table></figure>
+<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Can</span><span class="symbol">'t</span> locate <span class="type">CPAN</span>.pm in <span class="meta">@INC</span></span><br></pre></td></tr></table></figure>
 <p>这是由于没有安装<code>CPAN</code>出现的错误，使用命令：</p>
 <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum <span class="keyword">install</span> perl-CPAN</span><br></pre></td></tr></table></figure>
 <p>安装完成后，应该会自动集成<code>Data::Dumper</code>包。</p>
@@ -816,7 +816,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-count">42</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -857,7 +857,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">14</span>
+                      
+                    
+                    <span class="site-state-item-count">15</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -960,7 +962,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">45</span>
+                      
+                    
+                    <span class="site-state-item-count">46</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -1017,23 +1021,23 @@
                   
                   
                     <li>
+                      <a href="/2020/03/15/2020-03-15-double-side-feedback/" title="双向反馈法">双向反馈法</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/2020/03/06/2020-03-06-bbs-principle/" title="BBS 法则">BBS 法则</a>
+                    </li>
+                  
+                    <li>
+                      <a href="/2020/02/11/2020-02-21-mece-principle/" title="MECE 法则">MECE 法则</a>
+                    </li>
+                  
+                    <li>
                       <a href="/2019/03/02/2019-03-02-java-wildcards/" title="Java 通配符简析">Java 通配符简析</a>
                     </li>
                   
                     <li>
                       <a href="/2018/07/13/2018-07-13-java-annotation/" title="Java Annotation 简析">Java Annotation 简析</a>
-                    </li>
-                  
-                    <li>
-                      <a href="/2018/06/30/2018-06-30-vim-introduction/" title="Vim 简明教程">Vim 简明教程</a>
-                    </li>
-                  
-                    <li>
-                      <a href="/2018/06/27/2018-06-27-design-pattern-strategy/" title="设计模式--策略模式">设计模式--策略模式</a>
-                    </li>
-                  
-                    <li>
-                      <a href="/2018/06/26/2018-06-26-design-pattern-observer/" title="设计模式--观察者模式">设计模式--观察者模式</a>
                     </li>
                   
                 </ul>
@@ -1096,7 +1100,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
