@@ -44,14 +44,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2018/03/28/2018-03-28-java-memory-garbage-collection/</loc>
+    <loc>http://wenzhiquan.github.io/2018/04/01/2018-04-01-java-class-load/</loc>
     
     <lastmod>2019-07-10T04:13:06.246Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2018/04/01/2018-04-01-java-class-load/</loc>
+    <loc>http://wenzhiquan.github.io/2018/03/28/2018-03-28-java-memory-garbage-collection/</loc>
     
     <lastmod>2019-07-10T04:13:06.246Z</lastmod>
     
@@ -79,7 +79,7 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/10/15/2016-10-15-sed/</loc>
+    <loc>http://wenzhiquan.github.io/2016/09/06/2016-09-06-grep/</loc>
     
     <lastmod>2019-07-10T04:13:06.244Z</lastmod>
     
@@ -93,14 +93,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/09/06/2016-09-06-grep/</loc>
+    <loc>http://wenzhiquan.github.io/2016/10/15/2016-10-15-sed/</loc>
     
     <lastmod>2019-07-10T04:13:06.244Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/06/28/2016-06-28-regex/</loc>
+    <loc>http://wenzhiquan.github.io/2016/06/20/2016-06-20-linux-basic/</loc>
     
     <lastmod>2019-07-10T04:13:06.243Z</lastmod>
     
@@ -114,21 +114,21 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/06/20/2016-06-20-linux-basic/</loc>
+    <loc>http://wenzhiquan.github.io/2016/06/28/2016-06-28-regex/</loc>
     
     <lastmod>2019-07-10T04:13:06.243Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/06/05/2016-06-05-linux-frequently-used-order/</loc>
+    <loc>http://wenzhiquan.github.io/2016/05/31/2016-05-31-interview-algorithm-string/</loc>
     
     <lastmod>2019-07-10T04:13:06.242Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/05/31/2016-05-31-interview-algorithm-string/</loc>
+    <loc>http://wenzhiquan.github.io/2016/06/05/2016-06-05-linux-frequently-used-order/</loc>
     
     <lastmod>2019-07-10T04:13:06.242Z</lastmod>
     
@@ -142,13 +142,6 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/03/28/2016-03-28-seven-sort/</loc>
-    
-    <lastmod>2019-07-10T04:13:06.241Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://wenzhiquan.github.io/2016/03/28/2016-03-28-singleton-eight-type/</loc>
     
     <lastmod>2019-07-10T04:13:06.241Z</lastmod>
@@ -156,7 +149,7 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/04/12/2016-04-12-idea-gradle-ssm/</loc>
+    <loc>http://wenzhiquan.github.io/2016/03/28/2016-03-28-seven-sort/</loc>
     
     <lastmod>2019-07-10T04:13:06.241Z</lastmod>
     
@@ -164,6 +157,13 @@
   
   <url>
     <loc>http://wenzhiquan.github.io/2016/05/28/2016-05-28-string-match-sunday/</loc>
+    
+    <lastmod>2019-07-10T04:13:06.241Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2016/04/12/2016-04-12-idea-gradle-ssm/</loc>
     
     <lastmod>2019-07-10T04:13:06.241Z</lastmod>
     
@@ -191,14 +191,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2014/12/09/2014-12-09-nginx-mysql-php-fedora/</loc>
+    <loc>http://wenzhiquan.github.io/2014/10/14/2014-10-14-markdown-simple-syntax/</loc>
     
     <lastmod>2019-07-10T04:13:06.239Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2014/10/14/2014-10-14-markdown-simple-syntax/</loc>
+    <loc>http://wenzhiquan.github.io/2014/12/09/2014-12-09-nginx-mysql-php-fedora/</loc>
     
     <lastmod>2019-07-10T04:13:06.239Z</lastmod>
     
