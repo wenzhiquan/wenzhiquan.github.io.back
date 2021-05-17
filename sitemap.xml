@@ -2,6 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://wenzhiquan.github.io/2020/05/15/2020-05-15-non-violence-communicate/</loc>
+    
+    <lastmod>2020-05-15T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2020/05/09/2020-05-09-context-switch/</loc>
+    
+    <lastmod>2020-05-09T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2020/04/26/2020-04-26-act-immediately/</loc>
+    
+    <lastmod>2020-04-26T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2020/04/17/2020-04-17-about-consist/</loc>
+    
+    <lastmod>2020-04-17T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2020/04/12/2020-04-12-2-plus-2/</loc>
+    
+    <lastmod>2020-04-12T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2020/04/03/2020-04-03-mission-priority/</loc>
+    
+    <lastmod>2020-04-03T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2020/03/29/2020-03-29-learning-by-doing/</loc>
+    
+    <lastmod>2020-03-29T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wenzhiquan.github.io/2020/03/15/2020-03-15-double-side-feedback/</loc>
     
     <lastmod>2020-03-15T04:00:00.000Z</lastmod>
@@ -79,14 +128,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/08/05/2016-08-05-mac-installed-todo/</loc>
+    <loc>http://wenzhiquan.github.io/2016/09/06/2016-09-06-grep/</loc>
     
     <lastmod>2019-07-10T04:13:06.244Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/09/06/2016-09-06-grep/</loc>
+    <loc>http://wenzhiquan.github.io/2016/08/05/2016-08-05-mac-installed-todo/</loc>
     
     <lastmod>2019-07-10T04:13:06.244Z</lastmod>
     
@@ -128,6 +177,13 @@
   </url>
   
   <url>
+    <loc>http://wenzhiquan.github.io/2016/06/05/2016-06-05-linux-frequently-used-order/</loc>
+    
+    <lastmod>2019-07-10T04:13:06.242Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wenzhiquan.github.io/2016/06/15/2016-06-15-interview-algorithm-array/</loc>
     
     <lastmod>2019-07-10T04:13:06.242Z</lastmod>
@@ -135,9 +191,9 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/06/05/2016-06-05-linux-frequently-used-order/</loc>
+    <loc>http://wenzhiquan.github.io/2016/03/28/2016-03-28-singleton-eight-type/</loc>
     
-    <lastmod>2019-07-10T04:13:06.242Z</lastmod>
+    <lastmod>2019-07-10T04:13:06.241Z</lastmod>
     
   </url>
   
@@ -150,13 +206,6 @@
   
   <url>
     <loc>http://wenzhiquan.github.io/2016/05/28/2016-05-28-string-match-sunday/</loc>
-    
-    <lastmod>2019-07-10T04:13:06.241Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://wenzhiquan.github.io/2016/03/28/2016-03-28-singleton-eight-type/</loc>
     
     <lastmod>2019-07-10T04:13:06.241Z</lastmod>
     
