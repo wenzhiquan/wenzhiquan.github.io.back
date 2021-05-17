@@ -2,6 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://wenzhiquan.github.io/2020/08/14/2020-08-14-how-to-write-planning/</loc>
+    
+    <lastmod>2020-08-14T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2020/08/07/2020-08-07-avoid-empiricism/</loc>
+    
+    <lastmod>2020-08-07T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2020/07/23/2020-07-23-main-issue-and-documents/</loc>
+    
+    <lastmod>2020-07-23T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2020/07/12/2020-07-12-long-term-planning/</loc>
+    
+    <lastmod>2020-07-12T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2020/06/28/2020-06-29-planning-triangle/</loc>
+    
+    <lastmod>2020-06-28T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2020/06/12/2020-06-12-thinking-before-do-requirement/</loc>
+    
+    <lastmod>2020-06-12T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2020/06/07/2020-06-07-information-sync/</loc>
+    
+    <lastmod>2020-06-07T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2020/05/29/2020-05-29-anti-intelligence/</loc>
+    
+    <lastmod>2020-05-29T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wenzhiquan.github.io/2020/05/15/2020-05-15-non-violence-communicate/</loc>
     
     <lastmod>2020-05-15T04:00:00.000Z</lastmod>
@@ -135,14 +191,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/08/05/2016-08-05-mac-installed-todo/</loc>
+    <loc>http://wenzhiquan.github.io/2016/10/15/2016-10-15-sed/</loc>
     
     <lastmod>2019-07-10T04:13:06.244Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/10/15/2016-10-15-sed/</loc>
+    <loc>http://wenzhiquan.github.io/2016/08/05/2016-08-05-mac-installed-todo/</loc>
     
     <lastmod>2019-07-10T04:13:06.244Z</lastmod>
     
@@ -156,14 +212,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/06/28/2016-06-28-regex/</loc>
+    <loc>http://wenzhiquan.github.io/2016/06/20/2016-06-20-linux-basic/</loc>
     
     <lastmod>2019-07-10T04:13:06.243Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/06/20/2016-06-20-linux-basic/</loc>
+    <loc>http://wenzhiquan.github.io/2016/06/28/2016-06-28-regex/</loc>
     
     <lastmod>2019-07-10T04:13:06.243Z</lastmod>
     
@@ -191,14 +247,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/03/28/2016-03-28-singleton-eight-type/</loc>
+    <loc>http://wenzhiquan.github.io/2016/03/28/2016-03-28-seven-sort/</loc>
     
     <lastmod>2019-07-10T04:13:06.241Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/03/28/2016-03-28-seven-sort/</loc>
+    <loc>http://wenzhiquan.github.io/2016/03/28/2016-03-28-singleton-eight-type/</loc>
     
     <lastmod>2019-07-10T04:13:06.241Z</lastmod>
     
@@ -219,14 +275,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2015/09/18/2015-09-18-install-jekyll-fedora/</loc>
+    <loc>http://wenzhiquan.github.io/2015/05/04/2015-05-04-mac-sublime-c/</loc>
     
     <lastmod>2019-07-10T04:13:06.240Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2015/05/04/2015-05-04-mac-sublime-c/</loc>
+    <loc>http://wenzhiquan.github.io/2015/09/18/2015-09-18-install-jekyll-fedora/</loc>
     
     <lastmod>2019-07-10T04:13:06.240Z</lastmod>
     
@@ -240,14 +296,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2014/10/14/2014-10-14-markdown-simple-syntax/</loc>
+    <loc>http://wenzhiquan.github.io/2014/12/09/2014-12-09-nginx-mysql-php-fedora/</loc>
     
     <lastmod>2019-07-10T04:13:06.239Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2014/12/09/2014-12-09-nginx-mysql-php-fedora/</loc>
+    <loc>http://wenzhiquan.github.io/2014/10/14/2014-10-14-markdown-simple-syntax/</loc>
     
     <lastmod>2019-07-10T04:13:06.239Z</lastmod>
     

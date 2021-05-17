@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wenzhiquan.github.io/"/>
-  <updated>2020-05-15T04:00:00.000Z</updated>
+  <updated>2020-08-14T04:00:00.000Z</updated>
   <id>http://wenzhiquan.github.io/</id>
   
   <author>
@@ -15,6 +15,222 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何写项目规划</title>
+    <link href="http://wenzhiquan.github.io/2020/08/14/2020-08-14-how-to-write-planning/"/>
+    <id>http://wenzhiquan.github.io/2020/08/14/2020-08-14-how-to-write-planning/</id>
+    <published>2020-08-14T04:00:00.000Z</published>
+    <updated>2020-08-14T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;上次开会时育亮讲到，我们在写一个项目规划的时候应该从三个方面出发进行阐述，痛点，场景和解决问题，让我想到了之前的一个写作方法论——5w1H，痛点对应的就是 why，我们为什么要做这个项目；场景对应的就是
+        
+      
+    
+    </summary>
+    
+      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
+    
+    
+      <category term="方法论" scheme="http://wenzhiquan.github.io/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>避免经验主义导致的问题</title>
+    <link href="http://wenzhiquan.github.io/2020/08/07/2020-08-07-avoid-empiricism/"/>
+    <id>http://wenzhiquan.github.io/2020/08/07/2020-08-07-avoid-empiricism/</id>
+    <published>2020-08-07T04:00:00.000Z</published>
+    <updated>2020-08-07T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;在业务高速发展的系统中，在利用以往经验进行判断时，需要首先判断当前的业务是否还符合历史经验所处的背景和环境中，是否还适合套用经验，如果不适用，就需要摒弃以往的经验，重新思考针对当前业务环境，使用何种方案才能拥有更好的收益，否则很可能会产生反向的效果&lt;/p&gt;
+
+        
+      
+    
+    </summary>
+    
+      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
+    
+    
+      <category term="方法论" scheme="http://wenzhiquan.github.io/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>抓主要矛盾&amp;&amp;注重文档</title>
+    <link href="http://wenzhiquan.github.io/2020/07/23/2020-07-23-main-issue-and-documents/"/>
+    <id>http://wenzhiquan.github.io/2020/07/23/2020-07-23-main-issue-and-documents/</id>
+    <published>2020-07-23T04:00:00.000Z</published>
+    <updated>2020-07-23T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;ol&gt;
+&lt;li&gt;最近学习到了一个方法论：抓主要矛盾，这个方法论意义为在我们面对众多工作的事宜时，要弄清楚当前的最重要最紧急的事情，并将其作为主要矛盾，并且这个主要矛盾随着事情优先级的改变也是随时改变的，需要解决主要矛盾之后再处理其他事宜，而不要让非主要矛盾占用了主要矛盾的时间&lt;
+        
+      
+    
+    </summary>
+    
+      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
+    
+    
+      <category term="方法论" scheme="http://wenzhiquan.github.io/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何做长期规划</title>
+    <link href="http://wenzhiquan.github.io/2020/07/12/2020-07-12-long-term-planning/"/>
+    <id>http://wenzhiquan.github.io/2020/07/12/2020-07-12-long-term-planning/</id>
+    <published>2020-07-12T04:00:00.000Z</published>
+    <updated>2020-07-12T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;又从育亮学到了一个关于制定规划的点：做长期规划的时候，不一定要基于现有的能力想我们能做什么，可以激进一些，&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;看看能不能与其他部门合作共同开发，共建更加适宜用户使用的平台；&lt;/li&gt;
+&lt;li&gt;跳出当前的能力圈思考我们还有什么可以做的，然后再收束成我们
+        
+      
+    
+    </summary>
+    
+      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
+    
+    
+      <category term="方法论" scheme="http://wenzhiquan.github.io/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>规划三角形</title>
+    <link href="http://wenzhiquan.github.io/2020/06/28/2020-06-29-planning-triangle/"/>
+    <id>http://wenzhiquan.github.io/2020/06/28/2020-06-29-planning-triangle/</id>
+    <published>2020-06-28T04:00:00.000Z</published>
+    <updated>2020-06-28T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;年度规划会议中，育亮讲到了一个规划三角形的方法论，感觉受益匪浅。&lt;br&gt;对于 MS
+        
+      
+    
+    </summary>
+    
+      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
+    
+    
+      <category term="方法论" scheme="http://wenzhiquan.github.io/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>做需求之前需要思考的问题</title>
+    <link href="http://wenzhiquan.github.io/2020/06/12/2020-06-12-thinking-before-do-requirement/"/>
+    <id>http://wenzhiquan.github.io/2020/06/12/2020-06-12-thinking-before-do-requirement/</id>
+    <published>2020-06-12T04:00:00.000Z</published>
+    <updated>2020-06-12T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;做需求之前我们需要思考几个问题：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;为什么要做。已经是老生常谈了，不能为了做需求而做需求，而是要思考这个需求可以提升哪些指标，满足哪些用户需求，是否合理等等&lt;/li&gt;
+&lt;li&gt;使用场景是什么。其实有的时候我们思考出来的需求可能是伪需求，乍看之下很有道
+        
+      
+    
+    </summary>
+    
+      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
+    
+    
+      <category term="方法论" scheme="http://wenzhiquan.github.io/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于信息同步</title>
+    <link href="http://wenzhiquan.github.io/2020/06/07/2020-06-07-information-sync/"/>
+    <id>http://wenzhiquan.github.io/2020/06/07/2020-06-07-information-sync/</id>
+    <published>2020-06-07T04:00:00.000Z</published>
+    <updated>2020-06-07T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;信息同步非常重要，当我们前期与其他同学对接了需求之后，如果由于某些原因无法正常开始开发的话，一定要及时同步到对方，否则对方默认我们会支持而开发了相应功能之后，问我们要功能的时候却无法提供，这样不但浪费了对方的人力还会对双方的合作产生非常负面的影响。切记切记，信息一定要及时同
+        
+      
+    
+    </summary>
+    
+      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
+    
+    
+      <category term="方法论" scheme="http://wenzhiquan.github.io/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>逆商</title>
+    <link href="http://wenzhiquan.github.io/2020/05/29/2020-05-29-anti-intelligence/"/>
+    <id>http://wenzhiquan.github.io/2020/05/29/2020-05-29-anti-intelligence/</id>
+    <published>2020-05-29T04:00:00.000Z</published>
+    <updated>2020-05-29T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;如果把面对逆境比作攀登山峰，我们可能成为三种角色：放弃者，扎营者，攀登者，放弃者很好理解，遇到逆境便产生退缩的想法，屈服于逆境，觉得自己不行；扎营者是克服了几个逆境之后，觉得自己满足了，便不再举步向前，原地扎营；攀登者用于面对和发现逆境，并不断的克服，不断向前。大部分人都是
+        
+      
+    
+    </summary>
+    
+      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
+    
+    
+      <category term="方法论" scheme="http://wenzhiquan.github.io/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>非暴力沟通</title>
@@ -324,213 +540,6 @@
       <category term="Java" scheme="http://wenzhiquan.github.io/tags/Java/"/>
     
       <category term="Annotation" scheme="http://wenzhiquan.github.io/tags/Annotation/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Vim 简明教程</title>
-    <link href="http://wenzhiquan.github.io/2018/06/30/2018-06-30-vim-introduction/"/>
-    <id>http://wenzhiquan.github.io/2018/06/30/2018-06-30-vim-introduction/</id>
-    <published>2018-06-30T04:00:00.000Z</published>
-    <updated>2018-06-30T04:00:00.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;“Vim 是一个历史悠久的，具有很多命令的功能非常强大的文本编辑器，被称为 &lt;code&gt;编辑器之神&lt;/code&gt;。”&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://zh.wikipedia.org/wiki/Vim&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Vim&lt;/a&gt; 是从 vi 发展出来的一个文本编辑器。其代码补完、编译及错误跳转等方便编程的功能特别丰富，在程序员中被广泛使用。和 Emacs 并列成为类 Unix 系统用户最喜欢的编辑器。两派使用者经常发起 “XXX 才是最好的编辑器” 之争。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Vim" scheme="http://wenzhiquan.github.io/categories/Vim/"/>
-    
-    
-      <category term="vim" scheme="http://wenzhiquan.github.io/tags/vim/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式--策略模式</title>
-    <link href="http://wenzhiquan.github.io/2018/06/27/2018-06-27-design-pattern-strategy/"/>
-    <id>http://wenzhiquan.github.io/2018/06/27/2018-06-27-design-pattern-strategy/</id>
-    <published>2018-06-27T04:00:00.000Z</published>
-    <updated>2018-06-27T04:00:00.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;“设计模式是软件开发人员在开发过程中可以遵循的一般问题的解决方案。”&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;策略模式(Strategy Pattern)：定义一系列算法，将每一个算法封装起来，并让它们可以相互替换。策略模式让算法独立于使用它的客户而变化，也称为政策模式(Policy)。&lt;/p&gt;
-&lt;p&gt;策略模式是一种对象行为型模式。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="设计模式" scheme="http://wenzhiquan.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-      <category term="设计模式" scheme="http://wenzhiquan.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-      <category term="行为型模式" scheme="http://wenzhiquan.github.io/tags/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/"/>
-    
-      <category term="策略模式" scheme="http://wenzhiquan.github.io/tags/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式--观察者模式</title>
-    <link href="http://wenzhiquan.github.io/2018/06/26/2018-06-26-design-pattern-observer/"/>
-    <id>http://wenzhiquan.github.io/2018/06/26/2018-06-26-design-pattern-observer/</id>
-    <published>2018-06-26T04:00:00.000Z</published>
-    <updated>2018-06-26T04:00:00.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;“设计模式是软件开发人员在开发过程中可以遵循的一般问题的解决方案。”&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;当对象间存在一对多关系，且当一个对象被修改时，会自动通知它的依赖对象，则使用观察者模式（Observer Pattern）。观察者模式属于行为型模式。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="设计模式" scheme="http://wenzhiquan.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-      <category term="设计模式" scheme="http://wenzhiquan.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-      <category term="行为型模式" scheme="http://wenzhiquan.github.io/tags/%E8%A1%8C%E4%B8%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/"/>
-    
-      <category term="观察者模式" scheme="http://wenzhiquan.github.io/tags/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式--抽象工厂模式</title>
-    <link href="http://wenzhiquan.github.io/2018/06/25/2018-06-25-design-pattern-abstract-factory/"/>
-    <id>http://wenzhiquan.github.io/2018/06/25/2018-06-25-design-pattern-abstract-factory/</id>
-    <published>2018-06-25T04:00:00.000Z</published>
-    <updated>2018-06-25T04:00:00.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;“设计模式是软件开发人员在开发过程中可以遵循的一般问题的解决方案。”&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;在&lt;code&gt;工厂方法模式&lt;/code&gt;中具体工厂负责生产具体的产品，每一个具体工厂对应一种具体产品，工厂方法也具有唯一性，一般情况下，一个具体工厂中只有一个工厂方法或者一组重载的工厂方法。但是有时候我们需要一个工厂可以提供多个产品对象，而不是单一的产品对象。此时工厂方法模式就无法完成需求，而抽象工厂模式可以解决这个问题。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="设计模式" scheme="http://wenzhiquan.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-      <category term="设计模式" scheme="http://wenzhiquan.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-      <category term="创建型模式" scheme="http://wenzhiquan.github.io/tags/%E5%88%9B%E5%BB%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/"/>
-    
-      <category term="工厂模式" scheme="http://wenzhiquan.github.io/tags/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式--工厂方法模式</title>
-    <link href="http://wenzhiquan.github.io/2018/06/16/2018-06-16-design-pattern-factory-method/"/>
-    <id>http://wenzhiquan.github.io/2018/06/16/2018-06-16-design-pattern-factory-method/</id>
-    <published>2018-06-16T04:00:00.000Z</published>
-    <updated>2018-06-16T04:00:00.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;“设计模式是软件开发人员在开发过程中可以遵循的一般问题的解决方案。”&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;由于简单工厂模式每次增加新的产品时，都需要修改工厂类，违背了开闭原则，可以通过定义工厂类的父类，为每种产品都创建一个工厂，从而动态的获取子类，并且增加产品时增加工厂子类即可，不用修改工厂父类。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="设计模式" scheme="http://wenzhiquan.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-      <category term="设计模式" scheme="http://wenzhiquan.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-      <category term="创建型模式" scheme="http://wenzhiquan.github.io/tags/%E5%88%9B%E5%BB%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/"/>
-    
-      <category term="工厂模式" scheme="http://wenzhiquan.github.io/tags/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>设计模式--简单工厂模式</title>
-    <link href="http://wenzhiquan.github.io/2018/06/15/2018-06-15-design-pattern-simple-factory/"/>
-    <id>http://wenzhiquan.github.io/2018/06/15/2018-06-15-design-pattern-simple-factory/</id>
-    <published>2018-06-15T04:00:00.000Z</published>
-    <updated>2018-06-15T04:00:00.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;“设计模式是软件开发人员在开发过程中可以遵循的一般问题的解决方案。”&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;简介&quot;&gt;&lt;a href=&quot;#简介&quot; class=&quot;headerlink&quot; title=&quot;简介&quot;&gt;&lt;/a&gt;简介&lt;/h3&gt;&lt;p&gt;简单工厂模式是最简单的设计模式之一，简单到甚至没有放到23种常用设计模式当中，可以用于设计模式的入门学习。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="设计模式" scheme="http://wenzhiquan.github.io/categories/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-    
-      <category term="设计模式" scheme="http://wenzhiquan.github.io/tags/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/"/>
-    
-      <category term="创建型模式" scheme="http://wenzhiquan.github.io/tags/%E5%88%9B%E5%BB%BA%E5%9E%8B%E6%A8%A1%E5%BC%8F/"/>
-    
-      <category term="工厂模式" scheme="http://wenzhiquan.github.io/tags/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Thrift 简析</title>
-    <link href="http://wenzhiquan.github.io/2018/05/30/2018-05-30-thrift-introduction/"/>
-    <id>http://wenzhiquan.github.io/2018/05/30/2018-05-30-thrift-introduction/</id>
-    <published>2018-05-30T04:00:00.000Z</published>
-    <updated>2018-06-21T04:00:00.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;Thrift 是一种可扩展、跨语言的服务开发框架，用于各个服务之间的 RPC 通信。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h3&gt;&lt;p&gt;&lt;code&gt;Thrift&lt;/code&gt; 最初由 &lt;code&gt;Facebook&lt;/code&gt; 于 2007 年开发，2008 年进入 &lt;code&gt;Apache&lt;/code&gt; 开源项目。Thrift 主要用于各个服务之间的 RPC 通信，是一种可扩展、跨语言的 &lt;code&gt;RPC&lt;/code&gt; 服务开发框架，其服务端和客户端可以用不同的语言来开发。只需要依照 IDL（Interface Description Language）定义一次接口，Thrift 工具就能编译生成 C++, Java, Python, PHP, Ruby, JavaScript, Node.js 等语言的代码。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Thrift" scheme="http://wenzhiquan.github.io/categories/Thrift/"/>
-    
-    
-      <category term="RPC" scheme="http://wenzhiquan.github.io/tags/RPC/"/>
-    
-      <category term="Thrift" scheme="http://wenzhiquan.github.io/tags/Thrift/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>RPC 简析</title>
-    <link href="http://wenzhiquan.github.io/2018/05/29/2018-05-29-rpc-introduction/"/>
-    <id>http://wenzhiquan.github.io/2018/05/29/2018-05-29-rpc-introduction/</id>
-    <published>2018-05-29T04:00:00.000Z</published>
-    <updated>2018-05-29T04:00:00.000Z</updated>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;RPC 的主要功能目标是让构建分布式计算（应用）更容易，在提供强大的远程调用能力时不损失本地调用的语义简洁性。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;概述&quot;&gt;&lt;a href=&quot;#概述&quot; class=&quot;headerlink&quot; title=&quot;概述&quot;&gt;&lt;/a&gt;概述&lt;/h3&gt;&lt;h4 id=&quot;什么是-RPC&quot;&gt;&lt;a href=&quot;#什么是-RPC&quot; class=&quot;headerlink&quot; title=&quot;什么是 RPC&quot;&gt;&lt;/a&gt;什么是 &lt;code&gt;RPC&lt;/code&gt;&lt;/h4&gt;&lt;p&gt;&lt;code&gt;RPC&lt;/code&gt;，全称为 &lt;code&gt;Remote Procedure Call&lt;/code&gt;，即远程过程调用，是一种进程间的通信方式。它能够实现从主机 A 调用可达地址空间中另一台主机 B 上的过程或函数，而程序员并不需要显示的编码其调用过程。也即是说对于程序员来说，这个调用过程是透明的，本地调用和远程调用所用代码基本是相同的。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="RPC" scheme="http://wenzhiquan.github.io/categories/RPC/"/>
-    
-    
-      <category term="RPC" scheme="http://wenzhiquan.github.io/tags/RPC/"/>
     
   </entry>
   
