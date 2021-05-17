@@ -118,6 +118,7 @@ leancloud_counter_security:
   app_key: t2TehJbxap2pAcoBr4oCrCtT
   username: "wenzhiquan" # Will be asked while deploying if is left blank
   password: # Recommmended to be left blank. Will be asked while deploying if is left blank
+  server_url: https://xst4331o.lc-cn-n1-shared.com
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
