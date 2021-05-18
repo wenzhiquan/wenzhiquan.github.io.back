@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://wenzhiquan.github.io/"/>
-  <updated>2020-10-26T04:00:00.000Z</updated>
+  <updated>2021-01-27T04:00:00.000Z</updated>
   <id>http://wenzhiquan.github.io/</id>
   
   <author>
@@ -15,6 +15,266 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何更好的处理你的版本 tag</title>
+    <link href="http://wenzhiquan.github.io/2021/01/27/2021-01-27-how-to-deal-with-tag/"/>
+    <id>http://wenzhiquan.github.io/2021/01/27/2021-01-27-how-to-deal-with-tag/</id>
+    <published>2021-01-27T04:00:00.000Z</published>
+    <updated>2021-01-27T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;今天在发布上线的时候，CI 突然报错没有通过编译，打开一看，惊了，之前依赖的公司内部的一个组件库的 tag 删除了😂，oncall 问了原因，告知是有两个连续的版本 1.0.2 和 1.0.3
+        
+      
+    
+    </summary>
+    
+      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
+    
+    
+      <category term="个人思考" scheme="http://wenzhiquan.github.io/tags/%E4%B8%AA%E4%BA%BA%E6%80%9D%E8%80%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于系统设计抽象一层的思考</title>
+    <link href="http://wenzhiquan.github.io/2021/01/11/2021-01-11-about-persevere/"/>
+    <id>http://wenzhiquan.github.io/2021/01/11/2021-01-11-about-persevere/</id>
+    <published>2021-01-11T04:00:00.000Z</published>
+    <updated>2021-01-11T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;从我开始用「不背单词」APP 背单词和「多邻国」APP 学日语已经 50 天了，以前都说 21
+        
+      
+    
+    </summary>
+    
+      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
+    
+    
+      <category term="个人思考" scheme="http://wenzhiquan.github.io/tags/%E4%B8%AA%E4%BA%BA%E6%80%9D%E8%80%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于系统设计抽象一层的思考</title>
+    <link href="http://wenzhiquan.github.io/2020/12/14/2020-12-14-abstract-thinking-of-system-design/"/>
+    <id>http://wenzhiquan.github.io/2020/12/14/2020-12-14-abstract-thinking-of-system-design/</id>
+    <published>2020-12-14T04:00:00.000Z</published>
+    <updated>2020-12-14T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;平常在设计系统时，会基于现有的条件进行系统架构的设计，满足当前用户的需求，以最小的代价完成系统设计和实现。这样的设计在无法完全确定当前业务能否“活下来”的情况下是比较适用的，因为成本较低，可以快速试错，但是带来的缺点是总以最小代价来进行设计，可能会导致设计能力的原地踏步。因
+        
+      
+    
+    </summary>
+    
+      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
+    
+    
+      <category term="个人思考" scheme="http://wenzhiquan.github.io/tags/%E4%B8%AA%E4%BA%BA%E6%80%9D%E8%80%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>one on one 时需要注意的点（对同级或下级）</title>
+    <link href="http://wenzhiquan.github.io/2020/12/06/2020-12-06-how-to-one-on-one/"/>
+    <id>http://wenzhiquan.github.io/2020/12/06/2020-12-06-how-to-one-on-one/</id>
+    <published>2020-12-06T04:00:00.000Z</published>
+    <updated>2020-12-06T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;最近学习了一个与人 one on one
+        
+      
+    
+    </summary>
+    
+      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
+    
+    
+      <category term="方法论" scheme="http://wenzhiquan.github.io/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>重要的 15.87%</title>
+    <link href="http://wenzhiquan.github.io/2020/11/30/2020-11-30-important-15.87%25/"/>
+    <id>http://wenzhiquan.github.io/2020/11/30/2020-11-30-important-15.87%/</id>
+    <published>2020-11-30T04:00:00.000Z</published>
+    <updated>2020-11-30T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;今天看到万维钢的一篇文章，讲到我们学习的三个区域：舒适区，学习区和恐慌区，在学习区我们可以达到心流状态，让我们的工作挑战和技能形成平衡，这也就需要我们要在已有的知识技能的基础上增加“意外”，也就是学习新的内容，这个新内容比例经过研究表明是
+        
+      
+    
+    </summary>
+    
+      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
+    
+    
+      <category term="阅读感想" scheme="http://wenzhiquan.github.io/tags/%E9%98%85%E8%AF%BB%E6%84%9F%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>远离受害者模式</title>
+    <link href="http://wenzhiquan.github.io/2020/11/25/2020-11-25-away-victim-mode/"/>
+    <id>http://wenzhiquan.github.io/2020/11/25/2020-11-25-away-victim-mode/</id>
+    <published>2020-11-25T04:00:00.000Z</published>
+    <updated>2020-11-25T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;今天看了一篇文章，提到一个受害者模式，是指在遭遇到困难或者失败时，把自己放在受害者的位置上，责怪他人或者环境，比如，责怪父母离异觉得自己很可怜，责怪配偶不关心自己觉得遇人不淑，工作不顺利责怪领导碾压自己等。受害者模式是一种弱者的模式，消极的模式，不积极反思自己的不足加以改正
+        
+      
+    
+    </summary>
+    
+      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
+    
+    
+      <category term="阅读感想" scheme="http://wenzhiquan.github.io/tags/%E9%98%85%E8%AF%BB%E6%84%9F%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何提升自己的批判性思维</title>
+    <link href="http://wenzhiquan.github.io/2020/11/22/2020-11-22-criticism-thinking/"/>
+    <id>http://wenzhiquan.github.io/2020/11/22/2020-11-22-criticism-thinking/</id>
+    <published>2020-11-22T04:00:00.000Z</published>
+    <updated>2020-11-22T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;今天看 TED，里面提到了 5 个提升批判性思维的
+        
+      
+    
+    </summary>
+    
+      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
+    
+    
+      <category term="阅读感想" scheme="http://wenzhiquan.github.io/tags/%E9%98%85%E8%AF%BB%E6%84%9F%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何更好地准备一场会议</title>
+    <link href="http://wenzhiquan.github.io/2020/11/11/2020-11-11-prepare-conversation/"/>
+    <id>http://wenzhiquan.github.io/2020/11/11/2020-11-11-prepare-conversation/</id>
+    <published>2020-11-11T04:00:00.000Z</published>
+    <updated>2020-11-11T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;今天开了一场略显尴尬的会议，会议上我方存在的问题主要有两点，第一是会议之前和某一相关方没有达成一致，导致在会议上来回拉扯说不清楚，第二是会议之前准备不足，导致与会方提出的问题没有很好的进行回答，导致拖慢了整个会议的节奏，也给与会方留下不太好的印象。所以，在参加重要的会议之前
+        
+      
+    
+    </summary>
+    
+      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
+    
+    
+      <category term="个人思考" scheme="http://wenzhiquan.github.io/tags/%E4%B8%AA%E4%BA%BA%E6%80%9D%E8%80%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何编写一篇产品设计文档之我见</title>
+    <link href="http://wenzhiquan.github.io/2020/11/08/2020-11-08-how-to-write-product-design-document/"/>
+    <id>http://wenzhiquan.github.io/2020/11/08/2020-11-08-how-to-write-product-design-document/</id>
+    <published>2020-11-08T04:00:00.000Z</published>
+    <updated>2020-11-08T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;最近编写产品设计文档时，发现了一些方法论，在这里分享出来。首先，要写一篇产品设计文档时，要明确产品设计的背景是什么，是由于什么问题无法解决才需要这个产品，这个产品针对的用户是哪些人，产品设计出来是要帮他们在什么场景下解决什么问题，为了解决这些问题我们需要提供哪些核心能力，这
+        
+      
+    
+    </summary>
+    
+      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
+    
+    
+      <category term="方法论" scheme="http://wenzhiquan.github.io/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>提升自己思考问题的 level</title>
+    <link href="http://wenzhiquan.github.io/2020/11/02/2020-11-02-upward-thinking-level/"/>
+    <id>http://wenzhiquan.github.io/2020/11/02/2020-11-02-upward-thinking-level/</id>
+    <published>2020-11-02T04:00:00.000Z</published>
+    <updated>2020-11-02T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;上次和育亮 one one
+        
+      
+    
+    </summary>
+    
+      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
+    
+    
+      <category term="个人思考" scheme="http://wenzhiquan.github.io/tags/%E4%B8%AA%E4%BA%BA%E6%80%9D%E8%80%83/"/>
+    
+  </entry>
   
   <entry>
     <title>为什么需要积极主动</title>
@@ -292,274 +552,6 @@
     
     
       <category term="方法论" scheme="http://wenzhiquan.github.io/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何写项目规划</title>
-    <link href="http://wenzhiquan.github.io/2020/08/14/2020-08-14-how-to-write-planning/"/>
-    <id>http://wenzhiquan.github.io/2020/08/14/2020-08-14-how-to-write-planning/</id>
-    <published>2020-08-14T04:00:00.000Z</published>
-    <updated>2020-08-14T04:00:00.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;上次开会时育亮讲到，我们在写一个项目规划的时候应该从三个方面出发进行阐述，痛点，场景和解决问题，让我想到了之前的一个写作方法论——5w1H，痛点对应的就是 why，我们为什么要做这个项目；场景对应的就是
-        
-      
-    
-    </summary>
-    
-      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
-    
-    
-      <category term="方法论" scheme="http://wenzhiquan.github.io/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>避免经验主义导致的问题</title>
-    <link href="http://wenzhiquan.github.io/2020/08/07/2020-08-07-avoid-empiricism/"/>
-    <id>http://wenzhiquan.github.io/2020/08/07/2020-08-07-avoid-empiricism/</id>
-    <published>2020-08-07T04:00:00.000Z</published>
-    <updated>2020-08-07T04:00:00.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;在业务高速发展的系统中，在利用以往经验进行判断时，需要首先判断当前的业务是否还符合历史经验所处的背景和环境中，是否还适合套用经验，如果不适用，就需要摒弃以往的经验，重新思考针对当前业务环境，使用何种方案才能拥有更好的收益，否则很可能会产生反向的效果&lt;/p&gt;
-
-        
-      
-    
-    </summary>
-    
-      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
-    
-    
-      <category term="个人思考" scheme="http://wenzhiquan.github.io/tags/%E4%B8%AA%E4%BA%BA%E6%80%9D%E8%80%83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>抓主要矛盾&amp;&amp;注重文档</title>
-    <link href="http://wenzhiquan.github.io/2020/07/23/2020-07-23-main-issue-and-documents/"/>
-    <id>http://wenzhiquan.github.io/2020/07/23/2020-07-23-main-issue-and-documents/</id>
-    <published>2020-07-23T04:00:00.000Z</published>
-    <updated>2020-07-23T04:00:00.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;ol&gt;
-&lt;li&gt;最近学习到了一个方法论：抓主要矛盾，这个方法论意义为在我们面对众多工作的事宜时，要弄清楚当前的最重要最紧急的事情，并将其作为主要矛盾，并且这个主要矛盾随着事情优先级的改变也是随时改变的，需要解决主要矛盾之后再处理其他事宜，而不要让非主要矛盾占用了主要矛盾的时间&lt;
-        
-      
-    
-    </summary>
-    
-      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
-    
-    
-      <category term="方法论" scheme="http://wenzhiquan.github.io/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何做长期规划</title>
-    <link href="http://wenzhiquan.github.io/2020/07/12/2020-07-12-long-term-planning/"/>
-    <id>http://wenzhiquan.github.io/2020/07/12/2020-07-12-long-term-planning/</id>
-    <published>2020-07-12T04:00:00.000Z</published>
-    <updated>2020-07-12T04:00:00.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;又从育亮学到了一个关于制定规划的点：做长期规划的时候，不一定要基于现有的能力想我们能做什么，可以激进一些，&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;看看能不能与其他部门合作共同开发，共建更加适宜用户使用的平台；&lt;/li&gt;
-&lt;li&gt;跳出当前的能力圈思考我们还有什么可以做的，然后再收束成我们
-        
-      
-    
-    </summary>
-    
-      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
-    
-    
-      <category term="方法论" scheme="http://wenzhiquan.github.io/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>规划三角形</title>
-    <link href="http://wenzhiquan.github.io/2020/06/28/2020-06-29-planning-triangle/"/>
-    <id>http://wenzhiquan.github.io/2020/06/28/2020-06-29-planning-triangle/</id>
-    <published>2020-06-28T04:00:00.000Z</published>
-    <updated>2020-06-28T04:00:00.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;年度规划会议中，育亮讲到了一个规划三角形的方法论，感觉受益匪浅。&lt;br&gt;对于 MS
-        
-      
-    
-    </summary>
-    
-      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
-    
-    
-      <category term="方法论" scheme="http://wenzhiquan.github.io/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>做需求之前需要思考的问题</title>
-    <link href="http://wenzhiquan.github.io/2020/06/12/2020-06-12-thinking-before-do-requirement/"/>
-    <id>http://wenzhiquan.github.io/2020/06/12/2020-06-12-thinking-before-do-requirement/</id>
-    <published>2020-06-12T04:00:00.000Z</published>
-    <updated>2020-06-12T04:00:00.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;做需求之前我们需要思考几个问题：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;为什么要做。已经是老生常谈了，不能为了做需求而做需求，而是要思考这个需求可以提升哪些指标，满足哪些用户需求，是否合理等等&lt;/li&gt;
-&lt;li&gt;使用场景是什么。其实有的时候我们思考出来的需求可能是伪需求，乍看之下很有道
-        
-      
-    
-    </summary>
-    
-      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
-    
-    
-      <category term="个人思考" scheme="http://wenzhiquan.github.io/tags/%E4%B8%AA%E4%BA%BA%E6%80%9D%E8%80%83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于信息同步</title>
-    <link href="http://wenzhiquan.github.io/2020/06/07/2020-06-07-information-sync/"/>
-    <id>http://wenzhiquan.github.io/2020/06/07/2020-06-07-information-sync/</id>
-    <published>2020-06-07T04:00:00.000Z</published>
-    <updated>2020-06-07T04:00:00.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;信息同步非常重要，当我们前期与其他同学对接了需求之后，如果由于某些原因无法正常开始开发的话，一定要及时同步到对方，否则对方默认我们会支持而开发了相应功能之后，问我们要功能的时候却无法提供，这样不但浪费了对方的人力还会对双方的合作产生非常负面的影响。切记切记，信息一定要及时同
-        
-      
-    
-    </summary>
-    
-      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
-    
-    
-      <category term="个人思考" scheme="http://wenzhiquan.github.io/tags/%E4%B8%AA%E4%BA%BA%E6%80%9D%E8%80%83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>逆商</title>
-    <link href="http://wenzhiquan.github.io/2020/05/29/2020-05-29-anti-intelligence/"/>
-    <id>http://wenzhiquan.github.io/2020/05/29/2020-05-29-anti-intelligence/</id>
-    <published>2020-05-29T04:00:00.000Z</published>
-    <updated>2020-05-29T04:00:00.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;如果把面对逆境比作攀登山峰，我们可能成为三种角色：放弃者，扎营者，攀登者，放弃者很好理解，遇到逆境便产生退缩的想法，屈服于逆境，觉得自己不行；扎营者是克服了几个逆境之后，觉得自己满足了，便不再举步向前，原地扎营；攀登者用于面对和发现逆境，并不断的克服，不断向前。大部分人都是
-        
-      
-    
-    </summary>
-    
-      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
-    
-    
-      <category term="阅读感想" scheme="http://wenzhiquan.github.io/tags/%E9%98%85%E8%AF%BB%E6%84%9F%E6%83%B3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>非暴力沟通</title>
-    <link href="http://wenzhiquan.github.io/2020/05/15/2020-05-15-non-violence-communicate/"/>
-    <id>http://wenzhiquan.github.io/2020/05/15/2020-05-15-non-violence-communicate/</id>
-    <published>2020-05-15T04:00:00.000Z</published>
-    <updated>2020-05-15T04:00:00.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;本周阅读了《非暴力沟通》了解到我们周围其实充满了无意识的“暴力沟通”，比如直言“你这个方案不对”，“你应该这么这么做”等等，这种沟通很可能导致对方有很不好的感受，不利于后续的沟通。所以在沟通之前我们可以先把谈话目标说出来，然后采用四步法进行沟通：讲事实，讲感受，讲原因，讲需
-        
-      
-    
-    </summary>
-    
-      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
-    
-    
-      <category term="阅读感想" scheme="http://wenzhiquan.github.io/tags/%E9%98%85%E8%AF%BB%E6%84%9F%E6%83%B3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于我们的上下文切换</title>
-    <link href="http://wenzhiquan.github.io/2020/05/09/2020-05-09-context-switch/"/>
-    <id>http://wenzhiquan.github.io/2020/05/09/2020-05-09-context-switch/</id>
-    <published>2020-05-09T04:00:00.000Z</published>
-    <updated>2020-05-09T04:00:00.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;就像电脑的CPU一样，我们做事时，其实也是有上下文的，如果不断被其他事情打断，那我们切换回原来上下文的成本就会非常高，会极大的降低我们的工作效率，所以集中精力免打扰的完整的做完一件事情才能最大限度的利用好我们的精力和能力。应用在我们工作中，一天中可以在某几段需要集中的整块时
-        
-      
-    
-    </summary>
-    
-      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
-    
-    
-      <category term="个人思考" scheme="http://wenzhiquan.github.io/tags/%E4%B8%AA%E4%BA%BA%E6%80%9D%E8%80%83/"/>
     
   </entry>
   

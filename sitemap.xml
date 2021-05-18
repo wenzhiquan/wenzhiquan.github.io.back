@@ -2,6 +2,76 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://wenzhiquan.github.io/2021/01/27/2021-01-27-how-to-deal-with-tag/</loc>
+    
+    <lastmod>2021-01-27T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2021/01/11/2021-01-11-about-persevere/</loc>
+    
+    <lastmod>2021-01-11T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2020/12/14/2020-12-14-abstract-thinking-of-system-design/</loc>
+    
+    <lastmod>2020-12-14T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2020/12/06/2020-12-06-how-to-one-on-one/</loc>
+    
+    <lastmod>2020-12-06T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2020/11/30/2020-11-30-important-15.87%25/</loc>
+    
+    <lastmod>2020-11-30T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2020/11/25/2020-11-25-away-victim-mode/</loc>
+    
+    <lastmod>2020-11-25T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2020/11/22/2020-11-22-criticism-thinking/</loc>
+    
+    <lastmod>2020-11-22T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2020/11/11/2020-11-11-prepare-conversation/</loc>
+    
+    <lastmod>2020-11-11T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2020/11/08/2020-11-08-how-to-write-product-design-document/</loc>
+    
+    <lastmod>2020-11-08T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2020/11/02/2020-11-02-upward-thinking-level/</loc>
+    
+    <lastmod>2020-11-02T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wenzhiquan.github.io/2020/10/26/2020-10-26-be-positive-willing/</loc>
     
     <lastmod>2020-10-26T04:00:00.000Z</lastmod>
@@ -247,14 +317,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/07/04/2016-07-04-interview-algorithm-math-bit/</loc>
+    <loc>http://wenzhiquan.github.io/2016/08/05/2016-08-05-mac-installed-todo/</loc>
     
     <lastmod>2019-07-10T04:13:06.244Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/08/05/2016-08-05-mac-installed-todo/</loc>
+    <loc>http://wenzhiquan.github.io/2016/07/04/2016-07-04-interview-algorithm-math-bit/</loc>
     
     <lastmod>2019-07-10T04:13:06.244Z</lastmod>
     
@@ -303,14 +373,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/06/15/2016-06-15-interview-algorithm-array/</loc>
+    <loc>http://wenzhiquan.github.io/2016/06/05/2016-06-05-linux-frequently-used-order/</loc>
     
     <lastmod>2019-07-10T04:13:06.242Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/06/05/2016-06-05-linux-frequently-used-order/</loc>
+    <loc>http://wenzhiquan.github.io/2016/06/15/2016-06-15-interview-algorithm-array/</loc>
     
     <lastmod>2019-07-10T04:13:06.242Z</lastmod>
     
@@ -331,14 +401,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/04/12/2016-04-12-idea-gradle-ssm/</loc>
+    <loc>http://wenzhiquan.github.io/2016/05/28/2016-05-28-string-match-sunday/</loc>
     
     <lastmod>2019-07-10T04:13:06.241Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/05/28/2016-05-28-string-match-sunday/</loc>
+    <loc>http://wenzhiquan.github.io/2016/04/12/2016-04-12-idea-gradle-ssm/</loc>
     
     <lastmod>2019-07-10T04:13:06.241Z</lastmod>
     
@@ -352,13 +422,6 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2015/09/18/2015-09-18-install-jekyll-fedora/</loc>
-    
-    <lastmod>2019-07-10T04:13:06.240Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://wenzhiquan.github.io/2015/05/29/2015-05-29-install-nginx-php-mysql-mac/</loc>
     
     <lastmod>2019-07-10T04:13:06.240Z</lastmod>
@@ -366,7 +429,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2015/03/19/2015-03-19-mac-install-jekyll/</loc>
+    <loc>http://wenzhiquan.github.io/2015/09/18/2015-09-18-install-jekyll-fedora/</loc>
+    
+    <lastmod>2019-07-10T04:13:06.240Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2014/10/14/2014-10-14-markdown-simple-syntax/</loc>
     
     <lastmod>2019-07-10T04:13:06.239Z</lastmod>
     
@@ -380,7 +450,7 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2014/10/14/2014-10-14-markdown-simple-syntax/</loc>
+    <loc>http://wenzhiquan.github.io/2015/03/19/2015-03-19-mac-install-jekyll/</loc>
     
     <lastmod>2019-07-10T04:13:06.239Z</lastmod>
     
@@ -464,14 +534,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2018/05/04/2018-05-04-move-to-hexo-blog/</loc>
+    <loc>http://wenzhiquan.github.io/2018/05/29/2018-05-29-rpc-introduction/</loc>
     
     <lastmod>2018-05-29T04:00:00.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2018/05/29/2018-05-29-rpc-introduction/</loc>
+    <loc>http://wenzhiquan.github.io/2018/05/04/2018-05-04-move-to-hexo-blog/</loc>
     
     <lastmod>2018-05-29T04:00:00.000Z</lastmod>
     
