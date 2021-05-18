@@ -7,7 +7,7 @@ copyright: true
 categories:
   - 思考与感想
 tags:
-  - 方法论
+  - 个人思考
 ---
 
 做需求之前我们需要思考几个问题：
