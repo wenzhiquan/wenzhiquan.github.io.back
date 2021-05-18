@@ -284,7 +284,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">77</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">86</span></a>
   </li>
 
       
@@ -348,6 +348,1987 @@
           <div id="content" class="content">
             
   <section id="posts" class="posts-expand">
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2021/01/11/2021-01-11-about-persevere/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="温智全">
+      <meta itemprop="description" content="爱唱歌健身的程序员">
+      <meta itemprop="image" content="/uploads/avatar-wen.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="温智全的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/01/11/2021-01-11-about-persevere/" itemprop="url">
+                  关于系统设计抽象一层的思考
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2021-01-11 12:00:00" itemprop="dateCreated datePublished" datetime="2021-01-11T12:00:00+08:00">2021-01-11</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/思考与感想/" itemprop="url" rel="index"><span itemprop="name">思考与感想</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/01/11/2021-01-11-about-persevere/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2021/01/11/2021-01-11-about-persevere/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2021/01/11/2021-01-11-about-persevere/" class="leancloud_visitors" data-flag-title="关于系统设计抽象一层的思考">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-fire"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">441</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>从我开始用「不背单词」APP 背单词和「多邻国」APP 学日语已经 50 天了，以前都说 21 天养成一个习惯，那我这个习惯也算是养成了，但是其实能够坚持下来也是有一些条件的，这也和《掌控习惯》里面提到的一些方法不谋而合–让习惯简单易行和让习惯令人愉悦，其中我背单词的时候没有每天背非常多的单词个数，因为那样复习的时候会让自己产生压力，让坚持变的困难，而「多邻国」每个单元的学习比较简短，并且在每次学习之后给出一个及时反馈，给一些奖励，并且有学习排名，让我更有动力继续学习下去。</p>
+<p>反映到我们生活中的其他方面，其实我们也可以使用类似的方法让自己能够更长久的坚持下来</p>
+<ul>
+<li>看书不用看太多，每次看一章或者看一节，看完之后合上书，回顾一下刚刚看完的内容，总结一下自己的理解，最好能够找个人讲出来，化被动为主动。</li>
+<li>适当的做总结，而不是等年终的时候才做总结，一次总结太多东西会令人懈怠，每周都回顾一下自己做的事情，学到的内容，最好也能总结下来找个人讲出来，不知不觉之中自己就会获得更快的成长。</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+    
+    
+    <div>
+      
+    </div>
+    
+    
+    
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2020/12/14/2020-12-14-abstract-thinking-of-system-design/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="温智全">
+      <meta itemprop="description" content="爱唱歌健身的程序员">
+      <meta itemprop="image" content="/uploads/avatar-wen.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="温智全的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/12/14/2020-12-14-abstract-thinking-of-system-design/" itemprop="url">
+                  关于系统设计抽象一层的思考
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-12-14 12:00:00" itemprop="dateCreated datePublished" datetime="2020-12-14T12:00:00+08:00">2020-12-14</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/思考与感想/" itemprop="url" rel="index"><span itemprop="name">思考与感想</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/12/14/2020-12-14-abstract-thinking-of-system-design/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2020/12/14/2020-12-14-abstract-thinking-of-system-design/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/12/14/2020-12-14-abstract-thinking-of-system-design/" class="leancloud_visitors" data-flag-title="关于系统设计抽象一层的思考">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-fire"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">223</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>平常在设计系统时，会基于现有的条件进行系统架构的设计，满足当前用户的需求，以最小的代价完成系统设计和实现。这样的设计在无法完全确定当前业务能否“活下来”的情况下是比较适用的，因为成本较低，可以快速试错，但是带来的缺点是总以最小代价来进行设计，可能会导致设计能力的原地踏步。因此，我们应该在成本可控的基础上再多进行一层抽象的思考，当用户量级或者请求量级提升上来之后应该如何进行设计以保证系统的可靠性，或者如何提升设计的通用性，减少以后的修改成本。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+    
+    
+    <div>
+      
+    </div>
+    
+    
+    
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2020/12/06/2020-12-06-how-to-one-on-one/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="温智全">
+      <meta itemprop="description" content="爱唱歌健身的程序员">
+      <meta itemprop="image" content="/uploads/avatar-wen.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="温智全的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/12/06/2020-12-06-how-to-one-on-one/" itemprop="url">
+                  one on one 时需要注意的点（对同级或下级）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-12-06 12:00:00" itemprop="dateCreated datePublished" datetime="2020-12-06T12:00:00+08:00">2020-12-06</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/思考与感想/" itemprop="url" rel="index"><span itemprop="name">思考与感想</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/12/06/2020-12-06-how-to-one-on-one/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2020/12/06/2020-12-06-how-to-one-on-one/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/12/06/2020-12-06-how-to-one-on-one/" class="leancloud_visitors" data-flag-title="one on one 时需要注意的点（对同级或下级）">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-fire"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">694</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>最近学习了一个与人 one on one 的方法论模型，总结起来主要有两步：第一步是「建立信任打开心扉」，第二步是「解决问题」，切记在对方打开心扉之前，不要抛出问题，并且整个谈话应该是以被交谈者为中心，因为谈话主要是为了解决被交谈者的问题。两个部分又分为两个不同的模型</p>
+<p>「建立信任」使用 <strong>PLASS</strong> 模型（praise listen ask share support），praise 表示以肯定和赞许开头，用「事实+评价」的方式肯定对方，打开对方心扉，listen 表示在整个谈话过程中要以倾听为主，给对方足够的时间和空间来表达，并在倾听过程中表示理解，ask 表示用询问和引导的方式获取对方的意见和想法，切记不要过分表达自己的想法，share 表示在谈话过程中还应当分享自己的意见和经验，表露自己的感受和想法，给对方提供「参考」而不是「指导」，support 表示在对方提出需要帮助时，尽自己的努力为对方提供尽量多的支持和帮助，切记不要越俎代庖。</p>
+<p>通过上面的方式建立起信任，让对方能够真正的打开心扉，才能开始「解决问题」，这个阶段可以使用 <strong>GROW</strong> 模型（goal reality options way-forward），首先要对齐目标 goal，包括短期和长期目标，让谈话双方能够在一开始就谈论问题的重要性达成一致，然后需要分析现状 reality，抛出遇到问题的难点和原因，充分交换上下文信息，接着一起讨论方案 option，提出一些可供选择的策略或者行动方案，讨论需要哪些支持和资源，最后需要确认行动计划 way-forward，拆分达成目标的步骤，并且设立具体的实施方案。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+    
+    
+    <div>
+      
+    </div>
+    
+    
+    
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2020/11/30/2020-11-30-important-15.87%/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="温智全">
+      <meta itemprop="description" content="爱唱歌健身的程序员">
+      <meta itemprop="image" content="/uploads/avatar-wen.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="温智全的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/11/30/2020-11-30-important-15.87%/" itemprop="url">
+                  重要的 15.87%
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-11-30 12:00:00" itemprop="dateCreated datePublished" datetime="2020-11-30T12:00:00+08:00">2020-11-30</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/思考与感想/" itemprop="url" rel="index"><span itemprop="name">思考与感想</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/11/30/2020-11-30-important-15.87%/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2020/11/30/2020-11-30-important-15.87%/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/11/30/2020-11-30-important-15.87%/" class="leancloud_visitors" data-flag-title="重要的 15.87%">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-fire"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">246</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>今天看到万维钢的一篇文章，讲到我们学习的三个区域：舒适区，学习区和恐慌区，在学习区我们可以达到心流状态，让我们的工作挑战和技能形成平衡，这也就需要我们要在已有的知识技能的基础上增加“意外”，也就是学习新的内容，这个新内容比例经过研究表明是 15.87%，当学习的新知识是这个比例时可以让人获得最快的成长，这个理论同样适用于人工智能学习。</p>
+<p>所以想要让我们的学习效率获得提升，最好是基于我们熟悉的内容，再增加 15% 左右的新内容，这样可以让我们的大脑获得更多学习能力的提升，达到学习效率最大化</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+    
+    
+    <div>
+      
+    </div>
+    
+    
+    
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2020/11/25/2020-11-25-away-victim-mode/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="温智全">
+      <meta itemprop="description" content="爱唱歌健身的程序员">
+      <meta itemprop="image" content="/uploads/avatar-wen.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="温智全的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/11/25/2020-11-25-away-victim-mode/" itemprop="url">
+                  远离受害者模式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-11-25 12:00:00" itemprop="dateCreated datePublished" datetime="2020-11-25T12:00:00+08:00">2020-11-25</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/思考与感想/" itemprop="url" rel="index"><span itemprop="name">思考与感想</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/11/25/2020-11-25-away-victim-mode/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2020/11/25/2020-11-25-away-victim-mode/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/11/25/2020-11-25-away-victim-mode/" class="leancloud_visitors" data-flag-title="远离受害者模式">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-fire"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">345</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>今天看了一篇文章，提到一个受害者模式，是指在遭遇到困难或者失败时，把自己放在受害者的位置上，责怪他人或者环境，比如，责怪父母离异觉得自己很可怜，责怪配偶不关心自己觉得遇人不淑，工作不顺利责怪领导碾压自己等。受害者模式是一种弱者的模式，消极的模式，不积极反思自己的不足加以改正，而是怨天尤人，满怀委屈和不忿，觉得都是别人的错，与自己无关。</p>
+<p>这种心态无法帮助我们意识到自己的能力和责任，产生正向的能量。要获得成长，必须要走出这种心态，主动为发生的事情承担责任，积极探索如何解决问题和避免类似问题的再次发生，并在一次一次的承担中锻炼自己的力量，佛说“莫向外求”，其实我们每个人的潜力非常大，只要我们更加积极主动，我们会发现其实我们是有能力进行选择，有能力承担更多的责任的，相信自己是十分强大的！</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+    
+    
+    <div>
+      
+    </div>
+    
+    
+    
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2020/11/22/2020-11-22-criticism-thinking/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="温智全">
+      <meta itemprop="description" content="爱唱歌健身的程序员">
+      <meta itemprop="image" content="/uploads/avatar-wen.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="温智全的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/11/22/2020-11-22-criticism-thinking/" itemprop="url">
+                  如何提升自己的批判性思维
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-11-22 12:00:00" itemprop="dateCreated datePublished" datetime="2020-11-22T12:00:00+08:00">2020-11-22</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/思考与感想/" itemprop="url" rel="index"><span itemprop="name">思考与感想</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/11/22/2020-11-22-criticism-thinking/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2020/11/22/2020-11-22-criticism-thinking/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/11/22/2020-11-22-criticism-thinking/" class="leancloud_visitors" data-flag-title="如何提升自己的批判性思维">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-fire"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">488</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>今天看 TED，里面提到了 5 个提升批判性思维的 tips，这里分享给大家</p>
+<ol>
+<li>确定目的<br>在我们进行某项行动之前，不能为了做而做，而是需要在行动之前确定此次行动需要达成的目标，以便更有针对性的进行下一个步骤</li>
+<li>收集信息<br>明确目标之后，需要针对达成这个目标收集信息，包括且不限于咨询领域专家，参考成功经验等，尽可能多的收集信息，为下一个步骤提供基础</li>
+<li>应用信息<br>收集到足够的信息之后，我们还需要对这些信息进行分析，找出使用何种信息，进行何种方式的行动可以达成目标，对于一些可能的干扰信息，需要多问一句为什么，是否符合逻辑，能否帮助达成目标？</li>
+<li>考虑潜在信息<br>除了考虑已有信息直接给出的结论，还需要思考这些信息中是否还会隐藏一些潜在的信息，比如汽油降价，表面信息是可能会带来购车需求的增加，但我们还需要考虑到这可能会带来的污染等</li>
+<li>发掘其他视角<br>这一点其实也是老生常谈了，需要多角度看问题，最简单的方式其实是站在对立的角度来看同一个问题，假想自己是辩论的双方，不断找对方思维的漏洞，从而找出不同的观点，比如我们一个技术方案的设计，设计完成后，多问自己一句，如果不这么实现，能否有其他的实现方式等</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+    
+    
+    <div>
+      
+    </div>
+    
+    
+    
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2020/11/11/2020-11-11-prepare-conversation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="温智全">
+      <meta itemprop="description" content="爱唱歌健身的程序员">
+      <meta itemprop="image" content="/uploads/avatar-wen.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="温智全的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/11/11/2020-11-11-prepare-conversation/" itemprop="url">
+                  如何更好地准备一场会议
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-11-11 12:00:00" itemprop="dateCreated datePublished" datetime="2020-11-11T12:00:00+08:00">2020-11-11</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/思考与感想/" itemprop="url" rel="index"><span itemprop="name">思考与感想</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/11/11/2020-11-11-prepare-conversation/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2020/11/11/2020-11-11-prepare-conversation/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/11/11/2020-11-11-prepare-conversation/" class="leancloud_visitors" data-flag-title="如何更好地准备一场会议">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-fire"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">479</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>今天开了一场略显尴尬的会议，会议上我方存在的问题主要有两点，第一是会议之前和某一相关方没有达成一致，导致在会议上来回拉扯说不清楚，第二是会议之前准备不足，导致与会方提出的问题没有很好的进行回答，导致拖慢了整个会议的节奏，也给与会方留下不太好的印象。所以，在参加重要的会议之前，我们应当准备以下内容：</p>
+<ol>
+<li>与合作方先达成一致，就算有不一致的地方也先统一好在会上的表述，会后再私下讨论和解决不一致的地方，而不是在会上来回拉扯</li>
+<li>在开会之前先定义好会议议程，整理好会议要讨论的内容和想要达成的目标，有导向性的开展会议会更加利于达成一致</li>
+<li>开会之前需要事先准备一些与会方可能提出问题的解答，以免会上仓促回答导致内容缺失</li>
+</ol>
+<p>同样，在开会过程中也有一些需要关注的方面</p>
+<ol>
+<li>会议开始时，先跟与会方对齐会议议程，然后再展开会议</li>
+<li>开会时，某一项议程达成一致后再进行下一项议程，当然，如果某项议程长时间无法达成一致，则需要先暂时搁置，先过完能够达成一致的议程</li>
+<li>开会过程中需要记录双方讨论的内容和观点，以便之后复盘</li>
+<li>会议结束前，再次确认达成的一致的观点和后续安排，保证双方理解没有偏差</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+    
+    
+    <div>
+      
+    </div>
+    
+    
+    
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2020/11/08/2020-11-08-how-to-write-product-design-document/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="温智全">
+      <meta itemprop="description" content="爱唱歌健身的程序员">
+      <meta itemprop="image" content="/uploads/avatar-wen.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="温智全的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/11/08/2020-11-08-how-to-write-product-design-document/" itemprop="url">
+                  如何编写一篇产品设计文档之我见
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-11-08 12:00:00" itemprop="dateCreated datePublished" datetime="2020-11-08T12:00:00+08:00">2020-11-08</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/思考与感想/" itemprop="url" rel="index"><span itemprop="name">思考与感想</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/11/08/2020-11-08-how-to-write-product-design-document/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2020/11/08/2020-11-08-how-to-write-product-design-document/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/11/08/2020-11-08-how-to-write-product-design-document/" class="leancloud_visitors" data-flag-title="如何编写一篇产品设计文档之我见">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-fire"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">252</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>最近编写产品设计文档时，发现了一些方法论，在这里分享出来。首先，要写一篇产品设计文档时，要明确产品设计的背景是什么，是由于什么问题无法解决才需要这个产品，这个产品针对的用户是哪些人，产品设计出来是要帮他们在什么场景下解决什么问题，为了解决这些问题我们需要提供哪些核心能力，这些核心能力有哪些使用场景，产品要如何呈现才能更好的让用户使用，最后才是详细的架构和技术设计，总结下来一般框架为：</p>
+<ol>
+<li>背景<ul>
+<li>现有能力</li>
+<li>局限性</li>
+</ul>
+</li>
+<li>产品愿景</li>
+<li>核心能力</li>
+<li>使用场景</li>
+<li>产品设计<ul>
+<li>产品呈现</li>
+<li>方案设计</li>
+</ul>
+</li>
+<li>所需资源</li>
+<li>效果评估</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+    
+    
+    <div>
+      
+    </div>
+    
+    
+    
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2020/11/02/2020-11-02-upward-thinking-level/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="温智全">
+      <meta itemprop="description" content="爱唱歌健身的程序员">
+      <meta itemprop="image" content="/uploads/avatar-wen.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="温智全的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/11/02/2020-11-02-upward-thinking-level/" itemprop="url">
+                  提升自己思考问题的 level
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2020-11-02 12:00:00" itemprop="dateCreated datePublished" datetime="2020-11-02T12:00:00+08:00">2020-11-02</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/思考与感想/" itemprop="url" rel="index"><span itemprop="name">思考与感想</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2020/11/02/2020-11-02-upward-thinking-level/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2020/11/02/2020-11-02-upward-thinking-level/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2020/11/02/2020-11-02-upward-thinking-level/" class="leancloud_visitors" data-flag-title="提升自己思考问题的 level">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-fire"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">316</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>上次和育亮 one one 时，他提到要提升自己思考问题的层次，不要仅仅思考如何解决当前的问题，这样会不断的陷入细节当中，而应该提升关注问题的层次，抽象出来，理解业务的痛点，当理解并解决了业务的痛点之后，还应该举一反三，更深入的思考是否其他业务也可能存在类似的痛点，如何更好地去解决这类共同的问题。再往上一层，还应该能够考虑到如何协调资源以落地方案。再往上，还应该考虑到业界是如何解决此类问题的，能否辅助我们解决问题，我们今后应该如何继续推进系统的演进等等问题，提升自己的 insight。</p>
+<p>总结下来就是，不要仅仅关注如何解决当前的问题，要理解业务痛点举一反三，并能够考虑如何推动方案落地，还需要考虑方案的后续发展演进并持续推动。</p>
+
+          
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+    
+    
+    <div>
+      
+    </div>
+    
+    
+    
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
     
       
 
@@ -564,2037 +2545,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2020/10/20/2020-10-20-learn-from-body-training/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="温智全">
-      <meta itemprop="description" content="爱唱歌健身的程序员">
-      <meta itemprop="image" content="/uploads/avatar-wen.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="温智全的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/10/20/2020-10-20-learn-from-body-training/" itemprop="url">
-                  从健身得到的一些感触
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2020-10-20 12:00:00" itemprop="dateCreated datePublished" datetime="2020-10-20T12:00:00+08:00">2020-10-20</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/思考与感想/" itemprop="url" rel="index"><span itemprop="name">思考与感想</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/10/20/2020-10-20-learn-from-body-training/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2020/10/20/2020-10-20-learn-from-body-training/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/10/20/2020-10-20-learn-from-body-training/" class="leancloud_visitors" data-flag-title="从健身得到的一些感触">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-fire"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-                 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">581</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">1 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <ol>
-<li>健身是一项需要长期坚持的事业，身体健康是一辈子的事<ul>
-<li>健身是一项非常好的习惯，但是需要长期坚持才能够凸显成效，好习惯都是延迟满足的</li>
-<li>人的一生最重要的是身体健康，无论你的价值有多少个零，都是需要身体健康这个 1 来支撑的，失去了身体健康，后面再多的零也是无意义的</li>
-<li>如何将健身保持下去？找一个或几个人一起去练是很好的方法，互相监督能够大大提升坚持下去的概率</li>
-</ul>
-</li>
-<li>不要因循守旧，还要善于学习新的内容<ul>
-<li>有时候我们健身总是做一套固定的动作，久而久之可能就会变得倦怠，提不起兴趣，所以我们要持续学习新的动作，不断刺激自己健身的兴趣，达到更好的效果</li>
-<li>我们的工作和学习也是这样，如果仅仅抱着已有的知识“吃老本”，早晚有一天会无法跟上时代的潮流，我们要不断地学习新的知识，并应用到工作和学习当中，才能够在时代的浪潮中紧跟脚步，披荆斩棘，乘风破浪</li>
-</ul>
-</li>
-<li>健身不是一个人的事<ul>
-<li>刚才说到身体健康是 1，并且这个 1 还不仅仅是自己的 1，还会影响到我们身边更多的 1，比如父母，配偶，子女等等，我们把身体变得更好，也会让他们更加的安心</li>
-<li>我们把身体变得更好之后，还能够反过来影响身边的人，主动教授他们相关知识，让他们也更加具有健身意识，刻意的去锻炼自己的身体，这样一家人的身体都会变得越来越好</li>
-</ul>
-</li>
-<li>健身要适量<ul>
-<li>一定要量力而行，不要把自己练得影响了第二天的工作和学习，这样反而得不偿失</li>
-</ul>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-    
-    
-    <div>
-      
-    </div>
-    
-    
-    
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2020/10/15/2020-10-15-learn-from-zengguofan/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="温智全">
-      <meta itemprop="description" content="爱唱歌健身的程序员">
-      <meta itemprop="image" content="/uploads/avatar-wen.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="温智全的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/10/15/2020-10-15-learn-from-zengguofan/" itemprop="url">
-                  从曾国藩身上我们可以学习到的东西
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2020-10-15 12:00:00" itemprop="dateCreated datePublished" datetime="2020-10-15T12:00:00+08:00">2020-10-15</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/思考与感想/" itemprop="url" rel="index"><span itemprop="name">思考与感想</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/10/15/2020-10-15-learn-from-zengguofan/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2020/10/15/2020-10-15-learn-from-zengguofan/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/10/15/2020-10-15-learn-from-zengguofan/" class="leancloud_visitors" data-flag-title="从曾国藩身上我们可以学习到的东西">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-fire"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-                 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">1.6k</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">3 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>曾国藩，我们耳熟能详的一位伟人，组建湘军、平叛太平天国之乱、剿灭捻军、兴办洋务运动，为晚清朝廷立下了赫赫功勋，在我的眼中他一直就是一个有着丰功伟绩，可望而不可及的一位人物。但是张宏杰先生的《曾国藩的正面与侧面》经过严密的考证和整理，从曾国藩日常生活和工作中的一件件小事讲起，将曾国藩一生的故事娓娓道来，将曾国藩这一位“圣人”的形象有血有肉的，立体而丰富的展现在了我们的面前。</p>
-<p>为什么曾国藩的事迹总是能够为人们所称道，因为他只是一个智商中等，集各种矛盾于一体的人，就像我们每一位普通人一样，没有超高的智商，没有强硬的后台，靠的是自己的努力，最终成为了一位伟人，这样的成长路径对于普通人来说是可复制的可达到的。</p>
-<p>但同时他的成功又不是那么容易复制和达到的，他的性格中有四个要点，让他能够逐步的向上走，缓慢的到达巅峰，这几点真的不是一般人可以轻易做到的。</p>
-<p>他能获得成功最重要的一点就是“有恒”，琦玉老师（一拳超人）为什么那么强？贵在“有恒”，曾国藩更是这样，他的“有恒”体现在他的日课上，在日课上他记录了自己每一天的所作所为，包括各种糗事和不足，从而不断反思自己做的不好的地方，及时更正，然后坚持做得好的，这和《掌控习惯》所提出的“习惯是自我提高的复利”不谋而合，他几十年如一日的不断更正自己的错误，让自己不断变得更加优秀。我司的“始终创业”这一点中，“始终”二字便是“有恒”的一个最佳体现，能够一直以一家创业公司的心态要求自己，能自驱，能坚持，能有韧性的不断为之持续的努力，坚持稳步前进。</p>
-<p>除了有恒之外他还立志高远，他三十岁之后立志成为“完人”，“内圣外王”，内，俯仰无愧于天地，光明澄澈，不苟且，不退缩；外，经邦治国，建功立业，充分实现自我价值，并一直以“圣人”的言行要求自己，这个难以达到的目标却是驱使他一直不断向前的最大动力，是他面对艰难困苦、诱惑而不停步的指路明灯。这和我们的 OKR 和“追求极致”是多么的契合！我们在工作中也应该像曾国藩一样，以终为始，定下一个长远的目标作为我们的指路明灯，能够去追求长期价值而不是被当下所左右。此外当前所做的每一件事都应该考虑的更加全面，对每一个问题都能刨根问底，每一次思考都能更加贴近本质，追求更高的标准和结果，以求达到“内圣外王”的境界。</p>
-<p>还有一点是十分重要的，那就是他遇到挫折能够触底反弹，而不是被困难打倒，人生的五次大堑：科举被悬牌批评，画图甚陋被同事耻笑，批评皇帝遭反驳和挑战“大名大位”者被排挤，长沙“打脱牙和血吞”，江西之困“积泪涨江”，每一件都对他产生了巨大的影响，他在遭受挫折时，想到的不是抱怨，而是憋着一股气奋起向上，让他人刮目相看。其中最重要的一次是在江西去为父丁忧的时候逼迫皇帝给实权失败，在家中不断反思自己以前的做法，让他彻彻底底的变换了自己对人对事的姿态，不再众人皆醉我独醒，而是选择去“和光同尘”，让自己逐渐有了可以做大事的条件。“务实敢为”中也提到了这一点，我们要勇于开拓创新，有担当不畏艰难，敢于失败，并从失败中吸取经验，触底反弹，在不断快速试错迭代中修正我们的方向，最终达成更高的目标。</p>
-<p>另外他交友广泛，对待朋友十分真诚，所以能够获得众多臂助，这就是“坦诚清晰”和“开放谦逊”呀，人前人后一致，能够表达自己的真实想法，犯错了勇于承认和改正，能够善意假设，信任对方，久而久之就能够建立长期的友好合作关系，更加快速的推动事情的进展。</p>
-<p>曾国藩当时很多的做法都是为了顺应官场顺应时代的无奈之举，处于当今时代，我们能够从曾国藩身上学习到的最重要的几点：</p>
-<ol>
-<li>我们要立志高远，这样我们才能够不在小诱惑和小目标前止步</li>
-<li>为了达到高远的目标，我们需要不断坚持，“有恒”地去为达到目标不断努力</li>
-<li>一个人要坚持下来是很难的，我们有时还需要借助外力来监督自己，让身边的朋友或家人看到并督促自己</li>
-<li>要多交朋友，用“诚，敬，恕，浑”的方式来交朋友，待人以诚，尊敬他人，宽恕他人，不嫉妒和过于计较，拓宽自己的人脉，多一个朋友多一条路。</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-    
-    
-    <div>
-      
-    </div>
-    
-    
-    
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2020/10/13/2020-10-13-reading-and-practise/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="温智全">
-      <meta itemprop="description" content="爱唱歌健身的程序员">
-      <meta itemprop="image" content="/uploads/avatar-wen.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="温智全的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/10/13/2020-10-13-reading-and-practise/" itemprop="url">
-                  读书让我们进步，实践方能巩固
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2020-10-13 12:00:00" itemprop="dateCreated datePublished" datetime="2020-10-13T12:00:00+08:00">2020-10-13</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/思考与感想/" itemprop="url" rel="index"><span itemprop="name">思考与感想</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/10/13/2020-10-13-reading-and-practise/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2020/10/13/2020-10-13-reading-and-practise/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/10/13/2020-10-13-reading-and-practise/" class="leancloud_visitors" data-flag-title="读书让我们进步，实践方能巩固">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-fire"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-                 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">546</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">1 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>书籍凝聚了各类高手关于他们对于这个世界或者某些事件的理解，我们可以更加高效的从中获取知识，而不用通过日常生活中自己去慢慢踩坑总结，可以极大提高我们获取信息的效率。</p>
-<p>我觉得书籍大体可以分为四类：工具书，专业书，文化书，娱乐书，工具书用于提升我们的软实力，比如众所周知的《刻意练习》《金字塔原理》等，专业书用于提升我们专业硬实力，比如《深入理解 JVM 虚拟机》等，文化书用于提升我们的人文素养，文化常识，比如《牛津通识》《明朝那些事儿》等，娱乐书就是用来让我们放松身心，但没有任何实际作用的书籍，比如各类网络小说。</p>
-<p>我们应当尽量去阅读能够提升我们能力的书籍，而少去阅读小说这种能够提供即时满足感却无实际意义的书籍。此外，好的书值得多读几遍，并且一定要记录书籍的要点和自己当时读完之后的感想，这样能够加深我们对于这本书的理解和记忆，如果读完了就完事了，遗忘是迟早的事情，而记录和复习才能够加深我们的印象，让我们真正的把书读到脑子里。</p>
-<p>把书读到脑子里之后还不算完，能够把书中的知识应用到平常的工作生活中，才算是“读书”真正的终极状态，实践出真知，书中的知识不一定能够直接照搬来解决问题，而利用书中学来的知识和现实相结合，解决真实遇到的问题，才发挥了这次读书的最大作用，才真正巩固了这次读书的效果。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-    
-    
-    <div>
-      
-    </div>
-    
-    
-    
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2020/09/25/2020-09-25-deliberate-practise/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="温智全">
-      <meta itemprop="description" content="爱唱歌健身的程序员">
-      <meta itemprop="image" content="/uploads/avatar-wen.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="温智全的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/09/25/2020-09-25-deliberate-practise/" itemprop="url">
-                  如何刻意练习
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2020-09-25 12:00:00" itemprop="dateCreated datePublished" datetime="2020-09-25T12:00:00+08:00">2020-09-25</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/思考与感想/" itemprop="url" rel="index"><span itemprop="name">思考与感想</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/09/25/2020-09-25-deliberate-practise/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2020/09/25/2020-09-25-deliberate-practise/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/09/25/2020-09-25-deliberate-practise/" class="leancloud_visitors" data-flag-title="如何刻意练习">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-fire"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-                 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">544</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">1 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>看完了《刻意练习》，总结下来有以下四个主要步骤：</p>
-<ol>
-<li>找个好导师（如果没有导师就去学习杰出人物的练习方式）<ul>
-<li>求助导师或者学习杰出人物的做事方式，可以帮助我们建立高效的心理表征和练习方式</li>
-<li>我们可以通过 3F 法创建有效的心理表征：focus，feedback 和 fix it，聚焦在做的事情上，然后获得反馈，并根据反馈及时进行修正和提升</li>
-</ul>
-</li>
-<li>专注的投入<ul>
-<li>练习时需要投入百分之百的精力，如果练习时变得懈怠，可以缩短练习时间，短时高效练习的效果要高于长时低效练习</li>
-</ul>
-</li>
-<li>根据反馈跨越停滞阶段<ul>
-<li>反馈是刻意练习中很重要的一个部分，通过反馈，我们可以了解练习的效果和练习中存在的不足，这样能够帮助我们调整练习方法，不断地改进自身，建立更加有效的心理表征</li>
-</ul>
-</li>
-<li>保持动机<ul>
-<li>动机是支持我们不断练习的推动因素，保持动机才能够保持不断地进步。</li>
-<li>动机不足的原因只有一个：前进的理由败给了停下脚步的理由，所以要保持动机，要么加强前进的理由，要么弱化停下脚步的理由。</li>
-</ul>
-</li>
-</ol>
-<p>我们的技能是需要通过不断的练习才能够提升的，无论是编码能力或者是系统设计的能力，刻意练习的效果往往要高于被动练习，就如我们通过大量的开发实践才能够总结出更加高效的系统体系和业务架构，在每次开发过程中更多的投入精力，获得的结果会更加令自己惊喜。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-    
-    
-    <div>
-      
-    </div>
-    
-    
-    
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2020/09/20/2020-09-20-control-habits/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="温智全">
-      <meta itemprop="description" content="爱唱歌健身的程序员">
-      <meta itemprop="image" content="/uploads/avatar-wen.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="温智全的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/09/20/2020-09-20-control-habits/" itemprop="url">
-                  掌控习惯
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2020-09-20 12:00:00" itemprop="dateCreated datePublished" datetime="2020-09-20T12:00:00+08:00">2020-09-20</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/思考与感想/" itemprop="url" rel="index"><span itemprop="name">思考与感想</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/09/20/2020-09-20-control-habits/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2020/09/20/2020-09-20-control-habits/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/09/20/2020-09-20-control-habits/" class="leancloud_visitors" data-flag-title="掌控习惯">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-fire"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-                 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">347</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">1 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>《掌控习惯》中提到了打造好习惯的四个定律，感觉对我们还是可以有所帮助的：</p>
-<ol>
-<li>让习惯显而易见<ul>
-<li>用习惯记分卡记录自己每天的习惯，并标注出来哪些是好习惯，哪些是坏习惯</li>
-<li>习惯叠加，将不同习惯叠加在一起使其更加显而易见，例如我吃饭之前先要洗手</li>
-</ul>
-</li>
-<li>让习惯不可抗拒<ul>
-<li>让习惯联动起来，继当前习惯之后，我要完成一个我需要的习惯，接着完成一个我想要的习惯</li>
-<li>养成习惯时，提升执行习惯的次数的效果大于提升执行习惯的时间</li>
-</ul>
-</li>
-<li>让习惯简单易行<ul>
-<li>习惯是切入点而不是终点，作为启动一系列习惯的起点</li>
-<li>两分钟原则，养成习惯时，缩减成两分钟可以完成的版本，比如读一页书，然后再逐步增长时间</li>
-</ul>
-</li>
-<li>让习惯令人愉悦<ul>
-<li>打造即时满足感，完成某一个习惯之后，给自己一个奖励</li>
-<li>糟糕的坚持也好过放弃，连续放弃两次之后可能就养成了一个坏习惯</li>
-</ul>
-</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-    
-    
-    <div>
-      
-    </div>
-    
-    
-    
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2020/09/11/2020-09-11-two-kinds-fault/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="温智全">
-      <meta itemprop="description" content="爱唱歌健身的程序员">
-      <meta itemprop="image" content="/uploads/avatar-wen.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="温智全的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/09/11/2020-09-11-two-kinds-fault/" itemprop="url">
-                  应对“无知之错”和“无能之错”
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2020-09-11 12:00:00" itemprop="dateCreated datePublished" datetime="2020-09-11T12:00:00+08:00">2020-09-11</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/思考与感想/" itemprop="url" rel="index"><span itemprop="name">思考与感想</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/09/11/2020-09-11-two-kinds-fault/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2020/09/11/2020-09-11-two-kinds-fault/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/09/11/2020-09-11-two-kinds-fault/" class="leancloud_visitors" data-flag-title="应对“无知之错”和“无能之错”">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-fire"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-                 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">241</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">1 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>《清单革命》中提到了两类错误：“无知之错”和“无能之错”。</p>
-<ol>
-<li>无知之错指的是没有掌握相关的知识，可以认为是专业知识不足以解决遇到的问题，针对此类问题，需要增强专业知识的学习，掌握通用解决方案，从而解决问题。</li>
-<li>无能之错指的是犯错并非是因为没有掌握知识，而是因为没有正确使用，此类问题更加考验对已有知识的运用以及相关经验的积累，比“无知之错”更难解决。正所谓“知易行难”，光学习知识是不足以应对这个千变万化的世界的，实践出真知，多积累经验，应用知识，我们需要把重点放在“行”上。。。</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-    
-    
-    <div>
-      
-    </div>
-    
-    
-    
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2020/09/06/2020-09-06-why-write-weekly-report/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="温智全">
-      <meta itemprop="description" content="爱唱歌健身的程序员">
-      <meta itemprop="image" content="/uploads/avatar-wen.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="温智全的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/09/06/2020-09-06-why-write-weekly-report/" itemprop="url">
-                  为什么我们要写周报
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2020-09-06 12:00:00" itemprop="dateCreated datePublished" datetime="2020-09-06T12:00:00+08:00">2020-09-06</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/思考与感想/" itemprop="url" rel="index"><span itemprop="name">思考与感想</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/09/06/2020-09-06-why-write-weekly-report/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2020/09/06/2020-09-06-why-write-weekly-report/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/09/06/2020-09-06-why-write-weekly-report/" class="leancloud_visitors" data-flag-title="为什么我们要写周报">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-fire"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-                 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">186</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">1 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>最近在思考为什么我们要写周报，觉得有两方面的作用：</p>
-<ol>
-<li>对自己，周报是检核项目进展明确项目计划、复盘与调整迭代策略的重要手段。因此，周报内容可以围绕项目进展、计划、经验总结、认知迭代几个方面去写，让自己能够在写周报的过程中不断总结不断进步。</li>
-<li>对合作伙伴，周报可以让大家了解项目进展与问题，既能起到进展同步和暴露问题的作用，又能结合项目提出对合作伙伴的诉求，获得对方支持。</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-    
-    
-    <div>
-      
-    </div>
-    
-    
-    
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2020/08/25/2020-08-25-how-to-deal-anxiety/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="温智全">
-      <meta itemprop="description" content="爱唱歌健身的程序员">
-      <meta itemprop="image" content="/uploads/avatar-wen.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="温智全的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/08/25/2020-08-25-how-to-deal-anxiety/" itemprop="url">
-                  如何应对焦虑
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2020-08-25 12:00:00" itemprop="dateCreated datePublished" datetime="2020-08-25T12:00:00+08:00">2020-08-25</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/思考与感想/" itemprop="url" rel="index"><span itemprop="name">思考与感想</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/08/25/2020-08-25-how-to-deal-anxiety/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2020/08/25/2020-08-25-how-to-deal-anxiety/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/08/25/2020-08-25-how-to-deal-anxiety/" class="leancloud_visitors" data-flag-title="如何应对焦虑">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-fire"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-                 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">251</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">1 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>这周听到关于焦虑的解释与应用，觉得比较受用，分享给大家。</p>
-<p>焦虑指的是我们对还没有发生的事情产生的负面情绪。关键词：“还没有发生”、“负面情绪”。还没有发生意味着我们是有时间改变它的，负面情绪意味着我们可以直面它、接受并改变它。当我们有这样的情绪时，可以尝试使用列清单的方式，把可能发生的最坏结果写下来，并从第三方视角审视一下，写下为了从坏变好，自己可以做什么事情，从而掌握主动权而不是等待坏结果的发生。</p>
-<p>解决焦虑的最好办法，是解决那个引发焦虑的问题。不要沉浸在情绪里，要沉浸在行动里，用行动解决问题。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-    
-    
-    <div>
-      
-    </div>
-    
-    
-    
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2020/08/23/2020-08-23-investigate-user-requirements/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="温智全">
-      <meta itemprop="description" content="爱唱歌健身的程序员">
-      <meta itemprop="image" content="/uploads/avatar-wen.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="温智全的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/08/23/2020-08-23-investigate-user-requirements/" itemprop="url">
-                  深入一线了解用户需求
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2020-08-23 12:00:00" itemprop="dateCreated datePublished" datetime="2020-08-23T12:00:00+08:00">2020-08-23</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/思考与感想/" itemprop="url" rel="index"><span itemprop="name">思考与感想</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2020/08/23/2020-08-23-investigate-user-requirements/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2020/08/23/2020-08-23-investigate-user-requirements/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2020/08/23/2020-08-23-investigate-user-requirements/" class="leancloud_visitors" data-flag-title="深入一线了解用户需求">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-fire"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-                 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">443</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">1 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>到深圳出差和对应的架构和业务开发面谈之后深有感触，真的是要多深入一线，才能够真正了解用户的需求，换句话说，只有真正的接触了用户在系统的使用过程中遇到的痛点，才能让我们启发我们更深入的去思考。相比基础架构，业务架构能够更多的接触到用户，也就能更能理解用户的痛点，能思考并提出解决用户问题的需求点，所以我们要多和业务架构以及业务的同学多沟通交流，这不仅仅能让我们更多的接触到用户的痛点，更能激发我们的思考，扩展我们的视野。</p>
-<p>另外，在和用户聊需求的时候，不要直接问用户想要什么，因为大概率用户也不知道自己想要的功能具体是什么，也不要直接向用户讲解自己系统的功能，因为用户很可能缺少上下文，并不能很好的进行理解。我们应该跟用户聊他们的工作和使用场景，了解他们在此过程中遇到的问题和潜在的优化点，从而挖掘出用户的需求，并且通过挖掘用户使用场景验证方案的可行性。此外，做访谈总结的时候，最好把用户的原话写上去，因为每个人对于同一句话的理解可能是不同的，写上用户的原话，也能佐证自己的理解是正确的。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-    
-    
-    <div>
-      
-    </div>
-    
-    
-    
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2639,7 +2594,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">77</span>
+                    <span class="site-state-item-count">86</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2848,23 +2803,23 @@
                   
                   
                     <li>
-                      <a href="/2021/01/27/2021-01-27-how-to-deal-with-tag/" title="如何更好的处理你的版本 tag">如何更好的处理你的版本 tag</a>
+                      <a href="/2021/05/15/2021-05-15-raise-memory-level/" title="如何提升记忆水平">如何提升记忆水平</a>
                     </li>
                   
                     <li>
-                      <a href="/2021/01/11/2021-01-11-about-persevere/" title="关于系统设计抽象一层的思考">关于系统设计抽象一层的思考</a>
+                      <a href="/2021/04/22/2021-04-22-basics-delay-satisfication/" title="苦练基本功，延迟满足感">苦练基本功，延迟满足感</a>
                     </li>
                   
                     <li>
-                      <a href="/2020/12/14/2020-12-14-abstract-thinking-of-system-design/" title="关于系统设计抽象一层的思考">关于系统设计抽象一层的思考</a>
+                      <a href="/2021/03/30/2021-03-30-about-methodology/" title="方法论的作用">方法论的作用</a>
                     </li>
                   
                     <li>
-                      <a href="/2020/12/06/2020-12-06-how-to-one-on-one/" title="one on one 时需要注意的点（对同级或下级）">one on one 时需要注意的点（对同级或下级）</a>
+                      <a href="/2021/03/18/2021-03-18-whwhorere/" title="关于权责利的思考">关于权责利的思考</a>
                     </li>
                   
                     <li>
-                      <a href="/2020/11/30/2020-11-30-important-15.87%/" title="重要的 15.87%">重要的 15.87%</a>
+                      <a href="/2021/03/12/2021-03-12-authority-responsibility-benefit/" title="关于权责利的思考">关于权责利的思考</a>
                     </li>
                   
                 </ul>
@@ -2925,7 +2880,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">270k</span>
+    <span title="站点总字数">275k</span>
   
 
   

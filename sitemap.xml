@@ -2,6 +2,69 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://wenzhiquan.github.io/2021/05/15/2021-05-15-raise-memory-level/</loc>
+    
+    <lastmod>2021-05-15T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2021/04/22/2021-04-22-basics-delay-satisfication/</loc>
+    
+    <lastmod>2021-04-22T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2021/03/30/2021-03-30-about-methodology/</loc>
+    
+    <lastmod>2021-03-30T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2021/03/18/2021-03-18-whwhorere/</loc>
+    
+    <lastmod>2021-03-18T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2021/03/12/2021-03-12-authority-responsibility-benefit/</loc>
+    
+    <lastmod>2021-03-12T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2021/02/28/2021-02-28-talent-and-habit/</loc>
+    
+    <lastmod>2021-02-28T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2021/02/19/2021-02-19-meso-consideration/</loc>
+    
+    <lastmod>2021-02-19T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2021/02/09/2021-02-09-how-to-consider-more-perfect/</loc>
+    
+    <lastmod>2021-02-09T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2021/01/28/2021-01-28-how-to-deal-with-unfair-treat/</loc>
+    
+    <lastmod>2021-01-28T04:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://wenzhiquan.github.io/2021/01/27/2021-01-27-how-to-deal-with-tag/</loc>
     
     <lastmod>2021-01-27T04:00:00.000Z</lastmod>
@@ -289,14 +352,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2018/03/28/2018-03-28-java-memory-garbage-collection/</loc>
+    <loc>http://wenzhiquan.github.io/2018/04/01/2018-04-01-java-class-load/</loc>
     
     <lastmod>2019-07-10T04:13:06.246Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2018/04/01/2018-04-01-java-class-load/</loc>
+    <loc>http://wenzhiquan.github.io/2018/03/28/2018-03-28-java-memory-garbage-collection/</loc>
     
     <lastmod>2019-07-10T04:13:06.246Z</lastmod>
     
@@ -317,13 +380,6 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/08/05/2016-08-05-mac-installed-todo/</loc>
-    
-    <lastmod>2019-07-10T04:13:06.244Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://wenzhiquan.github.io/2016/07/04/2016-07-04-interview-algorithm-math-bit/</loc>
     
     <lastmod>2019-07-10T04:13:06.244Z</lastmod>
@@ -338,16 +394,16 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/10/15/2016-10-15-sed/</loc>
+    <loc>http://wenzhiquan.github.io/2016/08/05/2016-08-05-mac-installed-todo/</loc>
     
     <lastmod>2019-07-10T04:13:06.244Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2016/06/26/2016-06-26-interview-algorithm-binary-search/</loc>
+    <loc>http://wenzhiquan.github.io/2016/10/15/2016-10-15-sed/</loc>
     
-    <lastmod>2019-07-10T04:13:06.243Z</lastmod>
+    <lastmod>2019-07-10T04:13:06.244Z</lastmod>
     
   </url>
   
@@ -360,6 +416,13 @@
   
   <url>
     <loc>http://wenzhiquan.github.io/2016/06/20/2016-06-20-linux-basic/</loc>
+    
+    <lastmod>2019-07-10T04:13:06.243Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://wenzhiquan.github.io/2016/06/26/2016-06-26-interview-algorithm-binary-search/</loc>
     
     <lastmod>2019-07-10T04:13:06.243Z</lastmod>
     
@@ -422,14 +485,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2015/05/29/2015-05-29-install-nginx-php-mysql-mac/</loc>
+    <loc>http://wenzhiquan.github.io/2015/09/18/2015-09-18-install-jekyll-fedora/</loc>
     
     <lastmod>2019-07-10T04:13:06.240Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2015/09/18/2015-09-18-install-jekyll-fedora/</loc>
+    <loc>http://wenzhiquan.github.io/2015/05/29/2015-05-29-install-nginx-php-mysql-mac/</loc>
     
     <lastmod>2019-07-10T04:13:06.240Z</lastmod>
     
@@ -443,14 +506,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2014/12/09/2014-12-09-nginx-mysql-php-fedora/</loc>
+    <loc>http://wenzhiquan.github.io/2015/03/19/2015-03-19-mac-install-jekyll/</loc>
     
     <lastmod>2019-07-10T04:13:06.239Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2015/03/19/2015-03-19-mac-install-jekyll/</loc>
+    <loc>http://wenzhiquan.github.io/2014/12/09/2014-12-09-nginx-mysql-php-fedora/</loc>
     
     <lastmod>2019-07-10T04:13:06.239Z</lastmod>
     
@@ -534,14 +597,14 @@
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2018/05/29/2018-05-29-rpc-introduction/</loc>
+    <loc>http://wenzhiquan.github.io/2018/05/04/2018-05-04-move-to-hexo-blog/</loc>
     
     <lastmod>2018-05-29T04:00:00.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://wenzhiquan.github.io/2018/05/04/2018-05-04-move-to-hexo-blog/</loc>
+    <loc>http://wenzhiquan.github.io/2018/05/29/2018-05-29-rpc-introduction/</loc>
     
     <lastmod>2018-05-29T04:00:00.000Z</lastmod>
     
