@@ -268,7 +268,7 @@
           
           <li class="menu-item menu-item-tags">
     <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">48</span></a>
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签<span class="badge">49</span></a>
   </li>
         
         
@@ -276,7 +276,7 @@
           
           <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">15</span></a>
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类<span class="badge">16</span></a>
   </li>
         
         
@@ -284,7 +284,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">86</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档<span class="badge">92</span></a>
   </li>
 
       
@@ -594,6 +594,890 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2021/05/06/2021-05-06-go-gc-memory/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="温智全">
+      <meta itemprop="description" content="爱唱歌健身的程序员">
+      <meta itemprop="image" content="/uploads/avatar-wen.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="温智全的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/05/06/2021-05-06-go-gc-memory/" itemprop="url">
+                  垃圾回收和 Golang 内存管理
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2021-05-06 12:00:00" itemprop="dateCreated datePublished" datetime="2021-05-06T12:00:00+08:00">2021-05-06</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Golang/" itemprop="url" rel="index"><span itemprop="name">Golang</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/05/06/2021-05-06-go-gc-memory/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2021/05/06/2021-05-06-go-gc-memory/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2021/05/06/2021-05-06-go-gc-memory/" class="leancloud_visitors" data-flag-title="垃圾回收和 Golang 内存管理">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-fire"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">2.8k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">5 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="说在前面"><a href="#说在前面" class="headerlink" title="说在前面"></a>说在前面</h1><p>陆老师今天的课程从 GC 的发展历程讲起，渐次讲解了垃圾回收的流派以及基础的垃圾回收方法，从而引出 Golang 的 GC，向我们讲述了 Golang 垃圾回收的特点与触发时机，最终为我们简述了一些编程过程中可能使用到的工具和指标，帮助我们更快的找到和分析问题。</p>
+<h1 id="GC-基本理论"><a href="#GC-基本理论" class="headerlink" title="GC 基本理论"></a>GC 基本理论</h1><p>GC 的发展从 1959 年的 Lisp 语言就开始了，他所做的事情其实就是把需要程序员手动申请和释放内存这件事情自动化了，解放了程序员的生产力，能够用更多的精力放在业务代码上而不是去关心内存，经历了几十年的发展，GC 也变得越来越完善，功能也变得越来越强大了。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2021/05/06/2021-05-06-go-gc-memory/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+    
+    
+    <div>
+      
+    </div>
+    
+    
+    
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2021/04/30/2021-04-30-golang-scheduler/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="温智全">
+      <meta itemprop="description" content="爱唱歌健身的程序员">
+      <meta itemprop="image" content="/uploads/avatar-wen.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="温智全的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/04/30/2021-04-30-golang-scheduler/" itemprop="url">
+                  Golang scheduler 浅析
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2021-04-30 12:00:00" itemprop="dateCreated datePublished" datetime="2021-04-30T12:00:00+08:00">2021-04-30</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Golang/" itemprop="url" rel="index"><span itemprop="name">Golang</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/04/30/2021-04-30-golang-scheduler/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2021/04/30/2021-04-30-golang-scheduler/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2021/04/30/2021-04-30-golang-scheduler/" class="leancloud_visitors" data-flag-title="Golang scheduler 浅析">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-fire"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">1k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">2 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="说在前面"><a href="#说在前面" class="headerlink" title="说在前面"></a>说在前面</h1><p>饶老师从一个故事讲起，引出了调度器的概念和 Golang 的调度器模型，并深入的讲解了 Golang 的循环调度的实现和抢占式调度的实现，不禁令人感叹，Golang 的循环调度为我们的岁月静好负重前行。</p>
+<h1 id="循环调度的建立"><a href="#循环调度的建立" class="headerlink" title="循环调度的建立"></a>循环调度的建立</h1><p>所谓对 goroutine 的调度，实际上就是指 Golang 程序代码按照内置的一些算法，在运行时动态的选择合适的 goroutine 放到 CPU 上去执行的过程， 其本质是通过保存和恢复 CPU 寄存器的值达到切换 goroutine 的目的。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2021/04/30/2021-04-30-golang-scheduler/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+    
+    
+    <div>
+      
+    </div>
+    
+    
+    
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2021/04/28/2021-04-28-concurrent-data-structure copy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="温智全">
+      <meta itemprop="description" content="爱唱歌健身的程序员">
+      <meta itemprop="image" content="/uploads/avatar-wen.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="温智全的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/04/28/2021-04-28-concurrent-data-structure copy/" itemprop="url">
+                  Golang 并发数据结构和算法实践
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2021-04-28 12:00:00" itemprop="dateCreated datePublished" datetime="2021-04-28T12:00:00+08:00">2021-04-28</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Golang/" itemprop="url" rel="index"><span itemprop="name">Golang</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/04/28/2021-04-28-concurrent-data-structure copy/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2021/04/28/2021-04-28-concurrent-data-structure copy/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2021/04/28/2021-04-28-concurrent-data-structure copy/" class="leancloud_visitors" data-flag-title="Golang 并发数据结构和算法实践">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-fire"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">960</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">2 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="说在前面"><a href="#说在前面" class="headerlink" title="说在前面"></a>说在前面</h1><p>云浩老师这门课程中，从引入 Golang 本身数据结构对多核性能使用不足的场景讲起，然后由并发安全问题讲起，阐述了解决并发问题的通用方案，并基于此，提出了有序链表的并行化方案，由猜想到验证一步一步引导我们实现一个在多核场景下 scalable 的数据结构，由浅入深，令人印象深刻。</p>
+<h1 id="并发安全问题"><a href="#并发安全问题" class="headerlink" title="并发安全问题"></a>并发安全问题</h1><p>并发安全问题，表现为对一个变量发生更改的同时有另一个线程对同一个变量进行了读写，导致产生了不可预知的行为，也叫 data race</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2021/04/28/2021-04-28-concurrent-data-structure copy/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+    
+    
+    <div>
+      
+    </div>
+    
+    
+    
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2021/04/24/2021-04-24-golang-lock/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="温智全">
+      <meta itemprop="description" content="爱唱歌健身的程序员">
+      <meta itemprop="image" content="/uploads/avatar-wen.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="温智全的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/04/24/2021-04-24-golang-lock/" itemprop="url">
+                  Golang 的强人锁难
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2021-04-24 12:00:00" itemprop="dateCreated datePublished" datetime="2021-04-24T12:00:00+08:00">2021-04-24</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Golang/" itemprop="url" rel="index"><span itemprop="name">Golang</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/04/24/2021-04-24-golang-lock/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2021/04/24/2021-04-24-golang-lock/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2021/04/24/2021-04-24-golang-lock/" class="leancloud_visitors" data-flag-title="Golang 的强人锁难">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-fire"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">4.9k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">9 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="说在前面"><a href="#说在前面" class="headerlink" title="说在前面"></a>说在前面</h1><p>冯敏老师从一个不加锁并发修改导致出现问题的例子讲起，用最佳实践匹配我们工作中的实际场景，提出一些避免踩坑的建议，从而引出锁的进化和原理。</p>
+<h1 id="最佳实践"><a href="#最佳实践" class="headerlink" title="最佳实践"></a>最佳实践</h1><h2 id="减少持有时间"><a href="#减少持有时间" class="headerlink" title="减少持有时间"></a>减少持有时间</h2><h3 id="缩小临界区，注意-defer-的使用"><a href="#缩小临界区，注意-defer-的使用" class="headerlink" title="缩小临界区，注意 defer 的使用"></a>缩小临界区，注意 defer 的使用</h3><p>通过缩小临界区的方式，可以避免在加锁和解锁之间，由于有较为耗时的代码，导致锁持有时间过长，从而造成性能问题，例子如下：</p>
+<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> Users = <span class="keyword">map</span>[<span class="keyword">string</span>]<span class="keyword">string</span> &#123;</span><br><span class="line">    <span class="string">"user"</span>: <span class="string">"password"</span>,</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> mu sync.Mutex</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">CheckUser</span><span class="params">(name, password <span class="keyword">string</span>)</span> <span class="title">bool</span></span> &#123;</span><br><span class="line">    mu.Lock()</span><br><span class="line">    <span class="keyword">defer</span> mu.Unlock()</span><br><span class="line">    realPwd, exist: = Users[name]</span><br><span class="line">    <span class="keyword">return</span> exist &amp; realPwd == password</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>乍看之下这段代码是没有什么问题的，但是如果代码像下面这样</p>
+<figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Func SomeFunc() &#123;</span><br><span class="line">    <span class="comment">// do sth</span></span><br><span class="line">    mu.Lock()</span><br><span class="line">    defer mu.Unlock()</span><br><span class="line">    <span class="params">...</span></span><br><span class="line">    <span class="params">...</span><span class="comment">// long code</span></span><br><span class="line">    <span class="params">...</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果 defer 之后的代码特别耗时，那这个 mu 锁的时间就会非常长了，会拖慢整个程序的速度。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2021/04/24/2021-04-24-golang-lock/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+
+    
+
+    
+    
+    
+
+    
+    
+    
+    <div>
+      
+    </div>
+    
+    
+    
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2021/04/22/2021-04-22-basics-delay-satisfication/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -748,6 +1632,446 @@
 <p>延迟满足感则是苦练基本功必须具备的素质，同时也是苦练基本功可以锻炼出的一种能力，两者相辅相成，相互促进。举一个学生时期的例子，我们做题的时候，如果一道题很简单，轻轻松松就做出来了，我们是不会有什么满足感和成就感的，但是如果是一道难题，我们费尽九牛二虎之力终于做出来了，那种满足感和成就感相信大家都曾经感受过，这就是延迟满足感。同样的，在我们工作过程中，如果总是做一些自己能力之内的事情，轻易的就完成了，那我们不但没有什么满足感，还会没有任何进步。如果我们能够去做一些要花比较大的力气才能做成的事情，甚至一些自己无法独立完成，必须和他人合作才能完成的事情，这样的成长和满足感足以让我们久久回味。就像我们的 OKR 一样，其实就是为了让我们可以再往上够一够，让我们的满足感更强烈一些，让我们的成长更快一些。</p>
 
           
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+    
+    
+    <div>
+      
+    </div>
+    
+    
+    
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2021/04/18/2021-04-18-gott/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="温智全">
+      <meta itemprop="description" content="爱唱歌健身的程序员">
+      <meta itemprop="image" content="/uploads/avatar-wen.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="温智全的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/04/18/2021-04-18-gott/" itemprop="url">
+                  Golang On The Toilet
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2021-04-18 12:00:00" itemprop="dateCreated datePublished" datetime="2021-04-18T12:00:00+08:00">2021-04-18</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Golang/" itemprop="url" rel="index"><span itemprop="name">Golang</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/04/18/2021-04-18-gott/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2021/04/18/2021-04-18-gott/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2021/04/18/2021-04-18-gott/" class="leancloud_visitors" data-flag-title="Golang On The Toilet">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-fire"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">5.1k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">9 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="说在前面"><a href="#说在前面" class="headerlink" title="说在前面"></a>说在前面</h1><p>本文提供了一些 Golang 工程项目的最佳实践，分别从可读性、健壮性和效率三个方面进行描述。</p>
+<h1 id="Readable"><a href="#Readable" class="headerlink" title="Readable"></a>Readable</h1><p>可读性对于机器来说其实没有什么区别，但是对于作为开发者的每一个<code>人</code>来说，可读性就显得极其重要了。对于个人开发者来说，一个人不可能记住他写的每一行代码，很多时候我们自己写的代码，经过两三个月之后，我们基本上就会忘记当初写的逻辑，高可读的代码可以让我们更加轻易地进行阅读回忆；而对于协同开发来说，代码的可读性直接决定了多人合作开发的效率，高可读的代码可以让我们协作开发的效率得到巨大的提升，那么常用的代码中有哪些方式可以提升代码的可读性呢？</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2021/04/18/2021-04-18-gott/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+    
+    
+    <div>
+      
+    </div>
+    
+    
+    
+
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2021/04/16/2021-04-16-slice-map-channel copy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="温智全">
+      <meta itemprop="description" content="爱唱歌健身的程序员">
+      <meta itemprop="image" content="/uploads/avatar-wen.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="温智全的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2021/04/16/2021-04-16-slice-map-channel copy/" itemprop="url">
+                  Slice、Map 和 Channel 那些事儿
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2021-04-16 12:00:00" itemprop="dateCreated datePublished" datetime="2021-04-16T12:00:00+08:00">2021-04-16</time>
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Golang/" itemprop="url" rel="index"><span itemprop="name">Golang</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2021/04/16/2021-04-16-slice-map-channel copy/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2021/04/16/2021-04-16-slice-map-channel copy/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2021/04/16/2021-04-16-slice-map-channel copy/" class="leancloud_visitors" data-flag-title="Slice、Map 和 Channel 那些事儿">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-fire"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">热度：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+                 <span>℃</span>
+             </span>
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">2.3k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">4 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="说在前面"><a href="#说在前面" class="headerlink" title="说在前面"></a>说在前面</h1><p>我是加入字节之后才开始学习使用 Golang 的，在学习和应用这门语言的过程中，踩过很多坑，但是踩坑的同时也学习到了很多有用的知识和技巧。通过不断沉淀这些知识和技巧，我们能够更叫高效和保证质量的完成业务代码，避免造成不必要的损失。</p>
+<p>建议大家都先去看一下 <a href="http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang/" target="_blank" rel="noopener">50 Shades of Go</a>，里面涉及了 Golang 开发初期最容易踩得 50 个坑。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2021/04/16/2021-04-16-slice-map-channel copy/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1046,7 +2370,7 @@
           <h1 class="post-title" itemprop="name headline">
                 
                 <a class="post-title-link" href="/2021/03/18/2021-03-18-whwhorere/" itemprop="url">
-                  关于权责利的思考
+                  再看 whwhorere 方法论
                 </a>
               
             
@@ -1114,7 +2438,7 @@
 
           
           
-             <span id="/2021/03/18/2021-03-18-whwhorere/" class="leancloud_visitors" data-flag-title="关于权责利的思考">
+             <span id="/2021/03/18/2021-03-18-whwhorere/" class="leancloud_visitors" data-flag-title="再看 whwhorere 方法论">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-fire"></i>
@@ -1235,1320 +2559,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2021/03/12/2021-03-12-authority-responsibility-benefit/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="温智全">
-      <meta itemprop="description" content="爱唱歌健身的程序员">
-      <meta itemprop="image" content="/uploads/avatar-wen.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="温智全的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2021/03/12/2021-03-12-authority-responsibility-benefit/" itemprop="url">
-                  关于权责利的思考
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2021-03-12 12:00:00" itemprop="dateCreated datePublished" datetime="2021-03-12T12:00:00+08:00">2021-03-12</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/思考与感想/" itemprop="url" rel="index"><span itemprop="name">思考与感想</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2021/03/12/2021-03-12-authority-responsibility-benefit/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2021/03/12/2021-03-12-authority-responsibility-benefit/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2021/03/12/2021-03-12-authority-responsibility-benefit/" class="leancloud_visitors" data-flag-title="关于权责利的思考">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-fire"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-                 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">521</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">1 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>今天看到了一篇文章，讲的是一个团队指定了 A 作为 B 的上级，但是 A 却没有批复 B 的申请，给 B 打绩效的权利，B 的绩效好坏也不影响 A，久而久之 B 不再听从 A 的安排，A 也不去管 B，导致 AB 虽然是一个团队，却没有团队的合作。这个就是团队管理中常见的权责利不统一而导致的问题。</p>
-<ul>
-<li>权，指的是团队主管拥有的权利，一般指财务权和人事权。</li>
-<li>责，指的是团队主管需要承担的责任，比如团队的整体绩效。</li>
-<li>利，指的是实现了绩效之后，整个团队可以和获得的收益及其分配方案。</li>
-</ul>
-<p>三者之间的关系是缺一不可，相互制约又共同生效的，缺少了权就像指挥家缺少了手，无法顺畅的指挥交响乐，缺少了责容易成为“渣男”，只分派任务却不用担责，导致人心不平衡，缺少了利就是“想让马儿跑，却不给马儿吃草”，三者任缺其一都会导致管理出现问题，要做到权责利平衡，需要先做到薪资等利益和岗位责任对等，其次对应的岗位责任需要赋予对应的权利，岗位责任最大，工作难度越高，赋予的权力也需要越大，成功获取的利益大，失败承受的后果也更严重，三者相互制约，可以理清工作的边界，让我们认清工作的本质，知道什么是我需要做的，做成功能获得什么收益，这样我们工作的积极性也就提升起来了。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-    
-    
-    <div>
-      
-    </div>
-    
-    
-    
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2021/02/28/2021-02-28-talent-and-habit/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="温智全">
-      <meta itemprop="description" content="爱唱歌健身的程序员">
-      <meta itemprop="image" content="/uploads/avatar-wen.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="温智全的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2021/02/28/2021-02-28-talent-and-habit/" itemprop="url">
-                  关于天赋和习惯的思考
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2021-02-28 12:00:00" itemprop="dateCreated datePublished" datetime="2021-02-28T12:00:00+08:00">2021-02-28</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/思考与感想/" itemprop="url" rel="index"><span itemprop="name">思考与感想</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2021/02/28/2021-02-28-talent-and-habit/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2021/02/28/2021-02-28-talent-and-habit/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2021/02/28/2021-02-28-talent-and-habit/" class="leancloud_visitors" data-flag-title="关于天赋和习惯的思考">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-fire"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-                 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">675</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">1 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>这周看到一篇不错的文章：<a href="https://mp.weixin.qq.com/s/VIGupHjhN1JOnTqQbk8QfQ，大致讲的是我们要有一个认知，即决定成功的往往是学习习惯与思维习惯，而非天赋。" target="_blank" rel="noopener">https://mp.weixin.qq.com/s/VIGupHjhN1JOnTqQbk8QfQ，大致讲的是我们要有一个认知，即决定成功的往往是学习习惯与思维习惯，而非天赋。</a></p>
-<p>举个例子，在面对同样一个问题时，有的人能看得全面深入，有的人却只能单一角度看问题或无法深入。再比如一件事情需要我们进行 7 层的逻辑判断，一部分人由于长期以来的好习惯将思维锻炼到了直接就可以达到 4-5 层，而另一部分人缺少锻炼只能直接看到 1-2 层，面对这个问题的时候就会发现前者往往可以很容易的解决问题，让人觉得他们有天赋，这看起来是天赋，但一些精准的判断与独特的视角却是在过往的习惯中不断积累下来的，因此会给人一种有天赋的感觉。</p>
-<p>而形成这些习惯的本质原因，是我们从小的教育与成长环境。有的人过往环境让他更倾向于做能获得短期刺激的事情（如上课开小差、想学习时却被抖音/剧集吸引等）；有的人从小培养了专注的习惯，会对于刺激来的更长期的读书、或深挖一个问题找到背后原因的快感更加倾向。其实所谓天赋，不过是过往的长期原始习惯积累带来的能力差异，并非真的不可逾越。</p>
-<p>因此，在这个认知基础上，我们可以刻意训练自己的学习习惯与思维习惯。比如看书时远离手机，给自己创造一个安静的沉浸式的环境，培养专注的习惯。比如在遇到困难时，首先不是畏难，而是尝试找到角度深挖下去，长此以往在遇到困难时的第一反应不是害怕而是快速反应应对。当然除了这些还有其他一些习惯是可以养成的，意识到习惯的差异并建立正确认知，通过刻意练习，是能够逐渐弥补大家普遍认知的“天赋”差距的。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-    
-    
-    <div>
-      
-    </div>
-    
-    
-    
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2021/02/19/2021-02-19-meso-consideration/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="温智全">
-      <meta itemprop="description" content="爱唱歌健身的程序员">
-      <meta itemprop="image" content="/uploads/avatar-wen.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="温智全的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2021/02/19/2021-02-19-meso-consideration/" itemprop="url">
-                  关于中观层面的思考
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2021-02-19 12:00:00" itemprop="dateCreated datePublished" datetime="2021-02-19T12:00:00+08:00">2021-02-19</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/思考与感想/" itemprop="url" rel="index"><span itemprop="name">思考与感想</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2021/02/19/2021-02-19-meso-consideration/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2021/02/19/2021-02-19-meso-consideration/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2021/02/19/2021-02-19-meso-consideration/" class="leancloud_visitors" data-flag-title="关于中观层面的思考">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-fire"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-                 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">444</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">1 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>昨天和朋友讨论了一下关于工作总结应该如何去做的问题，他提出了一个观点我觉得十分正确，就是在总结中我们需要增加我们对于中观层面的思考，而不是仅仅罗列我们做了那些事情和达到了哪些效果。这让我想起了一个之前听到的一个做事情的方法论，叫做「以终为始」，在我们分析问题的时候应该从想要达到的最终效果开始思考，以此为起点，反推出我们需要做到哪些事情。比如我们要实现一个需求来达到某个目标，我们需要思考的不应该仅仅是如何完成这个需求，而是要去想为什么要达到这个目标需要做这个需求，而不是其他需求，有没有什么更好的解决方案，每种解决方案都有哪些优劣之处，为了更好的达到这个目标应该以什么样的优先级来完成不同的小步骤等等。这样的思考方式最开始会花费我们更多的时间和精力，但是一旦养成习惯之后，可以大大的增加我们思考的深度和广度，并且这种思考方式不仅仅可以运用在工作中，生活中也可以使用这种思考方式来达成更好的效果，比如参加一场重要的聚会，先思考想要在聚会上想要达到的状态，然后以终为始选择自己的装扮等等。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-    
-    
-    <div>
-      
-    </div>
-    
-    
-    
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2021/02/09/2021-02-09-how-to-consider-more-perfect/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="温智全">
-      <meta itemprop="description" content="爱唱歌健身的程序员">
-      <meta itemprop="image" content="/uploads/avatar-wen.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="温智全的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2021/02/09/2021-02-09-how-to-consider-more-perfect/" itemprop="url">
-                  如何更加完善的考虑和完成需求
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2021-02-09 12:00:00" itemprop="dateCreated datePublished" datetime="2021-02-09T12:00:00+08:00">2021-02-09</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/思考与感想/" itemprop="url" rel="index"><span itemprop="name">思考与感想</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2021/02/09/2021-02-09-how-to-consider-more-perfect/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2021/02/09/2021-02-09-how-to-consider-more-perfect/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2021/02/09/2021-02-09-how-to-consider-more-perfect/" class="leancloud_visitors" data-flag-title="如何更加完善的考虑和完成需求">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-fire"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-                 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">555</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">1 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>首先，我们需要明确的一点是，用户也无法清晰的知道自己的需求是什么。所以我们在跟用户讨论需求的时候，不要去问用户想要什么功能，否则往往会陷入细节却无法得出真正想要的结果，更好的方式是去引导用户讲述自己的使用场景，以及为什么会有这样的使用场景，自己的痛点是什么。收集过后，使用 MECE 法则，针对用户的场景和痛点穷举出可能的需求及其解决方案，列在白板上，然后对这些列举出来的方案进行抽象归类，这样就形成了一个一个的模块，然后对各个模块进行去重和提炼，提取出各个模块的核心，建立他们之间的关联，然后形成文档之后，与用户再进行多次沟通和交流，多次完善需求和方案，最终达成一致。</p>
-<p>在完成需求的时候，需要对各个模块进行充分的评估，然后确定出各个模块的优先级和大致的实现顺序，然后再对各个模块进行更细粒度的拆分，建立起相关的任务，与相关方一起评估实现的难度和方案，讨论得出实现的时间节点（一定要预留足够的 buffer），对于那种有依赖方的需求一定要提前进行沟通，保证正式开发之前依赖已经准备就绪，而不是等做完了某些需求，等要做有依赖的需求才发现依赖方还未准备就绪，这样会有极大的延期风险。实现需求的之后最好能够用 TDD 的方式进行开发，这样可以更明确的了解到需要实现到什么程度，也能在一定程度上保证和提升开发的质量。</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-    
-    
-    <div>
-      
-    </div>
-    
-    
-    
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2021/01/28/2021-01-28-how-to-deal-with-unfair-treat/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="温智全">
-      <meta itemprop="description" content="爱唱歌健身的程序员">
-      <meta itemprop="image" content="/uploads/avatar-wen.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="温智全的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2021/01/28/2021-01-28-how-to-deal-with-unfair-treat/" itemprop="url">
-                  如何看待看似不公正的待遇
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2021-01-28 12:00:00" itemprop="dateCreated datePublished" datetime="2021-01-28T12:00:00+08:00">2021-01-28</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/思考与感想/" itemprop="url" rel="index"><span itemprop="name">思考与感想</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2021/01/28/2021-01-28-how-to-deal-with-unfair-treat/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2021/01/28/2021-01-28-how-to-deal-with-unfair-treat/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2021/01/28/2021-01-28-how-to-deal-with-unfair-treat/" class="leancloud_visitors" data-flag-title="如何看待看似不公正的待遇">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-fire"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-                 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">624</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">1 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>有时候会听到一些同学的吐槽，说自己遭受了上级的不公正待遇，把更好的机会给了另一位同学而不是自己，导致自己的绩效不出彩，甚至会心生怨怼。其实我们可以设身处地的从两个方面来考虑这个问题：</p>
-<ol>
-<li>让自己站在上级的角度，思考一下为什么上级会把这个机会交给另一位同学而不是你，可能有以下原因：1. 觉得你能力不够，还不足以按照他的预期完成这个项目；2. 另一位同学经常能够按照预期甚至超预期完成项目。无非就是这两个原因，对于第一点很好解决，先从上级觉得你能够预期完成的事情入手，做到每个项目都能够超预期完成，要不了多久就能够让自己成为第二种情况，也就能够获得更好的机会了。第二点和第一点也是同样的处理方法，当你在上级心中的地位也是能够经常超预期的人了，下次有项目的时候肯定会将你也加入优先队列当中。信赖的建立是需要时间的，不要老想着一蹴而就，一次次信任的积累才能达成更好的信赖</li>
-<li>站在自己的角度，觉得上级不认可自己的能力，那么我们换一种思考方式呢？是不是我们没有让上级了解到自己的能力呢？工作中确实容易出现一种马太效应，愿意把项目交给自己信赖的人去做，然后做得好的就有继续的正向循环，而一直缩在后面不展示自己能力的人，可能就会一直得不到能力展示的机会。俗话说的很好：“师傅领进门，修行在个人”，如果自己一直缩在后面，而不愿展示自己的能力，那谁能如伯乐一般偏偏挑中了我们呢？所以我们需要更加主动一些，展示出自己的能力，通过做好一个又一个的项目，得到更多人的认可。</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-    
-    
-    <div>
-      
-    </div>
-    
-    
-    
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://wenzhiquan.github.io/2021/01/27/2021-01-27-how-to-deal-with-tag/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="温智全">
-      <meta itemprop="description" content="爱唱歌健身的程序员">
-      <meta itemprop="image" content="/uploads/avatar-wen.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="温智全的博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2021/01/27/2021-01-27-how-to-deal-with-tag/" itemprop="url">
-                  如何更好的处理你的版本 tag
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2021-01-27 12:00:00" itemprop="dateCreated datePublished" datetime="2021-01-27T12:00:00+08:00">2021-01-27</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/思考与感想/" itemprop="url" rel="index"><span itemprop="name">思考与感想</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2021/01/27/2021-01-27-how-to-deal-with-tag/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2021/01/27/2021-01-27-how-to-deal-with-tag/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-             <span id="/2021/01/27/2021-01-27-how-to-deal-with-tag/" class="leancloud_visitors" data-flag-title="如何更好的处理你的版本 tag">
-               <span class="post-meta-divider">|</span>
-               <span class="post-meta-item-icon">
-                 <i class="fa fa-fire"></i>
-               </span>
-               
-                 <span class="post-meta-item-text">热度：</span>
-               
-                 <span class="leancloud-visitors-count"></span>
-                 <span>℃</span>
-             </span>
-          
-
-          
-
-          
-            <div class="post-symbolscount">
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">本文字数：</span>
-                
-                <span title="本文字数">442</span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">1 分钟</span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>今天在发布上线的时候，CI 突然报错没有通过编译，打开一看，惊了，之前依赖的公司内部的一个组件库的 tag 删除了😂，oncall 问了原因，告知是有两个连续的版本 1.0.2 和 1.0.3 有个比较严重的问题所以删掉了。由此，我不禁思考：如何发布版本才能更少的影响用户</p>
-<ol>
-<li>首先，一定是要尽量保证发布的版本不要有问题，要进行足够的单测和集成测试，力求保证发布的每个版本都是 bug free 的，作为基础组件的库更应该如此。</li>
-<li>不要删除已有的 tag，然后重新发一个同名的 tag，之前也是一个组件库的同学进行了这个样的操作，导致已经下载的文件的 checksum 和线上不一致，导致编译错误。</li>
-<li>不要在新版本 tag 还没有准备好的情况下，就把老版本的 tag 删除了，即便老版本的 tag 可能有 bug，但是不一定会影响使用，但是一旦删除了，导致无法通过编译而无法上线，所造成的影响可能会更大，比如有一个紧急发布需要上线，但是由于老 tag 删除了而无法打包，后果不堪设想。</li>
-</ol>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-    
-    
-    <div>
-      
-    </div>
-    
-    
-    
-
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -2593,7 +2608,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">86</span>
+                    <span class="site-state-item-count">92</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -2636,7 +2651,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">15</span>
+                      
+                    
+                    <span class="site-state-item-count">16</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -2745,7 +2762,9 @@
                     
                       
                     
-                    <span class="site-state-item-count">48</span>
+                      
+                    
+                    <span class="site-state-item-count">49</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
@@ -2806,19 +2825,19 @@
                     </li>
                   
                     <li>
-                      <a href="/2021/04/22/2021-04-22-basics-delay-satisfication/" title="苦练基本功，延迟满足感">苦练基本功，延迟满足感</a>
+                      <a href="/2021/05/06/2021-05-06-go-gc-memory/" title="垃圾回收和 Golang 内存管理">垃圾回收和 Golang 内存管理</a>
                     </li>
                   
                     <li>
-                      <a href="/2021/03/30/2021-03-30-about-methodology/" title="方法论的作用">方法论的作用</a>
+                      <a href="/2021/04/30/2021-04-30-golang-scheduler/" title="Golang scheduler 浅析">Golang scheduler 浅析</a>
                     </li>
                   
                     <li>
-                      <a href="/2021/03/18/2021-03-18-whwhorere/" title="关于权责利的思考">关于权责利的思考</a>
+                      <a href="/2021/04/28/2021-04-28-concurrent-data-structure copy/" title="Golang 并发数据结构和算法实践">Golang 并发数据结构和算法实践</a>
                     </li>
                   
                     <li>
-                      <a href="/2021/03/12/2021-03-12-authority-responsibility-benefit/" title="关于权责利的思考">关于权责利的思考</a>
+                      <a href="/2021/04/24/2021-04-24-golang-lock/" title="Golang 的强人锁难">Golang 的强人锁难</a>
                     </li>
                   
                 </ul>
@@ -2879,7 +2898,7 @@
     
       <span class="post-meta-item-text">站点总字数：</span>
     
-    <span title="站点总字数">275k</span>
+    <span title="站点总字数">292k</span>
   
 
   

@@ -43,6 +43,96 @@
   </entry>
   
   <entry>
+    <title>垃圾回收和 Golang 内存管理</title>
+    <link href="http://wenzhiquan.github.io/2021/05/06/2021-05-06-go-gc-memory/"/>
+    <id>http://wenzhiquan.github.io/2021/05/06/2021-05-06-go-gc-memory/</id>
+    <published>2021-05-06T04:00:00.000Z</published>
+    <updated>2021-05-06T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;说在前面&quot;&gt;&lt;a href=&quot;#说在前面&quot; class=&quot;headerlink&quot; title=&quot;说在前面&quot;&gt;&lt;/a&gt;说在前面&lt;/h1&gt;&lt;p&gt;陆老师今天的课程从 GC 的发展历程讲起，渐次讲解了垃圾回收的流派以及基础的垃圾回收方法，从而引出 Golang 的 GC，向我们讲述了 Golang 垃圾回收的特点与触发时机，最终为我们简述了一些编程过程中可能使用到的工具和指标，帮助我们更快的找到和分析问题。&lt;/p&gt;
+&lt;h1 id=&quot;GC-基本理论&quot;&gt;&lt;a href=&quot;#GC-基本理论&quot; class=&quot;headerlink&quot; title=&quot;GC 基本理论&quot;&gt;&lt;/a&gt;GC 基本理论&lt;/h1&gt;&lt;p&gt;GC 的发展从 1959 年的 Lisp 语言就开始了，他所做的事情其实就是把需要程序员手动申请和释放内存这件事情自动化了，解放了程序员的生产力，能够用更多的精力放在业务代码上而不是去关心内存，经历了几十年的发展，GC 也变得越来越完善，功能也变得越来越强大了。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Golang" scheme="http://wenzhiquan.github.io/categories/Golang/"/>
+    
+    
+      <category term="垃圾回收" scheme="http://wenzhiquan.github.io/tags/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/"/>
+    
+      <category term="Golang" scheme="http://wenzhiquan.github.io/tags/Golang/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Golang scheduler 浅析</title>
+    <link href="http://wenzhiquan.github.io/2021/04/30/2021-04-30-golang-scheduler/"/>
+    <id>http://wenzhiquan.github.io/2021/04/30/2021-04-30-golang-scheduler/</id>
+    <published>2021-04-30T04:00:00.000Z</published>
+    <updated>2021-04-30T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;说在前面&quot;&gt;&lt;a href=&quot;#说在前面&quot; class=&quot;headerlink&quot; title=&quot;说在前面&quot;&gt;&lt;/a&gt;说在前面&lt;/h1&gt;&lt;p&gt;饶老师从一个故事讲起，引出了调度器的概念和 Golang 的调度器模型，并深入的讲解了 Golang 的循环调度的实现和抢占式调度的实现，不禁令人感叹，Golang 的循环调度为我们的岁月静好负重前行。&lt;/p&gt;
+&lt;h1 id=&quot;循环调度的建立&quot;&gt;&lt;a href=&quot;#循环调度的建立&quot; class=&quot;headerlink&quot; title=&quot;循环调度的建立&quot;&gt;&lt;/a&gt;循环调度的建立&lt;/h1&gt;&lt;p&gt;所谓对 goroutine 的调度，实际上就是指 Golang 程序代码按照内置的一些算法，在运行时动态的选择合适的 goroutine 放到 CPU 上去执行的过程， 其本质是通过保存和恢复 CPU 寄存器的值达到切换 goroutine 的目的。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Golang" scheme="http://wenzhiquan.github.io/categories/Golang/"/>
+    
+    
+      <category term="Golang" scheme="http://wenzhiquan.github.io/tags/Golang/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Golang 并发数据结构和算法实践</title>
+    <link href="http://wenzhiquan.github.io/2021/04/28/2021-04-28-concurrent-data-structure%20copy/"/>
+    <id>http://wenzhiquan.github.io/2021/04/28/2021-04-28-concurrent-data-structure copy/</id>
+    <published>2021-04-28T04:00:00.000Z</published>
+    <updated>2021-04-28T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;说在前面&quot;&gt;&lt;a href=&quot;#说在前面&quot; class=&quot;headerlink&quot; title=&quot;说在前面&quot;&gt;&lt;/a&gt;说在前面&lt;/h1&gt;&lt;p&gt;云浩老师这门课程中，从引入 Golang 本身数据结构对多核性能使用不足的场景讲起，然后由并发安全问题讲起，阐述了解决并发问题的通用方案，并基于此，提出了有序链表的并行化方案，由猜想到验证一步一步引导我们实现一个在多核场景下 scalable 的数据结构，由浅入深，令人印象深刻。&lt;/p&gt;
+&lt;h1 id=&quot;并发安全问题&quot;&gt;&lt;a href=&quot;#并发安全问题&quot; class=&quot;headerlink&quot; title=&quot;并发安全问题&quot;&gt;&lt;/a&gt;并发安全问题&lt;/h1&gt;&lt;p&gt;并发安全问题，表现为对一个变量发生更改的同时有另一个线程对同一个变量进行了读写，导致产生了不可预知的行为，也叫 data race&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Golang" scheme="http://wenzhiquan.github.io/categories/Golang/"/>
+    
+    
+      <category term="Golang" scheme="http://wenzhiquan.github.io/tags/Golang/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Golang 的强人锁难</title>
+    <link href="http://wenzhiquan.github.io/2021/04/24/2021-04-24-golang-lock/"/>
+    <id>http://wenzhiquan.github.io/2021/04/24/2021-04-24-golang-lock/</id>
+    <published>2021-04-24T04:00:00.000Z</published>
+    <updated>2021-04-24T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;说在前面&quot;&gt;&lt;a href=&quot;#说在前面&quot; class=&quot;headerlink&quot; title=&quot;说在前面&quot;&gt;&lt;/a&gt;说在前面&lt;/h1&gt;&lt;p&gt;冯敏老师从一个不加锁并发修改导致出现问题的例子讲起，用最佳实践匹配我们工作中的实际场景，提出一些避免踩坑的建议，从而引出锁的进化和原理。&lt;/p&gt;
+&lt;h1 id=&quot;最佳实践&quot;&gt;&lt;a href=&quot;#最佳实践&quot; class=&quot;headerlink&quot; title=&quot;最佳实践&quot;&gt;&lt;/a&gt;最佳实践&lt;/h1&gt;&lt;h2 id=&quot;减少持有时间&quot;&gt;&lt;a href=&quot;#减少持有时间&quot; class=&quot;headerlink&quot; title=&quot;减少持有时间&quot;&gt;&lt;/a&gt;减少持有时间&lt;/h2&gt;&lt;h3 id=&quot;缩小临界区，注意-defer-的使用&quot;&gt;&lt;a href=&quot;#缩小临界区，注意-defer-的使用&quot; class=&quot;headerlink&quot; title=&quot;缩小临界区，注意 defer 的使用&quot;&gt;&lt;/a&gt;缩小临界区，注意 defer 的使用&lt;/h3&gt;&lt;p&gt;通过缩小临界区的方式，可以避免在加锁和解锁之间，由于有较为耗时的代码，导致锁持有时间过长，从而造成性能问题，例子如下：&lt;/p&gt;
+&lt;figure class=&quot;highlight go&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;9&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;10&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; Users = &lt;span class=&quot;keyword&quot;&gt;map&lt;/span&gt;[&lt;span class=&quot;keyword&quot;&gt;string&lt;/span&gt;]&lt;span class=&quot;keyword&quot;&gt;string&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;string&quot;&gt;&quot;user&quot;&lt;/span&gt;: &lt;span class=&quot;string&quot;&gt;&quot;password&quot;&lt;/span&gt;,&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;var&lt;/span&gt; mu sync.Mutex&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;function&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;CheckUser&lt;/span&gt;&lt;span class=&quot;params&quot;&gt;(name, password &lt;span class=&quot;keyword&quot;&gt;string&lt;/span&gt;)&lt;/span&gt; &lt;span class=&quot;title&quot;&gt;bool&lt;/span&gt;&lt;/span&gt; &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    mu.Lock()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;defer&lt;/span&gt; mu.Unlock()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    realPwd, exist: = Users[name]&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;keyword&quot;&gt;return&lt;/span&gt; exist &amp;amp; realPwd == password&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;乍看之下这段代码是没有什么问题的，但是如果代码像下面这样&lt;/p&gt;
+&lt;figure class=&quot;highlight lasso&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;6&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;7&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;8&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;Func SomeFunc() &amp;#123;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;comment&quot;&gt;// do sth&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    mu.Lock()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    defer mu.Unlock()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;params&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;params&quot;&gt;...&lt;/span&gt;&lt;span class=&quot;comment&quot;&gt;// long code&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;    &lt;span class=&quot;params&quot;&gt;...&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;如果 defer 之后的代码特别耗时，那这个 mu 锁的时间就会非常长了，会拖慢整个程序的速度。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Golang" scheme="http://wenzhiquan.github.io/categories/Golang/"/>
+    
+    
+      <category term="Golang" scheme="http://wenzhiquan.github.io/tags/Golang/"/>
+    
+  </entry>
+  
+  <entry>
     <title>苦练基本功，延迟满足感</title>
     <link href="http://wenzhiquan.github.io/2021/04/22/2021-04-22-basics-delay-satisfication/"/>
     <id>http://wenzhiquan.github.io/2021/04/22/2021-04-22-basics-delay-satisfication/</id>
@@ -65,6 +155,48 @@
     
     
       <category term="个人思考" scheme="http://wenzhiquan.github.io/tags/%E4%B8%AA%E4%BA%BA%E6%80%9D%E8%80%83/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Golang On The Toilet</title>
+    <link href="http://wenzhiquan.github.io/2021/04/18/2021-04-18-gott/"/>
+    <id>http://wenzhiquan.github.io/2021/04/18/2021-04-18-gott/</id>
+    <published>2021-04-18T04:00:00.000Z</published>
+    <updated>2021-04-18T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;说在前面&quot;&gt;&lt;a href=&quot;#说在前面&quot; class=&quot;headerlink&quot; title=&quot;说在前面&quot;&gt;&lt;/a&gt;说在前面&lt;/h1&gt;&lt;p&gt;本文提供了一些 Golang 工程项目的最佳实践，分别从可读性、健壮性和效率三个方面进行描述。&lt;/p&gt;
+&lt;h1 id=&quot;Readable&quot;&gt;&lt;a href=&quot;#Readable&quot; class=&quot;headerlink&quot; title=&quot;Readable&quot;&gt;&lt;/a&gt;Readable&lt;/h1&gt;&lt;p&gt;可读性对于机器来说其实没有什么区别，但是对于作为开发者的每一个&lt;code&gt;人&lt;/code&gt;来说，可读性就显得极其重要了。对于个人开发者来说，一个人不可能记住他写的每一行代码，很多时候我们自己写的代码，经过两三个月之后，我们基本上就会忘记当初写的逻辑，高可读的代码可以让我们更加轻易地进行阅读回忆；而对于协同开发来说，代码的可读性直接决定了多人合作开发的效率，高可读的代码可以让我们协作开发的效率得到巨大的提升，那么常用的代码中有哪些方式可以提升代码的可读性呢？&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Golang" scheme="http://wenzhiquan.github.io/categories/Golang/"/>
+    
+    
+      <category term="Golang" scheme="http://wenzhiquan.github.io/tags/Golang/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Slice、Map 和 Channel 那些事儿</title>
+    <link href="http://wenzhiquan.github.io/2021/04/16/2021-04-16-slice-map-channel%20copy/"/>
+    <id>http://wenzhiquan.github.io/2021/04/16/2021-04-16-slice-map-channel copy/</id>
+    <published>2021-04-16T04:00:00.000Z</published>
+    <updated>2021-04-16T04:00:00.000Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;说在前面&quot;&gt;&lt;a href=&quot;#说在前面&quot; class=&quot;headerlink&quot; title=&quot;说在前面&quot;&gt;&lt;/a&gt;说在前面&lt;/h1&gt;&lt;p&gt;我是加入字节之后才开始学习使用 Golang 的，在学习和应用这门语言的过程中，踩过很多坑，但是踩坑的同时也学习到了很多有用的知识和技巧。通过不断沉淀这些知识和技巧，我们能够更叫高效和保证质量的完成业务代码，避免造成不必要的损失。&lt;/p&gt;
+&lt;p&gt;建议大家都先去看一下 &lt;a href=&quot;http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;50 Shades of Go&lt;/a&gt;，里面涉及了 Golang 开发初期最容易踩得 50 个坑。&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="Golang" scheme="http://wenzhiquan.github.io/categories/Golang/"/>
+    
+    
+      <category term="Golang" scheme="http://wenzhiquan.github.io/tags/Golang/"/>
     
   </entry>
   
@@ -95,7 +227,7 @@
   </entry>
   
   <entry>
-    <title>关于权责利的思考</title>
+    <title>再看 whwhorere 方法论</title>
     <link href="http://wenzhiquan.github.io/2021/03/18/2021-03-18-whwhorere/"/>
     <id>http://wenzhiquan.github.io/2021/03/18/2021-03-18-whwhorere/</id>
     <published>2021-03-18T04:00:00.000Z</published>
@@ -159,7 +291,7 @@
       
         
         
-          &lt;p&gt;这周看到一篇不错的文章：&lt;a href=&quot;https://mp.weixin.qq.com/s/VIGupHjhN1JOnTqQbk8QfQ，大致讲的是我们要有一个认知，即决定成功的往往是学习习惯与思维习惯，而非天赋。&quot; target=&quot;_blank&quot;
+          &lt;p&gt;这周看到一篇&lt;a href=&quot;https://mp.weixin.qq.com/s/VIGupHjhN1JOnTqQbk8QfQ&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;不错的文章&lt;/a&gt;，
         
       
     
@@ -379,162 +511,6 @@
     
     
       <category term="阅读感想" scheme="http://wenzhiquan.github.io/tags/%E9%98%85%E8%AF%BB%E6%84%9F%E6%83%B3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>远离受害者模式</title>
-    <link href="http://wenzhiquan.github.io/2020/11/25/2020-11-25-away-victim-mode/"/>
-    <id>http://wenzhiquan.github.io/2020/11/25/2020-11-25-away-victim-mode/</id>
-    <published>2020-11-25T04:00:00.000Z</published>
-    <updated>2020-11-25T04:00:00.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;今天看了一篇文章，提到一个受害者模式，是指在遭遇到困难或者失败时，把自己放在受害者的位置上，责怪他人或者环境，比如，责怪父母离异觉得自己很可怜，责怪配偶不关心自己觉得遇人不淑，工作不顺利责怪领导碾压自己等。受害者模式是一种弱者的模式，消极的模式，不积极反思自己的不足加以改正
-        
-      
-    
-    </summary>
-    
-      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
-    
-    
-      <category term="阅读感想" scheme="http://wenzhiquan.github.io/tags/%E9%98%85%E8%AF%BB%E6%84%9F%E6%83%B3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何提升自己的批判性思维</title>
-    <link href="http://wenzhiquan.github.io/2020/11/22/2020-11-22-criticism-thinking/"/>
-    <id>http://wenzhiquan.github.io/2020/11/22/2020-11-22-criticism-thinking/</id>
-    <published>2020-11-22T04:00:00.000Z</published>
-    <updated>2020-11-22T04:00:00.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;今天看 TED，里面提到了 5 个提升批判性思维的
-        
-      
-    
-    </summary>
-    
-      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
-    
-    
-      <category term="阅读感想" scheme="http://wenzhiquan.github.io/tags/%E9%98%85%E8%AF%BB%E6%84%9F%E6%83%B3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何更好地准备一场会议</title>
-    <link href="http://wenzhiquan.github.io/2020/11/11/2020-11-11-prepare-conversation/"/>
-    <id>http://wenzhiquan.github.io/2020/11/11/2020-11-11-prepare-conversation/</id>
-    <published>2020-11-11T04:00:00.000Z</published>
-    <updated>2020-11-11T04:00:00.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;今天开了一场略显尴尬的会议，会议上我方存在的问题主要有两点，第一是会议之前和某一相关方没有达成一致，导致在会议上来回拉扯说不清楚，第二是会议之前准备不足，导致与会方提出的问题没有很好的进行回答，导致拖慢了整个会议的节奏，也给与会方留下不太好的印象。所以，在参加重要的会议之前
-        
-      
-    
-    </summary>
-    
-      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
-    
-    
-      <category term="个人思考" scheme="http://wenzhiquan.github.io/tags/%E4%B8%AA%E4%BA%BA%E6%80%9D%E8%80%83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>如何编写一篇产品设计文档之我见</title>
-    <link href="http://wenzhiquan.github.io/2020/11/08/2020-11-08-how-to-write-product-design-document/"/>
-    <id>http://wenzhiquan.github.io/2020/11/08/2020-11-08-how-to-write-product-design-document/</id>
-    <published>2020-11-08T04:00:00.000Z</published>
-    <updated>2020-11-08T04:00:00.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;最近编写产品设计文档时，发现了一些方法论，在这里分享出来。首先，要写一篇产品设计文档时，要明确产品设计的背景是什么，是由于什么问题无法解决才需要这个产品，这个产品针对的用户是哪些人，产品设计出来是要帮他们在什么场景下解决什么问题，为了解决这些问题我们需要提供哪些核心能力，这
-        
-      
-    
-    </summary>
-    
-      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
-    
-    
-      <category term="方法论" scheme="http://wenzhiquan.github.io/tags/%E6%96%B9%E6%B3%95%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>提升自己思考问题的 level</title>
-    <link href="http://wenzhiquan.github.io/2020/11/02/2020-11-02-upward-thinking-level/"/>
-    <id>http://wenzhiquan.github.io/2020/11/02/2020-11-02-upward-thinking-level/</id>
-    <published>2020-11-02T04:00:00.000Z</published>
-    <updated>2020-11-02T04:00:00.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;上次和育亮 one one
-        
-      
-    
-    </summary>
-    
-      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
-    
-    
-      <category term="个人思考" scheme="http://wenzhiquan.github.io/tags/%E4%B8%AA%E4%BA%BA%E6%80%9D%E8%80%83/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>为什么需要积极主动</title>
-    <link href="http://wenzhiquan.github.io/2020/10/26/2020-10-26-be-positive-willing/"/>
-    <id>http://wenzhiquan.github.io/2020/10/26/2020-10-26-be-positive-willing/</id>
-    <published>2020-10-26T04:00:00.000Z</published>
-    <updated>2020-10-26T04:00:00.000Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;p&gt;以前在穿山甲的时候，有一句话其实说的很对：「成长是个人的事情」，正对应了那句老话「师傅领进门，修行在个人」，我们的 mentor 或者
-        
-      
-    
-    </summary>
-    
-      <category term="思考与感想" scheme="http://wenzhiquan.github.io/categories/%E6%80%9D%E8%80%83%E4%B8%8E%E6%84%9F%E6%83%B3/"/>
-    
-    
-      <category term="个人思考" scheme="http://wenzhiquan.github.io/tags/%E4%B8%AA%E4%BA%BA%E6%80%9D%E8%80%83/"/>
     
   </entry>
   
