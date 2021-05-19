@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "关于权责利的思考"
+title: "再看 whwhorere 方法论"
 date: 2021-03-18 12:00:00
 updated: 2021-03-18 12:00:00
 copyright: true
